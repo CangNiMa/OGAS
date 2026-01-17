@@ -1,0 +1,25 @@
+﻿cnm_Reset_decision = {
+	is_shown = {
+		is_player = yes
+	}
+
+	possible = {
+		always = yes
+	}
+
+	when_taken = {
+		add_journal_entry = {
+			type = je_cnm_construct_manager
+		}
+		add_journal_entry = {
+			type = je_OGAS_building_weight_manager
+		}
+		add_journal_entry = {
+			type = je_cnm_pm_manager
+		}
+		cnm_default_building_manager = yes
+		cnm_default_construct_manager = yes
+		cnm_default_pm_manager = yes
+	}
+
+}

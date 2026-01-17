@@ -1,0 +1,27 @@
+﻿l_german:
+
+je_cnm_pm_manager: "OGAS $pmg_automation$ $CHANGE$ $concept_production_method$"
+cnm_pm_manager_status_desc: "$cnm_pm_manager_status_desc_tolerance_pm_manager$\n$cnm_pm_manager_status_desc_pm_manage_frequency$"
+cnm_pm_manager_status_desc_tolerance_pm_manager: "$concept_production_method$ mode:[AddTextIf(EqualTo_CFixedPoint(Scope.GetCountry.MakeScope.Var('cnm_upgrade_tolerance_pm_manager').GetValue,Scope.GetCountry.MakeScope.ScriptValue('pm_upgrade_tolerance_low')), '$MUSIC_PLAYER_DENSITY_INTENSE$')][AddTextIf(EqualTo_CFixedPoint(Scope.GetCountry.MakeScope.Var('cnm_upgrade_tolerance_pm_manager').GetValue,Scope.GetCountry.MakeScope.ScriptValue('pm_upgrade_tolerance_medium')), '$MUSIC_PLAYER_DENSITY_BALANCED$')][AddTextIf(EqualTo_CFixedPoint(Scope.GetCountry.MakeScope.Var('cnm_upgrade_tolerance_pm_manager').GetValue,Scope.GetCountry.MakeScope.ScriptValue('pm_upgrade_tolerance_high')), '$MUSIC_PLAYER_DENSITY_RELAXED$')]"
+cnm_pm_manager_status_desc_pm_manage_frequency: "$CHANGE$ frequency:[AddTextIf(EqualTo_CFixedPoint(Scope.GetCountry.MakeScope.Var('cnm_pm_manage_frequency').GetValue,'(CFixedPoint)0'), 'none')][AddTextIf(EqualTo_CFixedPoint(Scope.GetCountry.MakeScope.Var('cnm_pm_manage_frequency').GetValue,'(CFixedPoint)1'), 'weekly')][AddTextIf(EqualTo_CFixedPoint(Scope.GetCountry.MakeScope.Var('cnm_pm_manage_frequency').GetValue,'(CFixedPoint)2'), 'monthly')][AddTextIf(EqualTo_CFixedPoint(Scope.GetCountry.MakeScope.Var('cnm_pm_manage_frequency').GetValue,'(CFixedPoint)3'), 'yearly')][Scope.GetCountry.MakeScope.Var('cnm_pm_manage_amount').GetValue] time"
+active_upgrade_pm_manager: "[SelectLocalization( EqualTo_CFixedPoint( Scope.GetCountry.MakeScope.Var('cnm_upgrade_pm_manager').GetValue,'(CFixedPoint)0'), '@simple_box!', '@green_checkmark_box!')]$pmg_automation$$buildings_upgrade$ main $concept_production_method$"
+active_upgrade_pm_manager_desc: "When expected profit is higher, OGAS will $pmg_automation$$buildings_upgrade$ main $concept_production_method$ to improve production efficiency."
+active_balance_pm_manager: "[AddTextIf(EqualTo_CFixedPoint(Scope.GetCountry.MakeScope.Var('cnm_balance_pm_manager').GetValue,'(CFixedPoint)0'), '@simple_box!')][AddTextIf(EqualTo_CFixedPoint(Scope.GetCountry.MakeScope.Var('cnm_balance_pm_manager').GetValue,'(CFixedPoint)1'), '@green_checkmark_box!')]$pmg_automation$ Balance $concept_production_method$"
+active_balance_pm_manager_desc: "Make $concept_production_method$ balance managed by OGAS. As long as the expected profit is higher, OGAS will switch between $concept_production_method$ to balance production."
+balance_tolerance_pm_manager_switch: "Switch $concept_production_method$ balance mode"
+balance_tolerance_pm_manager_switch_desc: "Available $concept_production_method$ balance strategy:\n$MUSIC_PLAYER_DENSITY_INTENSE$: Switch as long as the expected profit is 20% higher\n$MUSIC_PLAYER_DENSITY_BALANCED$: Switch as long as the expected profit is 35% higher\n$MUSIC_PLAYER_DENSITY_RELAXED$: Switch as long as the expected profit is 50% higher."
+
+
+pm_manage_amount_add: "+1 $CHANGE$ $AMOUNT$"
+pm_manage_amount_sub: "-1 $CHANGE$ $AMOUNT$"
+pm_manage_amount_add_desc: "$pm_manage_amount_add$"
+pm_manage_amount_sub_desc: "$pm_manage_amount_sub$"
+active_workforce_employment_pm_manager: "[SelectLocalization( EqualTo_CFixedPoint(Scope.GetCountry.MakeScope.Var('cnm_workforce_employment_pm_manager').GetValue,'(CFixedPoint)0'), '@simple_box!', '@green_checkmark_box!')]$pmg_automation$ $CHANGE$ $concept_workforce$"
+active_workforce_employment_pm_manager_desc: "When $concept_workforce$ < 5000, $buildings_upgrade$ $pmg_automation$ $concept_production_method$ $INCREASE$ $concept_workforce$, when $concept_unemployment$ > 10% downgrade $pmg_automation$ $concept_production_method$."
+pm_manage_frequency_switch: "Switch $CHANGE$ frequency"
+pm_manage_frequency_switch_desc: "$CHANGE$ frequency is: week/month/year"
+
+reset_pm_manager: "$OPTION_DEFAULT$"
+reset_pm_manager_desc: "$OPTION_DEFAULT$"
+
+je_cnm_pm_manager_reason: "You can set the function of OGAS $pmg_automation$ adjust $concept_production_method$ here."

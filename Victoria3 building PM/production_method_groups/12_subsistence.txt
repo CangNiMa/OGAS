@@ -1,0 +1,125 @@
+﻿pmg_base_building_subsistence_farm = {
+	texture = "gfx/interface/icons/generic_icons/mixed_icon_base.dds"
+	production_methods = {
+		default_building_subsistence_farm
+	}
+}
+
+pmg_home_workshops_building_subsistence_farm = {
+	texture = "gfx/interface/icons/generic_icons/mixed_icon_refining.dds"
+	production_methods = {
+		pm_home_workshops_no_building_subsistence_farm
+		pm_home_workshops_building_subsistence_farm
+	}
+}
+
+pmg_serfdom_building_subsistence_farm = {
+	texture = "gfx/interface/icons/generic_icons/mixed_icon_base.dds"
+	production_methods = {
+		pm_serfdom_no
+		pm_serfdom
+		pm_corvee_labor
+		pm_homesteading_building_subsistence
+	}
+}
+
+pmg_base_building_subsistence_orchard = {
+	texture = "gfx/interface/icons/generic_icons/mixed_icon_base.dds"
+	production_methods = {
+		default_building_subsistence_orchard
+	}
+}
+
+pmg_home_workshops_building_subsistence_orchard = {
+	texture = "gfx/interface/icons/generic_icons/mixed_icon_refining.dds"
+	production_methods = {
+		pm_home_workshops_no_building_subsistence_orchard
+		pm_home_workshops_building_subsistence_orchard
+	}
+}
+
+pmg_serfdom_building_subsistence_orchard = {
+	texture = "gfx/interface/icons/generic_icons/mixed_icon_base.dds"
+	production_methods = {
+		pm_serfdom_no
+		pm_corvee_labor
+		pm_serfdom_building_subsistence_orchard
+		pm_homesteading_building_subsistence
+	}
+}
+
+pmg_base_building_subsistence_pasture = {
+	texture = "gfx/interface/icons/generic_icons/mixed_icon_base.dds"
+	production_methods = {
+		default_building_subsistence_pasture
+	}
+}
+
+pmg_home_workshops_building_subsistence_pasture = {
+	texture = "gfx/interface/icons/generic_icons/mixed_icon_refining.dds"
+	production_methods = {
+		pm_home_workshops_no_building_subsistence_pasture
+		pm_home_workshops_building_subsistence_pasture
+	}
+}
+
+pmg_serfdom_building_subsistence_pasture = {
+	texture = "gfx/interface/icons/generic_icons/mixed_icon_base.dds"
+	production_methods = {
+		pm_serfdom_no
+		pm_corvee_labor
+		pm_serfdom_building_subsistence_pasture
+		pm_homesteading_building_subsistence
+	}
+}
+
+pmg_base_building_subsistence_fishing_village = {
+	texture = "gfx/interface/icons/generic_icons/mixed_icon_base.dds"
+	production_methods = {
+		default_building_subsistence_fishing_village
+	}
+}
+
+pmg_home_workshops_building_subsistence_fishing_village = {
+	texture = "gfx/interface/icons/generic_icons/mixed_icon_refining.dds"
+	production_methods = {
+		pm_home_workshops_no_building_subsistence_fishing_village
+		pm_home_workshops_building_subsistence_fishing_village
+	}
+}
+
+pmg_serfdom_building_subsistence_fishing_village = {
+	texture = "gfx/interface/icons/generic_icons/mixed_icon_base.dds"
+	production_methods = {
+		pm_serfdom_no
+		pm_corvee_labor
+		pm_serfdom_building_subsistence_fishing_village
+		pm_homesteading_building_subsistence
+	}
+}
+
+
+pmg_base_building_subsistence_rice_farm = {
+	texture = "gfx/interface/icons/generic_icons/mixed_icon_base.dds"
+	production_methods = {
+		default_building_subsistence_rice_farm
+	}
+}
+
+pmg_home_workshops_building_subsistence_rice_farm = {
+	texture = "gfx/interface/icons/generic_icons/mixed_icon_refining.dds"
+	production_methods = {
+		pm_home_workshops_no_building_subsistence_rice_farm
+		pm_home_workshops_building_subsistence_rice_farm
+	}
+}
+
+pmg_serfdom_building_subsistence_rice_farm = {
+	texture = "gfx/interface/icons/generic_icons/mixed_icon_base.dds"
+	production_methods = {
+		pm_serfdom_no
+		pm_corvee_labor
+		pm_serfdom_building_subsistence_rice_farm
+		pm_homesteading_building_subsistence
+	}
+}

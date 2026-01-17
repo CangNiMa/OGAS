@@ -1,0 +1,450 @@
+﻿#fabric
+pmg_base_building_construction_sector_fabric_current = {
+    if = {
+        limit = {
+            has_active_production_method = pm_wooden_buildings
+        }
+        value = pm_wooden_buildings_fabric
+    }
+    else_if = {
+        limit = {
+            has_active_production_method = pm_iron_frame_buildings
+        }
+        value = pm_iron_frame_buildings_fabric
+    }
+    else = {
+        value = 0.0
+    }
+    multiply = building_work_efficiency
+}
+state_fabric_production_if_no_pmg_base_building_construction_sector = {
+	value = state.sg:fabric.state_goods_production
+    if = {
+        limit = {
+            pmg_base_building_construction_sector_fabric_current > 0.0
+        }
+	subtract = pmg_base_building_construction_sector_fabric_current
+    }
+}
+state_fabric_consumption_if_no_pmg_base_building_construction_sector = {
+	value = state.sg:fabric.state_goods_consumption
+    if = {
+        limit = {
+            pmg_base_building_construction_sector_fabric_current < 0.0
+        }
+	add = pmg_base_building_construction_sector_fabric_current
+    }
+}
+market_fabric_production_if_no_pmg_base_building_construction_sector = {
+	value = market.mg:fabric.market_goods_sell_orders
+    if = {
+        limit = {
+            pmg_base_building_construction_sector_fabric_current > 0.0
+        }
+	subtract = pmg_base_building_construction_sector_fabric_current
+    multiply = state.market_access
+    }
+}
+market_fabric_consumption_if_no_pmg_base_building_construction_sector = {
+	value = market.mg:fabric.market_goods_buy_orders
+    if = {
+        limit = {
+            pmg_base_building_construction_sector_fabric_current < 0.0
+        }
+	add = pmg_base_building_construction_sector_fabric_current
+    multiply = state.market_access
+    }
+}
+#wood
+pmg_base_building_construction_sector_wood_current = {
+    if = {
+        limit = {
+            has_active_production_method = pm_wooden_buildings
+        }
+        value = pm_wooden_buildings_wood
+    }
+    else_if = {
+        limit = {
+            has_active_production_method = pm_iron_frame_buildings
+        }
+        value = pm_iron_frame_buildings_wood
+    }
+    else = {
+        value = 0.0
+    }
+    multiply = building_work_efficiency
+}
+state_wood_production_if_no_pmg_base_building_construction_sector = {
+	value = state.sg:wood.state_goods_production
+    if = {
+        limit = {
+            pmg_base_building_construction_sector_wood_current > 0.0
+        }
+	subtract = pmg_base_building_construction_sector_wood_current
+    }
+}
+state_wood_consumption_if_no_pmg_base_building_construction_sector = {
+	value = state.sg:wood.state_goods_consumption
+    if = {
+        limit = {
+            pmg_base_building_construction_sector_wood_current < 0.0
+        }
+	add = pmg_base_building_construction_sector_wood_current
+    }
+}
+market_wood_production_if_no_pmg_base_building_construction_sector = {
+	value = market.mg:wood.market_goods_sell_orders
+    if = {
+        limit = {
+            pmg_base_building_construction_sector_wood_current > 0.0
+        }
+	subtract = pmg_base_building_construction_sector_wood_current
+    multiply = state.market_access
+    }
+}
+market_wood_consumption_if_no_pmg_base_building_construction_sector = {
+	value = market.mg:wood.market_goods_buy_orders
+    if = {
+        limit = {
+            pmg_base_building_construction_sector_wood_current < 0.0
+        }
+	add = pmg_base_building_construction_sector_wood_current
+    multiply = state.market_access
+    }
+}
+#iron
+pmg_base_building_construction_sector_iron_current = {
+    if = {
+        limit = {
+            has_active_production_method = pm_iron_frame_buildings
+        }
+        value = pm_iron_frame_buildings_iron
+    }
+    else = {
+        value = 0.0
+    }
+    multiply = building_work_efficiency
+}
+state_iron_production_if_no_pmg_base_building_construction_sector = {
+	value = state.sg:iron.state_goods_production
+    if = {
+        limit = {
+            pmg_base_building_construction_sector_iron_current > 0.0
+        }
+	subtract = pmg_base_building_construction_sector_iron_current
+    }
+}
+state_iron_consumption_if_no_pmg_base_building_construction_sector = {
+	value = state.sg:iron.state_goods_consumption
+    if = {
+        limit = {
+            pmg_base_building_construction_sector_iron_current < 0.0
+        }
+	add = pmg_base_building_construction_sector_iron_current
+    }
+}
+market_iron_production_if_no_pmg_base_building_construction_sector = {
+	value = market.mg:iron.market_goods_sell_orders
+    if = {
+        limit = {
+            pmg_base_building_construction_sector_iron_current > 0.0
+        }
+	subtract = pmg_base_building_construction_sector_iron_current
+    multiply = state.market_access
+    }
+}
+market_iron_consumption_if_no_pmg_base_building_construction_sector = {
+	value = market.mg:iron.market_goods_buy_orders
+    if = {
+        limit = {
+            pmg_base_building_construction_sector_iron_current < 0.0
+        }
+	add = pmg_base_building_construction_sector_iron_current
+    multiply = state.market_access
+    }
+}
+#tools
+pmg_base_building_construction_sector_tools_current = {
+    if = {
+        limit = {
+            has_active_production_method = pm_iron_frame_buildings
+        }
+        value = pm_iron_frame_buildings_tools
+    }
+    else_if = {
+        limit = {
+            has_active_production_method = pm_steel_frame_buildings
+        }
+        value = pm_steel_frame_buildings_tools
+    }
+    else_if = {
+        limit = {
+            has_active_production_method = pm_arc_welded_buildings
+        }
+        value = pm_arc_welded_buildings_tools
+    }
+    else = {
+        value = 0.0
+    }
+    multiply = building_work_efficiency
+}
+state_tools_production_if_no_pmg_base_building_construction_sector = {
+	value = state.sg:tools.state_goods_production
+    if = {
+        limit = {
+            pmg_base_building_construction_sector_tools_current > 0.0
+        }
+	subtract = pmg_base_building_construction_sector_tools_current
+    }
+}
+state_tools_consumption_if_no_pmg_base_building_construction_sector = {
+	value = state.sg:tools.state_goods_consumption
+    if = {
+        limit = {
+            pmg_base_building_construction_sector_tools_current < 0.0
+        }
+	add = pmg_base_building_construction_sector_tools_current
+    }
+}
+market_tools_production_if_no_pmg_base_building_construction_sector = {
+	value = market.mg:tools.market_goods_sell_orders
+    if = {
+        limit = {
+            pmg_base_building_construction_sector_tools_current > 0.0
+        }
+	subtract = pmg_base_building_construction_sector_tools_current
+    multiply = state.market_access
+    }
+}
+market_tools_consumption_if_no_pmg_base_building_construction_sector = {
+	value = market.mg:tools.market_goods_buy_orders
+    if = {
+        limit = {
+            pmg_base_building_construction_sector_tools_current < 0.0
+        }
+	add = pmg_base_building_construction_sector_tools_current
+    multiply = state.market_access
+    }
+}
+#steel
+pmg_base_building_construction_sector_steel_current = {
+    if = {
+        limit = {
+            has_active_production_method = pm_steel_frame_buildings
+        }
+        value = pm_steel_frame_buildings_steel
+    }
+    else_if = {
+        limit = {
+            has_active_production_method = pm_arc_welded_buildings
+        }
+        value = pm_arc_welded_buildings_steel
+    }
+    else = {
+        value = 0.0
+    }
+    multiply = building_work_efficiency
+}
+state_steel_production_if_no_pmg_base_building_construction_sector = {
+	value = state.sg:steel.state_goods_production
+    if = {
+        limit = {
+            pmg_base_building_construction_sector_steel_current > 0.0
+        }
+	subtract = pmg_base_building_construction_sector_steel_current
+    }
+}
+state_steel_consumption_if_no_pmg_base_building_construction_sector = {
+	value = state.sg:steel.state_goods_consumption
+    if = {
+        limit = {
+            pmg_base_building_construction_sector_steel_current < 0.0
+        }
+	add = pmg_base_building_construction_sector_steel_current
+    }
+}
+market_steel_production_if_no_pmg_base_building_construction_sector = {
+	value = market.mg:steel.market_goods_sell_orders
+    if = {
+        limit = {
+            pmg_base_building_construction_sector_steel_current > 0.0
+        }
+	subtract = pmg_base_building_construction_sector_steel_current
+    multiply = state.market_access
+    }
+}
+market_steel_consumption_if_no_pmg_base_building_construction_sector = {
+	value = market.mg:steel.market_goods_buy_orders
+    if = {
+        limit = {
+            pmg_base_building_construction_sector_steel_current < 0.0
+        }
+	add = pmg_base_building_construction_sector_steel_current
+    multiply = state.market_access
+    }
+}
+#glass
+pmg_base_building_construction_sector_glass_current = {
+    if = {
+        limit = {
+            has_active_production_method = pm_steel_frame_buildings
+        }
+        value = pm_steel_frame_buildings_glass
+    }
+    else_if = {
+        limit = {
+            has_active_production_method = pm_arc_welded_buildings
+        }
+        value = pm_arc_welded_buildings_glass
+    }
+    else = {
+        value = 0.0
+    }
+    multiply = building_work_efficiency
+}
+state_glass_production_if_no_pmg_base_building_construction_sector = {
+	value = state.sg:glass.state_goods_production
+    if = {
+        limit = {
+            pmg_base_building_construction_sector_glass_current > 0.0
+        }
+	subtract = pmg_base_building_construction_sector_glass_current
+    }
+}
+state_glass_consumption_if_no_pmg_base_building_construction_sector = {
+	value = state.sg:glass.state_goods_consumption
+    if = {
+        limit = {
+            pmg_base_building_construction_sector_glass_current < 0.0
+        }
+	add = pmg_base_building_construction_sector_glass_current
+    }
+}
+market_glass_production_if_no_pmg_base_building_construction_sector = {
+	value = market.mg:glass.market_goods_sell_orders
+    if = {
+        limit = {
+            pmg_base_building_construction_sector_glass_current > 0.0
+        }
+	subtract = pmg_base_building_construction_sector_glass_current
+    multiply = state.market_access
+    }
+}
+market_glass_consumption_if_no_pmg_base_building_construction_sector = {
+	value = market.mg:glass.market_goods_buy_orders
+    if = {
+        limit = {
+            pmg_base_building_construction_sector_glass_current < 0.0
+        }
+	add = pmg_base_building_construction_sector_glass_current
+    multiply = state.market_access
+    }
+}
+#explosives
+pmg_base_building_construction_sector_explosives_current = {
+    if = {
+        limit = {
+            has_active_production_method = pm_steel_frame_buildings
+        }
+        value = pm_steel_frame_buildings_explosives
+    }
+    else_if = {
+        limit = {
+            has_active_production_method = pm_arc_welded_buildings
+        }
+        value = pm_arc_welded_buildings_explosives
+    }
+    else = {
+        value = 0.0
+    }
+    multiply = building_work_efficiency
+}
+state_explosives_production_if_no_pmg_base_building_construction_sector = {
+	value = state.sg:explosives.state_goods_production
+    if = {
+        limit = {
+            pmg_base_building_construction_sector_explosives_current > 0.0
+        }
+	subtract = pmg_base_building_construction_sector_explosives_current
+    }
+}
+state_explosives_consumption_if_no_pmg_base_building_construction_sector = {
+	value = state.sg:explosives.state_goods_consumption
+    if = {
+        limit = {
+            pmg_base_building_construction_sector_explosives_current < 0.0
+        }
+	add = pmg_base_building_construction_sector_explosives_current
+    }
+}
+market_explosives_production_if_no_pmg_base_building_construction_sector = {
+	value = market.mg:explosives.market_goods_sell_orders
+    if = {
+        limit = {
+            pmg_base_building_construction_sector_explosives_current > 0.0
+        }
+	subtract = pmg_base_building_construction_sector_explosives_current
+    multiply = state.market_access
+    }
+}
+market_explosives_consumption_if_no_pmg_base_building_construction_sector = {
+	value = market.mg:explosives.market_goods_buy_orders
+    if = {
+        limit = {
+            pmg_base_building_construction_sector_explosives_current < 0.0
+        }
+	add = pmg_base_building_construction_sector_explosives_current
+    multiply = state.market_access
+    }
+}
+#electricity
+pmg_base_building_construction_sector_electricity_current = {
+    if = {
+        limit = {
+            has_active_production_method = pm_arc_welded_buildings
+        }
+        value = pm_arc_welded_buildings_electricity
+    }
+    else = {
+        value = 0.0
+    }
+    multiply = building_work_efficiency
+}
+state_electricity_production_if_no_pmg_base_building_construction_sector = {
+	value = state.sg:electricity.state_goods_production
+    if = {
+        limit = {
+            pmg_base_building_construction_sector_electricity_current > 0.0
+        }
+	subtract = pmg_base_building_construction_sector_electricity_current
+    }
+}
+state_electricity_consumption_if_no_pmg_base_building_construction_sector = {
+	value = state.sg:electricity.state_goods_consumption
+    if = {
+        limit = {
+            pmg_base_building_construction_sector_electricity_current < 0.0
+        }
+	add = pmg_base_building_construction_sector_electricity_current
+    }
+}
+market_electricity_production_if_no_pmg_base_building_construction_sector = {
+	value = market.mg:electricity.market_goods_sell_orders
+    if = {
+        limit = {
+            pmg_base_building_construction_sector_electricity_current > 0.0
+        }
+	subtract = pmg_base_building_construction_sector_electricity_current
+    multiply = state.market_access
+    }
+}
+market_electricity_consumption_if_no_pmg_base_building_construction_sector = {
+	value = market.mg:electricity.market_goods_buy_orders
+    if = {
+        limit = {
+            pmg_base_building_construction_sector_electricity_current < 0.0
+        }
+	add = pmg_base_building_construction_sector_electricity_current
+    multiply = state.market_access
+    }
+}

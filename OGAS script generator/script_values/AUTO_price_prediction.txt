@@ -1,0 +1,4756 @@
+﻿ammunition_price_prediction = {
+    if = {
+        limit = {
+            scope:state_ammunition_production_prediction < scope:state_ammunition_consumption_prediction
+        }
+        value = scope:state_ammunition_production_prediction
+        subtract = scope:state_ammunition_consumption_prediction
+        divide = {
+            value = scope:state_ammunition_production_prediction
+            min = 0.1
+        }
+        multiply = -0.75
+        max = 0.75
+        add = 1
+    }
+    else_if = {
+        limit = {
+            scope:state_ammunition_production_prediction > scope:state_ammunition_consumption_prediction
+        }
+        value = scope:state_ammunition_production_prediction
+        subtract = scope:state_ammunition_consumption_prediction
+        divide = {
+            value = scope:state_ammunition_consumption_prediction
+            min = 0.1
+        }
+        multiply = -0.75
+        min = -0.75
+        add = 1
+    }
+    else = {
+        value = 1
+    }
+    multiply = {
+        value = 1
+        subtract = {
+            value = state.modifier:state_market_access_price_impact
+            multiply = state.market_access
+        }
+        multiply = ammunition_base_price
+    }
+    add = {
+        value = state.modifier:state_market_access_price_impact
+        multiply = state.market_access
+        multiply = ammunition_base_price
+        multiply = {
+            value = {
+                if = {
+                    limit = {
+                        scope:market_ammunition_production_prediction < scope:market_ammunition_consumption_prediction
+                    }
+                    value = scope:market_ammunition_production_prediction
+                    subtract = scope:market_ammunition_consumption_prediction
+                    divide = {
+                        value = scope:market_ammunition_production_prediction
+                        min = 0.1
+                    }
+                    multiply = -0.75
+                    max = 0.75
+                    add = 1
+                }
+                else_if = {
+                    limit = {
+                        scope:market_ammunition_production_prediction > scope:market_ammunition_consumption_prediction
+                    }
+                    value = scope:market_ammunition_production_prediction
+                    subtract = scope:market_ammunition_consumption_prediction
+                    divide = {
+                        value = scope:market_ammunition_consumption_prediction
+                        min = 0.1
+                    }
+                    multiply = -0.75
+                    min = -0.75
+                    add = 1
+                }
+                else = {
+                    value = 1
+                }
+            }
+        }
+    }
+}
+
+small_arms_price_prediction = {
+    if = {
+        limit = {
+            scope:state_small_arms_production_prediction < scope:state_small_arms_consumption_prediction
+        }
+        value = scope:state_small_arms_production_prediction
+        subtract = scope:state_small_arms_consumption_prediction
+        divide = {
+            value = scope:state_small_arms_production_prediction
+            min = 0.1
+        }
+        multiply = -0.75
+        max = 0.75
+        add = 1
+    }
+    else_if = {
+        limit = {
+            scope:state_small_arms_production_prediction > scope:state_small_arms_consumption_prediction
+        }
+        value = scope:state_small_arms_production_prediction
+        subtract = scope:state_small_arms_consumption_prediction
+        divide = {
+            value = scope:state_small_arms_consumption_prediction
+            min = 0.1
+        }
+        multiply = -0.75
+        min = -0.75
+        add = 1
+    }
+    else = {
+        value = 1
+    }
+    multiply = {
+        value = 1
+        subtract = {
+            value = state.modifier:state_market_access_price_impact
+            multiply = state.market_access
+        }
+        multiply = small_arms_base_price
+    }
+    add = {
+        value = state.modifier:state_market_access_price_impact
+        multiply = state.market_access
+        multiply = small_arms_base_price
+        multiply = {
+            value = {
+                if = {
+                    limit = {
+                        scope:market_small_arms_production_prediction < scope:market_small_arms_consumption_prediction
+                    }
+                    value = scope:market_small_arms_production_prediction
+                    subtract = scope:market_small_arms_consumption_prediction
+                    divide = {
+                        value = scope:market_small_arms_production_prediction
+                        min = 0.1
+                    }
+                    multiply = -0.75
+                    max = 0.75
+                    add = 1
+                }
+                else_if = {
+                    limit = {
+                        scope:market_small_arms_production_prediction > scope:market_small_arms_consumption_prediction
+                    }
+                    value = scope:market_small_arms_production_prediction
+                    subtract = scope:market_small_arms_consumption_prediction
+                    divide = {
+                        value = scope:market_small_arms_consumption_prediction
+                        min = 0.1
+                    }
+                    multiply = -0.75
+                    min = -0.75
+                    add = 1
+                }
+                else = {
+                    value = 1
+                }
+            }
+        }
+    }
+}
+
+artillery_price_prediction = {
+    if = {
+        limit = {
+            scope:state_artillery_production_prediction < scope:state_artillery_consumption_prediction
+        }
+        value = scope:state_artillery_production_prediction
+        subtract = scope:state_artillery_consumption_prediction
+        divide = {
+            value = scope:state_artillery_production_prediction
+            min = 0.1
+        }
+        multiply = -0.75
+        max = 0.75
+        add = 1
+    }
+    else_if = {
+        limit = {
+            scope:state_artillery_production_prediction > scope:state_artillery_consumption_prediction
+        }
+        value = scope:state_artillery_production_prediction
+        subtract = scope:state_artillery_consumption_prediction
+        divide = {
+            value = scope:state_artillery_consumption_prediction
+            min = 0.1
+        }
+        multiply = -0.75
+        min = -0.75
+        add = 1
+    }
+    else = {
+        value = 1
+    }
+    multiply = {
+        value = 1
+        subtract = {
+            value = state.modifier:state_market_access_price_impact
+            multiply = state.market_access
+        }
+        multiply = artillery_base_price
+    }
+    add = {
+        value = state.modifier:state_market_access_price_impact
+        multiply = state.market_access
+        multiply = artillery_base_price
+        multiply = {
+            value = {
+                if = {
+                    limit = {
+                        scope:market_artillery_production_prediction < scope:market_artillery_consumption_prediction
+                    }
+                    value = scope:market_artillery_production_prediction
+                    subtract = scope:market_artillery_consumption_prediction
+                    divide = {
+                        value = scope:market_artillery_production_prediction
+                        min = 0.1
+                    }
+                    multiply = -0.75
+                    max = 0.75
+                    add = 1
+                }
+                else_if = {
+                    limit = {
+                        scope:market_artillery_production_prediction > scope:market_artillery_consumption_prediction
+                    }
+                    value = scope:market_artillery_production_prediction
+                    subtract = scope:market_artillery_consumption_prediction
+                    divide = {
+                        value = scope:market_artillery_consumption_prediction
+                        min = 0.1
+                    }
+                    multiply = -0.75
+                    min = -0.75
+                    add = 1
+                }
+                else = {
+                    value = 1
+                }
+            }
+        }
+    }
+}
+
+tanks_price_prediction = {
+    if = {
+        limit = {
+            scope:state_tanks_production_prediction < scope:state_tanks_consumption_prediction
+        }
+        value = scope:state_tanks_production_prediction
+        subtract = scope:state_tanks_consumption_prediction
+        divide = {
+            value = scope:state_tanks_production_prediction
+            min = 0.1
+        }
+        multiply = -0.75
+        max = 0.75
+        add = 1
+    }
+    else_if = {
+        limit = {
+            scope:state_tanks_production_prediction > scope:state_tanks_consumption_prediction
+        }
+        value = scope:state_tanks_production_prediction
+        subtract = scope:state_tanks_consumption_prediction
+        divide = {
+            value = scope:state_tanks_consumption_prediction
+            min = 0.1
+        }
+        multiply = -0.75
+        min = -0.75
+        add = 1
+    }
+    else = {
+        value = 1
+    }
+    multiply = {
+        value = 1
+        subtract = {
+            value = state.modifier:state_market_access_price_impact
+            multiply = state.market_access
+        }
+        multiply = tanks_base_price
+    }
+    add = {
+        value = state.modifier:state_market_access_price_impact
+        multiply = state.market_access
+        multiply = tanks_base_price
+        multiply = {
+            value = {
+                if = {
+                    limit = {
+                        scope:market_tanks_production_prediction < scope:market_tanks_consumption_prediction
+                    }
+                    value = scope:market_tanks_production_prediction
+                    subtract = scope:market_tanks_consumption_prediction
+                    divide = {
+                        value = scope:market_tanks_production_prediction
+                        min = 0.1
+                    }
+                    multiply = -0.75
+                    max = 0.75
+                    add = 1
+                }
+                else_if = {
+                    limit = {
+                        scope:market_tanks_production_prediction > scope:market_tanks_consumption_prediction
+                    }
+                    value = scope:market_tanks_production_prediction
+                    subtract = scope:market_tanks_consumption_prediction
+                    divide = {
+                        value = scope:market_tanks_consumption_prediction
+                        min = 0.1
+                    }
+                    multiply = -0.75
+                    min = -0.75
+                    add = 1
+                }
+                else = {
+                    value = 1
+                }
+            }
+        }
+    }
+}
+
+aeroplanes_price_prediction = {
+    if = {
+        limit = {
+            scope:state_aeroplanes_production_prediction < scope:state_aeroplanes_consumption_prediction
+        }
+        value = scope:state_aeroplanes_production_prediction
+        subtract = scope:state_aeroplanes_consumption_prediction
+        divide = {
+            value = scope:state_aeroplanes_production_prediction
+            min = 0.1
+        }
+        multiply = -0.75
+        max = 0.75
+        add = 1
+    }
+    else_if = {
+        limit = {
+            scope:state_aeroplanes_production_prediction > scope:state_aeroplanes_consumption_prediction
+        }
+        value = scope:state_aeroplanes_production_prediction
+        subtract = scope:state_aeroplanes_consumption_prediction
+        divide = {
+            value = scope:state_aeroplanes_consumption_prediction
+            min = 0.1
+        }
+        multiply = -0.75
+        min = -0.75
+        add = 1
+    }
+    else = {
+        value = 1
+    }
+    multiply = {
+        value = 1
+        subtract = {
+            value = state.modifier:state_market_access_price_impact
+            multiply = state.market_access
+        }
+        multiply = aeroplanes_base_price
+    }
+    add = {
+        value = state.modifier:state_market_access_price_impact
+        multiply = state.market_access
+        multiply = aeroplanes_base_price
+        multiply = {
+            value = {
+                if = {
+                    limit = {
+                        scope:market_aeroplanes_production_prediction < scope:market_aeroplanes_consumption_prediction
+                    }
+                    value = scope:market_aeroplanes_production_prediction
+                    subtract = scope:market_aeroplanes_consumption_prediction
+                    divide = {
+                        value = scope:market_aeroplanes_production_prediction
+                        min = 0.1
+                    }
+                    multiply = -0.75
+                    max = 0.75
+                    add = 1
+                }
+                else_if = {
+                    limit = {
+                        scope:market_aeroplanes_production_prediction > scope:market_aeroplanes_consumption_prediction
+                    }
+                    value = scope:market_aeroplanes_production_prediction
+                    subtract = scope:market_aeroplanes_consumption_prediction
+                    divide = {
+                        value = scope:market_aeroplanes_consumption_prediction
+                        min = 0.1
+                    }
+                    multiply = -0.75
+                    min = -0.75
+                    add = 1
+                }
+                else = {
+                    value = 1
+                }
+            }
+        }
+    }
+}
+
+manowars_price_prediction = {
+    if = {
+        limit = {
+            scope:state_manowars_production_prediction < scope:state_manowars_consumption_prediction
+        }
+        value = scope:state_manowars_production_prediction
+        subtract = scope:state_manowars_consumption_prediction
+        divide = {
+            value = scope:state_manowars_production_prediction
+            min = 0.1
+        }
+        multiply = -0.75
+        max = 0.75
+        add = 1
+    }
+    else_if = {
+        limit = {
+            scope:state_manowars_production_prediction > scope:state_manowars_consumption_prediction
+        }
+        value = scope:state_manowars_production_prediction
+        subtract = scope:state_manowars_consumption_prediction
+        divide = {
+            value = scope:state_manowars_consumption_prediction
+            min = 0.1
+        }
+        multiply = -0.75
+        min = -0.75
+        add = 1
+    }
+    else = {
+        value = 1
+    }
+    multiply = {
+        value = 1
+        subtract = {
+            value = state.modifier:state_market_access_price_impact
+            multiply = state.market_access
+        }
+        multiply = manowars_base_price
+    }
+    add = {
+        value = state.modifier:state_market_access_price_impact
+        multiply = state.market_access
+        multiply = manowars_base_price
+        multiply = {
+            value = {
+                if = {
+                    limit = {
+                        scope:market_manowars_production_prediction < scope:market_manowars_consumption_prediction
+                    }
+                    value = scope:market_manowars_production_prediction
+                    subtract = scope:market_manowars_consumption_prediction
+                    divide = {
+                        value = scope:market_manowars_production_prediction
+                        min = 0.1
+                    }
+                    multiply = -0.75
+                    max = 0.75
+                    add = 1
+                }
+                else_if = {
+                    limit = {
+                        scope:market_manowars_production_prediction > scope:market_manowars_consumption_prediction
+                    }
+                    value = scope:market_manowars_production_prediction
+                    subtract = scope:market_manowars_consumption_prediction
+                    divide = {
+                        value = scope:market_manowars_consumption_prediction
+                        min = 0.1
+                    }
+                    multiply = -0.75
+                    min = -0.75
+                    add = 1
+                }
+                else = {
+                    value = 1
+                }
+            }
+        }
+    }
+}
+
+ironclads_price_prediction = {
+    if = {
+        limit = {
+            scope:state_ironclads_production_prediction < scope:state_ironclads_consumption_prediction
+        }
+        value = scope:state_ironclads_production_prediction
+        subtract = scope:state_ironclads_consumption_prediction
+        divide = {
+            value = scope:state_ironclads_production_prediction
+            min = 0.1
+        }
+        multiply = -0.75
+        max = 0.75
+        add = 1
+    }
+    else_if = {
+        limit = {
+            scope:state_ironclads_production_prediction > scope:state_ironclads_consumption_prediction
+        }
+        value = scope:state_ironclads_production_prediction
+        subtract = scope:state_ironclads_consumption_prediction
+        divide = {
+            value = scope:state_ironclads_consumption_prediction
+            min = 0.1
+        }
+        multiply = -0.75
+        min = -0.75
+        add = 1
+    }
+    else = {
+        value = 1
+    }
+    multiply = {
+        value = 1
+        subtract = {
+            value = state.modifier:state_market_access_price_impact
+            multiply = state.market_access
+        }
+        multiply = ironclads_base_price
+    }
+    add = {
+        value = state.modifier:state_market_access_price_impact
+        multiply = state.market_access
+        multiply = ironclads_base_price
+        multiply = {
+            value = {
+                if = {
+                    limit = {
+                        scope:market_ironclads_production_prediction < scope:market_ironclads_consumption_prediction
+                    }
+                    value = scope:market_ironclads_production_prediction
+                    subtract = scope:market_ironclads_consumption_prediction
+                    divide = {
+                        value = scope:market_ironclads_production_prediction
+                        min = 0.1
+                    }
+                    multiply = -0.75
+                    max = 0.75
+                    add = 1
+                }
+                else_if = {
+                    limit = {
+                        scope:market_ironclads_production_prediction > scope:market_ironclads_consumption_prediction
+                    }
+                    value = scope:market_ironclads_production_prediction
+                    subtract = scope:market_ironclads_consumption_prediction
+                    divide = {
+                        value = scope:market_ironclads_consumption_prediction
+                        min = 0.1
+                    }
+                    multiply = -0.75
+                    min = -0.75
+                    add = 1
+                }
+                else = {
+                    value = 1
+                }
+            }
+        }
+    }
+}
+
+grain_price_prediction = {
+    if = {
+        limit = {
+            scope:state_grain_production_prediction < scope:state_grain_consumption_prediction
+        }
+        value = scope:state_grain_production_prediction
+        subtract = scope:state_grain_consumption_prediction
+        divide = {
+            value = scope:state_grain_production_prediction
+            min = 0.1
+        }
+        multiply = -0.75
+        max = 0.75
+        add = 1
+    }
+    else_if = {
+        limit = {
+            scope:state_grain_production_prediction > scope:state_grain_consumption_prediction
+        }
+        value = scope:state_grain_production_prediction
+        subtract = scope:state_grain_consumption_prediction
+        divide = {
+            value = scope:state_grain_consumption_prediction
+            min = 0.1
+        }
+        multiply = -0.75
+        min = -0.75
+        add = 1
+    }
+    else = {
+        value = 1
+    }
+    multiply = {
+        value = 1
+        subtract = {
+            value = state.modifier:state_market_access_price_impact
+            multiply = state.market_access
+        }
+        multiply = grain_base_price
+    }
+    add = {
+        value = state.modifier:state_market_access_price_impact
+        multiply = state.market_access
+        multiply = grain_base_price
+        multiply = {
+            value = {
+                if = {
+                    limit = {
+                        scope:market_grain_production_prediction < scope:market_grain_consumption_prediction
+                    }
+                    value = scope:market_grain_production_prediction
+                    subtract = scope:market_grain_consumption_prediction
+                    divide = {
+                        value = scope:market_grain_production_prediction
+                        min = 0.1
+                    }
+                    multiply = -0.75
+                    max = 0.75
+                    add = 1
+                }
+                else_if = {
+                    limit = {
+                        scope:market_grain_production_prediction > scope:market_grain_consumption_prediction
+                    }
+                    value = scope:market_grain_production_prediction
+                    subtract = scope:market_grain_consumption_prediction
+                    divide = {
+                        value = scope:market_grain_consumption_prediction
+                        min = 0.1
+                    }
+                    multiply = -0.75
+                    min = -0.75
+                    add = 1
+                }
+                else = {
+                    value = 1
+                }
+            }
+        }
+    }
+}
+
+fish_price_prediction = {
+    if = {
+        limit = {
+            scope:state_fish_production_prediction < scope:state_fish_consumption_prediction
+        }
+        value = scope:state_fish_production_prediction
+        subtract = scope:state_fish_consumption_prediction
+        divide = {
+            value = scope:state_fish_production_prediction
+            min = 0.1
+        }
+        multiply = -0.75
+        max = 0.75
+        add = 1
+    }
+    else_if = {
+        limit = {
+            scope:state_fish_production_prediction > scope:state_fish_consumption_prediction
+        }
+        value = scope:state_fish_production_prediction
+        subtract = scope:state_fish_consumption_prediction
+        divide = {
+            value = scope:state_fish_consumption_prediction
+            min = 0.1
+        }
+        multiply = -0.75
+        min = -0.75
+        add = 1
+    }
+    else = {
+        value = 1
+    }
+    multiply = {
+        value = 1
+        subtract = {
+            value = state.modifier:state_market_access_price_impact
+            multiply = state.market_access
+        }
+        multiply = fish_base_price
+    }
+    add = {
+        value = state.modifier:state_market_access_price_impact
+        multiply = state.market_access
+        multiply = fish_base_price
+        multiply = {
+            value = {
+                if = {
+                    limit = {
+                        scope:market_fish_production_prediction < scope:market_fish_consumption_prediction
+                    }
+                    value = scope:market_fish_production_prediction
+                    subtract = scope:market_fish_consumption_prediction
+                    divide = {
+                        value = scope:market_fish_production_prediction
+                        min = 0.1
+                    }
+                    multiply = -0.75
+                    max = 0.75
+                    add = 1
+                }
+                else_if = {
+                    limit = {
+                        scope:market_fish_production_prediction > scope:market_fish_consumption_prediction
+                    }
+                    value = scope:market_fish_production_prediction
+                    subtract = scope:market_fish_consumption_prediction
+                    divide = {
+                        value = scope:market_fish_consumption_prediction
+                        min = 0.1
+                    }
+                    multiply = -0.75
+                    min = -0.75
+                    add = 1
+                }
+                else = {
+                    value = 1
+                }
+            }
+        }
+    }
+}
+
+fabric_price_prediction = {
+    if = {
+        limit = {
+            scope:state_fabric_production_prediction < scope:state_fabric_consumption_prediction
+        }
+        value = scope:state_fabric_production_prediction
+        subtract = scope:state_fabric_consumption_prediction
+        divide = {
+            value = scope:state_fabric_production_prediction
+            min = 0.1
+        }
+        multiply = -0.75
+        max = 0.75
+        add = 1
+    }
+    else_if = {
+        limit = {
+            scope:state_fabric_production_prediction > scope:state_fabric_consumption_prediction
+        }
+        value = scope:state_fabric_production_prediction
+        subtract = scope:state_fabric_consumption_prediction
+        divide = {
+            value = scope:state_fabric_consumption_prediction
+            min = 0.1
+        }
+        multiply = -0.75
+        min = -0.75
+        add = 1
+    }
+    else = {
+        value = 1
+    }
+    multiply = {
+        value = 1
+        subtract = {
+            value = state.modifier:state_market_access_price_impact
+            multiply = state.market_access
+        }
+        multiply = fabric_base_price
+    }
+    add = {
+        value = state.modifier:state_market_access_price_impact
+        multiply = state.market_access
+        multiply = fabric_base_price
+        multiply = {
+            value = {
+                if = {
+                    limit = {
+                        scope:market_fabric_production_prediction < scope:market_fabric_consumption_prediction
+                    }
+                    value = scope:market_fabric_production_prediction
+                    subtract = scope:market_fabric_consumption_prediction
+                    divide = {
+                        value = scope:market_fabric_production_prediction
+                        min = 0.1
+                    }
+                    multiply = -0.75
+                    max = 0.75
+                    add = 1
+                }
+                else_if = {
+                    limit = {
+                        scope:market_fabric_production_prediction > scope:market_fabric_consumption_prediction
+                    }
+                    value = scope:market_fabric_production_prediction
+                    subtract = scope:market_fabric_consumption_prediction
+                    divide = {
+                        value = scope:market_fabric_consumption_prediction
+                        min = 0.1
+                    }
+                    multiply = -0.75
+                    min = -0.75
+                    add = 1
+                }
+                else = {
+                    value = 1
+                }
+            }
+        }
+    }
+}
+
+wood_price_prediction = {
+    if = {
+        limit = {
+            scope:state_wood_production_prediction < scope:state_wood_consumption_prediction
+        }
+        value = scope:state_wood_production_prediction
+        subtract = scope:state_wood_consumption_prediction
+        divide = {
+            value = scope:state_wood_production_prediction
+            min = 0.1
+        }
+        multiply = -0.75
+        max = 0.75
+        add = 1
+    }
+    else_if = {
+        limit = {
+            scope:state_wood_production_prediction > scope:state_wood_consumption_prediction
+        }
+        value = scope:state_wood_production_prediction
+        subtract = scope:state_wood_consumption_prediction
+        divide = {
+            value = scope:state_wood_consumption_prediction
+            min = 0.1
+        }
+        multiply = -0.75
+        min = -0.75
+        add = 1
+    }
+    else = {
+        value = 1
+    }
+    multiply = {
+        value = 1
+        subtract = {
+            value = state.modifier:state_market_access_price_impact
+            multiply = state.market_access
+        }
+        multiply = wood_base_price
+    }
+    add = {
+        value = state.modifier:state_market_access_price_impact
+        multiply = state.market_access
+        multiply = wood_base_price
+        multiply = {
+            value = {
+                if = {
+                    limit = {
+                        scope:market_wood_production_prediction < scope:market_wood_consumption_prediction
+                    }
+                    value = scope:market_wood_production_prediction
+                    subtract = scope:market_wood_consumption_prediction
+                    divide = {
+                        value = scope:market_wood_production_prediction
+                        min = 0.1
+                    }
+                    multiply = -0.75
+                    max = 0.75
+                    add = 1
+                }
+                else_if = {
+                    limit = {
+                        scope:market_wood_production_prediction > scope:market_wood_consumption_prediction
+                    }
+                    value = scope:market_wood_production_prediction
+                    subtract = scope:market_wood_consumption_prediction
+                    divide = {
+                        value = scope:market_wood_consumption_prediction
+                        min = 0.1
+                    }
+                    multiply = -0.75
+                    min = -0.75
+                    add = 1
+                }
+                else = {
+                    value = 1
+                }
+            }
+        }
+    }
+}
+
+groceries_price_prediction = {
+    if = {
+        limit = {
+            scope:state_groceries_production_prediction < scope:state_groceries_consumption_prediction
+        }
+        value = scope:state_groceries_production_prediction
+        subtract = scope:state_groceries_consumption_prediction
+        divide = {
+            value = scope:state_groceries_production_prediction
+            min = 0.1
+        }
+        multiply = -0.75
+        max = 0.75
+        add = 1
+    }
+    else_if = {
+        limit = {
+            scope:state_groceries_production_prediction > scope:state_groceries_consumption_prediction
+        }
+        value = scope:state_groceries_production_prediction
+        subtract = scope:state_groceries_consumption_prediction
+        divide = {
+            value = scope:state_groceries_consumption_prediction
+            min = 0.1
+        }
+        multiply = -0.75
+        min = -0.75
+        add = 1
+    }
+    else = {
+        value = 1
+    }
+    multiply = {
+        value = 1
+        subtract = {
+            value = state.modifier:state_market_access_price_impact
+            multiply = state.market_access
+        }
+        multiply = groceries_base_price
+    }
+    add = {
+        value = state.modifier:state_market_access_price_impact
+        multiply = state.market_access
+        multiply = groceries_base_price
+        multiply = {
+            value = {
+                if = {
+                    limit = {
+                        scope:market_groceries_production_prediction < scope:market_groceries_consumption_prediction
+                    }
+                    value = scope:market_groceries_production_prediction
+                    subtract = scope:market_groceries_consumption_prediction
+                    divide = {
+                        value = scope:market_groceries_production_prediction
+                        min = 0.1
+                    }
+                    multiply = -0.75
+                    max = 0.75
+                    add = 1
+                }
+                else_if = {
+                    limit = {
+                        scope:market_groceries_production_prediction > scope:market_groceries_consumption_prediction
+                    }
+                    value = scope:market_groceries_production_prediction
+                    subtract = scope:market_groceries_consumption_prediction
+                    divide = {
+                        value = scope:market_groceries_consumption_prediction
+                        min = 0.1
+                    }
+                    multiply = -0.75
+                    min = -0.75
+                    add = 1
+                }
+                else = {
+                    value = 1
+                }
+            }
+        }
+    }
+}
+
+clothes_price_prediction = {
+    if = {
+        limit = {
+            scope:state_clothes_production_prediction < scope:state_clothes_consumption_prediction
+        }
+        value = scope:state_clothes_production_prediction
+        subtract = scope:state_clothes_consumption_prediction
+        divide = {
+            value = scope:state_clothes_production_prediction
+            min = 0.1
+        }
+        multiply = -0.75
+        max = 0.75
+        add = 1
+    }
+    else_if = {
+        limit = {
+            scope:state_clothes_production_prediction > scope:state_clothes_consumption_prediction
+        }
+        value = scope:state_clothes_production_prediction
+        subtract = scope:state_clothes_consumption_prediction
+        divide = {
+            value = scope:state_clothes_consumption_prediction
+            min = 0.1
+        }
+        multiply = -0.75
+        min = -0.75
+        add = 1
+    }
+    else = {
+        value = 1
+    }
+    multiply = {
+        value = 1
+        subtract = {
+            value = state.modifier:state_market_access_price_impact
+            multiply = state.market_access
+        }
+        multiply = clothes_base_price
+    }
+    add = {
+        value = state.modifier:state_market_access_price_impact
+        multiply = state.market_access
+        multiply = clothes_base_price
+        multiply = {
+            value = {
+                if = {
+                    limit = {
+                        scope:market_clothes_production_prediction < scope:market_clothes_consumption_prediction
+                    }
+                    value = scope:market_clothes_production_prediction
+                    subtract = scope:market_clothes_consumption_prediction
+                    divide = {
+                        value = scope:market_clothes_production_prediction
+                        min = 0.1
+                    }
+                    multiply = -0.75
+                    max = 0.75
+                    add = 1
+                }
+                else_if = {
+                    limit = {
+                        scope:market_clothes_production_prediction > scope:market_clothes_consumption_prediction
+                    }
+                    value = scope:market_clothes_production_prediction
+                    subtract = scope:market_clothes_consumption_prediction
+                    divide = {
+                        value = scope:market_clothes_consumption_prediction
+                        min = 0.1
+                    }
+                    multiply = -0.75
+                    min = -0.75
+                    add = 1
+                }
+                else = {
+                    value = 1
+                }
+            }
+        }
+    }
+}
+
+furniture_price_prediction = {
+    if = {
+        limit = {
+            scope:state_furniture_production_prediction < scope:state_furniture_consumption_prediction
+        }
+        value = scope:state_furniture_production_prediction
+        subtract = scope:state_furniture_consumption_prediction
+        divide = {
+            value = scope:state_furniture_production_prediction
+            min = 0.1
+        }
+        multiply = -0.75
+        max = 0.75
+        add = 1
+    }
+    else_if = {
+        limit = {
+            scope:state_furniture_production_prediction > scope:state_furniture_consumption_prediction
+        }
+        value = scope:state_furniture_production_prediction
+        subtract = scope:state_furniture_consumption_prediction
+        divide = {
+            value = scope:state_furniture_consumption_prediction
+            min = 0.1
+        }
+        multiply = -0.75
+        min = -0.75
+        add = 1
+    }
+    else = {
+        value = 1
+    }
+    multiply = {
+        value = 1
+        subtract = {
+            value = state.modifier:state_market_access_price_impact
+            multiply = state.market_access
+        }
+        multiply = furniture_base_price
+    }
+    add = {
+        value = state.modifier:state_market_access_price_impact
+        multiply = state.market_access
+        multiply = furniture_base_price
+        multiply = {
+            value = {
+                if = {
+                    limit = {
+                        scope:market_furniture_production_prediction < scope:market_furniture_consumption_prediction
+                    }
+                    value = scope:market_furniture_production_prediction
+                    subtract = scope:market_furniture_consumption_prediction
+                    divide = {
+                        value = scope:market_furniture_production_prediction
+                        min = 0.1
+                    }
+                    multiply = -0.75
+                    max = 0.75
+                    add = 1
+                }
+                else_if = {
+                    limit = {
+                        scope:market_furniture_production_prediction > scope:market_furniture_consumption_prediction
+                    }
+                    value = scope:market_furniture_production_prediction
+                    subtract = scope:market_furniture_consumption_prediction
+                    divide = {
+                        value = scope:market_furniture_consumption_prediction
+                        min = 0.1
+                    }
+                    multiply = -0.75
+                    min = -0.75
+                    add = 1
+                }
+                else = {
+                    value = 1
+                }
+            }
+        }
+    }
+}
+
+paper_price_prediction = {
+    if = {
+        limit = {
+            scope:state_paper_production_prediction < scope:state_paper_consumption_prediction
+        }
+        value = scope:state_paper_production_prediction
+        subtract = scope:state_paper_consumption_prediction
+        divide = {
+            value = scope:state_paper_production_prediction
+            min = 0.1
+        }
+        multiply = -0.75
+        max = 0.75
+        add = 1
+    }
+    else_if = {
+        limit = {
+            scope:state_paper_production_prediction > scope:state_paper_consumption_prediction
+        }
+        value = scope:state_paper_production_prediction
+        subtract = scope:state_paper_consumption_prediction
+        divide = {
+            value = scope:state_paper_consumption_prediction
+            min = 0.1
+        }
+        multiply = -0.75
+        min = -0.75
+        add = 1
+    }
+    else = {
+        value = 1
+    }
+    multiply = {
+        value = 1
+        subtract = {
+            value = state.modifier:state_market_access_price_impact
+            multiply = state.market_access
+        }
+        multiply = paper_base_price
+    }
+    add = {
+        value = state.modifier:state_market_access_price_impact
+        multiply = state.market_access
+        multiply = paper_base_price
+        multiply = {
+            value = {
+                if = {
+                    limit = {
+                        scope:market_paper_production_prediction < scope:market_paper_consumption_prediction
+                    }
+                    value = scope:market_paper_production_prediction
+                    subtract = scope:market_paper_consumption_prediction
+                    divide = {
+                        value = scope:market_paper_production_prediction
+                        min = 0.1
+                    }
+                    multiply = -0.75
+                    max = 0.75
+                    add = 1
+                }
+                else_if = {
+                    limit = {
+                        scope:market_paper_production_prediction > scope:market_paper_consumption_prediction
+                    }
+                    value = scope:market_paper_production_prediction
+                    subtract = scope:market_paper_consumption_prediction
+                    divide = {
+                        value = scope:market_paper_consumption_prediction
+                        min = 0.1
+                    }
+                    multiply = -0.75
+                    min = -0.75
+                    add = 1
+                }
+                else = {
+                    value = 1
+                }
+            }
+        }
+    }
+}
+
+services_price_prediction = {
+    if = {
+        limit = {
+            scope:state_services_production_prediction < scope:state_services_consumption_prediction
+        }
+        value = scope:state_services_production_prediction
+        subtract = scope:state_services_consumption_prediction
+        divide = {
+            value = scope:state_services_production_prediction
+            min = 0.1
+        }
+        multiply = -0.75
+        max = 0.75
+        add = 1
+    }
+    else_if = {
+        limit = {
+            scope:state_services_production_prediction > scope:state_services_consumption_prediction
+        }
+        value = scope:state_services_production_prediction
+        subtract = scope:state_services_consumption_prediction
+        divide = {
+            value = scope:state_services_consumption_prediction
+            min = 0.1
+        }
+        multiply = -0.75
+        min = -0.75
+        add = 1
+    }
+    else = {
+        value = 1
+    }
+    multiply = {
+        value = 1
+        subtract = {
+            value = state.modifier:state_market_access_price_impact
+            multiply = state.market_access
+        }
+        multiply = services_base_price
+    }
+    add = {
+        value = state.modifier:state_market_access_price_impact
+        multiply = state.market_access
+        multiply = services_base_price
+        multiply = {
+            value = {
+                if = {
+                    limit = {
+                        scope:market_services_production_prediction < scope:market_services_consumption_prediction
+                    }
+                    value = scope:market_services_production_prediction
+                    subtract = scope:market_services_consumption_prediction
+                    divide = {
+                        value = scope:market_services_production_prediction
+                        min = 0.1
+                    }
+                    multiply = -0.75
+                    max = 0.75
+                    add = 1
+                }
+                else_if = {
+                    limit = {
+                        scope:market_services_production_prediction > scope:market_services_consumption_prediction
+                    }
+                    value = scope:market_services_production_prediction
+                    subtract = scope:market_services_consumption_prediction
+                    divide = {
+                        value = scope:market_services_consumption_prediction
+                        min = 0.1
+                    }
+                    multiply = -0.75
+                    min = -0.75
+                    add = 1
+                }
+                else = {
+                    value = 1
+                }
+            }
+        }
+    }
+}
+
+transportation_price_prediction = {
+    if = {
+        limit = {
+            scope:state_transportation_production_prediction < scope:state_transportation_consumption_prediction
+        }
+        value = scope:state_transportation_production_prediction
+        subtract = scope:state_transportation_consumption_prediction
+        divide = {
+            value = scope:state_transportation_production_prediction
+            min = 0.1
+        }
+        multiply = -0.75
+        max = 0.75
+        add = 1
+    }
+    else_if = {
+        limit = {
+            scope:state_transportation_production_prediction > scope:state_transportation_consumption_prediction
+        }
+        value = scope:state_transportation_production_prediction
+        subtract = scope:state_transportation_consumption_prediction
+        divide = {
+            value = scope:state_transportation_consumption_prediction
+            min = 0.1
+        }
+        multiply = -0.75
+        min = -0.75
+        add = 1
+    }
+    else = {
+        value = 1
+    }
+    multiply = {
+        value = 1
+        subtract = {
+            value = state.modifier:state_market_access_price_impact
+            multiply = state.market_access
+        }
+        multiply = transportation_base_price
+    }
+    add = {
+        value = state.modifier:state_market_access_price_impact
+        multiply = state.market_access
+        multiply = transportation_base_price
+        multiply = {
+            value = {
+                if = {
+                    limit = {
+                        scope:market_transportation_production_prediction < scope:market_transportation_consumption_prediction
+                    }
+                    value = scope:market_transportation_production_prediction
+                    subtract = scope:market_transportation_consumption_prediction
+                    divide = {
+                        value = scope:market_transportation_production_prediction
+                        min = 0.1
+                    }
+                    multiply = -0.75
+                    max = 0.75
+                    add = 1
+                }
+                else_if = {
+                    limit = {
+                        scope:market_transportation_production_prediction > scope:market_transportation_consumption_prediction
+                    }
+                    value = scope:market_transportation_production_prediction
+                    subtract = scope:market_transportation_consumption_prediction
+                    divide = {
+                        value = scope:market_transportation_consumption_prediction
+                        min = 0.1
+                    }
+                    multiply = -0.75
+                    min = -0.75
+                    add = 1
+                }
+                else = {
+                    value = 1
+                }
+            }
+        }
+    }
+}
+
+electricity_price_prediction = {
+    if = {
+        limit = {
+            scope:state_electricity_production_prediction < scope:state_electricity_consumption_prediction
+        }
+        value = scope:state_electricity_production_prediction
+        subtract = scope:state_electricity_consumption_prediction
+        divide = {
+            value = scope:state_electricity_production_prediction
+            min = 0.1
+        }
+        multiply = -0.75
+        max = 0.75
+        add = 1
+    }
+    else_if = {
+        limit = {
+            scope:state_electricity_production_prediction > scope:state_electricity_consumption_prediction
+        }
+        value = scope:state_electricity_production_prediction
+        subtract = scope:state_electricity_consumption_prediction
+        divide = {
+            value = scope:state_electricity_consumption_prediction
+            min = 0.1
+        }
+        multiply = -0.75
+        min = -0.75
+        add = 1
+    }
+    else = {
+        value = 1
+    }
+    multiply = {
+        value = 1
+        subtract = {
+            value = state.modifier:state_market_access_price_impact
+            multiply = state.market_access
+        }
+        multiply = electricity_base_price
+    }
+    add = {
+        value = state.modifier:state_market_access_price_impact
+        multiply = state.market_access
+        multiply = electricity_base_price
+        multiply = {
+            value = {
+                if = {
+                    limit = {
+                        scope:market_electricity_production_prediction < scope:market_electricity_consumption_prediction
+                    }
+                    value = scope:market_electricity_production_prediction
+                    subtract = scope:market_electricity_consumption_prediction
+                    divide = {
+                        value = scope:market_electricity_production_prediction
+                        min = 0.1
+                    }
+                    multiply = -0.75
+                    max = 0.75
+                    add = 1
+                }
+                else_if = {
+                    limit = {
+                        scope:market_electricity_production_prediction > scope:market_electricity_consumption_prediction
+                    }
+                    value = scope:market_electricity_production_prediction
+                    subtract = scope:market_electricity_consumption_prediction
+                    divide = {
+                        value = scope:market_electricity_consumption_prediction
+                        min = 0.1
+                    }
+                    multiply = -0.75
+                    min = -0.75
+                    add = 1
+                }
+                else = {
+                    value = 1
+                }
+            }
+        }
+    }
+}
+
+merchant_marine_price_prediction = {
+    if = {
+        limit = {
+            scope:state_merchant_marine_production_prediction < scope:state_merchant_marine_consumption_prediction
+        }
+        value = scope:state_merchant_marine_production_prediction
+        subtract = scope:state_merchant_marine_consumption_prediction
+        divide = {
+            value = scope:state_merchant_marine_production_prediction
+            min = 0.1
+        }
+        multiply = -0.75
+        max = 0.75
+        add = 1
+    }
+    else_if = {
+        limit = {
+            scope:state_merchant_marine_production_prediction > scope:state_merchant_marine_consumption_prediction
+        }
+        value = scope:state_merchant_marine_production_prediction
+        subtract = scope:state_merchant_marine_consumption_prediction
+        divide = {
+            value = scope:state_merchant_marine_consumption_prediction
+            min = 0.1
+        }
+        multiply = -0.75
+        min = -0.75
+        add = 1
+    }
+    else = {
+        value = 1
+    }
+    multiply = {
+        value = 1
+        subtract = {
+            value = state.modifier:state_market_access_price_impact
+            multiply = state.market_access
+        }
+        multiply = merchant_marine_base_price
+    }
+    add = {
+        value = state.modifier:state_market_access_price_impact
+        multiply = state.market_access
+        multiply = merchant_marine_base_price
+        multiply = {
+            value = {
+                if = {
+                    limit = {
+                        scope:market_merchant_marine_production_prediction < scope:market_merchant_marine_consumption_prediction
+                    }
+                    value = scope:market_merchant_marine_production_prediction
+                    subtract = scope:market_merchant_marine_consumption_prediction
+                    divide = {
+                        value = scope:market_merchant_marine_production_prediction
+                        min = 0.1
+                    }
+                    multiply = -0.75
+                    max = 0.75
+                    add = 1
+                }
+                else_if = {
+                    limit = {
+                        scope:market_merchant_marine_production_prediction > scope:market_merchant_marine_consumption_prediction
+                    }
+                    value = scope:market_merchant_marine_production_prediction
+                    subtract = scope:market_merchant_marine_consumption_prediction
+                    divide = {
+                        value = scope:market_merchant_marine_consumption_prediction
+                        min = 0.1
+                    }
+                    multiply = -0.75
+                    min = -0.75
+                    add = 1
+                }
+                else = {
+                    value = 1
+                }
+            }
+        }
+    }
+}
+
+clippers_price_prediction = {
+    if = {
+        limit = {
+            scope:state_clippers_production_prediction < scope:state_clippers_consumption_prediction
+        }
+        value = scope:state_clippers_production_prediction
+        subtract = scope:state_clippers_consumption_prediction
+        divide = {
+            value = scope:state_clippers_production_prediction
+            min = 0.1
+        }
+        multiply = -0.75
+        max = 0.75
+        add = 1
+    }
+    else_if = {
+        limit = {
+            scope:state_clippers_production_prediction > scope:state_clippers_consumption_prediction
+        }
+        value = scope:state_clippers_production_prediction
+        subtract = scope:state_clippers_consumption_prediction
+        divide = {
+            value = scope:state_clippers_consumption_prediction
+            min = 0.1
+        }
+        multiply = -0.75
+        min = -0.75
+        add = 1
+    }
+    else = {
+        value = 1
+    }
+    multiply = {
+        value = 1
+        subtract = {
+            value = state.modifier:state_market_access_price_impact
+            multiply = state.market_access
+        }
+        multiply = clippers_base_price
+    }
+    add = {
+        value = state.modifier:state_market_access_price_impact
+        multiply = state.market_access
+        multiply = clippers_base_price
+        multiply = {
+            value = {
+                if = {
+                    limit = {
+                        scope:market_clippers_production_prediction < scope:market_clippers_consumption_prediction
+                    }
+                    value = scope:market_clippers_production_prediction
+                    subtract = scope:market_clippers_consumption_prediction
+                    divide = {
+                        value = scope:market_clippers_production_prediction
+                        min = 0.1
+                    }
+                    multiply = -0.75
+                    max = 0.75
+                    add = 1
+                }
+                else_if = {
+                    limit = {
+                        scope:market_clippers_production_prediction > scope:market_clippers_consumption_prediction
+                    }
+                    value = scope:market_clippers_production_prediction
+                    subtract = scope:market_clippers_consumption_prediction
+                    divide = {
+                        value = scope:market_clippers_consumption_prediction
+                        min = 0.1
+                    }
+                    multiply = -0.75
+                    min = -0.75
+                    add = 1
+                }
+                else = {
+                    value = 1
+                }
+            }
+        }
+    }
+}
+
+steamers_price_prediction = {
+    if = {
+        limit = {
+            scope:state_steamers_production_prediction < scope:state_steamers_consumption_prediction
+        }
+        value = scope:state_steamers_production_prediction
+        subtract = scope:state_steamers_consumption_prediction
+        divide = {
+            value = scope:state_steamers_production_prediction
+            min = 0.1
+        }
+        multiply = -0.75
+        max = 0.75
+        add = 1
+    }
+    else_if = {
+        limit = {
+            scope:state_steamers_production_prediction > scope:state_steamers_consumption_prediction
+        }
+        value = scope:state_steamers_production_prediction
+        subtract = scope:state_steamers_consumption_prediction
+        divide = {
+            value = scope:state_steamers_consumption_prediction
+            min = 0.1
+        }
+        multiply = -0.75
+        min = -0.75
+        add = 1
+    }
+    else = {
+        value = 1
+    }
+    multiply = {
+        value = 1
+        subtract = {
+            value = state.modifier:state_market_access_price_impact
+            multiply = state.market_access
+        }
+        multiply = steamers_base_price
+    }
+    add = {
+        value = state.modifier:state_market_access_price_impact
+        multiply = state.market_access
+        multiply = steamers_base_price
+        multiply = {
+            value = {
+                if = {
+                    limit = {
+                        scope:market_steamers_production_prediction < scope:market_steamers_consumption_prediction
+                    }
+                    value = scope:market_steamers_production_prediction
+                    subtract = scope:market_steamers_consumption_prediction
+                    divide = {
+                        value = scope:market_steamers_production_prediction
+                        min = 0.1
+                    }
+                    multiply = -0.75
+                    max = 0.75
+                    add = 1
+                }
+                else_if = {
+                    limit = {
+                        scope:market_steamers_production_prediction > scope:market_steamers_consumption_prediction
+                    }
+                    value = scope:market_steamers_production_prediction
+                    subtract = scope:market_steamers_consumption_prediction
+                    divide = {
+                        value = scope:market_steamers_consumption_prediction
+                        min = 0.1
+                    }
+                    multiply = -0.75
+                    min = -0.75
+                    add = 1
+                }
+                else = {
+                    value = 1
+                }
+            }
+        }
+    }
+}
+
+silk_price_prediction = {
+    if = {
+        limit = {
+            scope:state_silk_production_prediction < scope:state_silk_consumption_prediction
+        }
+        value = scope:state_silk_production_prediction
+        subtract = scope:state_silk_consumption_prediction
+        divide = {
+            value = scope:state_silk_production_prediction
+            min = 0.1
+        }
+        multiply = -0.75
+        max = 0.75
+        add = 1
+    }
+    else_if = {
+        limit = {
+            scope:state_silk_production_prediction > scope:state_silk_consumption_prediction
+        }
+        value = scope:state_silk_production_prediction
+        subtract = scope:state_silk_consumption_prediction
+        divide = {
+            value = scope:state_silk_consumption_prediction
+            min = 0.1
+        }
+        multiply = -0.75
+        min = -0.75
+        add = 1
+    }
+    else = {
+        value = 1
+    }
+    multiply = {
+        value = 1
+        subtract = {
+            value = state.modifier:state_market_access_price_impact
+            multiply = state.market_access
+        }
+        multiply = silk_base_price
+    }
+    add = {
+        value = state.modifier:state_market_access_price_impact
+        multiply = state.market_access
+        multiply = silk_base_price
+        multiply = {
+            value = {
+                if = {
+                    limit = {
+                        scope:market_silk_production_prediction < scope:market_silk_consumption_prediction
+                    }
+                    value = scope:market_silk_production_prediction
+                    subtract = scope:market_silk_consumption_prediction
+                    divide = {
+                        value = scope:market_silk_production_prediction
+                        min = 0.1
+                    }
+                    multiply = -0.75
+                    max = 0.75
+                    add = 1
+                }
+                else_if = {
+                    limit = {
+                        scope:market_silk_production_prediction > scope:market_silk_consumption_prediction
+                    }
+                    value = scope:market_silk_production_prediction
+                    subtract = scope:market_silk_consumption_prediction
+                    divide = {
+                        value = scope:market_silk_consumption_prediction
+                        min = 0.1
+                    }
+                    multiply = -0.75
+                    min = -0.75
+                    add = 1
+                }
+                else = {
+                    value = 1
+                }
+            }
+        }
+    }
+}
+
+dye_price_prediction = {
+    if = {
+        limit = {
+            scope:state_dye_production_prediction < scope:state_dye_consumption_prediction
+        }
+        value = scope:state_dye_production_prediction
+        subtract = scope:state_dye_consumption_prediction
+        divide = {
+            value = scope:state_dye_production_prediction
+            min = 0.1
+        }
+        multiply = -0.75
+        max = 0.75
+        add = 1
+    }
+    else_if = {
+        limit = {
+            scope:state_dye_production_prediction > scope:state_dye_consumption_prediction
+        }
+        value = scope:state_dye_production_prediction
+        subtract = scope:state_dye_consumption_prediction
+        divide = {
+            value = scope:state_dye_consumption_prediction
+            min = 0.1
+        }
+        multiply = -0.75
+        min = -0.75
+        add = 1
+    }
+    else = {
+        value = 1
+    }
+    multiply = {
+        value = 1
+        subtract = {
+            value = state.modifier:state_market_access_price_impact
+            multiply = state.market_access
+        }
+        multiply = dye_base_price
+    }
+    add = {
+        value = state.modifier:state_market_access_price_impact
+        multiply = state.market_access
+        multiply = dye_base_price
+        multiply = {
+            value = {
+                if = {
+                    limit = {
+                        scope:market_dye_production_prediction < scope:market_dye_consumption_prediction
+                    }
+                    value = scope:market_dye_production_prediction
+                    subtract = scope:market_dye_consumption_prediction
+                    divide = {
+                        value = scope:market_dye_production_prediction
+                        min = 0.1
+                    }
+                    multiply = -0.75
+                    max = 0.75
+                    add = 1
+                }
+                else_if = {
+                    limit = {
+                        scope:market_dye_production_prediction > scope:market_dye_consumption_prediction
+                    }
+                    value = scope:market_dye_production_prediction
+                    subtract = scope:market_dye_consumption_prediction
+                    divide = {
+                        value = scope:market_dye_consumption_prediction
+                        min = 0.1
+                    }
+                    multiply = -0.75
+                    min = -0.75
+                    add = 1
+                }
+                else = {
+                    value = 1
+                }
+            }
+        }
+    }
+}
+
+sulfur_price_prediction = {
+    if = {
+        limit = {
+            scope:state_sulfur_production_prediction < scope:state_sulfur_consumption_prediction
+        }
+        value = scope:state_sulfur_production_prediction
+        subtract = scope:state_sulfur_consumption_prediction
+        divide = {
+            value = scope:state_sulfur_production_prediction
+            min = 0.1
+        }
+        multiply = -0.75
+        max = 0.75
+        add = 1
+    }
+    else_if = {
+        limit = {
+            scope:state_sulfur_production_prediction > scope:state_sulfur_consumption_prediction
+        }
+        value = scope:state_sulfur_production_prediction
+        subtract = scope:state_sulfur_consumption_prediction
+        divide = {
+            value = scope:state_sulfur_consumption_prediction
+            min = 0.1
+        }
+        multiply = -0.75
+        min = -0.75
+        add = 1
+    }
+    else = {
+        value = 1
+    }
+    multiply = {
+        value = 1
+        subtract = {
+            value = state.modifier:state_market_access_price_impact
+            multiply = state.market_access
+        }
+        multiply = sulfur_base_price
+    }
+    add = {
+        value = state.modifier:state_market_access_price_impact
+        multiply = state.market_access
+        multiply = sulfur_base_price
+        multiply = {
+            value = {
+                if = {
+                    limit = {
+                        scope:market_sulfur_production_prediction < scope:market_sulfur_consumption_prediction
+                    }
+                    value = scope:market_sulfur_production_prediction
+                    subtract = scope:market_sulfur_consumption_prediction
+                    divide = {
+                        value = scope:market_sulfur_production_prediction
+                        min = 0.1
+                    }
+                    multiply = -0.75
+                    max = 0.75
+                    add = 1
+                }
+                else_if = {
+                    limit = {
+                        scope:market_sulfur_production_prediction > scope:market_sulfur_consumption_prediction
+                    }
+                    value = scope:market_sulfur_production_prediction
+                    subtract = scope:market_sulfur_consumption_prediction
+                    divide = {
+                        value = scope:market_sulfur_consumption_prediction
+                        min = 0.1
+                    }
+                    multiply = -0.75
+                    min = -0.75
+                    add = 1
+                }
+                else = {
+                    value = 1
+                }
+            }
+        }
+    }
+}
+
+coal_price_prediction = {
+    if = {
+        limit = {
+            scope:state_coal_production_prediction < scope:state_coal_consumption_prediction
+        }
+        value = scope:state_coal_production_prediction
+        subtract = scope:state_coal_consumption_prediction
+        divide = {
+            value = scope:state_coal_production_prediction
+            min = 0.1
+        }
+        multiply = -0.75
+        max = 0.75
+        add = 1
+    }
+    else_if = {
+        limit = {
+            scope:state_coal_production_prediction > scope:state_coal_consumption_prediction
+        }
+        value = scope:state_coal_production_prediction
+        subtract = scope:state_coal_consumption_prediction
+        divide = {
+            value = scope:state_coal_consumption_prediction
+            min = 0.1
+        }
+        multiply = -0.75
+        min = -0.75
+        add = 1
+    }
+    else = {
+        value = 1
+    }
+    multiply = {
+        value = 1
+        subtract = {
+            value = state.modifier:state_market_access_price_impact
+            multiply = state.market_access
+        }
+        multiply = coal_base_price
+    }
+    add = {
+        value = state.modifier:state_market_access_price_impact
+        multiply = state.market_access
+        multiply = coal_base_price
+        multiply = {
+            value = {
+                if = {
+                    limit = {
+                        scope:market_coal_production_prediction < scope:market_coal_consumption_prediction
+                    }
+                    value = scope:market_coal_production_prediction
+                    subtract = scope:market_coal_consumption_prediction
+                    divide = {
+                        value = scope:market_coal_production_prediction
+                        min = 0.1
+                    }
+                    multiply = -0.75
+                    max = 0.75
+                    add = 1
+                }
+                else_if = {
+                    limit = {
+                        scope:market_coal_production_prediction > scope:market_coal_consumption_prediction
+                    }
+                    value = scope:market_coal_production_prediction
+                    subtract = scope:market_coal_consumption_prediction
+                    divide = {
+                        value = scope:market_coal_consumption_prediction
+                        min = 0.1
+                    }
+                    multiply = -0.75
+                    min = -0.75
+                    add = 1
+                }
+                else = {
+                    value = 1
+                }
+            }
+        }
+    }
+}
+
+iron_price_prediction = {
+    if = {
+        limit = {
+            scope:state_iron_production_prediction < scope:state_iron_consumption_prediction
+        }
+        value = scope:state_iron_production_prediction
+        subtract = scope:state_iron_consumption_prediction
+        divide = {
+            value = scope:state_iron_production_prediction
+            min = 0.1
+        }
+        multiply = -0.75
+        max = 0.75
+        add = 1
+    }
+    else_if = {
+        limit = {
+            scope:state_iron_production_prediction > scope:state_iron_consumption_prediction
+        }
+        value = scope:state_iron_production_prediction
+        subtract = scope:state_iron_consumption_prediction
+        divide = {
+            value = scope:state_iron_consumption_prediction
+            min = 0.1
+        }
+        multiply = -0.75
+        min = -0.75
+        add = 1
+    }
+    else = {
+        value = 1
+    }
+    multiply = {
+        value = 1
+        subtract = {
+            value = state.modifier:state_market_access_price_impact
+            multiply = state.market_access
+        }
+        multiply = iron_base_price
+    }
+    add = {
+        value = state.modifier:state_market_access_price_impact
+        multiply = state.market_access
+        multiply = iron_base_price
+        multiply = {
+            value = {
+                if = {
+                    limit = {
+                        scope:market_iron_production_prediction < scope:market_iron_consumption_prediction
+                    }
+                    value = scope:market_iron_production_prediction
+                    subtract = scope:market_iron_consumption_prediction
+                    divide = {
+                        value = scope:market_iron_production_prediction
+                        min = 0.1
+                    }
+                    multiply = -0.75
+                    max = 0.75
+                    add = 1
+                }
+                else_if = {
+                    limit = {
+                        scope:market_iron_production_prediction > scope:market_iron_consumption_prediction
+                    }
+                    value = scope:market_iron_production_prediction
+                    subtract = scope:market_iron_consumption_prediction
+                    divide = {
+                        value = scope:market_iron_consumption_prediction
+                        min = 0.1
+                    }
+                    multiply = -0.75
+                    min = -0.75
+                    add = 1
+                }
+                else = {
+                    value = 1
+                }
+            }
+        }
+    }
+}
+
+lead_price_prediction = {
+    if = {
+        limit = {
+            scope:state_lead_production_prediction < scope:state_lead_consumption_prediction
+        }
+        value = scope:state_lead_production_prediction
+        subtract = scope:state_lead_consumption_prediction
+        divide = {
+            value = scope:state_lead_production_prediction
+            min = 0.1
+        }
+        multiply = -0.75
+        max = 0.75
+        add = 1
+    }
+    else_if = {
+        limit = {
+            scope:state_lead_production_prediction > scope:state_lead_consumption_prediction
+        }
+        value = scope:state_lead_production_prediction
+        subtract = scope:state_lead_consumption_prediction
+        divide = {
+            value = scope:state_lead_consumption_prediction
+            min = 0.1
+        }
+        multiply = -0.75
+        min = -0.75
+        add = 1
+    }
+    else = {
+        value = 1
+    }
+    multiply = {
+        value = 1
+        subtract = {
+            value = state.modifier:state_market_access_price_impact
+            multiply = state.market_access
+        }
+        multiply = lead_base_price
+    }
+    add = {
+        value = state.modifier:state_market_access_price_impact
+        multiply = state.market_access
+        multiply = lead_base_price
+        multiply = {
+            value = {
+                if = {
+                    limit = {
+                        scope:market_lead_production_prediction < scope:market_lead_consumption_prediction
+                    }
+                    value = scope:market_lead_production_prediction
+                    subtract = scope:market_lead_consumption_prediction
+                    divide = {
+                        value = scope:market_lead_production_prediction
+                        min = 0.1
+                    }
+                    multiply = -0.75
+                    max = 0.75
+                    add = 1
+                }
+                else_if = {
+                    limit = {
+                        scope:market_lead_production_prediction > scope:market_lead_consumption_prediction
+                    }
+                    value = scope:market_lead_production_prediction
+                    subtract = scope:market_lead_consumption_prediction
+                    divide = {
+                        value = scope:market_lead_consumption_prediction
+                        min = 0.1
+                    }
+                    multiply = -0.75
+                    min = -0.75
+                    add = 1
+                }
+                else = {
+                    value = 1
+                }
+            }
+        }
+    }
+}
+
+hardwood_price_prediction = {
+    if = {
+        limit = {
+            scope:state_hardwood_production_prediction < scope:state_hardwood_consumption_prediction
+        }
+        value = scope:state_hardwood_production_prediction
+        subtract = scope:state_hardwood_consumption_prediction
+        divide = {
+            value = scope:state_hardwood_production_prediction
+            min = 0.1
+        }
+        multiply = -0.75
+        max = 0.75
+        add = 1
+    }
+    else_if = {
+        limit = {
+            scope:state_hardwood_production_prediction > scope:state_hardwood_consumption_prediction
+        }
+        value = scope:state_hardwood_production_prediction
+        subtract = scope:state_hardwood_consumption_prediction
+        divide = {
+            value = scope:state_hardwood_consumption_prediction
+            min = 0.1
+        }
+        multiply = -0.75
+        min = -0.75
+        add = 1
+    }
+    else = {
+        value = 1
+    }
+    multiply = {
+        value = 1
+        subtract = {
+            value = state.modifier:state_market_access_price_impact
+            multiply = state.market_access
+        }
+        multiply = hardwood_base_price
+    }
+    add = {
+        value = state.modifier:state_market_access_price_impact
+        multiply = state.market_access
+        multiply = hardwood_base_price
+        multiply = {
+            value = {
+                if = {
+                    limit = {
+                        scope:market_hardwood_production_prediction < scope:market_hardwood_consumption_prediction
+                    }
+                    value = scope:market_hardwood_production_prediction
+                    subtract = scope:market_hardwood_consumption_prediction
+                    divide = {
+                        value = scope:market_hardwood_production_prediction
+                        min = 0.1
+                    }
+                    multiply = -0.75
+                    max = 0.75
+                    add = 1
+                }
+                else_if = {
+                    limit = {
+                        scope:market_hardwood_production_prediction > scope:market_hardwood_consumption_prediction
+                    }
+                    value = scope:market_hardwood_production_prediction
+                    subtract = scope:market_hardwood_consumption_prediction
+                    divide = {
+                        value = scope:market_hardwood_consumption_prediction
+                        min = 0.1
+                    }
+                    multiply = -0.75
+                    min = -0.75
+                    add = 1
+                }
+                else = {
+                    value = 1
+                }
+            }
+        }
+    }
+}
+
+rubber_price_prediction = {
+    if = {
+        limit = {
+            scope:state_rubber_production_prediction < scope:state_rubber_consumption_prediction
+        }
+        value = scope:state_rubber_production_prediction
+        subtract = scope:state_rubber_consumption_prediction
+        divide = {
+            value = scope:state_rubber_production_prediction
+            min = 0.1
+        }
+        multiply = -0.75
+        max = 0.75
+        add = 1
+    }
+    else_if = {
+        limit = {
+            scope:state_rubber_production_prediction > scope:state_rubber_consumption_prediction
+        }
+        value = scope:state_rubber_production_prediction
+        subtract = scope:state_rubber_consumption_prediction
+        divide = {
+            value = scope:state_rubber_consumption_prediction
+            min = 0.1
+        }
+        multiply = -0.75
+        min = -0.75
+        add = 1
+    }
+    else = {
+        value = 1
+    }
+    multiply = {
+        value = 1
+        subtract = {
+            value = state.modifier:state_market_access_price_impact
+            multiply = state.market_access
+        }
+        multiply = rubber_base_price
+    }
+    add = {
+        value = state.modifier:state_market_access_price_impact
+        multiply = state.market_access
+        multiply = rubber_base_price
+        multiply = {
+            value = {
+                if = {
+                    limit = {
+                        scope:market_rubber_production_prediction < scope:market_rubber_consumption_prediction
+                    }
+                    value = scope:market_rubber_production_prediction
+                    subtract = scope:market_rubber_consumption_prediction
+                    divide = {
+                        value = scope:market_rubber_production_prediction
+                        min = 0.1
+                    }
+                    multiply = -0.75
+                    max = 0.75
+                    add = 1
+                }
+                else_if = {
+                    limit = {
+                        scope:market_rubber_production_prediction > scope:market_rubber_consumption_prediction
+                    }
+                    value = scope:market_rubber_production_prediction
+                    subtract = scope:market_rubber_consumption_prediction
+                    divide = {
+                        value = scope:market_rubber_consumption_prediction
+                        min = 0.1
+                    }
+                    multiply = -0.75
+                    min = -0.75
+                    add = 1
+                }
+                else = {
+                    value = 1
+                }
+            }
+        }
+    }
+}
+
+oil_price_prediction = {
+    if = {
+        limit = {
+            scope:state_oil_production_prediction < scope:state_oil_consumption_prediction
+        }
+        value = scope:state_oil_production_prediction
+        subtract = scope:state_oil_consumption_prediction
+        divide = {
+            value = scope:state_oil_production_prediction
+            min = 0.1
+        }
+        multiply = -0.75
+        max = 0.75
+        add = 1
+    }
+    else_if = {
+        limit = {
+            scope:state_oil_production_prediction > scope:state_oil_consumption_prediction
+        }
+        value = scope:state_oil_production_prediction
+        subtract = scope:state_oil_consumption_prediction
+        divide = {
+            value = scope:state_oil_consumption_prediction
+            min = 0.1
+        }
+        multiply = -0.75
+        min = -0.75
+        add = 1
+    }
+    else = {
+        value = 1
+    }
+    multiply = {
+        value = 1
+        subtract = {
+            value = state.modifier:state_market_access_price_impact
+            multiply = state.market_access
+        }
+        multiply = oil_base_price
+    }
+    add = {
+        value = state.modifier:state_market_access_price_impact
+        multiply = state.market_access
+        multiply = oil_base_price
+        multiply = {
+            value = {
+                if = {
+                    limit = {
+                        scope:market_oil_production_prediction < scope:market_oil_consumption_prediction
+                    }
+                    value = scope:market_oil_production_prediction
+                    subtract = scope:market_oil_consumption_prediction
+                    divide = {
+                        value = scope:market_oil_production_prediction
+                        min = 0.1
+                    }
+                    multiply = -0.75
+                    max = 0.75
+                    add = 1
+                }
+                else_if = {
+                    limit = {
+                        scope:market_oil_production_prediction > scope:market_oil_consumption_prediction
+                    }
+                    value = scope:market_oil_production_prediction
+                    subtract = scope:market_oil_consumption_prediction
+                    divide = {
+                        value = scope:market_oil_consumption_prediction
+                        min = 0.1
+                    }
+                    multiply = -0.75
+                    min = -0.75
+                    add = 1
+                }
+                else = {
+                    value = 1
+                }
+            }
+        }
+    }
+}
+
+engines_price_prediction = {
+    if = {
+        limit = {
+            scope:state_engines_production_prediction < scope:state_engines_consumption_prediction
+        }
+        value = scope:state_engines_production_prediction
+        subtract = scope:state_engines_consumption_prediction
+        divide = {
+            value = scope:state_engines_production_prediction
+            min = 0.1
+        }
+        multiply = -0.75
+        max = 0.75
+        add = 1
+    }
+    else_if = {
+        limit = {
+            scope:state_engines_production_prediction > scope:state_engines_consumption_prediction
+        }
+        value = scope:state_engines_production_prediction
+        subtract = scope:state_engines_consumption_prediction
+        divide = {
+            value = scope:state_engines_consumption_prediction
+            min = 0.1
+        }
+        multiply = -0.75
+        min = -0.75
+        add = 1
+    }
+    else = {
+        value = 1
+    }
+    multiply = {
+        value = 1
+        subtract = {
+            value = state.modifier:state_market_access_price_impact
+            multiply = state.market_access
+        }
+        multiply = engines_base_price
+    }
+    add = {
+        value = state.modifier:state_market_access_price_impact
+        multiply = state.market_access
+        multiply = engines_base_price
+        multiply = {
+            value = {
+                if = {
+                    limit = {
+                        scope:market_engines_production_prediction < scope:market_engines_consumption_prediction
+                    }
+                    value = scope:market_engines_production_prediction
+                    subtract = scope:market_engines_consumption_prediction
+                    divide = {
+                        value = scope:market_engines_production_prediction
+                        min = 0.1
+                    }
+                    multiply = -0.75
+                    max = 0.75
+                    add = 1
+                }
+                else_if = {
+                    limit = {
+                        scope:market_engines_production_prediction > scope:market_engines_consumption_prediction
+                    }
+                    value = scope:market_engines_production_prediction
+                    subtract = scope:market_engines_consumption_prediction
+                    divide = {
+                        value = scope:market_engines_consumption_prediction
+                        min = 0.1
+                    }
+                    multiply = -0.75
+                    min = -0.75
+                    add = 1
+                }
+                else = {
+                    value = 1
+                }
+            }
+        }
+    }
+}
+
+steel_price_prediction = {
+    if = {
+        limit = {
+            scope:state_steel_production_prediction < scope:state_steel_consumption_prediction
+        }
+        value = scope:state_steel_production_prediction
+        subtract = scope:state_steel_consumption_prediction
+        divide = {
+            value = scope:state_steel_production_prediction
+            min = 0.1
+        }
+        multiply = -0.75
+        max = 0.75
+        add = 1
+    }
+    else_if = {
+        limit = {
+            scope:state_steel_production_prediction > scope:state_steel_consumption_prediction
+        }
+        value = scope:state_steel_production_prediction
+        subtract = scope:state_steel_consumption_prediction
+        divide = {
+            value = scope:state_steel_consumption_prediction
+            min = 0.1
+        }
+        multiply = -0.75
+        min = -0.75
+        add = 1
+    }
+    else = {
+        value = 1
+    }
+    multiply = {
+        value = 1
+        subtract = {
+            value = state.modifier:state_market_access_price_impact
+            multiply = state.market_access
+        }
+        multiply = steel_base_price
+    }
+    add = {
+        value = state.modifier:state_market_access_price_impact
+        multiply = state.market_access
+        multiply = steel_base_price
+        multiply = {
+            value = {
+                if = {
+                    limit = {
+                        scope:market_steel_production_prediction < scope:market_steel_consumption_prediction
+                    }
+                    value = scope:market_steel_production_prediction
+                    subtract = scope:market_steel_consumption_prediction
+                    divide = {
+                        value = scope:market_steel_production_prediction
+                        min = 0.1
+                    }
+                    multiply = -0.75
+                    max = 0.75
+                    add = 1
+                }
+                else_if = {
+                    limit = {
+                        scope:market_steel_production_prediction > scope:market_steel_consumption_prediction
+                    }
+                    value = scope:market_steel_production_prediction
+                    subtract = scope:market_steel_consumption_prediction
+                    divide = {
+                        value = scope:market_steel_consumption_prediction
+                        min = 0.1
+                    }
+                    multiply = -0.75
+                    min = -0.75
+                    add = 1
+                }
+                else = {
+                    value = 1
+                }
+            }
+        }
+    }
+}
+
+glass_price_prediction = {
+    if = {
+        limit = {
+            scope:state_glass_production_prediction < scope:state_glass_consumption_prediction
+        }
+        value = scope:state_glass_production_prediction
+        subtract = scope:state_glass_consumption_prediction
+        divide = {
+            value = scope:state_glass_production_prediction
+            min = 0.1
+        }
+        multiply = -0.75
+        max = 0.75
+        add = 1
+    }
+    else_if = {
+        limit = {
+            scope:state_glass_production_prediction > scope:state_glass_consumption_prediction
+        }
+        value = scope:state_glass_production_prediction
+        subtract = scope:state_glass_consumption_prediction
+        divide = {
+            value = scope:state_glass_consumption_prediction
+            min = 0.1
+        }
+        multiply = -0.75
+        min = -0.75
+        add = 1
+    }
+    else = {
+        value = 1
+    }
+    multiply = {
+        value = 1
+        subtract = {
+            value = state.modifier:state_market_access_price_impact
+            multiply = state.market_access
+        }
+        multiply = glass_base_price
+    }
+    add = {
+        value = state.modifier:state_market_access_price_impact
+        multiply = state.market_access
+        multiply = glass_base_price
+        multiply = {
+            value = {
+                if = {
+                    limit = {
+                        scope:market_glass_production_prediction < scope:market_glass_consumption_prediction
+                    }
+                    value = scope:market_glass_production_prediction
+                    subtract = scope:market_glass_consumption_prediction
+                    divide = {
+                        value = scope:market_glass_production_prediction
+                        min = 0.1
+                    }
+                    multiply = -0.75
+                    max = 0.75
+                    add = 1
+                }
+                else_if = {
+                    limit = {
+                        scope:market_glass_production_prediction > scope:market_glass_consumption_prediction
+                    }
+                    value = scope:market_glass_production_prediction
+                    subtract = scope:market_glass_consumption_prediction
+                    divide = {
+                        value = scope:market_glass_consumption_prediction
+                        min = 0.1
+                    }
+                    multiply = -0.75
+                    min = -0.75
+                    add = 1
+                }
+                else = {
+                    value = 1
+                }
+            }
+        }
+    }
+}
+
+fertilizer_price_prediction = {
+    if = {
+        limit = {
+            scope:state_fertilizer_production_prediction < scope:state_fertilizer_consumption_prediction
+        }
+        value = scope:state_fertilizer_production_prediction
+        subtract = scope:state_fertilizer_consumption_prediction
+        divide = {
+            value = scope:state_fertilizer_production_prediction
+            min = 0.1
+        }
+        multiply = -0.75
+        max = 0.75
+        add = 1
+    }
+    else_if = {
+        limit = {
+            scope:state_fertilizer_production_prediction > scope:state_fertilizer_consumption_prediction
+        }
+        value = scope:state_fertilizer_production_prediction
+        subtract = scope:state_fertilizer_consumption_prediction
+        divide = {
+            value = scope:state_fertilizer_consumption_prediction
+            min = 0.1
+        }
+        multiply = -0.75
+        min = -0.75
+        add = 1
+    }
+    else = {
+        value = 1
+    }
+    multiply = {
+        value = 1
+        subtract = {
+            value = state.modifier:state_market_access_price_impact
+            multiply = state.market_access
+        }
+        multiply = fertilizer_base_price
+    }
+    add = {
+        value = state.modifier:state_market_access_price_impact
+        multiply = state.market_access
+        multiply = fertilizer_base_price
+        multiply = {
+            value = {
+                if = {
+                    limit = {
+                        scope:market_fertilizer_production_prediction < scope:market_fertilizer_consumption_prediction
+                    }
+                    value = scope:market_fertilizer_production_prediction
+                    subtract = scope:market_fertilizer_consumption_prediction
+                    divide = {
+                        value = scope:market_fertilizer_production_prediction
+                        min = 0.1
+                    }
+                    multiply = -0.75
+                    max = 0.75
+                    add = 1
+                }
+                else_if = {
+                    limit = {
+                        scope:market_fertilizer_production_prediction > scope:market_fertilizer_consumption_prediction
+                    }
+                    value = scope:market_fertilizer_production_prediction
+                    subtract = scope:market_fertilizer_consumption_prediction
+                    divide = {
+                        value = scope:market_fertilizer_consumption_prediction
+                        min = 0.1
+                    }
+                    multiply = -0.75
+                    min = -0.75
+                    add = 1
+                }
+                else = {
+                    value = 1
+                }
+            }
+        }
+    }
+}
+
+tools_price_prediction = {
+    if = {
+        limit = {
+            scope:state_tools_production_prediction < scope:state_tools_consumption_prediction
+        }
+        value = scope:state_tools_production_prediction
+        subtract = scope:state_tools_consumption_prediction
+        divide = {
+            value = scope:state_tools_production_prediction
+            min = 0.1
+        }
+        multiply = -0.75
+        max = 0.75
+        add = 1
+    }
+    else_if = {
+        limit = {
+            scope:state_tools_production_prediction > scope:state_tools_consumption_prediction
+        }
+        value = scope:state_tools_production_prediction
+        subtract = scope:state_tools_consumption_prediction
+        divide = {
+            value = scope:state_tools_consumption_prediction
+            min = 0.1
+        }
+        multiply = -0.75
+        min = -0.75
+        add = 1
+    }
+    else = {
+        value = 1
+    }
+    multiply = {
+        value = 1
+        subtract = {
+            value = state.modifier:state_market_access_price_impact
+            multiply = state.market_access
+        }
+        multiply = tools_base_price
+    }
+    add = {
+        value = state.modifier:state_market_access_price_impact
+        multiply = state.market_access
+        multiply = tools_base_price
+        multiply = {
+            value = {
+                if = {
+                    limit = {
+                        scope:market_tools_production_prediction < scope:market_tools_consumption_prediction
+                    }
+                    value = scope:market_tools_production_prediction
+                    subtract = scope:market_tools_consumption_prediction
+                    divide = {
+                        value = scope:market_tools_production_prediction
+                        min = 0.1
+                    }
+                    multiply = -0.75
+                    max = 0.75
+                    add = 1
+                }
+                else_if = {
+                    limit = {
+                        scope:market_tools_production_prediction > scope:market_tools_consumption_prediction
+                    }
+                    value = scope:market_tools_production_prediction
+                    subtract = scope:market_tools_consumption_prediction
+                    divide = {
+                        value = scope:market_tools_consumption_prediction
+                        min = 0.1
+                    }
+                    multiply = -0.75
+                    min = -0.75
+                    add = 1
+                }
+                else = {
+                    value = 1
+                }
+            }
+        }
+    }
+}
+
+explosives_price_prediction = {
+    if = {
+        limit = {
+            scope:state_explosives_production_prediction < scope:state_explosives_consumption_prediction
+        }
+        value = scope:state_explosives_production_prediction
+        subtract = scope:state_explosives_consumption_prediction
+        divide = {
+            value = scope:state_explosives_production_prediction
+            min = 0.1
+        }
+        multiply = -0.75
+        max = 0.75
+        add = 1
+    }
+    else_if = {
+        limit = {
+            scope:state_explosives_production_prediction > scope:state_explosives_consumption_prediction
+        }
+        value = scope:state_explosives_production_prediction
+        subtract = scope:state_explosives_consumption_prediction
+        divide = {
+            value = scope:state_explosives_consumption_prediction
+            min = 0.1
+        }
+        multiply = -0.75
+        min = -0.75
+        add = 1
+    }
+    else = {
+        value = 1
+    }
+    multiply = {
+        value = 1
+        subtract = {
+            value = state.modifier:state_market_access_price_impact
+            multiply = state.market_access
+        }
+        multiply = explosives_base_price
+    }
+    add = {
+        value = state.modifier:state_market_access_price_impact
+        multiply = state.market_access
+        multiply = explosives_base_price
+        multiply = {
+            value = {
+                if = {
+                    limit = {
+                        scope:market_explosives_production_prediction < scope:market_explosives_consumption_prediction
+                    }
+                    value = scope:market_explosives_production_prediction
+                    subtract = scope:market_explosives_consumption_prediction
+                    divide = {
+                        value = scope:market_explosives_production_prediction
+                        min = 0.1
+                    }
+                    multiply = -0.75
+                    max = 0.75
+                    add = 1
+                }
+                else_if = {
+                    limit = {
+                        scope:market_explosives_production_prediction > scope:market_explosives_consumption_prediction
+                    }
+                    value = scope:market_explosives_production_prediction
+                    subtract = scope:market_explosives_consumption_prediction
+                    divide = {
+                        value = scope:market_explosives_consumption_prediction
+                        min = 0.1
+                    }
+                    multiply = -0.75
+                    min = -0.75
+                    add = 1
+                }
+                else = {
+                    value = 1
+                }
+            }
+        }
+    }
+}
+
+porcelain_price_prediction = {
+    if = {
+        limit = {
+            scope:state_porcelain_production_prediction < scope:state_porcelain_consumption_prediction
+        }
+        value = scope:state_porcelain_production_prediction
+        subtract = scope:state_porcelain_consumption_prediction
+        divide = {
+            value = scope:state_porcelain_production_prediction
+            min = 0.1
+        }
+        multiply = -0.75
+        max = 0.75
+        add = 1
+    }
+    else_if = {
+        limit = {
+            scope:state_porcelain_production_prediction > scope:state_porcelain_consumption_prediction
+        }
+        value = scope:state_porcelain_production_prediction
+        subtract = scope:state_porcelain_consumption_prediction
+        divide = {
+            value = scope:state_porcelain_consumption_prediction
+            min = 0.1
+        }
+        multiply = -0.75
+        min = -0.75
+        add = 1
+    }
+    else = {
+        value = 1
+    }
+    multiply = {
+        value = 1
+        subtract = {
+            value = state.modifier:state_market_access_price_impact
+            multiply = state.market_access
+        }
+        multiply = porcelain_base_price
+    }
+    add = {
+        value = state.modifier:state_market_access_price_impact
+        multiply = state.market_access
+        multiply = porcelain_base_price
+        multiply = {
+            value = {
+                if = {
+                    limit = {
+                        scope:market_porcelain_production_prediction < scope:market_porcelain_consumption_prediction
+                    }
+                    value = scope:market_porcelain_production_prediction
+                    subtract = scope:market_porcelain_consumption_prediction
+                    divide = {
+                        value = scope:market_porcelain_production_prediction
+                        min = 0.1
+                    }
+                    multiply = -0.75
+                    max = 0.75
+                    add = 1
+                }
+                else_if = {
+                    limit = {
+                        scope:market_porcelain_production_prediction > scope:market_porcelain_consumption_prediction
+                    }
+                    value = scope:market_porcelain_production_prediction
+                    subtract = scope:market_porcelain_consumption_prediction
+                    divide = {
+                        value = scope:market_porcelain_consumption_prediction
+                        min = 0.1
+                    }
+                    multiply = -0.75
+                    min = -0.75
+                    add = 1
+                }
+                else = {
+                    value = 1
+                }
+            }
+        }
+    }
+}
+
+meat_price_prediction = {
+    if = {
+        limit = {
+            scope:state_meat_production_prediction < scope:state_meat_consumption_prediction
+        }
+        value = scope:state_meat_production_prediction
+        subtract = scope:state_meat_consumption_prediction
+        divide = {
+            value = scope:state_meat_production_prediction
+            min = 0.1
+        }
+        multiply = -0.75
+        max = 0.75
+        add = 1
+    }
+    else_if = {
+        limit = {
+            scope:state_meat_production_prediction > scope:state_meat_consumption_prediction
+        }
+        value = scope:state_meat_production_prediction
+        subtract = scope:state_meat_consumption_prediction
+        divide = {
+            value = scope:state_meat_consumption_prediction
+            min = 0.1
+        }
+        multiply = -0.75
+        min = -0.75
+        add = 1
+    }
+    else = {
+        value = 1
+    }
+    multiply = {
+        value = 1
+        subtract = {
+            value = state.modifier:state_market_access_price_impact
+            multiply = state.market_access
+        }
+        multiply = meat_base_price
+    }
+    add = {
+        value = state.modifier:state_market_access_price_impact
+        multiply = state.market_access
+        multiply = meat_base_price
+        multiply = {
+            value = {
+                if = {
+                    limit = {
+                        scope:market_meat_production_prediction < scope:market_meat_consumption_prediction
+                    }
+                    value = scope:market_meat_production_prediction
+                    subtract = scope:market_meat_consumption_prediction
+                    divide = {
+                        value = scope:market_meat_production_prediction
+                        min = 0.1
+                    }
+                    multiply = -0.75
+                    max = 0.75
+                    add = 1
+                }
+                else_if = {
+                    limit = {
+                        scope:market_meat_production_prediction > scope:market_meat_consumption_prediction
+                    }
+                    value = scope:market_meat_production_prediction
+                    subtract = scope:market_meat_consumption_prediction
+                    divide = {
+                        value = scope:market_meat_consumption_prediction
+                        min = 0.1
+                    }
+                    multiply = -0.75
+                    min = -0.75
+                    add = 1
+                }
+                else = {
+                    value = 1
+                }
+            }
+        }
+    }
+}
+
+fruit_price_prediction = {
+    if = {
+        limit = {
+            scope:state_fruit_production_prediction < scope:state_fruit_consumption_prediction
+        }
+        value = scope:state_fruit_production_prediction
+        subtract = scope:state_fruit_consumption_prediction
+        divide = {
+            value = scope:state_fruit_production_prediction
+            min = 0.1
+        }
+        multiply = -0.75
+        max = 0.75
+        add = 1
+    }
+    else_if = {
+        limit = {
+            scope:state_fruit_production_prediction > scope:state_fruit_consumption_prediction
+        }
+        value = scope:state_fruit_production_prediction
+        subtract = scope:state_fruit_consumption_prediction
+        divide = {
+            value = scope:state_fruit_consumption_prediction
+            min = 0.1
+        }
+        multiply = -0.75
+        min = -0.75
+        add = 1
+    }
+    else = {
+        value = 1
+    }
+    multiply = {
+        value = 1
+        subtract = {
+            value = state.modifier:state_market_access_price_impact
+            multiply = state.market_access
+        }
+        multiply = fruit_base_price
+    }
+    add = {
+        value = state.modifier:state_market_access_price_impact
+        multiply = state.market_access
+        multiply = fruit_base_price
+        multiply = {
+            value = {
+                if = {
+                    limit = {
+                        scope:market_fruit_production_prediction < scope:market_fruit_consumption_prediction
+                    }
+                    value = scope:market_fruit_production_prediction
+                    subtract = scope:market_fruit_consumption_prediction
+                    divide = {
+                        value = scope:market_fruit_production_prediction
+                        min = 0.1
+                    }
+                    multiply = -0.75
+                    max = 0.75
+                    add = 1
+                }
+                else_if = {
+                    limit = {
+                        scope:market_fruit_production_prediction > scope:market_fruit_consumption_prediction
+                    }
+                    value = scope:market_fruit_production_prediction
+                    subtract = scope:market_fruit_consumption_prediction
+                    divide = {
+                        value = scope:market_fruit_consumption_prediction
+                        min = 0.1
+                    }
+                    multiply = -0.75
+                    min = -0.75
+                    add = 1
+                }
+                else = {
+                    value = 1
+                }
+            }
+        }
+    }
+}
+
+liquor_price_prediction = {
+    if = {
+        limit = {
+            scope:state_liquor_production_prediction < scope:state_liquor_consumption_prediction
+        }
+        value = scope:state_liquor_production_prediction
+        subtract = scope:state_liquor_consumption_prediction
+        divide = {
+            value = scope:state_liquor_production_prediction
+            min = 0.1
+        }
+        multiply = -0.75
+        max = 0.75
+        add = 1
+    }
+    else_if = {
+        limit = {
+            scope:state_liquor_production_prediction > scope:state_liquor_consumption_prediction
+        }
+        value = scope:state_liquor_production_prediction
+        subtract = scope:state_liquor_consumption_prediction
+        divide = {
+            value = scope:state_liquor_consumption_prediction
+            min = 0.1
+        }
+        multiply = -0.75
+        min = -0.75
+        add = 1
+    }
+    else = {
+        value = 1
+    }
+    multiply = {
+        value = 1
+        subtract = {
+            value = state.modifier:state_market_access_price_impact
+            multiply = state.market_access
+        }
+        multiply = liquor_base_price
+    }
+    add = {
+        value = state.modifier:state_market_access_price_impact
+        multiply = state.market_access
+        multiply = liquor_base_price
+        multiply = {
+            value = {
+                if = {
+                    limit = {
+                        scope:market_liquor_production_prediction < scope:market_liquor_consumption_prediction
+                    }
+                    value = scope:market_liquor_production_prediction
+                    subtract = scope:market_liquor_consumption_prediction
+                    divide = {
+                        value = scope:market_liquor_production_prediction
+                        min = 0.1
+                    }
+                    multiply = -0.75
+                    max = 0.75
+                    add = 1
+                }
+                else_if = {
+                    limit = {
+                        scope:market_liquor_production_prediction > scope:market_liquor_consumption_prediction
+                    }
+                    value = scope:market_liquor_production_prediction
+                    subtract = scope:market_liquor_consumption_prediction
+                    divide = {
+                        value = scope:market_liquor_consumption_prediction
+                        min = 0.1
+                    }
+                    multiply = -0.75
+                    min = -0.75
+                    add = 1
+                }
+                else = {
+                    value = 1
+                }
+            }
+        }
+    }
+}
+
+wine_price_prediction = {
+    if = {
+        limit = {
+            scope:state_wine_production_prediction < scope:state_wine_consumption_prediction
+        }
+        value = scope:state_wine_production_prediction
+        subtract = scope:state_wine_consumption_prediction
+        divide = {
+            value = scope:state_wine_production_prediction
+            min = 0.1
+        }
+        multiply = -0.75
+        max = 0.75
+        add = 1
+    }
+    else_if = {
+        limit = {
+            scope:state_wine_production_prediction > scope:state_wine_consumption_prediction
+        }
+        value = scope:state_wine_production_prediction
+        subtract = scope:state_wine_consumption_prediction
+        divide = {
+            value = scope:state_wine_consumption_prediction
+            min = 0.1
+        }
+        multiply = -0.75
+        min = -0.75
+        add = 1
+    }
+    else = {
+        value = 1
+    }
+    multiply = {
+        value = 1
+        subtract = {
+            value = state.modifier:state_market_access_price_impact
+            multiply = state.market_access
+        }
+        multiply = wine_base_price
+    }
+    add = {
+        value = state.modifier:state_market_access_price_impact
+        multiply = state.market_access
+        multiply = wine_base_price
+        multiply = {
+            value = {
+                if = {
+                    limit = {
+                        scope:market_wine_production_prediction < scope:market_wine_consumption_prediction
+                    }
+                    value = scope:market_wine_production_prediction
+                    subtract = scope:market_wine_consumption_prediction
+                    divide = {
+                        value = scope:market_wine_production_prediction
+                        min = 0.1
+                    }
+                    multiply = -0.75
+                    max = 0.75
+                    add = 1
+                }
+                else_if = {
+                    limit = {
+                        scope:market_wine_production_prediction > scope:market_wine_consumption_prediction
+                    }
+                    value = scope:market_wine_production_prediction
+                    subtract = scope:market_wine_consumption_prediction
+                    divide = {
+                        value = scope:market_wine_consumption_prediction
+                        min = 0.1
+                    }
+                    multiply = -0.75
+                    min = -0.75
+                    add = 1
+                }
+                else = {
+                    value = 1
+                }
+            }
+        }
+    }
+}
+
+tea_price_prediction = {
+    if = {
+        limit = {
+            scope:state_tea_production_prediction < scope:state_tea_consumption_prediction
+        }
+        value = scope:state_tea_production_prediction
+        subtract = scope:state_tea_consumption_prediction
+        divide = {
+            value = scope:state_tea_production_prediction
+            min = 0.1
+        }
+        multiply = -0.75
+        max = 0.75
+        add = 1
+    }
+    else_if = {
+        limit = {
+            scope:state_tea_production_prediction > scope:state_tea_consumption_prediction
+        }
+        value = scope:state_tea_production_prediction
+        subtract = scope:state_tea_consumption_prediction
+        divide = {
+            value = scope:state_tea_consumption_prediction
+            min = 0.1
+        }
+        multiply = -0.75
+        min = -0.75
+        add = 1
+    }
+    else = {
+        value = 1
+    }
+    multiply = {
+        value = 1
+        subtract = {
+            value = state.modifier:state_market_access_price_impact
+            multiply = state.market_access
+        }
+        multiply = tea_base_price
+    }
+    add = {
+        value = state.modifier:state_market_access_price_impact
+        multiply = state.market_access
+        multiply = tea_base_price
+        multiply = {
+            value = {
+                if = {
+                    limit = {
+                        scope:market_tea_production_prediction < scope:market_tea_consumption_prediction
+                    }
+                    value = scope:market_tea_production_prediction
+                    subtract = scope:market_tea_consumption_prediction
+                    divide = {
+                        value = scope:market_tea_production_prediction
+                        min = 0.1
+                    }
+                    multiply = -0.75
+                    max = 0.75
+                    add = 1
+                }
+                else_if = {
+                    limit = {
+                        scope:market_tea_production_prediction > scope:market_tea_consumption_prediction
+                    }
+                    value = scope:market_tea_production_prediction
+                    subtract = scope:market_tea_consumption_prediction
+                    divide = {
+                        value = scope:market_tea_consumption_prediction
+                        min = 0.1
+                    }
+                    multiply = -0.75
+                    min = -0.75
+                    add = 1
+                }
+                else = {
+                    value = 1
+                }
+            }
+        }
+    }
+}
+
+coffee_price_prediction = {
+    if = {
+        limit = {
+            scope:state_coffee_production_prediction < scope:state_coffee_consumption_prediction
+        }
+        value = scope:state_coffee_production_prediction
+        subtract = scope:state_coffee_consumption_prediction
+        divide = {
+            value = scope:state_coffee_production_prediction
+            min = 0.1
+        }
+        multiply = -0.75
+        max = 0.75
+        add = 1
+    }
+    else_if = {
+        limit = {
+            scope:state_coffee_production_prediction > scope:state_coffee_consumption_prediction
+        }
+        value = scope:state_coffee_production_prediction
+        subtract = scope:state_coffee_consumption_prediction
+        divide = {
+            value = scope:state_coffee_consumption_prediction
+            min = 0.1
+        }
+        multiply = -0.75
+        min = -0.75
+        add = 1
+    }
+    else = {
+        value = 1
+    }
+    multiply = {
+        value = 1
+        subtract = {
+            value = state.modifier:state_market_access_price_impact
+            multiply = state.market_access
+        }
+        multiply = coffee_base_price
+    }
+    add = {
+        value = state.modifier:state_market_access_price_impact
+        multiply = state.market_access
+        multiply = coffee_base_price
+        multiply = {
+            value = {
+                if = {
+                    limit = {
+                        scope:market_coffee_production_prediction < scope:market_coffee_consumption_prediction
+                    }
+                    value = scope:market_coffee_production_prediction
+                    subtract = scope:market_coffee_consumption_prediction
+                    divide = {
+                        value = scope:market_coffee_production_prediction
+                        min = 0.1
+                    }
+                    multiply = -0.75
+                    max = 0.75
+                    add = 1
+                }
+                else_if = {
+                    limit = {
+                        scope:market_coffee_production_prediction > scope:market_coffee_consumption_prediction
+                    }
+                    value = scope:market_coffee_production_prediction
+                    subtract = scope:market_coffee_consumption_prediction
+                    divide = {
+                        value = scope:market_coffee_consumption_prediction
+                        min = 0.1
+                    }
+                    multiply = -0.75
+                    min = -0.75
+                    add = 1
+                }
+                else = {
+                    value = 1
+                }
+            }
+        }
+    }
+}
+
+sugar_price_prediction = {
+    if = {
+        limit = {
+            scope:state_sugar_production_prediction < scope:state_sugar_consumption_prediction
+        }
+        value = scope:state_sugar_production_prediction
+        subtract = scope:state_sugar_consumption_prediction
+        divide = {
+            value = scope:state_sugar_production_prediction
+            min = 0.1
+        }
+        multiply = -0.75
+        max = 0.75
+        add = 1
+    }
+    else_if = {
+        limit = {
+            scope:state_sugar_production_prediction > scope:state_sugar_consumption_prediction
+        }
+        value = scope:state_sugar_production_prediction
+        subtract = scope:state_sugar_consumption_prediction
+        divide = {
+            value = scope:state_sugar_consumption_prediction
+            min = 0.1
+        }
+        multiply = -0.75
+        min = -0.75
+        add = 1
+    }
+    else = {
+        value = 1
+    }
+    multiply = {
+        value = 1
+        subtract = {
+            value = state.modifier:state_market_access_price_impact
+            multiply = state.market_access
+        }
+        multiply = sugar_base_price
+    }
+    add = {
+        value = state.modifier:state_market_access_price_impact
+        multiply = state.market_access
+        multiply = sugar_base_price
+        multiply = {
+            value = {
+                if = {
+                    limit = {
+                        scope:market_sugar_production_prediction < scope:market_sugar_consumption_prediction
+                    }
+                    value = scope:market_sugar_production_prediction
+                    subtract = scope:market_sugar_consumption_prediction
+                    divide = {
+                        value = scope:market_sugar_production_prediction
+                        min = 0.1
+                    }
+                    multiply = -0.75
+                    max = 0.75
+                    add = 1
+                }
+                else_if = {
+                    limit = {
+                        scope:market_sugar_production_prediction > scope:market_sugar_consumption_prediction
+                    }
+                    value = scope:market_sugar_production_prediction
+                    subtract = scope:market_sugar_consumption_prediction
+                    divide = {
+                        value = scope:market_sugar_consumption_prediction
+                        min = 0.1
+                    }
+                    multiply = -0.75
+                    min = -0.75
+                    add = 1
+                }
+                else = {
+                    value = 1
+                }
+            }
+        }
+    }
+}
+
+tobacco_price_prediction = {
+    if = {
+        limit = {
+            scope:state_tobacco_production_prediction < scope:state_tobacco_consumption_prediction
+        }
+        value = scope:state_tobacco_production_prediction
+        subtract = scope:state_tobacco_consumption_prediction
+        divide = {
+            value = scope:state_tobacco_production_prediction
+            min = 0.1
+        }
+        multiply = -0.75
+        max = 0.75
+        add = 1
+    }
+    else_if = {
+        limit = {
+            scope:state_tobacco_production_prediction > scope:state_tobacco_consumption_prediction
+        }
+        value = scope:state_tobacco_production_prediction
+        subtract = scope:state_tobacco_consumption_prediction
+        divide = {
+            value = scope:state_tobacco_consumption_prediction
+            min = 0.1
+        }
+        multiply = -0.75
+        min = -0.75
+        add = 1
+    }
+    else = {
+        value = 1
+    }
+    multiply = {
+        value = 1
+        subtract = {
+            value = state.modifier:state_market_access_price_impact
+            multiply = state.market_access
+        }
+        multiply = tobacco_base_price
+    }
+    add = {
+        value = state.modifier:state_market_access_price_impact
+        multiply = state.market_access
+        multiply = tobacco_base_price
+        multiply = {
+            value = {
+                if = {
+                    limit = {
+                        scope:market_tobacco_production_prediction < scope:market_tobacco_consumption_prediction
+                    }
+                    value = scope:market_tobacco_production_prediction
+                    subtract = scope:market_tobacco_consumption_prediction
+                    divide = {
+                        value = scope:market_tobacco_production_prediction
+                        min = 0.1
+                    }
+                    multiply = -0.75
+                    max = 0.75
+                    add = 1
+                }
+                else_if = {
+                    limit = {
+                        scope:market_tobacco_production_prediction > scope:market_tobacco_consumption_prediction
+                    }
+                    value = scope:market_tobacco_production_prediction
+                    subtract = scope:market_tobacco_consumption_prediction
+                    divide = {
+                        value = scope:market_tobacco_consumption_prediction
+                        min = 0.1
+                    }
+                    multiply = -0.75
+                    min = -0.75
+                    add = 1
+                }
+                else = {
+                    value = 1
+                }
+            }
+        }
+    }
+}
+
+opium_price_prediction = {
+    if = {
+        limit = {
+            scope:state_opium_production_prediction < scope:state_opium_consumption_prediction
+        }
+        value = scope:state_opium_production_prediction
+        subtract = scope:state_opium_consumption_prediction
+        divide = {
+            value = scope:state_opium_production_prediction
+            min = 0.1
+        }
+        multiply = -0.75
+        max = 0.75
+        add = 1
+    }
+    else_if = {
+        limit = {
+            scope:state_opium_production_prediction > scope:state_opium_consumption_prediction
+        }
+        value = scope:state_opium_production_prediction
+        subtract = scope:state_opium_consumption_prediction
+        divide = {
+            value = scope:state_opium_consumption_prediction
+            min = 0.1
+        }
+        multiply = -0.75
+        min = -0.75
+        add = 1
+    }
+    else = {
+        value = 1
+    }
+    multiply = {
+        value = 1
+        subtract = {
+            value = state.modifier:state_market_access_price_impact
+            multiply = state.market_access
+        }
+        multiply = opium_base_price
+    }
+    add = {
+        value = state.modifier:state_market_access_price_impact
+        multiply = state.market_access
+        multiply = opium_base_price
+        multiply = {
+            value = {
+                if = {
+                    limit = {
+                        scope:market_opium_production_prediction < scope:market_opium_consumption_prediction
+                    }
+                    value = scope:market_opium_production_prediction
+                    subtract = scope:market_opium_consumption_prediction
+                    divide = {
+                        value = scope:market_opium_production_prediction
+                        min = 0.1
+                    }
+                    multiply = -0.75
+                    max = 0.75
+                    add = 1
+                }
+                else_if = {
+                    limit = {
+                        scope:market_opium_production_prediction > scope:market_opium_consumption_prediction
+                    }
+                    value = scope:market_opium_production_prediction
+                    subtract = scope:market_opium_consumption_prediction
+                    divide = {
+                        value = scope:market_opium_consumption_prediction
+                        min = 0.1
+                    }
+                    multiply = -0.75
+                    min = -0.75
+                    add = 1
+                }
+                else = {
+                    value = 1
+                }
+            }
+        }
+    }
+}
+
+automobiles_price_prediction = {
+    if = {
+        limit = {
+            scope:state_automobiles_production_prediction < scope:state_automobiles_consumption_prediction
+        }
+        value = scope:state_automobiles_production_prediction
+        subtract = scope:state_automobiles_consumption_prediction
+        divide = {
+            value = scope:state_automobiles_production_prediction
+            min = 0.1
+        }
+        multiply = -0.75
+        max = 0.75
+        add = 1
+    }
+    else_if = {
+        limit = {
+            scope:state_automobiles_production_prediction > scope:state_automobiles_consumption_prediction
+        }
+        value = scope:state_automobiles_production_prediction
+        subtract = scope:state_automobiles_consumption_prediction
+        divide = {
+            value = scope:state_automobiles_consumption_prediction
+            min = 0.1
+        }
+        multiply = -0.75
+        min = -0.75
+        add = 1
+    }
+    else = {
+        value = 1
+    }
+    multiply = {
+        value = 1
+        subtract = {
+            value = state.modifier:state_market_access_price_impact
+            multiply = state.market_access
+        }
+        multiply = automobiles_base_price
+    }
+    add = {
+        value = state.modifier:state_market_access_price_impact
+        multiply = state.market_access
+        multiply = automobiles_base_price
+        multiply = {
+            value = {
+                if = {
+                    limit = {
+                        scope:market_automobiles_production_prediction < scope:market_automobiles_consumption_prediction
+                    }
+                    value = scope:market_automobiles_production_prediction
+                    subtract = scope:market_automobiles_consumption_prediction
+                    divide = {
+                        value = scope:market_automobiles_production_prediction
+                        min = 0.1
+                    }
+                    multiply = -0.75
+                    max = 0.75
+                    add = 1
+                }
+                else_if = {
+                    limit = {
+                        scope:market_automobiles_production_prediction > scope:market_automobiles_consumption_prediction
+                    }
+                    value = scope:market_automobiles_production_prediction
+                    subtract = scope:market_automobiles_consumption_prediction
+                    divide = {
+                        value = scope:market_automobiles_consumption_prediction
+                        min = 0.1
+                    }
+                    multiply = -0.75
+                    min = -0.75
+                    add = 1
+                }
+                else = {
+                    value = 1
+                }
+            }
+        }
+    }
+}
+
+telephones_price_prediction = {
+    if = {
+        limit = {
+            scope:state_telephones_production_prediction < scope:state_telephones_consumption_prediction
+        }
+        value = scope:state_telephones_production_prediction
+        subtract = scope:state_telephones_consumption_prediction
+        divide = {
+            value = scope:state_telephones_production_prediction
+            min = 0.1
+        }
+        multiply = -0.75
+        max = 0.75
+        add = 1
+    }
+    else_if = {
+        limit = {
+            scope:state_telephones_production_prediction > scope:state_telephones_consumption_prediction
+        }
+        value = scope:state_telephones_production_prediction
+        subtract = scope:state_telephones_consumption_prediction
+        divide = {
+            value = scope:state_telephones_consumption_prediction
+            min = 0.1
+        }
+        multiply = -0.75
+        min = -0.75
+        add = 1
+    }
+    else = {
+        value = 1
+    }
+    multiply = {
+        value = 1
+        subtract = {
+            value = state.modifier:state_market_access_price_impact
+            multiply = state.market_access
+        }
+        multiply = telephones_base_price
+    }
+    add = {
+        value = state.modifier:state_market_access_price_impact
+        multiply = state.market_access
+        multiply = telephones_base_price
+        multiply = {
+            value = {
+                if = {
+                    limit = {
+                        scope:market_telephones_production_prediction < scope:market_telephones_consumption_prediction
+                    }
+                    value = scope:market_telephones_production_prediction
+                    subtract = scope:market_telephones_consumption_prediction
+                    divide = {
+                        value = scope:market_telephones_production_prediction
+                        min = 0.1
+                    }
+                    multiply = -0.75
+                    max = 0.75
+                    add = 1
+                }
+                else_if = {
+                    limit = {
+                        scope:market_telephones_production_prediction > scope:market_telephones_consumption_prediction
+                    }
+                    value = scope:market_telephones_production_prediction
+                    subtract = scope:market_telephones_consumption_prediction
+                    divide = {
+                        value = scope:market_telephones_consumption_prediction
+                        min = 0.1
+                    }
+                    multiply = -0.75
+                    min = -0.75
+                    add = 1
+                }
+                else = {
+                    value = 1
+                }
+            }
+        }
+    }
+}
+
+radios_price_prediction = {
+    if = {
+        limit = {
+            scope:state_radios_production_prediction < scope:state_radios_consumption_prediction
+        }
+        value = scope:state_radios_production_prediction
+        subtract = scope:state_radios_consumption_prediction
+        divide = {
+            value = scope:state_radios_production_prediction
+            min = 0.1
+        }
+        multiply = -0.75
+        max = 0.75
+        add = 1
+    }
+    else_if = {
+        limit = {
+            scope:state_radios_production_prediction > scope:state_radios_consumption_prediction
+        }
+        value = scope:state_radios_production_prediction
+        subtract = scope:state_radios_consumption_prediction
+        divide = {
+            value = scope:state_radios_consumption_prediction
+            min = 0.1
+        }
+        multiply = -0.75
+        min = -0.75
+        add = 1
+    }
+    else = {
+        value = 1
+    }
+    multiply = {
+        value = 1
+        subtract = {
+            value = state.modifier:state_market_access_price_impact
+            multiply = state.market_access
+        }
+        multiply = radios_base_price
+    }
+    add = {
+        value = state.modifier:state_market_access_price_impact
+        multiply = state.market_access
+        multiply = radios_base_price
+        multiply = {
+            value = {
+                if = {
+                    limit = {
+                        scope:market_radios_production_prediction < scope:market_radios_consumption_prediction
+                    }
+                    value = scope:market_radios_production_prediction
+                    subtract = scope:market_radios_consumption_prediction
+                    divide = {
+                        value = scope:market_radios_production_prediction
+                        min = 0.1
+                    }
+                    multiply = -0.75
+                    max = 0.75
+                    add = 1
+                }
+                else_if = {
+                    limit = {
+                        scope:market_radios_production_prediction > scope:market_radios_consumption_prediction
+                    }
+                    value = scope:market_radios_production_prediction
+                    subtract = scope:market_radios_consumption_prediction
+                    divide = {
+                        value = scope:market_radios_consumption_prediction
+                        min = 0.1
+                    }
+                    multiply = -0.75
+                    min = -0.75
+                    add = 1
+                }
+                else = {
+                    value = 1
+                }
+            }
+        }
+    }
+}
+
+luxury_clothes_price_prediction = {
+    if = {
+        limit = {
+            scope:state_luxury_clothes_production_prediction < scope:state_luxury_clothes_consumption_prediction
+        }
+        value = scope:state_luxury_clothes_production_prediction
+        subtract = scope:state_luxury_clothes_consumption_prediction
+        divide = {
+            value = scope:state_luxury_clothes_production_prediction
+            min = 0.1
+        }
+        multiply = -0.75
+        max = 0.75
+        add = 1
+    }
+    else_if = {
+        limit = {
+            scope:state_luxury_clothes_production_prediction > scope:state_luxury_clothes_consumption_prediction
+        }
+        value = scope:state_luxury_clothes_production_prediction
+        subtract = scope:state_luxury_clothes_consumption_prediction
+        divide = {
+            value = scope:state_luxury_clothes_consumption_prediction
+            min = 0.1
+        }
+        multiply = -0.75
+        min = -0.75
+        add = 1
+    }
+    else = {
+        value = 1
+    }
+    multiply = {
+        value = 1
+        subtract = {
+            value = state.modifier:state_market_access_price_impact
+            multiply = state.market_access
+        }
+        multiply = luxury_clothes_base_price
+    }
+    add = {
+        value = state.modifier:state_market_access_price_impact
+        multiply = state.market_access
+        multiply = luxury_clothes_base_price
+        multiply = {
+            value = {
+                if = {
+                    limit = {
+                        scope:market_luxury_clothes_production_prediction < scope:market_luxury_clothes_consumption_prediction
+                    }
+                    value = scope:market_luxury_clothes_production_prediction
+                    subtract = scope:market_luxury_clothes_consumption_prediction
+                    divide = {
+                        value = scope:market_luxury_clothes_production_prediction
+                        min = 0.1
+                    }
+                    multiply = -0.75
+                    max = 0.75
+                    add = 1
+                }
+                else_if = {
+                    limit = {
+                        scope:market_luxury_clothes_production_prediction > scope:market_luxury_clothes_consumption_prediction
+                    }
+                    value = scope:market_luxury_clothes_production_prediction
+                    subtract = scope:market_luxury_clothes_consumption_prediction
+                    divide = {
+                        value = scope:market_luxury_clothes_consumption_prediction
+                        min = 0.1
+                    }
+                    multiply = -0.75
+                    min = -0.75
+                    add = 1
+                }
+                else = {
+                    value = 1
+                }
+            }
+        }
+    }
+}
+
+luxury_furniture_price_prediction = {
+    if = {
+        limit = {
+            scope:state_luxury_furniture_production_prediction < scope:state_luxury_furniture_consumption_prediction
+        }
+        value = scope:state_luxury_furniture_production_prediction
+        subtract = scope:state_luxury_furniture_consumption_prediction
+        divide = {
+            value = scope:state_luxury_furniture_production_prediction
+            min = 0.1
+        }
+        multiply = -0.75
+        max = 0.75
+        add = 1
+    }
+    else_if = {
+        limit = {
+            scope:state_luxury_furniture_production_prediction > scope:state_luxury_furniture_consumption_prediction
+        }
+        value = scope:state_luxury_furniture_production_prediction
+        subtract = scope:state_luxury_furniture_consumption_prediction
+        divide = {
+            value = scope:state_luxury_furniture_consumption_prediction
+            min = 0.1
+        }
+        multiply = -0.75
+        min = -0.75
+        add = 1
+    }
+    else = {
+        value = 1
+    }
+    multiply = {
+        value = 1
+        subtract = {
+            value = state.modifier:state_market_access_price_impact
+            multiply = state.market_access
+        }
+        multiply = luxury_furniture_base_price
+    }
+    add = {
+        value = state.modifier:state_market_access_price_impact
+        multiply = state.market_access
+        multiply = luxury_furniture_base_price
+        multiply = {
+            value = {
+                if = {
+                    limit = {
+                        scope:market_luxury_furniture_production_prediction < scope:market_luxury_furniture_consumption_prediction
+                    }
+                    value = scope:market_luxury_furniture_production_prediction
+                    subtract = scope:market_luxury_furniture_consumption_prediction
+                    divide = {
+                        value = scope:market_luxury_furniture_production_prediction
+                        min = 0.1
+                    }
+                    multiply = -0.75
+                    max = 0.75
+                    add = 1
+                }
+                else_if = {
+                    limit = {
+                        scope:market_luxury_furniture_production_prediction > scope:market_luxury_furniture_consumption_prediction
+                    }
+                    value = scope:market_luxury_furniture_production_prediction
+                    subtract = scope:market_luxury_furniture_consumption_prediction
+                    divide = {
+                        value = scope:market_luxury_furniture_consumption_prediction
+                        min = 0.1
+                    }
+                    multiply = -0.75
+                    min = -0.75
+                    add = 1
+                }
+                else = {
+                    value = 1
+                }
+            }
+        }
+    }
+}
+
+gold_price_prediction = {
+    if = {
+        limit = {
+            scope:state_gold_production_prediction < scope:state_gold_consumption_prediction
+        }
+        value = scope:state_gold_production_prediction
+        subtract = scope:state_gold_consumption_prediction
+        divide = {
+            value = scope:state_gold_production_prediction
+            min = 0.1
+        }
+        multiply = -0.75
+        max = 0.75
+        add = 1
+    }
+    else_if = {
+        limit = {
+            scope:state_gold_production_prediction > scope:state_gold_consumption_prediction
+        }
+        value = scope:state_gold_production_prediction
+        subtract = scope:state_gold_consumption_prediction
+        divide = {
+            value = scope:state_gold_consumption_prediction
+            min = 0.1
+        }
+        multiply = -0.75
+        min = -0.75
+        add = 1
+    }
+    else = {
+        value = 1
+    }
+    multiply = {
+        value = 1
+        subtract = {
+            value = state.modifier:state_market_access_price_impact
+            multiply = state.market_access
+        }
+        multiply = gold_base_price
+    }
+    add = {
+        value = state.modifier:state_market_access_price_impact
+        multiply = state.market_access
+        multiply = gold_base_price
+        multiply = {
+            value = {
+                if = {
+                    limit = {
+                        scope:market_gold_production_prediction < scope:market_gold_consumption_prediction
+                    }
+                    value = scope:market_gold_production_prediction
+                    subtract = scope:market_gold_consumption_prediction
+                    divide = {
+                        value = scope:market_gold_production_prediction
+                        min = 0.1
+                    }
+                    multiply = -0.75
+                    max = 0.75
+                    add = 1
+                }
+                else_if = {
+                    limit = {
+                        scope:market_gold_production_prediction > scope:market_gold_consumption_prediction
+                    }
+                    value = scope:market_gold_production_prediction
+                    subtract = scope:market_gold_consumption_prediction
+                    divide = {
+                        value = scope:market_gold_consumption_prediction
+                        min = 0.1
+                    }
+                    multiply = -0.75
+                    min = -0.75
+                    add = 1
+                }
+                else = {
+                    value = 1
+                }
+            }
+        }
+    }
+}
+
+fine_art_price_prediction = {
+    if = {
+        limit = {
+            scope:state_fine_art_production_prediction < scope:state_fine_art_consumption_prediction
+        }
+        value = scope:state_fine_art_production_prediction
+        subtract = scope:state_fine_art_consumption_prediction
+        divide = {
+            value = scope:state_fine_art_production_prediction
+            min = 0.1
+        }
+        multiply = -0.75
+        max = 0.75
+        add = 1
+    }
+    else_if = {
+        limit = {
+            scope:state_fine_art_production_prediction > scope:state_fine_art_consumption_prediction
+        }
+        value = scope:state_fine_art_production_prediction
+        subtract = scope:state_fine_art_consumption_prediction
+        divide = {
+            value = scope:state_fine_art_consumption_prediction
+            min = 0.1
+        }
+        multiply = -0.75
+        min = -0.75
+        add = 1
+    }
+    else = {
+        value = 1
+    }
+    multiply = {
+        value = 1
+        subtract = {
+            value = state.modifier:state_market_access_price_impact
+            multiply = state.market_access
+        }
+        multiply = fine_art_base_price
+    }
+    add = {
+        value = state.modifier:state_market_access_price_impact
+        multiply = state.market_access
+        multiply = fine_art_base_price
+        multiply = {
+            value = {
+                if = {
+                    limit = {
+                        scope:market_fine_art_production_prediction < scope:market_fine_art_consumption_prediction
+                    }
+                    value = scope:market_fine_art_production_prediction
+                    subtract = scope:market_fine_art_consumption_prediction
+                    divide = {
+                        value = scope:market_fine_art_production_prediction
+                        min = 0.1
+                    }
+                    multiply = -0.75
+                    max = 0.75
+                    add = 1
+                }
+                else_if = {
+                    limit = {
+                        scope:market_fine_art_production_prediction > scope:market_fine_art_consumption_prediction
+                    }
+                    value = scope:market_fine_art_production_prediction
+                    subtract = scope:market_fine_art_consumption_prediction
+                    divide = {
+                        value = scope:market_fine_art_consumption_prediction
+                        min = 0.1
+                    }
+                    multiply = -0.75
+                    min = -0.75
+                    add = 1
+                }
+                else = {
+                    value = 1
+                }
+            }
+        }
+    }
+}
+
+air_travel_price_prediction = {
+    if = {
+        limit = {
+            scope:state_air_travel_production_prediction < scope:state_air_travel_consumption_prediction
+        }
+        value = scope:state_air_travel_production_prediction
+        subtract = scope:state_air_travel_consumption_prediction
+        divide = {
+            value = scope:state_air_travel_production_prediction
+            min = 0.1
+        }
+        multiply = -0.75
+        max = 0.75
+        add = 1
+    }
+    else_if = {
+        limit = {
+            scope:state_air_travel_production_prediction > scope:state_air_travel_consumption_prediction
+        }
+        value = scope:state_air_travel_production_prediction
+        subtract = scope:state_air_travel_consumption_prediction
+        divide = {
+            value = scope:state_air_travel_consumption_prediction
+            min = 0.1
+        }
+        multiply = -0.75
+        min = -0.75
+        add = 1
+    }
+    else = {
+        value = 1
+    }
+    multiply = {
+        value = 1
+        subtract = {
+            value = state.modifier:state_market_access_price_impact
+            multiply = state.market_access
+        }
+        multiply = air_travel_base_price
+    }
+    add = {
+        value = state.modifier:state_market_access_price_impact
+        multiply = state.market_access
+        multiply = air_travel_base_price
+        multiply = {
+            value = {
+                if = {
+                    limit = {
+                        scope:market_air_travel_production_prediction < scope:market_air_travel_consumption_prediction
+                    }
+                    value = scope:market_air_travel_production_prediction
+                    subtract = scope:market_air_travel_consumption_prediction
+                    divide = {
+                        value = scope:market_air_travel_production_prediction
+                        min = 0.1
+                    }
+                    multiply = -0.75
+                    max = 0.75
+                    add = 1
+                }
+                else_if = {
+                    limit = {
+                        scope:market_air_travel_production_prediction > scope:market_air_travel_consumption_prediction
+                    }
+                    value = scope:market_air_travel_production_prediction
+                    subtract = scope:market_air_travel_consumption_prediction
+                    divide = {
+                        value = scope:market_air_travel_consumption_prediction
+                        min = 0.1
+                    }
+                    multiply = -0.75
+                    min = -0.75
+                    add = 1
+                }
+                else = {
+                    value = 1
+                }
+            }
+        }
+    }
+}
+
+good_uranium_price_prediction = {
+    if = {
+        limit = {
+            scope:state_good_uranium_production_prediction < scope:state_good_uranium_consumption_prediction
+        }
+        value = scope:state_good_uranium_production_prediction
+        subtract = scope:state_good_uranium_consumption_prediction
+        divide = {
+            value = scope:state_good_uranium_production_prediction
+            min = 0.1
+        }
+        multiply = -0.75
+        max = 0.75
+        add = 1
+    }
+    else_if = {
+        limit = {
+            scope:state_good_uranium_production_prediction > scope:state_good_uranium_consumption_prediction
+        }
+        value = scope:state_good_uranium_production_prediction
+        subtract = scope:state_good_uranium_consumption_prediction
+        divide = {
+            value = scope:state_good_uranium_consumption_prediction
+            min = 0.1
+        }
+        multiply = -0.75
+        min = -0.75
+        add = 1
+    }
+    else = {
+        value = 1
+    }
+    multiply = {
+        value = 1
+        subtract = {
+            value = state.modifier:state_market_access_price_impact
+            multiply = state.market_access
+        }
+        multiply = good_uranium_base_price
+    }
+    add = {
+        value = state.modifier:state_market_access_price_impact
+        multiply = state.market_access
+        multiply = good_uranium_base_price
+        multiply = {
+            value = {
+                if = {
+                    limit = {
+                        scope:market_good_uranium_production_prediction < scope:market_good_uranium_consumption_prediction
+                    }
+                    value = scope:market_good_uranium_production_prediction
+                    subtract = scope:market_good_uranium_consumption_prediction
+                    divide = {
+                        value = scope:market_good_uranium_production_prediction
+                        min = 0.1
+                    }
+                    multiply = -0.75
+                    max = 0.75
+                    add = 1
+                }
+                else_if = {
+                    limit = {
+                        scope:market_good_uranium_production_prediction > scope:market_good_uranium_consumption_prediction
+                    }
+                    value = scope:market_good_uranium_production_prediction
+                    subtract = scope:market_good_uranium_consumption_prediction
+                    divide = {
+                        value = scope:market_good_uranium_consumption_prediction
+                        min = 0.1
+                    }
+                    multiply = -0.75
+                    min = -0.75
+                    add = 1
+                }
+                else = {
+                    value = 1
+                }
+            }
+        }
+    }
+}
+
+elgar_instruments_price_prediction = {
+    if = {
+        limit = {
+            scope:state_elgar_instruments_production_prediction < scope:state_elgar_instruments_consumption_prediction
+        }
+        value = scope:state_elgar_instruments_production_prediction
+        subtract = scope:state_elgar_instruments_consumption_prediction
+        divide = {
+            value = scope:state_elgar_instruments_production_prediction
+            min = 0.1
+        }
+        multiply = -0.75
+        max = 0.75
+        add = 1
+    }
+    else_if = {
+        limit = {
+            scope:state_elgar_instruments_production_prediction > scope:state_elgar_instruments_consumption_prediction
+        }
+        value = scope:state_elgar_instruments_production_prediction
+        subtract = scope:state_elgar_instruments_consumption_prediction
+        divide = {
+            value = scope:state_elgar_instruments_consumption_prediction
+            min = 0.1
+        }
+        multiply = -0.75
+        min = -0.75
+        add = 1
+    }
+    else = {
+        value = 1
+    }
+    multiply = {
+        value = 1
+        subtract = {
+            value = state.modifier:state_market_access_price_impact
+            multiply = state.market_access
+        }
+        multiply = elgar_instruments_base_price
+    }
+    add = {
+        value = state.modifier:state_market_access_price_impact
+        multiply = state.market_access
+        multiply = elgar_instruments_base_price
+        multiply = {
+            value = {
+                if = {
+                    limit = {
+                        scope:market_elgar_instruments_production_prediction < scope:market_elgar_instruments_consumption_prediction
+                    }
+                    value = scope:market_elgar_instruments_production_prediction
+                    subtract = scope:market_elgar_instruments_consumption_prediction
+                    divide = {
+                        value = scope:market_elgar_instruments_production_prediction
+                        min = 0.1
+                    }
+                    multiply = -0.75
+                    max = 0.75
+                    add = 1
+                }
+                else_if = {
+                    limit = {
+                        scope:market_elgar_instruments_production_prediction > scope:market_elgar_instruments_consumption_prediction
+                    }
+                    value = scope:market_elgar_instruments_production_prediction
+                    subtract = scope:market_elgar_instruments_consumption_prediction
+                    divide = {
+                        value = scope:market_elgar_instruments_consumption_prediction
+                        min = 0.1
+                    }
+                    multiply = -0.75
+                    min = -0.75
+                    add = 1
+                }
+                else = {
+                    value = 1
+                }
+            }
+        }
+    }
+}
+
+elgar_music_price_prediction = {
+    if = {
+        limit = {
+            scope:state_elgar_music_production_prediction < scope:state_elgar_music_consumption_prediction
+        }
+        value = scope:state_elgar_music_production_prediction
+        subtract = scope:state_elgar_music_consumption_prediction
+        divide = {
+            value = scope:state_elgar_music_production_prediction
+            min = 0.1
+        }
+        multiply = -0.75
+        max = 0.75
+        add = 1
+    }
+    else_if = {
+        limit = {
+            scope:state_elgar_music_production_prediction > scope:state_elgar_music_consumption_prediction
+        }
+        value = scope:state_elgar_music_production_prediction
+        subtract = scope:state_elgar_music_consumption_prediction
+        divide = {
+            value = scope:state_elgar_music_consumption_prediction
+            min = 0.1
+        }
+        multiply = -0.75
+        min = -0.75
+        add = 1
+    }
+    else = {
+        value = 1
+    }
+    multiply = {
+        value = 1
+        subtract = {
+            value = state.modifier:state_market_access_price_impact
+            multiply = state.market_access
+        }
+        multiply = elgar_music_base_price
+    }
+    add = {
+        value = state.modifier:state_market_access_price_impact
+        multiply = state.market_access
+        multiply = elgar_music_base_price
+        multiply = {
+            value = {
+                if = {
+                    limit = {
+                        scope:market_elgar_music_production_prediction < scope:market_elgar_music_consumption_prediction
+                    }
+                    value = scope:market_elgar_music_production_prediction
+                    subtract = scope:market_elgar_music_consumption_prediction
+                    divide = {
+                        value = scope:market_elgar_music_production_prediction
+                        min = 0.1
+                    }
+                    multiply = -0.75
+                    max = 0.75
+                    add = 1
+                }
+                else_if = {
+                    limit = {
+                        scope:market_elgar_music_production_prediction > scope:market_elgar_music_consumption_prediction
+                    }
+                    value = scope:market_elgar_music_production_prediction
+                    subtract = scope:market_elgar_music_consumption_prediction
+                    divide = {
+                        value = scope:market_elgar_music_consumption_prediction
+                        min = 0.1
+                    }
+                    multiply = -0.75
+                    min = -0.75
+                    add = 1
+                }
+                else = {
+                    value = 1
+                }
+            }
+        }
+    }
+}
+
+manzoni_prints_price_prediction = {
+    if = {
+        limit = {
+            scope:state_manzoni_prints_production_prediction < scope:state_manzoni_prints_consumption_prediction
+        }
+        value = scope:state_manzoni_prints_production_prediction
+        subtract = scope:state_manzoni_prints_consumption_prediction
+        divide = {
+            value = scope:state_manzoni_prints_production_prediction
+            min = 0.1
+        }
+        multiply = -0.75
+        max = 0.75
+        add = 1
+    }
+    else_if = {
+        limit = {
+            scope:state_manzoni_prints_production_prediction > scope:state_manzoni_prints_consumption_prediction
+        }
+        value = scope:state_manzoni_prints_production_prediction
+        subtract = scope:state_manzoni_prints_consumption_prediction
+        divide = {
+            value = scope:state_manzoni_prints_consumption_prediction
+            min = 0.1
+        }
+        multiply = -0.75
+        min = -0.75
+        add = 1
+    }
+    else = {
+        value = 1
+    }
+    multiply = {
+        value = 1
+        subtract = {
+            value = state.modifier:state_market_access_price_impact
+            multiply = state.market_access
+        }
+        multiply = manzoni_prints_base_price
+    }
+    add = {
+        value = state.modifier:state_market_access_price_impact
+        multiply = state.market_access
+        multiply = manzoni_prints_base_price
+        multiply = {
+            value = {
+                if = {
+                    limit = {
+                        scope:market_manzoni_prints_production_prediction < scope:market_manzoni_prints_consumption_prediction
+                    }
+                    value = scope:market_manzoni_prints_production_prediction
+                    subtract = scope:market_manzoni_prints_consumption_prediction
+                    divide = {
+                        value = scope:market_manzoni_prints_production_prediction
+                        min = 0.1
+                    }
+                    multiply = -0.75
+                    max = 0.75
+                    add = 1
+                }
+                else_if = {
+                    limit = {
+                        scope:market_manzoni_prints_production_prediction > scope:market_manzoni_prints_consumption_prediction
+                    }
+                    value = scope:market_manzoni_prints_production_prediction
+                    subtract = scope:market_manzoni_prints_consumption_prediction
+                    divide = {
+                        value = scope:market_manzoni_prints_consumption_prediction
+                        min = 0.1
+                    }
+                    multiply = -0.75
+                    min = -0.75
+                    add = 1
+                }
+                else = {
+                    value = 1
+                }
+            }
+        }
+    }
+}
+

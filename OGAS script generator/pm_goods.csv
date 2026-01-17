@@ -1,0 +1,12 @@
+﻿buildings,production_method_groups,production_methods,type,required_construction,ammunition,small_arms,artillery,tanks,aeroplanes,manowars,ironclads,grain,fish,fabric,wood,groceries,clothes,furniture,paper,services,transportation,electricity,merchant_marine,clippers,steamers,silk,dye,sulfur,coal,iron,lead,hardwood,rubber,oil,engines,steel,glass,fertilizer,tools,explosives,porcelain,meat,fruit,liquor,wine,tea,coffee,sugar,tobacco,opium,automobiles,telephones,radios,luxury_clothes,luxury_furniture,gold,fine_art
+building_uranium_mine,pmg_curie_mining_equipment_building_uranium_mine,pm_curie_picks_and_shovels_building_uranium_mine,base,construction_cost_medium,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,-5,,,,,,,,,,,,,,,,,,
+building_uranium_mine,pmg_curie_mining_equipment_building_uranium_mine,pm_curie_atmospheric_engine_pump_building_uranium_mine,base,construction_cost_medium,,,,,,,,,,,,,,,,,,,,,,,,,-10,,,,,,,,,,-10,,,,,,,,,,,,,,,,,,
+building_uranium_mine,pmg_curie_mining_equipment_building_uranium_mine,pm_curie_condensing_engine_pump_building_uranium_mine,base,construction_cost_medium,,,,,,,,,,,,,,,,,,,,,,,,,-15,,,,,,,,,,-15,,,,,,,,,,,,,,,,,,
+building_uranium_mine,pmg_curie_mining_equipment_building_uranium_mine,pm_curie_diesel_pump_building_uranium_mine,base,construction_cost_medium,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,-5,,,,,-15,,,,,,,,,,,,,,,,,,
+building_uranium_mine,pmg_curie_explosives_building_uranium_mine,pm_no_explosives,base,construction_cost_medium,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+building_uranium_mine,pmg_curie_explosives_building_uranium_mine,pm_curie_nitroglycerin_building_uranium_mine,base,construction_cost_medium,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,-5,,,,,,,,,,,,,,,,,
+building_uranium_mine,pmg_curie_explosives_building_uranium_mine,pm_curie_dynamite_building_uranium_mine,base,construction_cost_medium,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+building_airport,pmg_base_building_airport,pm_private_charters,base,construction_cost_high,,,,,-2,,,,,,,,,,-2,,,,,,,,,,,,,,,-2,,,,,-2,,,,,,,,,,,,,,,,,,
+building_airport,pmg_base_building_airport,pm_regional_routes,base,construction_cost_high,,,,,-5,,,,,,,,,,,,,-2,,,,,,,,,,,,-5,,,,,-5,,,,,,,,,,,,,-5,,,,,
+building_airport,pmg_base_building_airport,pm_domestic_routes,base,construction_cost_high,,,,,-10,,,,,,,,,,,,,-5,,,,,,,,,,,,-10,,,,,-5,,,,,,,,,,,,,-5,-5,,,,
+building_airport,pmg_base_building_airport,pm_international_routes,base,construction_cost_high,,,,,-20,,,,,,,,,,,,,-10,,,,,,,,,,,,-25,,,,,-10,,,,,,,,,,,,,-10,-10,,,,

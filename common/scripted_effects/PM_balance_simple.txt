@@ -1,0 +1,369 @@
+﻿PM_balance_simple = {
+    every_scope_state = {
+        limit = {
+            has_active_building = building_urban_center
+            b:building_urban_center.occupancy > 0.01
+            sg:services.state_goods_pricier > 0.5
+        }
+        if = {
+            limit = {
+                b:building_urban_center = {
+                    has_active_production_method = pm_market_stalls
+                }
+                can_activate_production_method = {
+                    building_type = building_urban_center
+                    production_method = pm_market_squares
+                }
+            }
+            activate_production_method = {
+                building_type = building_urban_center
+                production_method = pm_market_squares
+            }
+        }
+        else_if = {
+            limit = {
+                b:building_urban_center = {
+                    has_active_production_method = pm_market_squares
+                }
+                can_activate_production_method = {
+                    building_type = building_urban_center
+                    production_method = pm_covered_markets
+                }
+            }
+            activate_production_method = {
+                building_type = building_urban_center
+                production_method = pm_covered_markets
+            }
+        }
+        else_if = {
+            limit = {
+                b:building_urban_center = {
+                    has_active_production_method = pm_covered_markets
+                }
+                can_activate_production_method = {
+                    building_type = building_urban_center
+                    production_method = pm_arcades
+                }
+            }
+            activate_production_method = {
+                building_type = building_urban_center
+                production_method = pm_arcades
+            }
+        }
+    }
+    every_scope_state = {
+        limit = {
+            has_active_building = building_urban_center
+            b:building_urban_center.occupancy > 0.01
+            sg:services.state_goods_pricier < -0.5
+        }
+        if = {
+            limit = {
+                b:building_urban_center = {
+                    has_active_production_method = pm_arcades
+                }
+                can_activate_production_method = {
+                    building_type = building_urban_center
+                    production_method = pm_covered_markets
+                }
+            }
+            activate_production_method = {
+                building_type = building_urban_center
+                production_method = pm_covered_markets
+            }
+        }
+        else_if = {
+            limit = {
+                b:building_urban_center = {
+                    has_active_production_method = pm_covered_markets
+                }
+                can_activate_production_method = {
+                    building_type = building_urban_center
+                    production_method = pm_market_squares
+                }
+            }
+            activate_production_method = {
+                building_type = building_urban_center
+                production_method = pm_market_squares
+            }
+        }
+        else_if = {
+            limit = {
+                b:building_urban_center = {
+                    has_active_production_method = pm_market_squares
+                }
+                can_activate_production_method = {
+                    building_type = building_urban_center
+                    production_method = pm_market_stalls
+                }
+            }
+            activate_production_method = {
+                building_type = building_urban_center
+                production_method = pm_market_stalls
+            }
+        }
+    }
+
+    every_scope_state = {
+        limit = {
+            has_active_building = building_urban_center
+            b:building_urban_center.occupancy > 0.01
+            sg:services.state_goods_pricier > 0.5
+        }
+        if = {
+            limit = {
+                b:building_urban_center = {
+                    has_active_production_method = pm_no_street_lighting
+                }
+                can_activate_production_method = {
+                    building_type = building_urban_center
+                    production_method = pm_gas_streetlights
+                }
+            }
+            activate_production_method = {
+                building_type = building_urban_center
+                production_method = pm_gas_streetlights
+            }
+        }
+        else_if = {
+            limit = {
+                b:building_urban_center = {
+                    has_active_production_method = pm_gas_streetlights
+                }
+                can_activate_production_method = {
+                    building_type = building_urban_center
+                    production_method = pm_electric_streetlights
+                }
+            }
+            activate_production_method = {
+                building_type = building_urban_center
+                production_method = pm_electric_streetlights
+            }
+        }
+    }
+    every_scope_state = {
+        limit = {
+            has_active_building = building_urban_center
+            b:building_urban_center.occupancy > 0.01
+            sg:services.state_goods_pricier < -0.5
+        }
+        if = {
+            limit = {
+                b:building_urban_center = {
+                    has_active_production_method = pm_electric_streetlights
+                }
+                can_activate_production_method = {
+                    building_type = building_urban_center
+                    production_method = pm_gas_streetlights
+                }
+            }
+            activate_production_method = {
+                building_type = building_urban_center
+                production_method = pm_gas_streetlights
+            }
+        }
+        else_if = {
+            limit = {
+                b:building_urban_center = {
+                    has_active_production_method = pm_gas_streetlights
+                }
+                can_activate_production_method = {
+                    building_type = building_urban_center
+                    production_method = pm_no_street_lighting
+                }
+            }
+            activate_production_method = {
+                building_type = building_urban_center
+                production_method = pm_no_street_lighting
+            }
+        }
+    }
+
+    every_scope_state = {
+        limit = {
+            has_active_building = building_urban_center
+            b:building_urban_center.occupancy > 0.01
+            sg:transportation.state_goods_pricier > 0.5
+        }
+        if = {
+            limit = {
+                b:building_urban_center = {
+                    has_active_production_method = pm_no_public_transport
+                }
+                can_activate_production_method = {
+                    building_type = building_urban_center
+                    production_method = pm_public_trams
+                }
+            }
+            activate_production_method = {
+                building_type = building_urban_center
+                production_method = pm_public_trams
+            }
+        }
+        else_if = {
+            limit = {
+                b:building_urban_center = {
+                    has_active_production_method = pm_public_trams
+                }
+                can_activate_production_method = {
+                    building_type = building_urban_center
+                    production_method = pm_public_motor_carriages
+                }
+            }
+            activate_production_method = {
+                building_type = building_urban_center
+                production_method = pm_public_motor_carriages
+            }
+        }
+    }
+    every_scope_state = {
+        limit = {
+            has_active_building = building_urban_center
+            b:building_urban_center.occupancy > 0.01
+            sg:transportation.state_goods_pricier < -0.5
+        }
+        if = {
+            limit = {
+                b:building_urban_center = {
+                    has_active_production_method = pm_public_motor_carriages
+                }
+                can_activate_production_method = {
+                    building_type = building_urban_center
+                    production_method = pm_public_trams
+                }
+            }
+            activate_production_method = {
+                building_type = building_urban_center
+                production_method = pm_public_trams
+            }
+        }
+        else_if = {
+            limit = {
+                b:building_urban_center = {
+                    has_active_production_method = pm_public_trams
+                }
+                can_activate_production_method = {
+                    building_type = building_urban_center
+                    production_method = pm_no_public_transport
+                }
+            }
+            activate_production_method = {
+                building_type = building_urban_center
+                production_method = pm_no_public_transport
+            }
+        }
+    }
+
+    every_scope_state = {
+        limit = {
+            has_active_building = building_railway
+            b:building_railway.occupancy > 0.01
+            sg:transportation.state_goods_pricier > 0.5
+        }
+        if = {
+            limit = {
+                b:building_railway = {
+                    has_active_production_method = pm_no_passenger_trains
+                }
+                can_activate_production_method = {
+                    building_type = building_railway
+                    production_method = pm_wooden_passenger_carriages
+                }
+            }
+            activate_production_method = {
+                building_type = building_railway
+                production_method = pm_wooden_passenger_carriages
+            }
+        }
+        else_if = {
+            limit = {
+                b:building_railway = {
+                    has_active_production_method = pm_wooden_passenger_carriages
+                }
+                can_activate_production_method = {
+                    building_type = building_railway
+                    production_method = pm_steel_passenger_carriages
+                }
+            }
+            activate_production_method = {
+                building_type = building_railway
+                production_method = pm_steel_passenger_carriages
+            }
+        }
+    }
+    every_scope_state = {
+        limit = {
+            has_active_building = building_railway
+            b:building_railway.occupancy > 0.01
+            sg:transportation.state_goods_pricier < -0.5
+        }
+        if = {
+            limit = {
+                b:building_railway = {
+                    has_active_production_method = pm_steel_passenger_carriages
+                }
+                can_activate_production_method = {
+                    building_type = building_railway
+                    production_method = pm_wooden_passenger_carriages
+                }
+            }
+            activate_production_method = {
+                building_type = building_railway
+                production_method = pm_wooden_passenger_carriages
+            }
+        }
+        else_if = {
+            limit = {
+                b:building_railway = {
+                    has_active_production_method = pm_wooden_passenger_carriages
+                }
+                can_activate_production_method = {
+                    building_type = building_railway
+                    production_method = pm_no_passenger_trains
+                }
+            }
+            activate_production_method = {
+                building_type = building_railway
+                production_method = pm_no_passenger_trains
+            }
+        }
+    }
+
+    every_scope_state = {
+        limit = {
+            has_active_building = building_power_plant
+            b:building_power_plant.occupancy > 0.01
+            sg:electricity.state_goods_pricier > 0.5
+        }
+        if = {
+            limit = {
+                b:building_power_plant = {
+                    has_active_production_method = pm_early_power_plant
+                }
+                can_activate_production_method = {
+                    building_type = building_power_plant
+                    production_method = pm_coal-fired_plant
+                }
+            }
+            activate_production_method = {
+                building_type = building_power_plant
+                production_method = pm_coal-fired_plant
+            }
+        }
+        else_if = {
+            limit = {
+                b:building_power_plant = {
+                    has_active_production_method = pm_coal-fired_plant
+                }
+                can_activate_production_method = {
+                    building_type = building_power_plant
+                    production_method = pm_oil-fired_plant
+                }
+            }
+            activate_production_method = {
+                building_type = building_power_plant
+                production_method = pm_oil-fired_plant
+            }
+        }
+    }
+}

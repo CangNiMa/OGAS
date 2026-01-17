@@ -1,0 +1,150 @@
+﻿auto_railway_manager = {
+    clear_variable_list = OGAS_possible_railway_list
+    every_scope_state = {
+        limit = {
+            infrastructure_delta <= 0
+        }
+        #find those that can upgrade railway building production method
+        if = {
+            limit = {
+                can_activate_production_method = {
+                    building_type = building_railway
+                    production_method = pm_diesel_trains_principle_transport_3
+                }
+            }
+            activate_production_method = {
+                building_type = building_railway
+                production_method = pm_diesel_trains_principle_transport_3
+            }
+        }
+        else_if = {
+            limit = {
+                can_activate_production_method = {
+                    building_type = building_railway
+                    production_method = pm_diesel_trains
+                }
+            }
+            activate_production_method = {
+                building_type = building_railway
+                production_method = pm_diesel_trains
+            }
+        }
+        else_if = {
+            limit = {
+                not ={
+                    is_production_method_active = {
+                        building_type = building_railway
+                        production_method = pm_diesel_trains_principle_transport_3
+                    }
+                }
+                can_activate_production_method = {
+                    building_type = building_railway
+                    production_method = pm_electric_trains_principle_transport_3
+                }
+            }
+            activate_production_method = {
+                building_type = building_railway
+                production_method = pm_electric_trains_principle_transport_3
+            }
+        }
+        else_if = {
+            limit = {
+                not ={
+                    is_production_method_active = {
+                        building_type = building_railway
+                        production_method = pm_diesel_trains
+                    }
+                }
+                can_activate_production_method = {
+                    building_type = building_railway
+                    production_method = pm_electric_trains
+                }
+            }
+            activate_production_method = {
+                building_type = building_railway
+                production_method = pm_electric_trains
+            }
+        }
+        else_if = {
+            limit = {
+                not ={
+                    is_production_method_active = {
+                        building_type = building_railway
+                        production_method = pm_diesel_trains_principle_transport_3
+                    }
+                    is_production_method_active = {
+                        building_type = building_railway
+                        production_method = pm_electric_trains_principle_transport_3
+                    }
+                }
+                can_activate_production_method = {
+                    building_type = building_railway
+                    production_method = pm_steam_trains_principle_transport_3
+                }
+            }
+            activate_production_method = {
+                building_type = building_railway
+                production_method = pm_steam_trains_principle_transport_3
+            }
+        }
+        else_if = {
+            limit = {
+                not ={
+                    is_production_method_active = {
+                        building_type = building_railway
+                        production_method = pm_diesel_trains
+                    }
+                    is_production_method_active = {
+                        building_type = building_railway
+                        production_method = pm_electric_trains
+                    }
+                }
+                can_activate_production_method = {
+                    building_type = building_railway
+                    production_method = pm_steam_trains
+                }
+            }
+            activate_production_method = {
+                building_type = building_railway
+                production_method = pm_steam_trains
+            }
+        }
+        #remaining states try to queue railway building constructions
+        else_if = {
+            limit = {
+                cnm_state_can_building_railway = yes
+            }
+            owner = {
+                add_to_variable_list = {
+                    name = OGAS_possible_railway_list
+                    target = prev
+                }
+            }
+        }
+    }
+    every_in_list = {
+        variable = OGAS_possible_railway_list  
+        while = {
+            limit = {
+                #if there is no railway, need to queue one, then possible get level_after_queued_constructions
+                trigger_if = {
+                    limit = {
+                        #has_active_building can not get building in progress
+                        any_scope_building = {
+                            is_building_type = building_railway
+                        }
+                    }
+                    b:building_railway.level_after_queued_constructions < state_railway_queue_prediction
+                }
+            }
+            count = state_railway_need
+            start_building_construction = building_railway
+        }
+        owner = {
+            remove_list_variable = {
+                name = OGAS_possible_railway_list
+                target = prev
+            }
+        }
+    }
+}

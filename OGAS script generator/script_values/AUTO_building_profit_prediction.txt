@@ -1,0 +1,603 @@
+﻿pmg_curie_mining_equipment_building_uranium_mine_pm_curie_picks_and_shovels_building_uranium_mine_profit_prediction = {
+    value = 0
+    add = {
+        value = pm_curie_picks_and_shovels_building_uranium_mine_tools
+        multiply = building_work_efficiency
+        save_temporary_value_as = pm_curie_picks_and_shovels_building_uranium_mine_tools_prediction
+        value = state_tools_production_if_no_pmg_curie_mining_equipment_building_uranium_mine
+        save_temporary_value_as = state_tools_production_prediction
+        value = state_tools_consumption_if_no_pmg_curie_mining_equipment_building_uranium_mine
+        subtract = scope:pm_curie_picks_and_shovels_building_uranium_mine_tools_prediction
+        save_temporary_value_as = state_tools_consumption_prediction
+        value = market_tools_production_if_no_pmg_curie_mining_equipment_building_uranium_mine
+        save_temporary_value_as = market_tools_production_prediction
+        value = market_tools_consumption_if_no_pmg_curie_mining_equipment_building_uranium_mine
+        subtract = scope:pm_curie_picks_and_shovels_building_uranium_mine_tools_prediction
+        save_temporary_value_as = market_tools_consumption_prediction
+        value = tools_price_prediction
+        multiply = scope:pm_curie_picks_and_shovels_building_uranium_mine_tools_prediction
+    }
+    divide = level
+}
+
+pmg_curie_mining_equipment_building_uranium_mine_pm_curie_picks_and_shovels_building_uranium_mine_profit_prediction_weighted = {
+    value = pmg_curie_mining_equipment_building_uranium_mine_pm_curie_picks_and_shovels_building_uranium_mine_profit_prediction
+    multiply = owner.var:cnm_upgrade_tolerance_pm_manager
+}
+
+pmg_curie_mining_equipment_building_uranium_mine_pm_curie_atmospheric_engine_pump_building_uranium_mine_profit_prediction = {
+    value = 0
+    add = {
+        value = pm_curie_atmospheric_engine_pump_building_uranium_mine_coal
+        multiply = building_work_efficiency
+        save_temporary_value_as = pm_curie_atmospheric_engine_pump_building_uranium_mine_coal_prediction
+        value = state_coal_production_if_no_pmg_curie_mining_equipment_building_uranium_mine
+        save_temporary_value_as = state_coal_production_prediction
+        value = state_coal_consumption_if_no_pmg_curie_mining_equipment_building_uranium_mine
+        subtract = scope:pm_curie_atmospheric_engine_pump_building_uranium_mine_coal_prediction
+        save_temporary_value_as = state_coal_consumption_prediction
+        value = market_coal_production_if_no_pmg_curie_mining_equipment_building_uranium_mine
+        save_temporary_value_as = market_coal_production_prediction
+        value = market_coal_consumption_if_no_pmg_curie_mining_equipment_building_uranium_mine
+        subtract = scope:pm_curie_atmospheric_engine_pump_building_uranium_mine_coal_prediction
+        save_temporary_value_as = market_coal_consumption_prediction
+        value = coal_price_prediction
+        multiply = scope:pm_curie_atmospheric_engine_pump_building_uranium_mine_coal_prediction
+    }
+    add = {
+        value = pm_curie_atmospheric_engine_pump_building_uranium_mine_tools
+        multiply = building_work_efficiency
+        save_temporary_value_as = pm_curie_atmospheric_engine_pump_building_uranium_mine_tools_prediction
+        value = state_tools_production_if_no_pmg_curie_mining_equipment_building_uranium_mine
+        save_temporary_value_as = state_tools_production_prediction
+        value = state_tools_consumption_if_no_pmg_curie_mining_equipment_building_uranium_mine
+        subtract = scope:pm_curie_atmospheric_engine_pump_building_uranium_mine_tools_prediction
+        save_temporary_value_as = state_tools_consumption_prediction
+        value = market_tools_production_if_no_pmg_curie_mining_equipment_building_uranium_mine
+        save_temporary_value_as = market_tools_production_prediction
+        value = market_tools_consumption_if_no_pmg_curie_mining_equipment_building_uranium_mine
+        subtract = scope:pm_curie_atmospheric_engine_pump_building_uranium_mine_tools_prediction
+        save_temporary_value_as = market_tools_consumption_prediction
+        value = tools_price_prediction
+        multiply = scope:pm_curie_atmospheric_engine_pump_building_uranium_mine_tools_prediction
+    }
+    divide = level
+}
+
+pmg_curie_mining_equipment_building_uranium_mine_pm_curie_atmospheric_engine_pump_building_uranium_mine_profit_prediction_weighted = {
+    value = pmg_curie_mining_equipment_building_uranium_mine_pm_curie_atmospheric_engine_pump_building_uranium_mine_profit_prediction
+    multiply = owner.var:cnm_upgrade_tolerance_pm_manager
+}
+
+pmg_curie_mining_equipment_building_uranium_mine_pm_curie_condensing_engine_pump_building_uranium_mine_profit_prediction = {
+    value = 0
+    add = {
+        value = pm_curie_condensing_engine_pump_building_uranium_mine_coal
+        multiply = building_work_efficiency
+        save_temporary_value_as = pm_curie_condensing_engine_pump_building_uranium_mine_coal_prediction
+        value = state_coal_production_if_no_pmg_curie_mining_equipment_building_uranium_mine
+        save_temporary_value_as = state_coal_production_prediction
+        value = state_coal_consumption_if_no_pmg_curie_mining_equipment_building_uranium_mine
+        subtract = scope:pm_curie_condensing_engine_pump_building_uranium_mine_coal_prediction
+        save_temporary_value_as = state_coal_consumption_prediction
+        value = market_coal_production_if_no_pmg_curie_mining_equipment_building_uranium_mine
+        save_temporary_value_as = market_coal_production_prediction
+        value = market_coal_consumption_if_no_pmg_curie_mining_equipment_building_uranium_mine
+        subtract = scope:pm_curie_condensing_engine_pump_building_uranium_mine_coal_prediction
+        save_temporary_value_as = market_coal_consumption_prediction
+        value = coal_price_prediction
+        multiply = scope:pm_curie_condensing_engine_pump_building_uranium_mine_coal_prediction
+    }
+    add = {
+        value = pm_curie_condensing_engine_pump_building_uranium_mine_tools
+        multiply = building_work_efficiency
+        save_temporary_value_as = pm_curie_condensing_engine_pump_building_uranium_mine_tools_prediction
+        value = state_tools_production_if_no_pmg_curie_mining_equipment_building_uranium_mine
+        save_temporary_value_as = state_tools_production_prediction
+        value = state_tools_consumption_if_no_pmg_curie_mining_equipment_building_uranium_mine
+        subtract = scope:pm_curie_condensing_engine_pump_building_uranium_mine_tools_prediction
+        save_temporary_value_as = state_tools_consumption_prediction
+        value = market_tools_production_if_no_pmg_curie_mining_equipment_building_uranium_mine
+        save_temporary_value_as = market_tools_production_prediction
+        value = market_tools_consumption_if_no_pmg_curie_mining_equipment_building_uranium_mine
+        subtract = scope:pm_curie_condensing_engine_pump_building_uranium_mine_tools_prediction
+        save_temporary_value_as = market_tools_consumption_prediction
+        value = tools_price_prediction
+        multiply = scope:pm_curie_condensing_engine_pump_building_uranium_mine_tools_prediction
+    }
+    divide = level
+}
+
+pmg_curie_mining_equipment_building_uranium_mine_pm_curie_condensing_engine_pump_building_uranium_mine_profit_prediction_weighted = {
+    value = pmg_curie_mining_equipment_building_uranium_mine_pm_curie_condensing_engine_pump_building_uranium_mine_profit_prediction
+    multiply = owner.var:cnm_upgrade_tolerance_pm_manager
+}
+
+pmg_curie_mining_equipment_building_uranium_mine_pm_curie_diesel_pump_building_uranium_mine_profit_prediction = {
+    value = 0
+    add = {
+        value = pm_curie_diesel_pump_building_uranium_mine_oil
+        multiply = building_work_efficiency
+        save_temporary_value_as = pm_curie_diesel_pump_building_uranium_mine_oil_prediction
+        value = state_oil_production_if_no_pmg_curie_mining_equipment_building_uranium_mine
+        save_temporary_value_as = state_oil_production_prediction
+        value = state_oil_consumption_if_no_pmg_curie_mining_equipment_building_uranium_mine
+        subtract = scope:pm_curie_diesel_pump_building_uranium_mine_oil_prediction
+        save_temporary_value_as = state_oil_consumption_prediction
+        value = market_oil_production_if_no_pmg_curie_mining_equipment_building_uranium_mine
+        save_temporary_value_as = market_oil_production_prediction
+        value = market_oil_consumption_if_no_pmg_curie_mining_equipment_building_uranium_mine
+        subtract = scope:pm_curie_diesel_pump_building_uranium_mine_oil_prediction
+        save_temporary_value_as = market_oil_consumption_prediction
+        value = oil_price_prediction
+        multiply = scope:pm_curie_diesel_pump_building_uranium_mine_oil_prediction
+    }
+    add = {
+        value = pm_curie_diesel_pump_building_uranium_mine_tools
+        multiply = building_work_efficiency
+        save_temporary_value_as = pm_curie_diesel_pump_building_uranium_mine_tools_prediction
+        value = state_tools_production_if_no_pmg_curie_mining_equipment_building_uranium_mine
+        save_temporary_value_as = state_tools_production_prediction
+        value = state_tools_consumption_if_no_pmg_curie_mining_equipment_building_uranium_mine
+        subtract = scope:pm_curie_diesel_pump_building_uranium_mine_tools_prediction
+        save_temporary_value_as = state_tools_consumption_prediction
+        value = market_tools_production_if_no_pmg_curie_mining_equipment_building_uranium_mine
+        save_temporary_value_as = market_tools_production_prediction
+        value = market_tools_consumption_if_no_pmg_curie_mining_equipment_building_uranium_mine
+        subtract = scope:pm_curie_diesel_pump_building_uranium_mine_tools_prediction
+        save_temporary_value_as = market_tools_consumption_prediction
+        value = tools_price_prediction
+        multiply = scope:pm_curie_diesel_pump_building_uranium_mine_tools_prediction
+    }
+    divide = level
+}
+
+pmg_curie_mining_equipment_building_uranium_mine_pm_curie_diesel_pump_building_uranium_mine_profit_prediction_weighted = {
+    value = pmg_curie_mining_equipment_building_uranium_mine_pm_curie_diesel_pump_building_uranium_mine_profit_prediction
+    multiply = owner.var:cnm_upgrade_tolerance_pm_manager
+}
+
+pmg_curie_explosives_building_uranium_mine_pm_no_explosives_profit_prediction = {
+    value = 0
+    divide = level
+}
+
+pmg_curie_explosives_building_uranium_mine_pm_no_explosives_profit_prediction_weighted = {
+    value = pmg_curie_explosives_building_uranium_mine_pm_no_explosives_profit_prediction
+    multiply = owner.var:cnm_upgrade_tolerance_pm_manager
+}
+
+pmg_curie_explosives_building_uranium_mine_pm_curie_nitroglycerin_building_uranium_mine_profit_prediction = {
+    value = 0
+    add = {
+        value = pm_curie_nitroglycerin_building_uranium_mine_explosives
+        multiply = building_work_efficiency
+        save_temporary_value_as = pm_curie_nitroglycerin_building_uranium_mine_explosives_prediction
+        value = state_explosives_production_if_no_pmg_curie_explosives_building_uranium_mine
+        save_temporary_value_as = state_explosives_production_prediction
+        value = state_explosives_consumption_if_no_pmg_curie_explosives_building_uranium_mine
+        subtract = scope:pm_curie_nitroglycerin_building_uranium_mine_explosives_prediction
+        save_temporary_value_as = state_explosives_consumption_prediction
+        value = market_explosives_production_if_no_pmg_curie_explosives_building_uranium_mine
+        save_temporary_value_as = market_explosives_production_prediction
+        value = market_explosives_consumption_if_no_pmg_curie_explosives_building_uranium_mine
+        subtract = scope:pm_curie_nitroglycerin_building_uranium_mine_explosives_prediction
+        save_temporary_value_as = market_explosives_consumption_prediction
+        value = explosives_price_prediction
+        multiply = scope:pm_curie_nitroglycerin_building_uranium_mine_explosives_prediction
+    }
+    divide = level
+}
+
+pmg_curie_explosives_building_uranium_mine_pm_curie_nitroglycerin_building_uranium_mine_profit_prediction_weighted = {
+    value = pmg_curie_explosives_building_uranium_mine_pm_curie_nitroglycerin_building_uranium_mine_profit_prediction
+    multiply = owner.var:cnm_upgrade_tolerance_pm_manager
+}
+
+pmg_curie_explosives_building_uranium_mine_pm_curie_dynamite_building_uranium_mine_profit_prediction = {
+    value = 0
+    divide = level
+}
+
+pmg_curie_explosives_building_uranium_mine_pm_curie_dynamite_building_uranium_mine_profit_prediction_weighted = {
+    value = pmg_curie_explosives_building_uranium_mine_pm_curie_dynamite_building_uranium_mine_profit_prediction
+    multiply = owner.var:cnm_upgrade_tolerance_pm_manager
+}
+
+pmg_base_building_airport_pm_private_charters_profit_prediction = {
+    value = 0
+    add = {
+        value = pm_private_charters_aeroplanes
+        multiply = building_work_efficiency
+        save_temporary_value_as = pm_private_charters_aeroplanes_prediction
+        value = state_aeroplanes_production_if_no_pmg_base_building_airport
+        save_temporary_value_as = state_aeroplanes_production_prediction
+        value = state_aeroplanes_consumption_if_no_pmg_base_building_airport
+        subtract = scope:pm_private_charters_aeroplanes_prediction
+        save_temporary_value_as = state_aeroplanes_consumption_prediction
+        value = market_aeroplanes_production_if_no_pmg_base_building_airport
+        save_temporary_value_as = market_aeroplanes_production_prediction
+        value = market_aeroplanes_consumption_if_no_pmg_base_building_airport
+        subtract = scope:pm_private_charters_aeroplanes_prediction
+        save_temporary_value_as = market_aeroplanes_consumption_prediction
+        value = aeroplanes_price_prediction
+        multiply = scope:pm_private_charters_aeroplanes_prediction
+    }
+    add = {
+        value = pm_private_charters_paper
+        multiply = building_work_efficiency
+        save_temporary_value_as = pm_private_charters_paper_prediction
+        value = state_paper_production_if_no_pmg_base_building_airport
+        save_temporary_value_as = state_paper_production_prediction
+        value = state_paper_consumption_if_no_pmg_base_building_airport
+        subtract = scope:pm_private_charters_paper_prediction
+        save_temporary_value_as = state_paper_consumption_prediction
+        value = market_paper_production_if_no_pmg_base_building_airport
+        save_temporary_value_as = market_paper_production_prediction
+        value = market_paper_consumption_if_no_pmg_base_building_airport
+        subtract = scope:pm_private_charters_paper_prediction
+        save_temporary_value_as = market_paper_consumption_prediction
+        value = paper_price_prediction
+        multiply = scope:pm_private_charters_paper_prediction
+    }
+    add = {
+        value = pm_private_charters_oil
+        multiply = building_work_efficiency
+        save_temporary_value_as = pm_private_charters_oil_prediction
+        value = state_oil_production_if_no_pmg_base_building_airport
+        save_temporary_value_as = state_oil_production_prediction
+        value = state_oil_consumption_if_no_pmg_base_building_airport
+        subtract = scope:pm_private_charters_oil_prediction
+        save_temporary_value_as = state_oil_consumption_prediction
+        value = market_oil_production_if_no_pmg_base_building_airport
+        save_temporary_value_as = market_oil_production_prediction
+        value = market_oil_consumption_if_no_pmg_base_building_airport
+        subtract = scope:pm_private_charters_oil_prediction
+        save_temporary_value_as = market_oil_consumption_prediction
+        value = oil_price_prediction
+        multiply = scope:pm_private_charters_oil_prediction
+    }
+    add = {
+        value = pm_private_charters_tools
+        multiply = building_work_efficiency
+        save_temporary_value_as = pm_private_charters_tools_prediction
+        value = state_tools_production_if_no_pmg_base_building_airport
+        save_temporary_value_as = state_tools_production_prediction
+        value = state_tools_consumption_if_no_pmg_base_building_airport
+        subtract = scope:pm_private_charters_tools_prediction
+        save_temporary_value_as = state_tools_consumption_prediction
+        value = market_tools_production_if_no_pmg_base_building_airport
+        save_temporary_value_as = market_tools_production_prediction
+        value = market_tools_consumption_if_no_pmg_base_building_airport
+        subtract = scope:pm_private_charters_tools_prediction
+        save_temporary_value_as = market_tools_consumption_prediction
+        value = tools_price_prediction
+        multiply = scope:pm_private_charters_tools_prediction
+    }
+    divide = level
+}
+
+pmg_base_building_airport_pm_private_charters_profit_prediction_weighted = {
+    value = pmg_base_building_airport_pm_private_charters_profit_prediction
+    multiply = owner.var:cnm_upgrade_tolerance_pm_manager
+}
+
+pmg_base_building_airport_pm_regional_routes_profit_prediction = {
+    value = 0
+    add = {
+        value = pm_regional_routes_aeroplanes
+        multiply = building_work_efficiency
+        save_temporary_value_as = pm_regional_routes_aeroplanes_prediction
+        value = state_aeroplanes_production_if_no_pmg_base_building_airport
+        save_temporary_value_as = state_aeroplanes_production_prediction
+        value = state_aeroplanes_consumption_if_no_pmg_base_building_airport
+        subtract = scope:pm_regional_routes_aeroplanes_prediction
+        save_temporary_value_as = state_aeroplanes_consumption_prediction
+        value = market_aeroplanes_production_if_no_pmg_base_building_airport
+        save_temporary_value_as = market_aeroplanes_production_prediction
+        value = market_aeroplanes_consumption_if_no_pmg_base_building_airport
+        subtract = scope:pm_regional_routes_aeroplanes_prediction
+        save_temporary_value_as = market_aeroplanes_consumption_prediction
+        value = aeroplanes_price_prediction
+        multiply = scope:pm_regional_routes_aeroplanes_prediction
+    }
+    add = {
+        value = pm_regional_routes_electricity
+        multiply = building_work_efficiency
+        save_temporary_value_as = pm_regional_routes_electricity_prediction
+        value = state_electricity_production_if_no_pmg_base_building_airport
+        save_temporary_value_as = state_electricity_production_prediction
+        value = state_electricity_consumption_if_no_pmg_base_building_airport
+        subtract = scope:pm_regional_routes_electricity_prediction
+        save_temporary_value_as = state_electricity_consumption_prediction
+        value = market_electricity_production_if_no_pmg_base_building_airport
+        save_temporary_value_as = market_electricity_production_prediction
+        value = market_electricity_consumption_if_no_pmg_base_building_airport
+        subtract = scope:pm_regional_routes_electricity_prediction
+        save_temporary_value_as = market_electricity_consumption_prediction
+        value = electricity_price_prediction
+        multiply = scope:pm_regional_routes_electricity_prediction
+    }
+    add = {
+        value = pm_regional_routes_oil
+        multiply = building_work_efficiency
+        save_temporary_value_as = pm_regional_routes_oil_prediction
+        value = state_oil_production_if_no_pmg_base_building_airport
+        save_temporary_value_as = state_oil_production_prediction
+        value = state_oil_consumption_if_no_pmg_base_building_airport
+        subtract = scope:pm_regional_routes_oil_prediction
+        save_temporary_value_as = state_oil_consumption_prediction
+        value = market_oil_production_if_no_pmg_base_building_airport
+        save_temporary_value_as = market_oil_production_prediction
+        value = market_oil_consumption_if_no_pmg_base_building_airport
+        subtract = scope:pm_regional_routes_oil_prediction
+        save_temporary_value_as = market_oil_consumption_prediction
+        value = oil_price_prediction
+        multiply = scope:pm_regional_routes_oil_prediction
+    }
+    add = {
+        value = pm_regional_routes_tools
+        multiply = building_work_efficiency
+        save_temporary_value_as = pm_regional_routes_tools_prediction
+        value = state_tools_production_if_no_pmg_base_building_airport
+        save_temporary_value_as = state_tools_production_prediction
+        value = state_tools_consumption_if_no_pmg_base_building_airport
+        subtract = scope:pm_regional_routes_tools_prediction
+        save_temporary_value_as = state_tools_consumption_prediction
+        value = market_tools_production_if_no_pmg_base_building_airport
+        save_temporary_value_as = market_tools_production_prediction
+        value = market_tools_consumption_if_no_pmg_base_building_airport
+        subtract = scope:pm_regional_routes_tools_prediction
+        save_temporary_value_as = market_tools_consumption_prediction
+        value = tools_price_prediction
+        multiply = scope:pm_regional_routes_tools_prediction
+    }
+    add = {
+        value = pm_regional_routes_telephones
+        multiply = building_work_efficiency
+        save_temporary_value_as = pm_regional_routes_telephones_prediction
+        value = state_telephones_production_if_no_pmg_base_building_airport
+        save_temporary_value_as = state_telephones_production_prediction
+        value = state_telephones_consumption_if_no_pmg_base_building_airport
+        subtract = scope:pm_regional_routes_telephones_prediction
+        save_temporary_value_as = state_telephones_consumption_prediction
+        value = market_telephones_production_if_no_pmg_base_building_airport
+        save_temporary_value_as = market_telephones_production_prediction
+        value = market_telephones_consumption_if_no_pmg_base_building_airport
+        subtract = scope:pm_regional_routes_telephones_prediction
+        save_temporary_value_as = market_telephones_consumption_prediction
+        value = telephones_price_prediction
+        multiply = scope:pm_regional_routes_telephones_prediction
+    }
+    divide = level
+}
+
+pmg_base_building_airport_pm_regional_routes_profit_prediction_weighted = {
+    value = pmg_base_building_airport_pm_regional_routes_profit_prediction
+    multiply = owner.var:cnm_upgrade_tolerance_pm_manager
+}
+
+pmg_base_building_airport_pm_domestic_routes_profit_prediction = {
+    value = 0
+    add = {
+        value = pm_domestic_routes_aeroplanes
+        multiply = building_work_efficiency
+        save_temporary_value_as = pm_domestic_routes_aeroplanes_prediction
+        value = state_aeroplanes_production_if_no_pmg_base_building_airport
+        save_temporary_value_as = state_aeroplanes_production_prediction
+        value = state_aeroplanes_consumption_if_no_pmg_base_building_airport
+        subtract = scope:pm_domestic_routes_aeroplanes_prediction
+        save_temporary_value_as = state_aeroplanes_consumption_prediction
+        value = market_aeroplanes_production_if_no_pmg_base_building_airport
+        save_temporary_value_as = market_aeroplanes_production_prediction
+        value = market_aeroplanes_consumption_if_no_pmg_base_building_airport
+        subtract = scope:pm_domestic_routes_aeroplanes_prediction
+        save_temporary_value_as = market_aeroplanes_consumption_prediction
+        value = aeroplanes_price_prediction
+        multiply = scope:pm_domestic_routes_aeroplanes_prediction
+    }
+    add = {
+        value = pm_domestic_routes_electricity
+        multiply = building_work_efficiency
+        save_temporary_value_as = pm_domestic_routes_electricity_prediction
+        value = state_electricity_production_if_no_pmg_base_building_airport
+        save_temporary_value_as = state_electricity_production_prediction
+        value = state_electricity_consumption_if_no_pmg_base_building_airport
+        subtract = scope:pm_domestic_routes_electricity_prediction
+        save_temporary_value_as = state_electricity_consumption_prediction
+        value = market_electricity_production_if_no_pmg_base_building_airport
+        save_temporary_value_as = market_electricity_production_prediction
+        value = market_electricity_consumption_if_no_pmg_base_building_airport
+        subtract = scope:pm_domestic_routes_electricity_prediction
+        save_temporary_value_as = market_electricity_consumption_prediction
+        value = electricity_price_prediction
+        multiply = scope:pm_domestic_routes_electricity_prediction
+    }
+    add = {
+        value = pm_domestic_routes_oil
+        multiply = building_work_efficiency
+        save_temporary_value_as = pm_domestic_routes_oil_prediction
+        value = state_oil_production_if_no_pmg_base_building_airport
+        save_temporary_value_as = state_oil_production_prediction
+        value = state_oil_consumption_if_no_pmg_base_building_airport
+        subtract = scope:pm_domestic_routes_oil_prediction
+        save_temporary_value_as = state_oil_consumption_prediction
+        value = market_oil_production_if_no_pmg_base_building_airport
+        save_temporary_value_as = market_oil_production_prediction
+        value = market_oil_consumption_if_no_pmg_base_building_airport
+        subtract = scope:pm_domestic_routes_oil_prediction
+        save_temporary_value_as = market_oil_consumption_prediction
+        value = oil_price_prediction
+        multiply = scope:pm_domestic_routes_oil_prediction
+    }
+    add = {
+        value = pm_domestic_routes_tools
+        multiply = building_work_efficiency
+        save_temporary_value_as = pm_domestic_routes_tools_prediction
+        value = state_tools_production_if_no_pmg_base_building_airport
+        save_temporary_value_as = state_tools_production_prediction
+        value = state_tools_consumption_if_no_pmg_base_building_airport
+        subtract = scope:pm_domestic_routes_tools_prediction
+        save_temporary_value_as = state_tools_consumption_prediction
+        value = market_tools_production_if_no_pmg_base_building_airport
+        save_temporary_value_as = market_tools_production_prediction
+        value = market_tools_consumption_if_no_pmg_base_building_airport
+        subtract = scope:pm_domestic_routes_tools_prediction
+        save_temporary_value_as = market_tools_consumption_prediction
+        value = tools_price_prediction
+        multiply = scope:pm_domestic_routes_tools_prediction
+    }
+    add = {
+        value = pm_domestic_routes_telephones
+        multiply = building_work_efficiency
+        save_temporary_value_as = pm_domestic_routes_telephones_prediction
+        value = state_telephones_production_if_no_pmg_base_building_airport
+        save_temporary_value_as = state_telephones_production_prediction
+        value = state_telephones_consumption_if_no_pmg_base_building_airport
+        subtract = scope:pm_domestic_routes_telephones_prediction
+        save_temporary_value_as = state_telephones_consumption_prediction
+        value = market_telephones_production_if_no_pmg_base_building_airport
+        save_temporary_value_as = market_telephones_production_prediction
+        value = market_telephones_consumption_if_no_pmg_base_building_airport
+        subtract = scope:pm_domestic_routes_telephones_prediction
+        save_temporary_value_as = market_telephones_consumption_prediction
+        value = telephones_price_prediction
+        multiply = scope:pm_domestic_routes_telephones_prediction
+    }
+    add = {
+        value = pm_domestic_routes_radios
+        multiply = building_work_efficiency
+        save_temporary_value_as = pm_domestic_routes_radios_prediction
+        value = state_radios_production_if_no_pmg_base_building_airport
+        save_temporary_value_as = state_radios_production_prediction
+        value = state_radios_consumption_if_no_pmg_base_building_airport
+        subtract = scope:pm_domestic_routes_radios_prediction
+        save_temporary_value_as = state_radios_consumption_prediction
+        value = market_radios_production_if_no_pmg_base_building_airport
+        save_temporary_value_as = market_radios_production_prediction
+        value = market_radios_consumption_if_no_pmg_base_building_airport
+        subtract = scope:pm_domestic_routes_radios_prediction
+        save_temporary_value_as = market_radios_consumption_prediction
+        value = radios_price_prediction
+        multiply = scope:pm_domestic_routes_radios_prediction
+    }
+    divide = level
+}
+
+pmg_base_building_airport_pm_domestic_routes_profit_prediction_weighted = {
+    value = pmg_base_building_airport_pm_domestic_routes_profit_prediction
+    multiply = owner.var:cnm_upgrade_tolerance_pm_manager
+}
+
+pmg_base_building_airport_pm_international_routes_profit_prediction = {
+    value = 0
+    add = {
+        value = pm_international_routes_aeroplanes
+        multiply = building_work_efficiency
+        save_temporary_value_as = pm_international_routes_aeroplanes_prediction
+        value = state_aeroplanes_production_if_no_pmg_base_building_airport
+        save_temporary_value_as = state_aeroplanes_production_prediction
+        value = state_aeroplanes_consumption_if_no_pmg_base_building_airport
+        subtract = scope:pm_international_routes_aeroplanes_prediction
+        save_temporary_value_as = state_aeroplanes_consumption_prediction
+        value = market_aeroplanes_production_if_no_pmg_base_building_airport
+        save_temporary_value_as = market_aeroplanes_production_prediction
+        value = market_aeroplanes_consumption_if_no_pmg_base_building_airport
+        subtract = scope:pm_international_routes_aeroplanes_prediction
+        save_temporary_value_as = market_aeroplanes_consumption_prediction
+        value = aeroplanes_price_prediction
+        multiply = scope:pm_international_routes_aeroplanes_prediction
+    }
+    add = {
+        value = pm_international_routes_electricity
+        multiply = building_work_efficiency
+        save_temporary_value_as = pm_international_routes_electricity_prediction
+        value = state_electricity_production_if_no_pmg_base_building_airport
+        save_temporary_value_as = state_electricity_production_prediction
+        value = state_electricity_consumption_if_no_pmg_base_building_airport
+        subtract = scope:pm_international_routes_electricity_prediction
+        save_temporary_value_as = state_electricity_consumption_prediction
+        value = market_electricity_production_if_no_pmg_base_building_airport
+        save_temporary_value_as = market_electricity_production_prediction
+        value = market_electricity_consumption_if_no_pmg_base_building_airport
+        subtract = scope:pm_international_routes_electricity_prediction
+        save_temporary_value_as = market_electricity_consumption_prediction
+        value = electricity_price_prediction
+        multiply = scope:pm_international_routes_electricity_prediction
+    }
+    add = {
+        value = pm_international_routes_oil
+        multiply = building_work_efficiency
+        save_temporary_value_as = pm_international_routes_oil_prediction
+        value = state_oil_production_if_no_pmg_base_building_airport
+        save_temporary_value_as = state_oil_production_prediction
+        value = state_oil_consumption_if_no_pmg_base_building_airport
+        subtract = scope:pm_international_routes_oil_prediction
+        save_temporary_value_as = state_oil_consumption_prediction
+        value = market_oil_production_if_no_pmg_base_building_airport
+        save_temporary_value_as = market_oil_production_prediction
+        value = market_oil_consumption_if_no_pmg_base_building_airport
+        subtract = scope:pm_international_routes_oil_prediction
+        save_temporary_value_as = market_oil_consumption_prediction
+        value = oil_price_prediction
+        multiply = scope:pm_international_routes_oil_prediction
+    }
+    add = {
+        value = pm_international_routes_tools
+        multiply = building_work_efficiency
+        save_temporary_value_as = pm_international_routes_tools_prediction
+        value = state_tools_production_if_no_pmg_base_building_airport
+        save_temporary_value_as = state_tools_production_prediction
+        value = state_tools_consumption_if_no_pmg_base_building_airport
+        subtract = scope:pm_international_routes_tools_prediction
+        save_temporary_value_as = state_tools_consumption_prediction
+        value = market_tools_production_if_no_pmg_base_building_airport
+        save_temporary_value_as = market_tools_production_prediction
+        value = market_tools_consumption_if_no_pmg_base_building_airport
+        subtract = scope:pm_international_routes_tools_prediction
+        save_temporary_value_as = market_tools_consumption_prediction
+        value = tools_price_prediction
+        multiply = scope:pm_international_routes_tools_prediction
+    }
+    add = {
+        value = pm_international_routes_telephones
+        multiply = building_work_efficiency
+        save_temporary_value_as = pm_international_routes_telephones_prediction
+        value = state_telephones_production_if_no_pmg_base_building_airport
+        save_temporary_value_as = state_telephones_production_prediction
+        value = state_telephones_consumption_if_no_pmg_base_building_airport
+        subtract = scope:pm_international_routes_telephones_prediction
+        save_temporary_value_as = state_telephones_consumption_prediction
+        value = market_telephones_production_if_no_pmg_base_building_airport
+        save_temporary_value_as = market_telephones_production_prediction
+        value = market_telephones_consumption_if_no_pmg_base_building_airport
+        subtract = scope:pm_international_routes_telephones_prediction
+        save_temporary_value_as = market_telephones_consumption_prediction
+        value = telephones_price_prediction
+        multiply = scope:pm_international_routes_telephones_prediction
+    }
+    add = {
+        value = pm_international_routes_radios
+        multiply = building_work_efficiency
+        save_temporary_value_as = pm_international_routes_radios_prediction
+        value = state_radios_production_if_no_pmg_base_building_airport
+        save_temporary_value_as = state_radios_production_prediction
+        value = state_radios_consumption_if_no_pmg_base_building_airport
+        subtract = scope:pm_international_routes_radios_prediction
+        save_temporary_value_as = state_radios_consumption_prediction
+        value = market_radios_production_if_no_pmg_base_building_airport
+        save_temporary_value_as = market_radios_production_prediction
+        value = market_radios_consumption_if_no_pmg_base_building_airport
+        subtract = scope:pm_international_routes_radios_prediction
+        save_temporary_value_as = market_radios_consumption_prediction
+        value = radios_price_prediction
+        multiply = scope:pm_international_routes_radios_prediction
+    }
+    divide = level
+}
+
+pmg_base_building_airport_pm_international_routes_profit_prediction_weighted = {
+    value = pmg_base_building_airport_pm_international_routes_profit_prediction
+    multiply = owner.var:cnm_upgrade_tolerance_pm_manager
+}
+

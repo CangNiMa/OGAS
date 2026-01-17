@@ -1,0 +1,37 @@
+﻿##########################################
+# MENDELEJEW PRODUCTION METHODS GROUPS  #
+##########################################
+
+#by Marco Dandolo
+
+############################
+
+pmg_mendelejew_chemistry = {
+	texture = "gfx/interface/icons/production_method_icons/verrier_early_modern_telescope_pm.dds"
+	ai_selection = most_productive
+
+	production_methods = {
+		pm_mendelejew_chemistry_classical
+		pm_mendelejew_chemistry
+		pm_mendelejew_spectroscopy
+		pm_mendelejew_cyclotron
+	}
+}
+
+pmg_mendelejew_coal_liquefaction = {
+	texture = "gfx/interface/icons/production_method_icons/verrier_early_modern_telescope_pm.dds"
+	ai_selection = most_productive
+
+	production_methods = {
+		pm_mendelejew_coal_liquefaction
+	}
+}
+
+pmg_mendelejew_isoprene = {
+	texture = "gfx/interface/icons/production_method_icons/verrier_early_modern_telescope_pm.dds"
+	ai_selection = most_productive
+
+	production_methods = {
+		pm_mendelejew_isoprene
+	}
+}

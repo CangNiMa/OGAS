@@ -1,0 +1,169 @@
+﻿active_workforce_employment_pm_manager = {
+	name = "active_workforce_employment_pm_manager"
+	desc = "active_workforce_employment_pm_manager_desc"
+
+	effect = {
+		if = {
+			limit = {
+				root.var:cnm_workforce_employment_pm_manager = 0
+			}
+			set_variable = {
+				name = cnm_workforce_employment_pm_manager
+				value = 1
+			}
+		}
+		else_if = {
+			limit = {
+				root.var:cnm_workforce_employment_pm_manager = 1
+			}
+			set_variable = {
+				name = cnm_workforce_employment_pm_manager
+				value = 0
+			}
+		}
+	}
+}
+active_upgrade_pm_manager = {
+	name = "active_upgrade_pm_manager"
+	desc = "active_upgrade_pm_manager_desc"
+
+	effect = {
+		if = {
+			limit = {
+				root.var:cnm_upgrade_pm_manager = 0
+			}
+			set_variable = {
+				name = cnm_upgrade_pm_manager
+				value = 1
+			}
+		}
+		else_if = {
+			limit = {
+				root.var:cnm_upgrade_pm_manager = 1
+			}
+			set_variable = {
+				name = cnm_upgrade_pm_manager
+				value = 0
+			}
+		}
+	}
+}
+active_balance_pm_manager = {
+	name = "active_balance_pm_manager"
+	desc = "active_balance_pm_manager_desc"
+
+	effect = {
+		if = {
+			limit = {
+				root.var:cnm_balance_pm_manager = 0
+			}
+			set_variable = {
+				name = cnm_balance_pm_manager
+				value = 1
+			}
+		}
+		else_if = {
+			limit = {
+				root.var:cnm_balance_pm_manager = 1
+			}
+			set_variable = {
+				name = cnm_balance_pm_manager
+				value = 0
+			}
+		}
+	}
+}
+balance_tolerance_pm_manager_switch = {
+	name = "balance_tolerance_pm_manager_switch"
+	desc = "balance_tolerance_pm_manager_switch_desc"
+
+	effect = {
+		if = {
+			limit = {
+				root.var:cnm_upgrade_tolerance_pm_manager = pm_upgrade_tolerance_high
+			}
+			set_variable = {
+				name = cnm_upgrade_tolerance_pm_manager
+				value = pm_upgrade_tolerance_low
+			}
+		}
+		else_if = {
+			limit = {
+				root.var:cnm_upgrade_tolerance_pm_manager = pm_upgrade_tolerance_low
+			}
+			set_variable = {
+				name = cnm_upgrade_tolerance_pm_manager
+				value = pm_upgrade_tolerance_medium
+			}
+		}
+		else_if = {
+			limit = {
+				root.var:cnm_upgrade_tolerance_pm_manager = pm_upgrade_tolerance_medium
+			}
+			set_variable = {
+				name = cnm_upgrade_tolerance_pm_manager
+				value = pm_upgrade_tolerance_high
+			}
+		}
+	}
+}
+
+pm_manage_amount_add = {
+	name = "pm_manage_amount_add"
+	desc = "pm_manage_amount_add_desc"
+
+	effect = {
+		change_variable = {
+			name = cnm_pm_manage_amount
+			add = 1
+		}
+	}
+}
+pm_manage_amount_sub = {
+	name = "pm_manage_amount_sub"
+	desc = "pm_manage_amount_sub_desc"
+
+	effect = {
+		if = {
+			limit = {
+				root.var:cnm_pm_manage_amount > 1
+			}
+			change_variable = {
+				name = cnm_pm_manage_amount
+				subtract = 1
+			}
+		}
+	}
+}
+
+pm_manage_frequency_switch = {
+	name = "pm_manage_frequency_switch"
+	desc = "pm_manage_frequency_switch_desc"
+
+	effect = {
+		if = {
+			limit = {
+				root.var:cnm_pm_manage_frequency = 3
+			}
+			set_variable = {
+				name = cnm_pm_manage_frequency
+				value = 0
+			}
+		}
+		else = {
+			change_variable = {
+				name = cnm_pm_manage_frequency
+				add = 1
+			}
+		}
+	}
+}
+
+reset_pm_manager = {
+	name = "reset_pm_manager"
+	desc = "reset_pm_manager_desc"
+
+	effect = {
+		cnm_default_pm_manager = yes
+	}
+}

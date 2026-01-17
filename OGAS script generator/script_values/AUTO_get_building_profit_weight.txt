@@ -1,0 +1,14 @@
+﻿get_building_profit_weight = {
+    if = {
+        limit = {
+            is_building_type = building_uranium_mine
+        }
+        value = owner.var:cnm_auto_construct_building_uranium_mine
+    }
+    if = {
+        limit = {
+            is_building_type = building_airport
+        }
+        value = owner.var:cnm_auto_construct_building_airport
+    }
+}

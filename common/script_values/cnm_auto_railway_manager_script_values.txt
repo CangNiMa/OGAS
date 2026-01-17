@@ -1,0 +1,82 @@
+﻿pm_early_trains_state_infrastructure_add = 20
+pm_steam_trains_state_infrastructure_add = 25
+pm_steam_trains_principle_transport_3_state_infrastructure_add = 30
+pm_electric_trains_state_infrastructure_add = 30
+pm_electric_trains_principle_transport_3_state_infrastructure_add = 40
+pm_diesel_trains_state_infrastructure_add = 40
+pm_diesel_trains_principle_transport_3_state_infrastructure_add = 55
+
+available_railway_infrastructure_output = {
+	#find basic infrastructure output
+	if = {
+		limit = {
+			cnm_state_can_pm_diesel_trains_principle_transport_3 = yes
+		}
+		value = pm_diesel_trains_principle_transport_3_state_infrastructure_add
+	}
+	else_if = {
+		limit = {
+			cnm_state_can_pm_diesel_trains = yes
+		}
+		value = pm_diesel_trains_state_infrastructure_add
+	}
+	else_if = {
+		limit = {
+			cnm_state_can_pm_electric_trains_principle_transport_3 = yes
+		}
+		value = pm_electric_trains_principle_transport_3_state_infrastructure_add
+	}
+	else_if = {
+		limit = {
+			cnm_state_can_pm_electric_trains = yes
+		}
+		value = pm_electric_trains_state_infrastructure_add
+	}
+	else_if = {
+		limit = {
+			cnm_state_can_pm_steam_trains_principle_transport_3 = yes
+		}
+		value = pm_steam_trains_principle_transport_3_state_infrastructure_add
+	}
+	else_if = {
+		limit = {
+			cnm_state_can_pm_steam_trains = yes
+		}
+		value = pm_steam_trains_state_infrastructure_add
+	}
+	else_if = {
+		limit = {
+			cnm_state_can_pm_early_trains = yes
+		}
+		value = pm_early_trains_state_infrastructure_add
+	}
+	#try to find real infrastructure output
+	if = {
+		limit = {
+			has_active_building = building_railway
+		}
+		multiply = {
+			value = 1
+			add = b:building_railway.modifier:building_railway_throughput_add
+			add = b:building_railway.modifier:building_throughput_add
+		}
+	}
+}
+state_railway_need = {
+	value = infrastructure_delta
+	multiply = -1
+	divide = available_railway_infrastructure_output
+	add = 0.5
+	round = yes
+	#+0.5 = round up
+}
+state_railway_queue_prediction = {
+	value = state_railway_need
+	#now we got pridicted new railway level, plus levels already = predicted final level
+	if = {
+		limit = {
+			has_active_building = building_railway
+		}
+		add = b:building_railway.level
+	}
+}

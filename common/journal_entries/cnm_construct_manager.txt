@@ -1,0 +1,145 @@
+﻿je_cnm_construct_manager = {
+	icon = "gfx/interface/icons/event_icons/event_industry.dds"
+	group = je_group_internal_affairs
+
+	scripted_button = construct_manager
+	scripted_button = add_best_building_construction_sector
+	scripted_button = active_auto_construct_manager
+	scripted_button = active_auto_railway_manager
+	scripted_button = active_auto_construction_sector_manager
+	scripted_button = active_ban_construct_power_low
+	scripted_button = active_ban_no_incorporated
+	scripted_button = active_ban_unemployed_low
+	scripted_button = active_ban_available_workers_low
+	scripted_button = active_use_state_construction_mult
+
+	
+	scripted_button = OGAS_building_unit_add
+	scripted_button = OGAS_building_unit_sub
+	
+	scripted_button = OGAS_building_queue_add
+	scripted_button = OGAS_building_queue_sub
+
+	scripted_button = reset_construct_manager
+
+	immediate = {
+		cnm_default_construct_manager = yes
+	}
+	status_desc = {
+		desc = je_cnm_construct_manager_status_desc
+	}
+
+	on_weekly_pulse = {
+		effect = {
+			#cnm_auto_railway_manager
+			if = {
+				limit = {
+					root.var:cnm_auto_railway_manager = 1
+				}
+				auto_railway_manager = yes
+			}
+			#cnm_auto_construction_sector_manager
+			if = {
+				limit = {
+					root.var:cnm_auto_construction_sector_manager = 1
+					has_wasted_construction = no
+				}
+				auto_construction_sector_manager = yes
+			}
+			#cnm_auto_construct_manager
+			if = {
+				limit = {
+					root.var:cnm_auto_construct_manager = 1
+				}
+				#save and clear list, due to performance cost
+				clear_variable_list = OGAS_possible_list
+				every_scope_building = {
+					limit ={
+						OGAS_possible_construct_building = yes
+					}
+					root = {
+						add_to_variable_list = {
+							name = OGAS_possible_list
+							target = prev
+						}
+					}
+				}
+				save_scope_value_as = {
+					name = OGAS_construct_start
+					value = yes
+				}
+
+				#start construct
+				#normal loop
+				while = {
+					limit = { 
+						construction_queue_government_duration < root.var:OGAS_building_queue_config
+						scope:OGAS_construct_start = yes
+						#exists = OGAS_possible_list
+						#variable_list_size = {
+						#	name = OGAS_possible_list
+						#	value > 0
+						#} 
+						#if list = 0, the list is deleted, cant use as trigger
+					}
+					ordered_in_list = {  
+						variable = OGAS_possible_list
+						order_by = cnm_building_profit_weight
+						max = 3
+						check_range_bounds = no
+						OGAS_find_best_profit_building = yes
+						if = {
+							limit = {
+								root = {
+									variable_list_size = {
+										name = OGAS_possible_list
+										value > 3
+									}
+								}
+							}
+							#remove this building from list if can go on next loop (remain list > 3 means can go next loop)
+							root = {
+								remove_list_variable = {
+									name = OGAS_possible_list
+									target = prev
+								}
+							}
+						}
+						else = {
+							#if remain list < 3 means player still has lots of construct power, which means OGAS fail
+							root = {
+								remove_list_variable = {
+									name = OGAS_possible_list
+									target = prev
+								}
+								#end loop by set no
+								save_scope_value_as = {
+									name = OGAS_construct_start
+									value = no
+								}
+								post_notification = OGAS_construct_fail_notification
+							}
+						}
+						#save_scope_value_as = { name = debug_profit_per_level value = cnm_building_profit_weight }
+					}
+				}
+			}
+
+			#version check
+			if = {
+				limit = {
+					root.var:cnm_mod_running_version = cnm_mod_version
+				}
+			}
+			else = {
+				cnm_default_building_manager = yes
+				cnm_default_construct_manager = yes
+				cnm_default_pm_manager = yes
+				post_notification = OGAS_rest_version_notification
+			}
+		}
+	}
+
+	should_be_pinned_by_default = yes
+	weight = 10000
+}

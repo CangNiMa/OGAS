@@ -1,0 +1,230 @@
+﻿############################
+# PANUM PRODUCTION METHODS #
+############################
+
+#by Lord R & Marco Dandolo
+
+##############################
+
+#Tuberculosis Sanatorium
+
+pm_panum_sanatorium = {
+	texture = "gfx/interface/icons/production_method_icons/panum_sanatorium_pm.dds"
+
+	country_modifiers = {
+		level_scaled = {
+			country_expenses_add = 1000
+			country_prestige_add = 10
+			state_mortality_mult = -0.01
+		}
+	}
+}
+
+################################
+
+#Clinic&Hospital
+
+pm_panum_no_clinic = {
+	texture = "gfx/interface/icons/production_method_icons/panum_no_clinic_pm.dds"
+
+	unlocking_production_methods = {
+		pm_panum_no_clinic
+	}
+}
+
+pm_panum_clinic = {
+	texture = "gfx/interface/icons/production_method_icons/panum_clinic_pm.dds"
+
+	disallowing_laws = {
+		law_no_health_system
+	}
+
+	unlocking_production_methods = {
+		pm_panum_clinic
+	}
+
+	building_modifiers = {
+		level_scaled = {
+			building_employment_academics_add = 100
+		}
+	}
+
+	state_modifiers = {
+		unscaled = { 
+			state_standard_of_living_add = 0.25
+			state_mortality_mult = -0.01
+			state_harvest_condition_panum_cholera_condition_impact_mult = -0.1
+			state_harvest_condition_panum_tuberculosis_condition_impact_mult = -0.1
+			state_harvest_condition_panum_smallpox_condition_impact_mult = -0.1
+			state_harvest_condition_panum_typhus_condition_impact_mult = -0.1
+			state_harvest_condition_panum_yellow_fever_condition_impact_mult = -0.1
+			state_harvest_condition_panum_measles_condition_impact_mult = -0.1
+			state_harvest_condition_panum_scarlet_condition_impact_mult = -0.1
+			state_harvest_condition_panum_plague_condition_impact_mult = -0.1
+			state_harvest_condition_panum_diphteria_condition_impact_mult = -0.1
+			state_harvest_condition_panum_polio_condition_impact_mult = -0.1
+		}
+	}
+
+}
+
+pm_panum_hospital = {
+	texture = "gfx/interface/icons/production_method_icons/panum_hospital_pm.dds"
+
+	disallowing_laws = {
+		law_no_health_system
+	}
+
+	unlocking_production_methods = {
+		pm_panum_hospital
+	}
+
+	building_modifiers = {
+		level_scaled = {
+			building_employment_academics_add = 200
+		}
+	}
+
+	state_modifiers = {
+		unscaled = { 
+			state_standard_of_living_add = 0.5
+			state_mortality_mult = -0.02
+			state_birth_rate_mult = 0.01
+			state_harvest_condition_panum_cholera_condition_impact_mult = -0.15
+			state_harvest_condition_panum_tuberculosis_condition_impact_mult = -0.15
+			state_harvest_condition_panum_smallpox_condition_impact_mult = -0.15
+			state_harvest_condition_panum_typhus_condition_impact_mult = -0.15
+			state_harvest_condition_panum_yellow_fever_condition_impact_mult = -0.15
+			state_harvest_condition_panum_measles_condition_impact_mult = -0.15
+			state_harvest_condition_panum_scarlet_condition_impact_mult = -0.15
+			state_harvest_condition_panum_plague_condition_impact_mult = -0.15
+			state_harvest_condition_panum_diphteria_condition_impact_mult = -0.15
+			state_harvest_condition_panum_polio_condition_impact_mult = -0.15
+		}
+	}
+
+}
+
+################################
+
+#Red Cross
+
+pm_panum_red_cross = {
+	texture = "gfx/interface/icons/production_method_icons/panum_sanatorium_pm.dds"
+
+	country_modifiers = {
+		level_scaled = {
+			country_prestige_add = 10
+			country_influence_add = 100
+		}
+	}
+}
+
+################################
+
+#Asylum
+
+pm_panum_straitjacket = {
+	texture = "gfx/interface/icons/production_method_icons/panum_sanatorium_pm.dds"
+	is_default = yes
+
+	state_modifiers = {
+		unscaled = {
+			state_turmoil_effects_mult = -0.1
+		}
+	}
+
+	country_modifiers = {
+		unscaled = { 
+			country_panum_psychological_treatment_success_chance_mult = 0.05
+		}
+	}
+}
+
+pm_panum_padded_cell = {
+	texture = "gfx/interface/icons/production_method_icons/panum_sanatorium_pm.dds"
+
+	unlocking_technologies = {
+		psychiatry
+	}
+
+	state_modifiers = {
+		unscaled = {
+			state_turmoil_effects_mult = -0.05
+		}
+	}
+
+	country_modifiers = {
+		unscaled = { 
+			country_panum_psychological_treatment_success_chance_mult = 0.1
+		}
+	}
+}
+
+pm_panum_no_restraint = {
+	texture = "gfx/interface/icons/production_method_icons/panum_sanatorium_pm.dds"
+
+	unlocking_technologies = {
+		human_rights
+	}
+
+	state_modifiers = {
+		unscaled = { 
+			state_turmoil_effects_mult = -0.01
+		}
+	}
+
+	country_modifiers = {
+		unscaled = { 
+			country_panum_psychological_treatment_success_chance_mult = 0.25
+		}
+	}
+}
+
+pm_panum_psychotherapy = {
+	texture = "gfx/interface/icons/production_method_icons/panum_sanatorium_pm.dds"
+
+	unlocking_technologies = {
+		psychoanalysis
+	}
+
+	country_modifiers = {
+		unscaled = {
+			country_panum_psychological_treatment_success_chance_mult = 0.35
+		}
+	}
+}
+
+pm_panum_behavioral_therapy = {
+	texture = "gfx/interface/icons/production_method_icons/panum_sanatorium_pm.dds"
+
+	unlocking_technologies = {
+		behaviorism
+	}
+
+	country_modifiers = {
+		unscaled = {
+			country_panum_psychological_treatment_success_chance_mult = 0.5
+		}
+	}
+}
+
+pm_panum_lobotomy = {
+	texture = "gfx/interface/icons/production_method_icons/panum_sanatorium_pm.dds"
+
+	unlocking_technologies = {
+		antibiotics
+	}
+
+	state_modifiers = {
+		unscaled = {
+			state_turmoil_effects_mult = -0.15
+		}
+	}
+
+	country_modifiers = {
+		unscaled = {
+			country_society_tech_research_speed_mult = 0.01
+		}
+	}
+}

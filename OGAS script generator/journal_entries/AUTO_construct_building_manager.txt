@@ -1,0 +1,11 @@
+﻿je_OGAS_building_weight_manager = {
+    icon = "gfx/interface/icons/event_icons/event_industry.dds"
+    group = je_group_internal_affairs
+
+    scripted_button = increase_building_uranium_mine
+    scripted_button = decrease_building_uranium_mine
+    scripted_button = increase_building_airport
+    scripted_button = decrease_building_airport
+	scripted_button = default_all_construct_building
+	should_be_pinned_by_default = yes
+}

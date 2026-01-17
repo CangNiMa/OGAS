@@ -1,0 +1,880 @@
+﻿increase_building_food_industry = {
+    name = "increase_building_food_industry"
+    desc = "increase_building_food_industry_desc"
+    effect = {
+        change_variable = {
+            name = cnm_auto_construct_building_food_industry
+            add = 0.1
+        }
+    }
+}
+decrease_building_food_industry = {
+    name = "decrease_building_food_industry"
+    desc = "decrease_building_food_industry_desc"
+    effect = {
+        change_variable = {
+            name = cnm_auto_construct_building_food_industry
+            add = -0.1
+        }
+    }
+}
+increase_building_textile_mill = {
+    name = "increase_building_textile_mill"
+    desc = "increase_building_textile_mill_desc"
+    effect = {
+        change_variable = {
+            name = cnm_auto_construct_building_textile_mill
+            add = 0.1
+        }
+    }
+}
+decrease_building_textile_mill = {
+    name = "decrease_building_textile_mill"
+    desc = "decrease_building_textile_mill_desc"
+    effect = {
+        change_variable = {
+            name = cnm_auto_construct_building_textile_mill
+            add = -0.1
+        }
+    }
+}
+increase_building_furniture_manufactory = {
+    name = "increase_building_furniture_manufactory"
+    desc = "increase_building_furniture_manufactory_desc"
+    effect = {
+        change_variable = {
+            name = cnm_auto_construct_building_furniture_manufactory
+            add = 0.1
+        }
+    }
+}
+decrease_building_furniture_manufactory = {
+    name = "decrease_building_furniture_manufactory"
+    desc = "decrease_building_furniture_manufactory_desc"
+    effect = {
+        change_variable = {
+            name = cnm_auto_construct_building_furniture_manufactory
+            add = -0.1
+        }
+    }
+}
+increase_building_glassworks = {
+    name = "increase_building_glassworks"
+    desc = "increase_building_glassworks_desc"
+    effect = {
+        change_variable = {
+            name = cnm_auto_construct_building_glassworks
+            add = 0.1
+        }
+    }
+}
+decrease_building_glassworks = {
+    name = "decrease_building_glassworks"
+    desc = "decrease_building_glassworks_desc"
+    effect = {
+        change_variable = {
+            name = cnm_auto_construct_building_glassworks
+            add = -0.1
+        }
+    }
+}
+increase_building_tooling_workshop = {
+    name = "increase_building_tooling_workshop"
+    desc = "increase_building_tooling_workshop_desc"
+    effect = {
+        change_variable = {
+            name = cnm_auto_construct_building_tooling_workshop
+            add = 0.1
+        }
+    }
+}
+decrease_building_tooling_workshop = {
+    name = "decrease_building_tooling_workshop"
+    desc = "decrease_building_tooling_workshop_desc"
+    effect = {
+        change_variable = {
+            name = cnm_auto_construct_building_tooling_workshop
+            add = -0.1
+        }
+    }
+}
+increase_building_paper_mill = {
+    name = "increase_building_paper_mill"
+    desc = "increase_building_paper_mill_desc"
+    effect = {
+        change_variable = {
+            name = cnm_auto_construct_building_paper_mill
+            add = 0.1
+        }
+    }
+}
+decrease_building_paper_mill = {
+    name = "decrease_building_paper_mill"
+    desc = "decrease_building_paper_mill_desc"
+    effect = {
+        change_variable = {
+            name = cnm_auto_construct_building_paper_mill
+            add = -0.1
+        }
+    }
+}
+increase_building_chemical_plant = {
+    name = "increase_building_chemical_plant"
+    desc = "increase_building_chemical_plant_desc"
+    effect = {
+        change_variable = {
+            name = cnm_auto_construct_building_chemical_plant
+            add = 0.1
+        }
+    }
+}
+decrease_building_chemical_plant = {
+    name = "decrease_building_chemical_plant"
+    desc = "decrease_building_chemical_plant_desc"
+    effect = {
+        change_variable = {
+            name = cnm_auto_construct_building_chemical_plant
+            add = -0.1
+        }
+    }
+}
+increase_building_explosives_factory = {
+    name = "increase_building_explosives_factory"
+    desc = "increase_building_explosives_factory_desc"
+    effect = {
+        change_variable = {
+            name = cnm_auto_construct_building_explosives_factory
+            add = 0.1
+        }
+    }
+}
+decrease_building_explosives_factory = {
+    name = "decrease_building_explosives_factory"
+    desc = "decrease_building_explosives_factory_desc"
+    effect = {
+        change_variable = {
+            name = cnm_auto_construct_building_explosives_factory
+            add = -0.1
+        }
+    }
+}
+increase_building_synthetics_plant = {
+    name = "increase_building_synthetics_plant"
+    desc = "increase_building_synthetics_plant_desc"
+    effect = {
+        change_variable = {
+            name = cnm_auto_construct_building_synthetics_plant
+            add = 0.1
+        }
+    }
+}
+decrease_building_synthetics_plant = {
+    name = "decrease_building_synthetics_plant"
+    desc = "decrease_building_synthetics_plant_desc"
+    effect = {
+        change_variable = {
+            name = cnm_auto_construct_building_synthetics_plant
+            add = -0.1
+        }
+    }
+}
+increase_building_steel_mill = {
+    name = "increase_building_steel_mill"
+    desc = "increase_building_steel_mill_desc"
+    effect = {
+        change_variable = {
+            name = cnm_auto_construct_building_steel_mill
+            add = 0.1
+        }
+    }
+}
+decrease_building_steel_mill = {
+    name = "decrease_building_steel_mill"
+    desc = "decrease_building_steel_mill_desc"
+    effect = {
+        change_variable = {
+            name = cnm_auto_construct_building_steel_mill
+            add = -0.1
+        }
+    }
+}
+increase_building_motor_industry = {
+    name = "increase_building_motor_industry"
+    desc = "increase_building_motor_industry_desc"
+    effect = {
+        change_variable = {
+            name = cnm_auto_construct_building_motor_industry
+            add = 0.1
+        }
+    }
+}
+decrease_building_motor_industry = {
+    name = "decrease_building_motor_industry"
+    desc = "decrease_building_motor_industry_desc"
+    effect = {
+        change_variable = {
+            name = cnm_auto_construct_building_motor_industry
+            add = -0.1
+        }
+    }
+}
+increase_building_shipyard = {
+    name = "increase_building_shipyard"
+    desc = "increase_building_shipyard_desc"
+    effect = {
+        change_variable = {
+            name = cnm_auto_construct_building_shipyard
+            add = 0.1
+        }
+    }
+}
+decrease_building_shipyard = {
+    name = "decrease_building_shipyard"
+    desc = "decrease_building_shipyard_desc"
+    effect = {
+        change_variable = {
+            name = cnm_auto_construct_building_shipyard
+            add = -0.1
+        }
+    }
+}
+increase_building_automotive_industry = {
+    name = "increase_building_automotive_industry"
+    desc = "increase_building_automotive_industry_desc"
+    effect = {
+        change_variable = {
+            name = cnm_auto_construct_building_automotive_industry
+            add = 0.1
+        }
+    }
+}
+decrease_building_automotive_industry = {
+    name = "decrease_building_automotive_industry"
+    desc = "decrease_building_automotive_industry_desc"
+    effect = {
+        change_variable = {
+            name = cnm_auto_construct_building_automotive_industry
+            add = -0.1
+        }
+    }
+}
+increase_building_electrics_industry = {
+    name = "increase_building_electrics_industry"
+    desc = "increase_building_electrics_industry_desc"
+    effect = {
+        change_variable = {
+            name = cnm_auto_construct_building_electrics_industry
+            add = 0.1
+        }
+    }
+}
+decrease_building_electrics_industry = {
+    name = "decrease_building_electrics_industry"
+    desc = "decrease_building_electrics_industry_desc"
+    effect = {
+        change_variable = {
+            name = cnm_auto_construct_building_electrics_industry
+            add = -0.1
+        }
+    }
+}
+increase_building_rye_farm = {
+    name = "increase_building_rye_farm"
+    desc = "increase_building_rye_farm_desc"
+    effect = {
+        change_variable = {
+            name = cnm_auto_construct_building_rye_farm
+            add = 0.1
+        }
+    }
+}
+decrease_building_rye_farm = {
+    name = "decrease_building_rye_farm"
+    desc = "decrease_building_rye_farm_desc"
+    effect = {
+        change_variable = {
+            name = cnm_auto_construct_building_rye_farm
+            add = -0.1
+        }
+    }
+}
+increase_building_wheat_farm = {
+    name = "increase_building_wheat_farm"
+    desc = "increase_building_wheat_farm_desc"
+    effect = {
+        change_variable = {
+            name = cnm_auto_construct_building_wheat_farm
+            add = 0.1
+        }
+    }
+}
+decrease_building_wheat_farm = {
+    name = "decrease_building_wheat_farm"
+    desc = "decrease_building_wheat_farm_desc"
+    effect = {
+        change_variable = {
+            name = cnm_auto_construct_building_wheat_farm
+            add = -0.1
+        }
+    }
+}
+increase_building_rice_farm = {
+    name = "increase_building_rice_farm"
+    desc = "increase_building_rice_farm_desc"
+    effect = {
+        change_variable = {
+            name = cnm_auto_construct_building_rice_farm
+            add = 0.1
+        }
+    }
+}
+decrease_building_rice_farm = {
+    name = "decrease_building_rice_farm"
+    desc = "decrease_building_rice_farm_desc"
+    effect = {
+        change_variable = {
+            name = cnm_auto_construct_building_rice_farm
+            add = -0.1
+        }
+    }
+}
+increase_building_maize_farm = {
+    name = "increase_building_maize_farm"
+    desc = "increase_building_maize_farm_desc"
+    effect = {
+        change_variable = {
+            name = cnm_auto_construct_building_maize_farm
+            add = 0.1
+        }
+    }
+}
+decrease_building_maize_farm = {
+    name = "decrease_building_maize_farm"
+    desc = "decrease_building_maize_farm_desc"
+    effect = {
+        change_variable = {
+            name = cnm_auto_construct_building_maize_farm
+            add = -0.1
+        }
+    }
+}
+increase_building_millet_farm = {
+    name = "increase_building_millet_farm"
+    desc = "increase_building_millet_farm_desc"
+    effect = {
+        change_variable = {
+            name = cnm_auto_construct_building_millet_farm
+            add = 0.1
+        }
+    }
+}
+decrease_building_millet_farm = {
+    name = "decrease_building_millet_farm"
+    desc = "decrease_building_millet_farm_desc"
+    effect = {
+        change_variable = {
+            name = cnm_auto_construct_building_millet_farm
+            add = -0.1
+        }
+    }
+}
+increase_building_livestock_ranch = {
+    name = "increase_building_livestock_ranch"
+    desc = "increase_building_livestock_ranch_desc"
+    effect = {
+        change_variable = {
+            name = cnm_auto_construct_building_livestock_ranch
+            add = 0.1
+        }
+    }
+}
+decrease_building_livestock_ranch = {
+    name = "decrease_building_livestock_ranch"
+    desc = "decrease_building_livestock_ranch_desc"
+    effect = {
+        change_variable = {
+            name = cnm_auto_construct_building_livestock_ranch
+            add = -0.1
+        }
+    }
+}
+increase_building_vineyard = {
+    name = "increase_building_vineyard"
+    desc = "increase_building_vineyard_desc"
+    effect = {
+        change_variable = {
+            name = cnm_auto_construct_building_vineyard
+            add = 0.1
+        }
+    }
+}
+decrease_building_vineyard = {
+    name = "decrease_building_vineyard"
+    desc = "decrease_building_vineyard_desc"
+    effect = {
+        change_variable = {
+            name = cnm_auto_construct_building_vineyard
+            add = -0.1
+        }
+    }
+}
+increase_building_coal_mine = {
+    name = "increase_building_coal_mine"
+    desc = "increase_building_coal_mine_desc"
+    effect = {
+        change_variable = {
+            name = cnm_auto_construct_building_coal_mine
+            add = 0.1
+        }
+    }
+}
+decrease_building_coal_mine = {
+    name = "decrease_building_coal_mine"
+    desc = "decrease_building_coal_mine_desc"
+    effect = {
+        change_variable = {
+            name = cnm_auto_construct_building_coal_mine
+            add = -0.1
+        }
+    }
+}
+increase_building_iron_mine = {
+    name = "increase_building_iron_mine"
+    desc = "increase_building_iron_mine_desc"
+    effect = {
+        change_variable = {
+            name = cnm_auto_construct_building_iron_mine
+            add = 0.1
+        }
+    }
+}
+decrease_building_iron_mine = {
+    name = "decrease_building_iron_mine"
+    desc = "decrease_building_iron_mine_desc"
+    effect = {
+        change_variable = {
+            name = cnm_auto_construct_building_iron_mine
+            add = -0.1
+        }
+    }
+}
+increase_building_lead_mine = {
+    name = "increase_building_lead_mine"
+    desc = "increase_building_lead_mine_desc"
+    effect = {
+        change_variable = {
+            name = cnm_auto_construct_building_lead_mine
+            add = 0.1
+        }
+    }
+}
+decrease_building_lead_mine = {
+    name = "decrease_building_lead_mine"
+    desc = "decrease_building_lead_mine_desc"
+    effect = {
+        change_variable = {
+            name = cnm_auto_construct_building_lead_mine
+            add = -0.1
+        }
+    }
+}
+increase_building_sulfur_mine = {
+    name = "increase_building_sulfur_mine"
+    desc = "increase_building_sulfur_mine_desc"
+    effect = {
+        change_variable = {
+            name = cnm_auto_construct_building_sulfur_mine
+            add = 0.1
+        }
+    }
+}
+decrease_building_sulfur_mine = {
+    name = "decrease_building_sulfur_mine"
+    desc = "decrease_building_sulfur_mine_desc"
+    effect = {
+        change_variable = {
+            name = cnm_auto_construct_building_sulfur_mine
+            add = -0.1
+        }
+    }
+}
+increase_building_gold_mine = {
+    name = "increase_building_gold_mine"
+    desc = "increase_building_gold_mine_desc"
+    effect = {
+        change_variable = {
+            name = cnm_auto_construct_building_gold_mine
+            add = 0.1
+        }
+    }
+}
+decrease_building_gold_mine = {
+    name = "decrease_building_gold_mine"
+    desc = "decrease_building_gold_mine_desc"
+    effect = {
+        change_variable = {
+            name = cnm_auto_construct_building_gold_mine
+            add = -0.1
+        }
+    }
+}
+increase_building_coffee_plantation = {
+    name = "increase_building_coffee_plantation"
+    desc = "increase_building_coffee_plantation_desc"
+    effect = {
+        change_variable = {
+            name = cnm_auto_construct_building_coffee_plantation
+            add = 0.1
+        }
+    }
+}
+decrease_building_coffee_plantation = {
+    name = "decrease_building_coffee_plantation"
+    desc = "decrease_building_coffee_plantation_desc"
+    effect = {
+        change_variable = {
+            name = cnm_auto_construct_building_coffee_plantation
+            add = -0.1
+        }
+    }
+}
+increase_building_cotton_plantation = {
+    name = "increase_building_cotton_plantation"
+    desc = "increase_building_cotton_plantation_desc"
+    effect = {
+        change_variable = {
+            name = cnm_auto_construct_building_cotton_plantation
+            add = 0.1
+        }
+    }
+}
+decrease_building_cotton_plantation = {
+    name = "decrease_building_cotton_plantation"
+    desc = "decrease_building_cotton_plantation_desc"
+    effect = {
+        change_variable = {
+            name = cnm_auto_construct_building_cotton_plantation
+            add = -0.1
+        }
+    }
+}
+increase_building_dye_plantation = {
+    name = "increase_building_dye_plantation"
+    desc = "increase_building_dye_plantation_desc"
+    effect = {
+        change_variable = {
+            name = cnm_auto_construct_building_dye_plantation
+            add = 0.1
+        }
+    }
+}
+decrease_building_dye_plantation = {
+    name = "decrease_building_dye_plantation"
+    desc = "decrease_building_dye_plantation_desc"
+    effect = {
+        change_variable = {
+            name = cnm_auto_construct_building_dye_plantation
+            add = -0.1
+        }
+    }
+}
+increase_building_opium_plantation = {
+    name = "increase_building_opium_plantation"
+    desc = "increase_building_opium_plantation_desc"
+    effect = {
+        change_variable = {
+            name = cnm_auto_construct_building_opium_plantation
+            add = 0.1
+        }
+    }
+}
+decrease_building_opium_plantation = {
+    name = "decrease_building_opium_plantation"
+    desc = "decrease_building_opium_plantation_desc"
+    effect = {
+        change_variable = {
+            name = cnm_auto_construct_building_opium_plantation
+            add = -0.1
+        }
+    }
+}
+increase_building_tea_plantation = {
+    name = "increase_building_tea_plantation"
+    desc = "increase_building_tea_plantation_desc"
+    effect = {
+        change_variable = {
+            name = cnm_auto_construct_building_tea_plantation
+            add = 0.1
+        }
+    }
+}
+decrease_building_tea_plantation = {
+    name = "decrease_building_tea_plantation"
+    desc = "decrease_building_tea_plantation_desc"
+    effect = {
+        change_variable = {
+            name = cnm_auto_construct_building_tea_plantation
+            add = -0.1
+        }
+    }
+}
+increase_building_tobacco_plantation = {
+    name = "increase_building_tobacco_plantation"
+    desc = "increase_building_tobacco_plantation_desc"
+    effect = {
+        change_variable = {
+            name = cnm_auto_construct_building_tobacco_plantation
+            add = 0.1
+        }
+    }
+}
+decrease_building_tobacco_plantation = {
+    name = "decrease_building_tobacco_plantation"
+    desc = "decrease_building_tobacco_plantation_desc"
+    effect = {
+        change_variable = {
+            name = cnm_auto_construct_building_tobacco_plantation
+            add = -0.1
+        }
+    }
+}
+increase_building_sugar_plantation = {
+    name = "increase_building_sugar_plantation"
+    desc = "increase_building_sugar_plantation_desc"
+    effect = {
+        change_variable = {
+            name = cnm_auto_construct_building_sugar_plantation
+            add = 0.1
+        }
+    }
+}
+decrease_building_sugar_plantation = {
+    name = "decrease_building_sugar_plantation"
+    desc = "decrease_building_sugar_plantation_desc"
+    effect = {
+        change_variable = {
+            name = cnm_auto_construct_building_sugar_plantation
+            add = -0.1
+        }
+    }
+}
+increase_building_banana_plantation = {
+    name = "increase_building_banana_plantation"
+    desc = "increase_building_banana_plantation_desc"
+    effect = {
+        change_variable = {
+            name = cnm_auto_construct_building_banana_plantation
+            add = 0.1
+        }
+    }
+}
+decrease_building_banana_plantation = {
+    name = "decrease_building_banana_plantation"
+    desc = "decrease_building_banana_plantation_desc"
+    effect = {
+        change_variable = {
+            name = cnm_auto_construct_building_banana_plantation
+            add = -0.1
+        }
+    }
+}
+increase_building_silk_plantation = {
+    name = "increase_building_silk_plantation"
+    desc = "increase_building_silk_plantation_desc"
+    effect = {
+        change_variable = {
+            name = cnm_auto_construct_building_silk_plantation
+            add = 0.1
+        }
+    }
+}
+decrease_building_silk_plantation = {
+    name = "decrease_building_silk_plantation"
+    desc = "decrease_building_silk_plantation_desc"
+    effect = {
+        change_variable = {
+            name = cnm_auto_construct_building_silk_plantation
+            add = -0.1
+        }
+    }
+}
+increase_building_art_academy = {
+    name = "increase_building_art_academy"
+    desc = "increase_building_art_academy_desc"
+    effect = {
+        change_variable = {
+            name = cnm_auto_construct_building_art_academy
+            add = 0.1
+        }
+    }
+}
+decrease_building_art_academy = {
+    name = "decrease_building_art_academy"
+    desc = "decrease_building_art_academy_desc"
+    effect = {
+        change_variable = {
+            name = cnm_auto_construct_building_art_academy
+            add = -0.1
+        }
+    }
+}
+increase_building_logging_camp = {
+    name = "increase_building_logging_camp"
+    desc = "increase_building_logging_camp_desc"
+    effect = {
+        change_variable = {
+            name = cnm_auto_construct_building_logging_camp
+            add = 0.1
+        }
+    }
+}
+decrease_building_logging_camp = {
+    name = "decrease_building_logging_camp"
+    desc = "decrease_building_logging_camp_desc"
+    effect = {
+        change_variable = {
+            name = cnm_auto_construct_building_logging_camp
+            add = -0.1
+        }
+    }
+}
+increase_building_rubber_plantation = {
+    name = "increase_building_rubber_plantation"
+    desc = "increase_building_rubber_plantation_desc"
+    effect = {
+        change_variable = {
+            name = cnm_auto_construct_building_rubber_plantation
+            add = 0.1
+        }
+    }
+}
+decrease_building_rubber_plantation = {
+    name = "decrease_building_rubber_plantation"
+    desc = "decrease_building_rubber_plantation_desc"
+    effect = {
+        change_variable = {
+            name = cnm_auto_construct_building_rubber_plantation
+            add = -0.1
+        }
+    }
+}
+increase_building_fishing_wharf = {
+    name = "increase_building_fishing_wharf"
+    desc = "increase_building_fishing_wharf_desc"
+    effect = {
+        change_variable = {
+            name = cnm_auto_construct_building_fishing_wharf
+            add = 0.1
+        }
+    }
+}
+decrease_building_fishing_wharf = {
+    name = "decrease_building_fishing_wharf"
+    desc = "decrease_building_fishing_wharf_desc"
+    effect = {
+        change_variable = {
+            name = cnm_auto_construct_building_fishing_wharf
+            add = -0.1
+        }
+    }
+}
+increase_building_whaling_station = {
+    name = "increase_building_whaling_station"
+    desc = "increase_building_whaling_station_desc"
+    effect = {
+        change_variable = {
+            name = cnm_auto_construct_building_whaling_station
+            add = 0.1
+        }
+    }
+}
+decrease_building_whaling_station = {
+    name = "decrease_building_whaling_station"
+    desc = "decrease_building_whaling_station_desc"
+    effect = {
+        change_variable = {
+            name = cnm_auto_construct_building_whaling_station
+            add = -0.1
+        }
+    }
+}
+increase_building_oil_rig = {
+    name = "increase_building_oil_rig"
+    desc = "increase_building_oil_rig_desc"
+    effect = {
+        change_variable = {
+            name = cnm_auto_construct_building_oil_rig
+            add = 0.1
+        }
+    }
+}
+decrease_building_oil_rig = {
+    name = "decrease_building_oil_rig"
+    desc = "decrease_building_oil_rig_desc"
+    effect = {
+        change_variable = {
+            name = cnm_auto_construct_building_oil_rig
+            add = -0.1
+        }
+    }
+}
+increase_building_railway = {
+    name = "increase_building_railway"
+    desc = "increase_building_railway_desc"
+    effect = {
+        change_variable = {
+            name = cnm_auto_construct_building_railway
+            add = 0.1
+        }
+    }
+}
+decrease_building_railway = {
+    name = "decrease_building_railway"
+    desc = "decrease_building_railway_desc"
+    effect = {
+        change_variable = {
+            name = cnm_auto_construct_building_railway
+            add = -0.1
+        }
+    }
+}
+increase_building_uranium_mine = {
+    name = "increase_building_uranium_mine"
+    desc = "increase_building_uranium_mine_desc"
+    effect = {
+        change_variable = {
+            name = cnm_auto_construct_building_uranium_mine
+            add = 0.1
+        }
+    }
+}
+decrease_building_uranium_mine = {
+    name = "decrease_building_uranium_mine"
+    desc = "decrease_building_uranium_mine_desc"
+    effect = {
+        change_variable = {
+            name = cnm_auto_construct_building_uranium_mine
+            add = -0.1
+        }
+    }
+}
+increase_building_airport = {
+    name = "increase_building_airport"
+    desc = "increase_building_airport_desc"
+    effect = {
+        change_variable = {
+            name = cnm_auto_construct_building_airport
+            add = 0.1
+        }
+    }
+}
+decrease_building_airport = {
+    name = "decrease_building_airport"
+    desc = "decrease_building_airport_desc"
+    effect = {
+        change_variable = {
+            name = cnm_auto_construct_building_airport
+            add = -0.1
+        }
+    }
+}

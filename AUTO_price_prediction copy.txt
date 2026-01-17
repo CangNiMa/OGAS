@@ -1,0 +1,94 @@
+﻿#need: 
+#scope:state_goods_production_prediction
+#scope:state_goods_consumption_prediction
+#scope:market_goods_production_prediction
+#scope:market_goods_consumption_prediction
+#scope:goods_base_price
+goods_price_prediction = {
+    #当地商品价格中州供需份额
+    add = {
+        #求州供需，生产<消费时价格最高1.75，生产>消费时价格最低0.25
+        if = {
+            limit = {
+                scope:state_goods_production_prediction < scope:state_goods_consumption_prediction
+            }
+            value = scope:state_goods_production_prediction
+            subtract = scope:state_goods_consumption_prediction
+            divide = {
+                value = scope:state_goods_production_prediction
+                min = 0.1
+            }
+            multiply = -0.75
+            max = 0.75
+            add = 1
+        }
+        else_if = {
+            limit = {
+                scope:state_goods_production_prediction > scope:state_goods_consumption_prediction
+            }
+            value = scope:state_goods_production_prediction
+            subtract = scope:state_goods_consumption_prediction
+            divide = {
+                value = scope:state_goods_consumption_prediction
+                min = 0.1
+            }
+            multiply = -0.75
+            min = -0.75
+            add = 1
+        }
+        else = {
+            value = 1
+        }
+        #州供需*非市场接入影响份额=当地商品价格中州供需份额
+        multiply = {
+            value = 1
+            subtract = {
+                value = state.modifier:state_market_access_price_impact
+                multiply = state.market_access
+            }
+        }
+    }
+
+    #当地商品价格中市场供需份额
+    add = {
+        #预测市场波动
+        if = {
+            limit = {
+                scope:market_goods_production_prediction < scope:market_goods_consumption_prediction
+            }
+            value = scope:market_goods_production_prediction
+            subtract = scope:market_goods_consumption_prediction
+            divide = {
+                value = scope:market_goods_production_prediction
+                min = 0.1
+            }
+            multiply = -0.75
+            max = 0.75
+            add = 1
+        }
+        else_if = {
+            limit = {
+                scope:market_goods_production_prediction > scope:market_goods_consumption_prediction
+            }
+            value = scope:market_goods_production_prediction
+            subtract = scope:market_goods_consumption_prediction
+            divide = {
+                value = scope:market_goods_consumption_prediction
+                min = 0.1
+            }
+            multiply = -0.75
+            min = -0.75
+            add = 1
+        }
+        else = {
+            value = 1
+        }
+        #市场份额
+        multiply = {
+            value = state.modifier:state_market_access_price_impact
+            multiply = state.market_access
+        }
+    }
+    #份额*商品基价=当地商品现价
+    multiply = scope:goods_base_price
+}

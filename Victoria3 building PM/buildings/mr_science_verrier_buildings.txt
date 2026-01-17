@@ -1,0 +1,93 @@
+﻿######################
+# VERRIER BUILDINGS  #
+######################
+
+#by Marco Dandolo
+
+##########################
+
+#Observatory
+
+building_verrier_observatory = {
+
+	building_group = bg_technology
+
+	city_type = city
+
+	levels_per_mesh = 1
+
+	ignore_stateregion_max_level = yes
+	expandable = no
+	downsizeable = no
+
+	unlocking_technologies = {
+		verrier_physics_tech
+	}
+
+	production_method_groups = {
+		pmg_verrier_telescope
+		pmg_curie_physics
+		pmg_mendelejew_chemistry
+		pmg_curtiss_meteorology
+		pmg_gaudi_magnetic_observatory
+		pmg_verrier_computers
+	}
+
+	icon = "gfx/interface/icons/building_icons/building_verrier_observatory.dds"
+
+	required_construction = construction_cost_medium
+
+	potential = {
+		is_capital = yes
+	}
+
+	can_build_government = {
+		#Only one observatory
+		custom_tooltip = {
+			text = verrier_observatory_can_construct_only_observatory_tt
+			owner = {
+				has_revolution = no
+				NOT = {
+					any_scope_building = {
+						is_building_type = building_verrier_observatory
+						level > 0
+					}
+				}
+			}
+		}
+		#Needs a university or event
+		custom_tooltip = {
+			text = mr_has_level_1_university_in_state_tt
+			OR = {
+				any_scope_building = {
+					is_building_type = building_university
+					level >= 1
+				}
+				owner = {
+					has_variable = verrier_allowed_to_build_observatory
+				}
+			}
+		}
+		#Needs technologies, scientists or event
+		custom_tooltip = {
+			text = verrier_observatory_can_construct_technology_or_astronomer_tt
+			owner = {
+				OR = {
+					has_technology_researched = verrier_astronomy_tech
+					has_technology_researched = verrier_chemistry_tech
+					verrier_has_astronomer_no_tooltip_trigger = yes
+					mendelejew_has_chemist_no_tooltip_trigger = yes
+					has_variable = verrier_allowed_to_build_observatory
+				}
+			}
+		}
+	}
+
+	can_build_private = {
+		always = no
+	}
+
+	ai_value = 0 # Has an on_action for it
+
+	background = "gfx/interface/icons/building_icons/backgrounds/building_panel_bg_monuments.dds"
+}

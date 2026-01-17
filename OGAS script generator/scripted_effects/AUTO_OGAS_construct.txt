@@ -1,0 +1,21 @@
+﻿OGAS_find_best_profit_building = {
+    while = {
+        count = root.var:OGAS_building_unit_config
+        if = {
+            limit = { 
+                is_building_type = building_uranium_mine
+            }
+            state = {
+                start_building_construction = building_uranium_mine
+            }
+        }
+        if = {
+            limit = { 
+                is_building_type = building_airport
+            }
+            state = {
+                start_building_construction = building_airport
+            }
+        }
+    }
+}

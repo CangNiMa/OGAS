@@ -1,0 +1,152 @@
+﻿cnm_base_auto_expand_rule = {
+	occupancy >= 0.95
+	#building_has_goods_shortage = no
+	is_under_construction = no 
+	state = {
+		cnm_base_state_can_build_rule = yes
+	}
+}
+cnm_base_state_can_build_rule = {
+	trigger_if = {
+		limit = { 
+			owner = {
+				var:cnm_construct_rule_ban_unemployed_low = 1
+			}
+		}
+		cnm_state_unemployed > 5000
+	}
+	trigger_if = {
+		limit = { 
+			owner = {
+				var:cnm_construct_rule_ban_construct_power_low = 1
+			}
+		}
+		modifier:state_construction_mult >= 0
+	}
+	trigger_if = {
+		limit = { 
+			owner = {
+				var:cnm_construct_rule_ban_available_workers_low = 1
+			}
+		}
+		cnm_state_available_workers > 5000
+	}
+	trigger_if = {
+		limit = { 
+			owner = {
+				var:cnm_construct_rule_ban_no_incorporated = 1
+			}
+		}
+		is_incorporated = yes
+	}
+}
+cnm_profit_ok = {
+	OR = {
+		is_subsidized = yes
+		weekly_profit > 0
+		#earnings > 6
+	}
+}
+
+cnm_infrastructure_low = {
+	state = {
+		relative_infrastructure <= 1
+	}
+}
+
+cnm_market_access_ok = {
+	state.market_access >= 1
+}
+
+OGAS_possible_construct_building = {
+	cnm_base_auto_expand_rule = yes
+	can_queue_building_levels = 1
+	is_buildable = yes
+	OGAS_construct_building_configure = yes
+	OGAS_possible_building = yes
+	cnm_building_profit_weight > 0
+}
+
+cnm_state_can_building_construction_sector = {
+	or = {
+		not = {
+			any_scope_building = {
+				is_building_type = building_construction_sector
+			}
+		}
+		and = {
+			any_scope_building = {
+				is_building_type = building_construction_sector
+				can_queue_building_levels = 1
+				cnm_base_auto_expand_rule = yes
+			}
+		}
+	}
+}
+cnm_state_building_construction_sector_unit_profit_predict = {
+	if = {
+		limit = {
+			has_technology_researched = arc_welding
+		}
+		if = {
+			limit = {
+				has_active_building = building_construction_sector
+			}
+			value = b:building_construction_sector.building_construction_sector_unit_profit_pm_arc_welded_buildings
+		}
+		else = {
+			value = state_unit_profit_prediction_pm_arc_welded_buildings
+		}
+	}
+}
+
+cnm_state_can_building_railway = {
+	owner = {
+		has_technology_researched = railways
+	}
+	cnm_state_available_workers > 5000
+}
+cnm_state_can_pm_diesel_trains_principle_transport_3 = {
+	owner = {
+		has_technology_researched = compression_ignition
+		power_bloc ?= {
+			has_principle = principle:principle_transport_3
+		}
+	}
+}
+cnm_state_can_pm_diesel_trains ={
+	owner = {
+		has_technology_researched = compression_ignition
+	}
+}
+cnm_state_can_pm_electric_trains_principle_transport_3 ={
+	owner = {
+		has_technology_researched = electric_railway
+		power_bloc ?= {
+			has_principle = principle:principle_transport_3
+		}
+	}
+}
+cnm_state_can_pm_electric_trains = {
+	owner = {
+		has_technology_researched = electric_railway
+	}
+}
+cnm_state_can_pm_steam_trains_principle_transport_3 = {
+	owner = {
+		has_technology_researched = steel_railway_cars
+		power_bloc ?= {
+			has_principle = principle:principle_transport_3
+		}
+	}
+}
+cnm_state_can_pm_steam_trains = {
+	owner = {
+		has_technology_researched = steel_railway_cars
+	}
+}
+cnm_state_can_pm_early_trains = {
+	owner = {
+		has_technology_researched = railways
+	}
+}

@@ -1,0 +1,39 @@
+﻿auto_construction_sector_manager = {
+    if = {
+        limit = {
+            net_total_income > cnm_current_construct_sector_unit_price
+        }
+        if = {
+            limit = {
+                any_scope_state = {
+                    any_scope_building = {
+                        is_building_type = building_construction_sector
+                        can_queue_building_levels = 1
+                        cnm_base_auto_expand_rule = yes
+                    }
+                }
+            }
+            cnm_find_best_building_construction_sector = yes
+        }
+        else_if = {
+            limit = {
+                any_scope_state = {
+                    cnm_state_available_workers > 5000
+                    cnm_base_state_can_build_rule = yes
+                    can_construct_building = building_construction_sector
+                }
+            }
+            ordered_scope_state = {
+                limit = {
+                    cnm_state_available_workers > 5000
+                    cnm_base_state_can_build_rule = yes
+                    can_construct_building = building_construction_sector
+                }
+                order_by = cnm_state_available_workers
+                max = 1
+                check_range_bounds = no
+                start_building_construction = building_construction_sector
+            }
+        }
+    }
+}

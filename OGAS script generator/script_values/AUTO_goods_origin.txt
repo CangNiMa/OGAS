@@ -1,0 +1,797 @@
+﻿pmg_curie_mining_equipment_building_uranium_mine_tools_current = {
+    if = {
+        limit = {
+            has_active_production_method = pm_curie_picks_and_shovels_building_uranium_mine
+        }
+        value = pm_curie_picks_and_shovels_building_uranium_mine_tools
+    }
+    else_if = {
+        limit = {
+            has_active_production_method = pm_curie_atmospheric_engine_pump_building_uranium_mine
+        }
+        value = pm_curie_atmospheric_engine_pump_building_uranium_mine_tools
+    }
+    else_if = {
+        limit = {
+            has_active_production_method = pm_curie_condensing_engine_pump_building_uranium_mine
+        }
+        value = pm_curie_condensing_engine_pump_building_uranium_mine_tools
+    }
+    else_if = {
+        limit = {
+            has_active_production_method = pm_curie_diesel_pump_building_uranium_mine
+        }
+        value = pm_curie_diesel_pump_building_uranium_mine_tools
+    }
+    else = {
+        value = 0.0
+    }
+    multiply = building_work_efficiency
+}
+
+state_tools_production_if_no_pmg_curie_mining_equipment_building_uranium_mine = {
+	value = state.sg:tools.state_goods_production
+    if = {
+        limit = {
+            pmg_curie_mining_equipment_building_uranium_mine_tools_current > 0.0
+        }
+	subtract = pmg_curie_mining_equipment_building_uranium_mine_tools_current
+    }
+}
+
+state_tools_consumption_if_no_pmg_curie_mining_equipment_building_uranium_mine = {
+	value = state.sg:tools.state_goods_consumption
+    if = {
+        limit = {
+            pmg_curie_mining_equipment_building_uranium_mine_tools_current < 0.0
+        }
+	add = pmg_curie_mining_equipment_building_uranium_mine_tools_current
+    }
+}
+
+market_tools_production_if_no_pmg_curie_mining_equipment_building_uranium_mine = {
+	value = market.mg:tools.market_goods_sell_orders
+    if = {
+        limit = {
+            pmg_curie_mining_equipment_building_uranium_mine_tools_current > 0.0
+        }
+	subtract = pmg_curie_mining_equipment_building_uranium_mine_tools_current
+        multiply = state.market_access
+    }
+}
+
+market_tools_consumption_if_no_pmg_curie_mining_equipment_building_uranium_mine = {
+	value = market.mg:tools.market_goods_buy_orders
+    if = {
+        limit = {
+            pmg_curie_mining_equipment_building_uranium_mine_tools_current < 0.0
+        }
+	add = pmg_curie_mining_equipment_building_uranium_mine_tools_current
+        multiply = state.market_access
+    }
+}
+
+pmg_curie_mining_equipment_building_uranium_mine_coal_current = {
+    if = {
+        limit = {
+            has_active_production_method = pm_curie_picks_and_shovels_building_uranium_mine
+        }
+        value = pm_curie_picks_and_shovels_building_uranium_mine_coal
+    }
+    else_if = {
+        limit = {
+            has_active_production_method = pm_curie_atmospheric_engine_pump_building_uranium_mine
+        }
+        value = pm_curie_atmospheric_engine_pump_building_uranium_mine_coal
+    }
+    else_if = {
+        limit = {
+            has_active_production_method = pm_curie_condensing_engine_pump_building_uranium_mine
+        }
+        value = pm_curie_condensing_engine_pump_building_uranium_mine_coal
+    }
+    else_if = {
+        limit = {
+            has_active_production_method = pm_curie_diesel_pump_building_uranium_mine
+        }
+        value = pm_curie_diesel_pump_building_uranium_mine_coal
+    }
+    else = {
+        value = 0.0
+    }
+    multiply = building_work_efficiency
+}
+
+state_coal_production_if_no_pmg_curie_mining_equipment_building_uranium_mine = {
+	value = state.sg:coal.state_goods_production
+    if = {
+        limit = {
+            pmg_curie_mining_equipment_building_uranium_mine_coal_current > 0.0
+        }
+	subtract = pmg_curie_mining_equipment_building_uranium_mine_coal_current
+    }
+}
+
+state_coal_consumption_if_no_pmg_curie_mining_equipment_building_uranium_mine = {
+	value = state.sg:coal.state_goods_consumption
+    if = {
+        limit = {
+            pmg_curie_mining_equipment_building_uranium_mine_coal_current < 0.0
+        }
+	add = pmg_curie_mining_equipment_building_uranium_mine_coal_current
+    }
+}
+
+market_coal_production_if_no_pmg_curie_mining_equipment_building_uranium_mine = {
+	value = market.mg:coal.market_goods_sell_orders
+    if = {
+        limit = {
+            pmg_curie_mining_equipment_building_uranium_mine_coal_current > 0.0
+        }
+	subtract = pmg_curie_mining_equipment_building_uranium_mine_coal_current
+        multiply = state.market_access
+    }
+}
+
+market_coal_consumption_if_no_pmg_curie_mining_equipment_building_uranium_mine = {
+	value = market.mg:coal.market_goods_buy_orders
+    if = {
+        limit = {
+            pmg_curie_mining_equipment_building_uranium_mine_coal_current < 0.0
+        }
+	add = pmg_curie_mining_equipment_building_uranium_mine_coal_current
+        multiply = state.market_access
+    }
+}
+
+pmg_curie_mining_equipment_building_uranium_mine_oil_current = {
+    if = {
+        limit = {
+            has_active_production_method = pm_curie_picks_and_shovels_building_uranium_mine
+        }
+        value = pm_curie_picks_and_shovels_building_uranium_mine_oil
+    }
+    else_if = {
+        limit = {
+            has_active_production_method = pm_curie_atmospheric_engine_pump_building_uranium_mine
+        }
+        value = pm_curie_atmospheric_engine_pump_building_uranium_mine_oil
+    }
+    else_if = {
+        limit = {
+            has_active_production_method = pm_curie_condensing_engine_pump_building_uranium_mine
+        }
+        value = pm_curie_condensing_engine_pump_building_uranium_mine_oil
+    }
+    else_if = {
+        limit = {
+            has_active_production_method = pm_curie_diesel_pump_building_uranium_mine
+        }
+        value = pm_curie_diesel_pump_building_uranium_mine_oil
+    }
+    else = {
+        value = 0.0
+    }
+    multiply = building_work_efficiency
+}
+
+state_oil_production_if_no_pmg_curie_mining_equipment_building_uranium_mine = {
+	value = state.sg:oil.state_goods_production
+    if = {
+        limit = {
+            pmg_curie_mining_equipment_building_uranium_mine_oil_current > 0.0
+        }
+	subtract = pmg_curie_mining_equipment_building_uranium_mine_oil_current
+    }
+}
+
+state_oil_consumption_if_no_pmg_curie_mining_equipment_building_uranium_mine = {
+	value = state.sg:oil.state_goods_consumption
+    if = {
+        limit = {
+            pmg_curie_mining_equipment_building_uranium_mine_oil_current < 0.0
+        }
+	add = pmg_curie_mining_equipment_building_uranium_mine_oil_current
+    }
+}
+
+market_oil_production_if_no_pmg_curie_mining_equipment_building_uranium_mine = {
+	value = market.mg:oil.market_goods_sell_orders
+    if = {
+        limit = {
+            pmg_curie_mining_equipment_building_uranium_mine_oil_current > 0.0
+        }
+	subtract = pmg_curie_mining_equipment_building_uranium_mine_oil_current
+        multiply = state.market_access
+    }
+}
+
+market_oil_consumption_if_no_pmg_curie_mining_equipment_building_uranium_mine = {
+	value = market.mg:oil.market_goods_buy_orders
+    if = {
+        limit = {
+            pmg_curie_mining_equipment_building_uranium_mine_oil_current < 0.0
+        }
+	add = pmg_curie_mining_equipment_building_uranium_mine_oil_current
+        multiply = state.market_access
+    }
+}
+
+pmg_curie_explosives_building_uranium_mine_explosives_current = {
+    if = {
+        limit = {
+            has_active_production_method = pm_no_explosives
+        }
+        value = pm_no_explosives_explosives
+    }
+    else_if = {
+        limit = {
+            has_active_production_method = pm_curie_nitroglycerin_building_uranium_mine
+        }
+        value = pm_curie_nitroglycerin_building_uranium_mine_explosives
+    }
+    else_if = {
+        limit = {
+            has_active_production_method = pm_curie_dynamite_building_uranium_mine
+        }
+        value = pm_curie_dynamite_building_uranium_mine_explosives
+    }
+    else = {
+        value = 0.0
+    }
+    multiply = building_work_efficiency
+}
+
+state_explosives_production_if_no_pmg_curie_explosives_building_uranium_mine = {
+	value = state.sg:explosives.state_goods_production
+    if = {
+        limit = {
+            pmg_curie_explosives_building_uranium_mine_explosives_current > 0.0
+        }
+	subtract = pmg_curie_explosives_building_uranium_mine_explosives_current
+    }
+}
+
+state_explosives_consumption_if_no_pmg_curie_explosives_building_uranium_mine = {
+	value = state.sg:explosives.state_goods_consumption
+    if = {
+        limit = {
+            pmg_curie_explosives_building_uranium_mine_explosives_current < 0.0
+        }
+	add = pmg_curie_explosives_building_uranium_mine_explosives_current
+    }
+}
+
+market_explosives_production_if_no_pmg_curie_explosives_building_uranium_mine = {
+	value = market.mg:explosives.market_goods_sell_orders
+    if = {
+        limit = {
+            pmg_curie_explosives_building_uranium_mine_explosives_current > 0.0
+        }
+	subtract = pmg_curie_explosives_building_uranium_mine_explosives_current
+        multiply = state.market_access
+    }
+}
+
+market_explosives_consumption_if_no_pmg_curie_explosives_building_uranium_mine = {
+	value = market.mg:explosives.market_goods_buy_orders
+    if = {
+        limit = {
+            pmg_curie_explosives_building_uranium_mine_explosives_current < 0.0
+        }
+	add = pmg_curie_explosives_building_uranium_mine_explosives_current
+        multiply = state.market_access
+    }
+}
+
+pmg_base_building_airport_aeroplanes_current = {
+    if = {
+        limit = {
+            has_active_production_method = pm_private_charters
+        }
+        value = pm_private_charters_aeroplanes
+    }
+    else_if = {
+        limit = {
+            has_active_production_method = pm_regional_routes
+        }
+        value = pm_regional_routes_aeroplanes
+    }
+    else_if = {
+        limit = {
+            has_active_production_method = pm_domestic_routes
+        }
+        value = pm_domestic_routes_aeroplanes
+    }
+    else_if = {
+        limit = {
+            has_active_production_method = pm_international_routes
+        }
+        value = pm_international_routes_aeroplanes
+    }
+    else = {
+        value = 0.0
+    }
+    multiply = building_work_efficiency
+}
+
+state_aeroplanes_production_if_no_pmg_base_building_airport = {
+	value = state.sg:aeroplanes.state_goods_production
+    if = {
+        limit = {
+            pmg_base_building_airport_aeroplanes_current > 0.0
+        }
+	subtract = pmg_base_building_airport_aeroplanes_current
+    }
+}
+
+state_aeroplanes_consumption_if_no_pmg_base_building_airport = {
+	value = state.sg:aeroplanes.state_goods_consumption
+    if = {
+        limit = {
+            pmg_base_building_airport_aeroplanes_current < 0.0
+        }
+	add = pmg_base_building_airport_aeroplanes_current
+    }
+}
+
+market_aeroplanes_production_if_no_pmg_base_building_airport = {
+	value = market.mg:aeroplanes.market_goods_sell_orders
+    if = {
+        limit = {
+            pmg_base_building_airport_aeroplanes_current > 0.0
+        }
+	subtract = pmg_base_building_airport_aeroplanes_current
+        multiply = state.market_access
+    }
+}
+
+market_aeroplanes_consumption_if_no_pmg_base_building_airport = {
+	value = market.mg:aeroplanes.market_goods_buy_orders
+    if = {
+        limit = {
+            pmg_base_building_airport_aeroplanes_current < 0.0
+        }
+	add = pmg_base_building_airport_aeroplanes_current
+        multiply = state.market_access
+    }
+}
+
+pmg_base_building_airport_paper_current = {
+    if = {
+        limit = {
+            has_active_production_method = pm_private_charters
+        }
+        value = pm_private_charters_paper
+    }
+    else_if = {
+        limit = {
+            has_active_production_method = pm_regional_routes
+        }
+        value = pm_regional_routes_paper
+    }
+    else_if = {
+        limit = {
+            has_active_production_method = pm_domestic_routes
+        }
+        value = pm_domestic_routes_paper
+    }
+    else_if = {
+        limit = {
+            has_active_production_method = pm_international_routes
+        }
+        value = pm_international_routes_paper
+    }
+    else = {
+        value = 0.0
+    }
+    multiply = building_work_efficiency
+}
+
+state_paper_production_if_no_pmg_base_building_airport = {
+	value = state.sg:paper.state_goods_production
+    if = {
+        limit = {
+            pmg_base_building_airport_paper_current > 0.0
+        }
+	subtract = pmg_base_building_airport_paper_current
+    }
+}
+
+state_paper_consumption_if_no_pmg_base_building_airport = {
+	value = state.sg:paper.state_goods_consumption
+    if = {
+        limit = {
+            pmg_base_building_airport_paper_current < 0.0
+        }
+	add = pmg_base_building_airport_paper_current
+    }
+}
+
+market_paper_production_if_no_pmg_base_building_airport = {
+	value = market.mg:paper.market_goods_sell_orders
+    if = {
+        limit = {
+            pmg_base_building_airport_paper_current > 0.0
+        }
+	subtract = pmg_base_building_airport_paper_current
+        multiply = state.market_access
+    }
+}
+
+market_paper_consumption_if_no_pmg_base_building_airport = {
+	value = market.mg:paper.market_goods_buy_orders
+    if = {
+        limit = {
+            pmg_base_building_airport_paper_current < 0.0
+        }
+	add = pmg_base_building_airport_paper_current
+        multiply = state.market_access
+    }
+}
+
+pmg_base_building_airport_oil_current = {
+    if = {
+        limit = {
+            has_active_production_method = pm_private_charters
+        }
+        value = pm_private_charters_oil
+    }
+    else_if = {
+        limit = {
+            has_active_production_method = pm_regional_routes
+        }
+        value = pm_regional_routes_oil
+    }
+    else_if = {
+        limit = {
+            has_active_production_method = pm_domestic_routes
+        }
+        value = pm_domestic_routes_oil
+    }
+    else_if = {
+        limit = {
+            has_active_production_method = pm_international_routes
+        }
+        value = pm_international_routes_oil
+    }
+    else = {
+        value = 0.0
+    }
+    multiply = building_work_efficiency
+}
+
+state_oil_production_if_no_pmg_base_building_airport = {
+	value = state.sg:oil.state_goods_production
+    if = {
+        limit = {
+            pmg_base_building_airport_oil_current > 0.0
+        }
+	subtract = pmg_base_building_airport_oil_current
+    }
+}
+
+state_oil_consumption_if_no_pmg_base_building_airport = {
+	value = state.sg:oil.state_goods_consumption
+    if = {
+        limit = {
+            pmg_base_building_airport_oil_current < 0.0
+        }
+	add = pmg_base_building_airport_oil_current
+    }
+}
+
+market_oil_production_if_no_pmg_base_building_airport = {
+	value = market.mg:oil.market_goods_sell_orders
+    if = {
+        limit = {
+            pmg_base_building_airport_oil_current > 0.0
+        }
+	subtract = pmg_base_building_airport_oil_current
+        multiply = state.market_access
+    }
+}
+
+market_oil_consumption_if_no_pmg_base_building_airport = {
+	value = market.mg:oil.market_goods_buy_orders
+    if = {
+        limit = {
+            pmg_base_building_airport_oil_current < 0.0
+        }
+	add = pmg_base_building_airport_oil_current
+        multiply = state.market_access
+    }
+}
+
+pmg_base_building_airport_tools_current = {
+    if = {
+        limit = {
+            has_active_production_method = pm_private_charters
+        }
+        value = pm_private_charters_tools
+    }
+    else_if = {
+        limit = {
+            has_active_production_method = pm_regional_routes
+        }
+        value = pm_regional_routes_tools
+    }
+    else_if = {
+        limit = {
+            has_active_production_method = pm_domestic_routes
+        }
+        value = pm_domestic_routes_tools
+    }
+    else_if = {
+        limit = {
+            has_active_production_method = pm_international_routes
+        }
+        value = pm_international_routes_tools
+    }
+    else = {
+        value = 0.0
+    }
+    multiply = building_work_efficiency
+}
+
+state_tools_production_if_no_pmg_base_building_airport = {
+	value = state.sg:tools.state_goods_production
+    if = {
+        limit = {
+            pmg_base_building_airport_tools_current > 0.0
+        }
+	subtract = pmg_base_building_airport_tools_current
+    }
+}
+
+state_tools_consumption_if_no_pmg_base_building_airport = {
+	value = state.sg:tools.state_goods_consumption
+    if = {
+        limit = {
+            pmg_base_building_airport_tools_current < 0.0
+        }
+	add = pmg_base_building_airport_tools_current
+    }
+}
+
+market_tools_production_if_no_pmg_base_building_airport = {
+	value = market.mg:tools.market_goods_sell_orders
+    if = {
+        limit = {
+            pmg_base_building_airport_tools_current > 0.0
+        }
+	subtract = pmg_base_building_airport_tools_current
+        multiply = state.market_access
+    }
+}
+
+market_tools_consumption_if_no_pmg_base_building_airport = {
+	value = market.mg:tools.market_goods_buy_orders
+    if = {
+        limit = {
+            pmg_base_building_airport_tools_current < 0.0
+        }
+	add = pmg_base_building_airport_tools_current
+        multiply = state.market_access
+    }
+}
+
+pmg_base_building_airport_electricity_current = {
+    if = {
+        limit = {
+            has_active_production_method = pm_private_charters
+        }
+        value = pm_private_charters_electricity
+    }
+    else_if = {
+        limit = {
+            has_active_production_method = pm_regional_routes
+        }
+        value = pm_regional_routes_electricity
+    }
+    else_if = {
+        limit = {
+            has_active_production_method = pm_domestic_routes
+        }
+        value = pm_domestic_routes_electricity
+    }
+    else_if = {
+        limit = {
+            has_active_production_method = pm_international_routes
+        }
+        value = pm_international_routes_electricity
+    }
+    else = {
+        value = 0.0
+    }
+    multiply = building_work_efficiency
+}
+
+state_electricity_production_if_no_pmg_base_building_airport = {
+	value = state.sg:electricity.state_goods_production
+    if = {
+        limit = {
+            pmg_base_building_airport_electricity_current > 0.0
+        }
+	subtract = pmg_base_building_airport_electricity_current
+    }
+}
+
+state_electricity_consumption_if_no_pmg_base_building_airport = {
+	value = state.sg:electricity.state_goods_consumption
+    if = {
+        limit = {
+            pmg_base_building_airport_electricity_current < 0.0
+        }
+	add = pmg_base_building_airport_electricity_current
+    }
+}
+
+market_electricity_production_if_no_pmg_base_building_airport = {
+	value = market.mg:electricity.market_goods_sell_orders
+    if = {
+        limit = {
+            pmg_base_building_airport_electricity_current > 0.0
+        }
+	subtract = pmg_base_building_airport_electricity_current
+        multiply = state.market_access
+    }
+}
+
+market_electricity_consumption_if_no_pmg_base_building_airport = {
+	value = market.mg:electricity.market_goods_buy_orders
+    if = {
+        limit = {
+            pmg_base_building_airport_electricity_current < 0.0
+        }
+	add = pmg_base_building_airport_electricity_current
+        multiply = state.market_access
+    }
+}
+
+pmg_base_building_airport_telephones_current = {
+    if = {
+        limit = {
+            has_active_production_method = pm_private_charters
+        }
+        value = pm_private_charters_telephones
+    }
+    else_if = {
+        limit = {
+            has_active_production_method = pm_regional_routes
+        }
+        value = pm_regional_routes_telephones
+    }
+    else_if = {
+        limit = {
+            has_active_production_method = pm_domestic_routes
+        }
+        value = pm_domestic_routes_telephones
+    }
+    else_if = {
+        limit = {
+            has_active_production_method = pm_international_routes
+        }
+        value = pm_international_routes_telephones
+    }
+    else = {
+        value = 0.0
+    }
+    multiply = building_work_efficiency
+}
+
+state_telephones_production_if_no_pmg_base_building_airport = {
+	value = state.sg:telephones.state_goods_production
+    if = {
+        limit = {
+            pmg_base_building_airport_telephones_current > 0.0
+        }
+	subtract = pmg_base_building_airport_telephones_current
+    }
+}
+
+state_telephones_consumption_if_no_pmg_base_building_airport = {
+	value = state.sg:telephones.state_goods_consumption
+    if = {
+        limit = {
+            pmg_base_building_airport_telephones_current < 0.0
+        }
+	add = pmg_base_building_airport_telephones_current
+    }
+}
+
+market_telephones_production_if_no_pmg_base_building_airport = {
+	value = market.mg:telephones.market_goods_sell_orders
+    if = {
+        limit = {
+            pmg_base_building_airport_telephones_current > 0.0
+        }
+	subtract = pmg_base_building_airport_telephones_current
+        multiply = state.market_access
+    }
+}
+
+market_telephones_consumption_if_no_pmg_base_building_airport = {
+	value = market.mg:telephones.market_goods_buy_orders
+    if = {
+        limit = {
+            pmg_base_building_airport_telephones_current < 0.0
+        }
+	add = pmg_base_building_airport_telephones_current
+        multiply = state.market_access
+    }
+}
+
+pmg_base_building_airport_radios_current = {
+    if = {
+        limit = {
+            has_active_production_method = pm_private_charters
+        }
+        value = pm_private_charters_radios
+    }
+    else_if = {
+        limit = {
+            has_active_production_method = pm_regional_routes
+        }
+        value = pm_regional_routes_radios
+    }
+    else_if = {
+        limit = {
+            has_active_production_method = pm_domestic_routes
+        }
+        value = pm_domestic_routes_radios
+    }
+    else_if = {
+        limit = {
+            has_active_production_method = pm_international_routes
+        }
+        value = pm_international_routes_radios
+    }
+    else = {
+        value = 0.0
+    }
+    multiply = building_work_efficiency
+}
+
+state_radios_production_if_no_pmg_base_building_airport = {
+	value = state.sg:radios.state_goods_production
+    if = {
+        limit = {
+            pmg_base_building_airport_radios_current > 0.0
+        }
+	subtract = pmg_base_building_airport_radios_current
+    }
+}
+
+state_radios_consumption_if_no_pmg_base_building_airport = {
+	value = state.sg:radios.state_goods_consumption
+    if = {
+        limit = {
+            pmg_base_building_airport_radios_current < 0.0
+        }
+	add = pmg_base_building_airport_radios_current
+    }
+}
+
+market_radios_production_if_no_pmg_base_building_airport = {
+	value = market.mg:radios.market_goods_sell_orders
+    if = {
+        limit = {
+            pmg_base_building_airport_radios_current > 0.0
+        }
+	subtract = pmg_base_building_airport_radios_current
+        multiply = state.market_access
+    }
+}
+
+market_radios_consumption_if_no_pmg_base_building_airport = {
+	value = market.mg:radios.market_goods_buy_orders
+    if = {
+        limit = {
+            pmg_base_building_airport_radios_current < 0.0
+        }
+	add = pmg_base_building_airport_radios_current
+        multiply = state.market_access
+    }
+}
+

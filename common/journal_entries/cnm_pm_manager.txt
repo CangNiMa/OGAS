@@ -1,0 +1,53 @@
+﻿je_cnm_pm_manager = {
+	icon = "gfx/interface/icons/event_icons/event_industry.dds"
+	group = je_group_internal_affairs
+
+	scripted_button = active_upgrade_pm_manager
+	scripted_button = active_balance_pm_manager
+	scripted_button = balance_tolerance_pm_manager_switch
+	scripted_button = active_workforce_employment_pm_manager
+	scripted_button = pm_manage_amount_add
+	scripted_button = pm_manage_amount_sub
+	scripted_button = pm_manage_frequency_switch
+	scripted_button = reset_pm_manager
+	immediate = {
+		cnm_default_pm_manager = yes
+	}
+	status_desc = {
+		desc = cnm_pm_manager_status_desc
+	}
+
+	on_weekly_pulse = {
+		effect = {
+			if = {
+				limit = {
+					root.var:cnm_pm_manage_frequency = 1
+				}
+				cnm_start_pm_manage = yes
+			}
+		}
+	}
+	on_monthly_pulse = {
+		effect = {
+			if = {
+				limit = {
+					root.var:cnm_pm_manage_frequency = 2
+				}
+				cnm_start_pm_manage = yes
+			}
+		}
+	}
+	on_yearly_pulse = {
+		effect = {
+			if = {
+				limit = {
+					root.var:cnm_pm_manage_frequency = 3
+				}
+				cnm_start_pm_manage = yes
+			}
+		}
+	}
+
+	should_be_pinned_by_default = yes
+	weight = 10000
+}

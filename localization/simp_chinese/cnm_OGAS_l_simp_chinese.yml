@@ -1,0 +1,43 @@
+﻿l_simp_chinese:
+
+ag_cnm_not_enough_workers_in_state_group_name: "工人数量不足"
+ag_cnm_not_enough_workers_in_state_group_desc: "工人数量不足"
+ag_cnm_not_enough_workers_in_state_group_tooltip: "工人数量不足"
+
+cnm_not_enough_workers_in_state_setting_name: "OGAS工人数量不足警告"
+alert_cnm_not_enough_workers_in_state_name: "[SCOPE.GetRootScope.GetState.GetName] 工人数量不足"
+alert_cnm_not_enough_workers_in_state_hint: "[SCOPE.GetRootScope.GetState.GetName] 工人数量不足"
+alert_cnm_not_enough_workers_in_state_action: "转到州面板"
+
+cnm_no_available_state_workers_setting_name: "OGAS无可用工人警告"
+alert_cnm_no_available_state_workers_name: "OGAS无可用工人警告"
+alert_cnm_no_available_state_workers_hint: "你启用了消灭自给农，但全国已没有满足条件的地区"
+alert_cnm_no_available_state_workers_action: "转到日志面板"
+
+cnm_no_available_state_unemployee_setting_name: "OGAS无可用失业警告"
+alert_cnm_no_available_state_unemployee_name: "OGAS无可用失业警告"
+alert_cnm_no_available_state_unemployee_hint: "你启用了消灭失业，但全国已没有满足条件的地区"
+alert_cnm_no_available_state_unemployee_action: "转到日志面板"
+
+cnm_no_available_state_construct_power_setting_name: "OGAS无正$concept_construct$力地区警告"
+alert_cnm_no_available_state_construct_power_name: "OGAS无正$concept_construct$力地区警告"
+alert_cnm_no_available_state_construct_power_hint: "你启用了禁止$concept_construct$力过低，但全国已没有满足条件的地区"
+alert_cnm_no_available_state_construct_power_action: "转到日志面板"
+
+cnm_no_available_construct_building_manager_value_setting_name: "OGAS无配置$concept_building$警告"
+alert_cnm_no_available_construct_building_manager_value_name: "OGAS无配置$concept_building$警告"
+alert_cnm_no_available_construct_building_manager_value_hint: "以防你忘记，你已关闭所有$concept_building$类型配置，OGAS将无法进行任何种类$concept_building$的$concept_construct$"
+alert_cnm_no_available_construct_building_manager_value_action: "转到日志面板"
+
+cnm_Reset_decision: "OGAS重置"
+cnm_Reset_decision_desc: "对于某些更新后不出现日志的玩家，可以用此方法重置MOD日志"
+
+OGAS_rest_version_notification_group: "OGAS版本更新"
+notification_OGAS_rest_version_notification_name: "OGAS版本更新！"
+notification_OGAS_rest_version_notification_desc: "OGAS发现你运行的版本储存数据与新版本不同！已将所有设置重置为默认。"
+notification_OGAS_rest_version_notification_tooltip: "$notification_OGAS_rest_version_notification_name$\n$notification_OGAS_rest_version_notification_desc$"
+
+OGAS_construct_fail_notification_group: "OGAS$concept_alert_settings_alert$"
+notification_OGAS_construct_fail_notification_name: "OGAS$concept_alert_settings_alert$"
+notification_OGAS_construct_fail_notification_desc: "OGAS已经造满所有可用建筑！剩余建造力将交给您手动操作。您可以增加每次建造的倍率或者铺设全新建筑来增加OGAS的可用建筑。"
+notification_OGAS_construct_fail_notification_tooltip: "$notification_OGAS_construct_fail_notification_name$\n$notification_OGAS_construct_fail_notification_desc$"

@@ -1,0 +1,70 @@
+﻿####################################
+# ELGAR PRODUCTION METHODS GROUPS  #
+####################################
+
+#by Marco Dandolo
+
+############################
+
+#Opera house
+
+pmg_elgar_orchestra = {
+	texture = "gfx/interface/icons/production_method_icons/elgar_public_orchestra_pm.dds"
+	ai_selection = most_productive
+
+	production_methods = {
+		pm_elgar_classical_orchestra
+		pm_elgar_early_romantic_orchestra
+		pm_elgar_mid_romantic_orchestra
+		pm_elgar_late_romantic_orchestra
+	}
+}
+
+pmg_elgar_ballet_school = {
+	texture = "gfx/interface/icons/production_method_icons/elgar_ballet_pm.dds"
+	ai_selection = most_productive
+
+	production_methods = {
+		pm_elgar_no_ballet
+		pm_elgar_classic_ballet
+		pm_elgar_expressionistic_ballet
+	}
+}
+
+########################################
+
+#Instrument workshop
+
+pmg_elgar_instruments = {
+	texture = "gfx/interface/icons/production_method_icons/elgar_artisan_instruments_pm.dds"
+	ai_selection = most_productive
+
+	production_methods = {
+		pm_elgar_artisan_instruments
+		pm_elgar_industrial_instruments
+		pm_elgar_electronic_instruments
+	}
+}
+
+pmg_elgar_instrument_cases = {
+	texture = "gfx/interface/icons/production_method_icons/elgar_artisan_instruments_pm.dds"
+	# ai_selection = most_productive
+	
+	production_methods = {
+		pm_elgar_fabric_instrument_wraps
+		pm_elgar_softshell_instrument_cases
+		pm_elgar_hardshell_instrument_cases
+	}
+}
+
+pmg_elgar_instrument_materials = {
+	texture = "gfx/interface/icons/production_method_icons/elgar_artisan_instruments_pm.dds"
+	ai_selection = most_productive
+	
+	production_methods = {
+		pm_elgar_no_material_specialties
+		pm_elgar_hardwood_instruments
+		pm_elgar_metal_instruments
+		pm_elgar_hybrid_instruments
+	}
+}

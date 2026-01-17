@@ -1,0 +1,16 @@
+﻿pm_wooden_buildings_fabric = -25
+pm_wooden_buildings_wood = -75
+pm_iron_frame_buildings_fabric = -20
+pm_iron_frame_buildings_wood = -40
+pm_iron_frame_buildings_iron = -50
+pm_iron_frame_buildings_tools = -10
+pm_steel_frame_buildings_steel = -50
+pm_steel_frame_buildings_glass = -40
+pm_steel_frame_buildings_explosives = -10
+pm_steel_frame_buildings_tools = -20
+pm_arc_welded_buildings_steel = -50
+pm_arc_welded_buildings_glass = -40
+pm_arc_welded_buildings_explosives = -20
+pm_arc_welded_buildings_tools = -40
+pm_arc_welded_buildings_electricity = -40
+

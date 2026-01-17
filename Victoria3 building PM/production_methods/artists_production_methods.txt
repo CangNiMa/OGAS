@@ -1,0 +1,196 @@
+﻿##############################
+# ARTISTS PRODUCTION METHODS #
+##############################
+
+#by Marco Dandolo
+
+##############################
+
+###ARTS ACADEMY###
+
+#Specialization
+
+pm_artists_arts_academy_standard = {
+	texture = "gfx/interface/icons/production_method_icons/elgar_aa_no_specialization_pm.dds"
+	is_default = yes
+
+	timed_modifiers = {
+		pm_artist_artistic_confusion_modifier
+	}
+
+	building_modifiers = {		# Use a 180/240 split
+		workforce_scaled = { 	# unscaled DOES NOT WORK (it just behaves as workforce scaled anyway)
+			# input goods
+			goods_input_paper_add = 6		# 180
+			goods_input_fabric_add = 12		# 240
+			goods_output_fine_art_add = 3	# 600
+		}
+	}
+}
+
+pm_artists_arts_academy_conservatory = {
+	texture = "gfx/interface/icons/production_method_icons/elgar_aa_conservatory_pm.dds"
+
+	unlocking_technologies = {
+		elgar_irrationalism_tech
+	}
+
+	timed_modifiers = {
+		pm_artist_artistic_confusion_modifier
+	}
+
+	country_modifiers = {
+		unscaled = {
+			country_artists_decorative_can_promote_composer_boolean = yes
+		}
+	}
+
+	building_modifiers = {		# Use a 180/240 split
+		workforce_scaled = { 	# unscaled DOES NOT WORK
+			# input goods
+			goods_input_paper_add = 6					# 180
+			goods_input_elgar_instruments_add = 6		# 240
+			goods_output_fine_art_add = 3				# 600
+		}
+	}
+
+	ai_value = -1000
+}
+
+pm_artists_arts_academy_salon = {
+	texture = "gfx/interface/icons/production_method_icons/elgar_aa_literary_salon_pm.dds"
+
+	unlocking_technologies = {
+	}
+
+	timed_modifiers = {
+		pm_artist_artistic_confusion_modifier
+	}
+
+	country_modifiers = {
+		unscaled = {
+			country_artists_decorative_can_promote_writer_boolean = yes
+		}
+	}
+
+	building_modifiers = {
+		workforce_scaled = { 	# unscaled DOES NOT WORK
+			# input goods
+			goods_input_paper_add = 6					# 180
+			goods_input_manzoni_prints_add = 4			# 240
+			goods_output_fine_art_add = 3				# 600
+		}
+	}
+
+	ai_value = -1000
+}
+
+pm_artists_arts_academy_studio = {
+	texture = "gfx/interface/icons/production_method_icons/elgar_aa_art_studio_pm.dds"
+
+	unlocking_technologies = {
+		realism
+	}
+
+	timed_modifiers = {
+		pm_artist_artistic_confusion_modifier
+	}
+
+	country_modifiers = {
+		unscaled = {
+			country_artists_decorative_can_promote_painter_boolean = yes
+		}
+	}
+
+	building_modifiers = {
+		workforce_scaled = { 	# unscaled DOES NOT WORK
+			# input goods
+			goods_input_paper_add = 6					# 180
+			goods_input_dye_add = 6						# 240
+			goods_output_fine_art_add = 3				# 600
+		}
+	}
+
+	ai_value = -1000
+}
+
+pm_artists_arts_academy_school = {
+	texture = "gfx/interface/icons/production_method_icons/elgar_aa_art_school_pm.dds"
+
+	unlocking_technologies = {
+		urban_planning
+	}
+
+	timed_modifiers = {
+		pm_artist_artistic_confusion_modifier
+	}
+
+	country_modifiers = {
+		unscaled = {
+			country_artists_decorative_can_promote_architect_boolean = yes
+		}
+	}
+
+	building_modifiers = {
+		workforce_scaled = { 	# unscaled DOES NOT WORK
+			# input goods
+			goods_input_paper_add = 6					# 180
+			goods_input_tools_add = 6					# 240
+			goods_output_fine_art_add = 3				# 600
+		}
+	}
+
+	ai_value = -1000
+}
+
+#################
+
+#Sculptor
+
+pm_artists_sculptor_basic = {
+	texture = "gfx/interface/icons/production_method_icons/artists_sculptor_basic.dds"
+	is_default = yes
+}
+
+pm_artists_sculptor_modern = {
+	texture = "gfx/interface/icons/production_method_icons/artists_sculptor_modern.dds"
+	ai_value = 10000
+
+	unlocking_technologies = {
+		elgar_impressionism_tech
+	}
+
+	building_modifiers = {
+		unscaled = {
+			building_throughput_add = 0.05
+		}
+		workforce_scaled = { 	# unscaled DOES NOT WORK
+			# input goods
+			goods_input_wood_add = 4					# 80
+			goods_input_tools_add = 2					# 80
+			goods_output_fine_art_add = 1				# 200
+		}
+	}
+}
+
+pm_artists_sculptor_art_deco = {
+	texture = "gfx/interface/icons/production_method_icons/artists_sculptor_art_deco.dds"
+	ai_value = 20000
+
+	unlocking_technologies = {
+		elgar_art_deco_tech
+	}
+
+	building_modifiers = {
+		unscaled = {
+			building_throughput_add = 0.15
+		}
+		workforce_scaled = { 	# unscaled DOES NOT WORK
+			# input goods
+			goods_input_wood_add = 4					# 80
+			goods_input_lead_add = 2					# 80
+			goods_input_tools_add = 4					# 160
+			goods_output_fine_art_add = 2				# 400
+		}
+	}
+}

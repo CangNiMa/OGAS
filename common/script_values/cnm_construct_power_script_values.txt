@@ -1,0 +1,20 @@
+﻿cnm_construct_power_pm_wooden_buildings = 2
+cnm_construct_power_pm_iron_frame_buildings = 5
+cnm_construct_power_pm_steel_frame_buildings = 10
+cnm_construct_power_pm_arc_welded_buildings = 15
+
+pm_wooden_buildings_goods_input_fabric_add = 25
+pm_wooden_buildings_goods_input_wood_add = 75
+pm_iron_frame_buildings_goods_input_wood_add = 40
+pm_iron_frame_buildings_goods_input_fabric_add = 20
+pm_iron_frame_buildings_goods_input_iron_add = 50
+pm_iron_frame_buildings_goods_input_tools_add = 10
+pm_steel_frame_buildings_goods_input_steel_add = 50
+pm_steel_frame_buildings_goods_input_glass_add = 40
+pm_steel_frame_buildings_goods_input_explosives_add = 10
+pm_steel_frame_buildings_goods_input_tools_add = 20
+pm_arc_welded_buildings_goods_input_steel_add = 50
+pm_arc_welded_buildings_goods_input_glass_add = 40
+pm_arc_welded_buildings_goods_input_explosives_add = 20
+pm_arc_welded_buildings_goods_input_tools_add = 40
+pm_arc_welded_buildings_goods_input_electricity_add = 40

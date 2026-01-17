@@ -1,0 +1,8 @@
+﻿default_all_construct_building = {
+	name = "default_all_construct_building"
+	desc = "default_all_construct_building_desc"
+
+	effect = {
+		cnm_default_building_manager = yes
+	}
+}

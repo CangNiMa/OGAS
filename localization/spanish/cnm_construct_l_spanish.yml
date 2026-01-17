@@ -1,0 +1,59 @@
+﻿l_spanish:
+
+je_cnm_construct_manager: "OGAS $pmg_automation$ $concept_construct$"
+#je_cnm_construct_manager_status_desc: "$construction_unit_price$\n$construct_power_queue_price$\n$construct_power_cost$\n$OGAS_building_unit_config$\n$OGAS_building_queue_config$"
+je_cnm_construct_manager_status_desc: "$OGAS_building_unit_config$\n$OGAS_building_queue_config$"
+construction_unit_price: "$concept_construction$ unitprice@money![Scope.GetCountry.MakeScope.ScriptValue('cnm_current_construct_power_unit_price')|D]"
+construct_power_queue_price: "queue price@money![Scope.GetCountry.MakeScope.ScriptValue('cnm_current_construct_power_queue_price')|D]"
+construct_power_cost: "$concept_construct$ total cost@money![Scope.GetCountry.MakeScope.ScriptValue('cnm_current_construct_power_cost')|D]"
+OGAS_building_unit_config: "$concept_construct$ time: [Scope.GetCountry.MakeScope.Var('OGAS_building_unit_config').GetValue]"
+OGAS_building_queue_config: "$concept_construction_queue$ time: [Scope.GetCountry.MakeScope.Var('OGAS_building_queue_config').GetValue] week"
+
+construct_manager: "+1 best $concept_building_balance_profit$ $concept_building$"
+construct_manager_desc: "$AUTO_EXPAND$ one highest $concept_building_balance_profit$ $concept_building$"
+
+add_best_building_construction_sector: "+1 best $building_construction_sector$"
+add_best_building_construction_sector_desc: "$AUTO_EXPAND$ one best unit cost $concept_construction$ $building_construction_sector$"
+
+active_auto_construct_manager: "[SelectLocalization( EqualTo_CFixedPoint( Scope.GetCountry.MakeScope.Var('cnm_auto_construct_manager').GetValue,'(CFixedPoint)0'), '@simple_box!', '@green_checkmark_box!')]$active_auto_construct_manager_no_icon$"
+active_auto_construct_manager_no_icon: "$pmg_automation$ $concept_construct$"
+active_auto_construct_manager_desc: "OGAS will $pmg_automation$ fill the $concept_construction_queue$ with best $concept_building_balance_profit$$concept_building$. If there is no $concept_construct$, it indicates that there are too many prohibited conditions for the building. You can use $construct_manager$ for quick check.\nThis function run after vanilla $AUTO_EXPAND$ and $active_auto_railway_manager_no_icon$."
+
+active_auto_railway_manager: "[SelectLocalization( EqualTo_CFixedPoint( Scope.GetCountry.MakeScope.Var('cnm_auto_railway_manager').GetValue,'(CFixedPoint)0'), '@simple_box!', '@green_checkmark_box!')]$active_auto_railway_manager_no_icon$"
+active_auto_railway_manager_no_icon: "$pmg_automation$ $building_railway$ $concept_infrastructure$"
+active_auto_railway_manager_desc: "$pmg_automation$$concept_construct$$building_railway$,$INCREASE$ $concept_infrastructure$.\nThis function run after vanilla $AUTO_EXPAND$, but run before $je_cnm_construct_manager$.\nPlease note, $building_railway$ $concept_construct$ by this function is different from $building_railway$ $concept_construct$ by $je_cnm_construct_manager$ based on $concept_building_balance_profit$."
+
+active_auto_construction_sector_manager: "[SelectLocalization( EqualTo_CFixedPoint( Scope.GetCountry.MakeScope.Var('cnm_auto_construction_sector_manager').GetValue,'(CFixedPoint)0'), '@simple_box!', '@green_checkmark_box!')]$active_auto_construction_sector_manager_no_icon$"
+active_auto_construction_sector_manager_no_icon: "$pmg_automation$ $building_construction_sector$"
+active_auto_construction_sector_manager_desc: "$pmg_automation$$concept_construct$$building_construction_sector$, if you have enough $BALANCE$ and $TRIGGER_HAS_WASTED_CONSTRUCTION_NOT$。"
+
+
+add_best_contruction: "+1 Optimal $building_construction_sector$"
+add_best_contruction_desc: "$concept_construct$ one cheapest unit-price $building_construction_sector$."
+
+active_ban_construct_power_low: "[SelectLocalization( EqualTo_CFixedPoint( Scope.GetCountry.MakeScope.Var('cnm_construct_rule_ban_construct_power_low').GetValue,'(CFixedPoint)0'), '@simple_box!', '@green_checkmark_box!')]Ban $concept_construction$ low"
+active_ban_construct_power_low_desc: "$je_cnm_construct_manager$ will not select state with $state_construction_mult$ < 0"
+active_ban_no_incorporated: "[SelectLocalization( EqualTo_CFixedPoint( Scope.GetCountry.MakeScope.Var('cnm_construct_rule_ban_no_incorporated').GetValue,'(CFixedPoint)0'), '@simple_box!', '@green_checkmark_box!')]Only $incorporate_state$"
+active_ban_no_incorporated_desc: "$je_cnm_construct_manager$ will only select $incorporate_state$"
+
+active_ban_unemployed_low: "[SelectLocalization( EqualTo_CFixedPoint( Scope.GetCountry.MakeScope.Var('cnm_construct_rule_ban_unemployed_low').GetValue,'(CFixedPoint)0'), '@simple_box!', '@green_checkmark_box!')]$DECREASE$$concept_unemployed$"
+active_ban_unemployed_low_desc: "$je_cnm_construct_manager$ will only select $concept_state$ with $concept_unemployed$ > 5000"
+active_ban_available_workers_low: "[SelectLocalization( EqualTo_CFixedPoint( Scope.GetCountry.MakeScope.Var('cnm_construct_rule_ban_available_workers_low').GetValue,'(CFixedPoint)0'), '@simple_box!', '@green_checkmark_box!')]$DECREASE$$peasants_no_icon$"
+active_ban_available_workers_low_desc: "$je_cnm_construct_manager$ will only select $concept_state$ with $concept_unemployed$+$peasants_no_icon$ > 5000"
+active_use_state_construction_mult: "[SelectLocalization( EqualTo_CFixedPoint( Scope.GetCountry.MakeScope.Var('cnm_rule_use_state_construction_mult').GetValue,'(CFixedPoint)0'), '@simple_box!', '@green_checkmark_box!')]Count $state_construction_mult$ weight"
+active_use_state_construction_mult_desc: "Count $state_construction_mult$ as building weight, this is beneficial for saving construction costs. For example, you can use $concept_decree$ $decree_road_maintenance$ to influence the location that OGAS choose."
+
+reset_construct_manager: "$OPTION_DEFAULT$"
+reset_construct_manager_desc: "$OPTION_DEFAULT$"
+
+OGAS_building_unit_add: "+1 $concept_construct$ $POP_AMOUNT$ each time@arrow_up!"
+OGAS_building_unit_add_desc: ""
+OGAS_building_unit_sub: "-1 $concept_construct$$POP_AMOUNT$ each time@arrow_down!"
+OGAS_building_unit_sub_desc: ""
+OGAS_building_queue_add: "+0.5 week $concept_construction_queue$ time@arrow_up!"
+OGAS_building_queue_add_desc: "If you find that OGAS has not filled the construction queue, you can increase the allowed construction queue time for OGAS."
+OGAS_building_queue_sub: "-0.5 week $concept_construction_queue$ time@arrow_down!"
+OGAS_building_queue_sub_desc: "If you find that the construction queue added by OGAS is too long, you can reduce the allowed construction queue time of OGAS to enhance its response speed to the economic situation."
+
+
+je_cnm_construct_manager_reason: "$concept_construction$ unit price:\nEach $concept_construction$ cost, there may be some mistake based on your current ratio, the more $concept_construction$ the less mistake.\nUnit price queue:\nEach queue cost, the more queue the less mistake.\n$concept_construct$ total cost:\n$building_construction_sector$ total cost, include goods and wages.\n\nNote that only $concept_building$ that must exist can be expanded. There is no way to know the $concept_building_balance_profit$ of an unfinished $concept_building$.\n If there is no OGAS construction, it indicates that there are too many prohibited conditions for the $concept_building$. Please check the prohibited conditions of the $concept_building$. If '$construct_manager$' works, means OGAS works. \n Building rules: By default, only one building can be upgraded at a time, occupation > 95%, and custom conditions.\n\nIf you do not want see OGAS report any more, you can deactive it in settings."

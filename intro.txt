@@ -1,0 +1,102 @@
+计算机真是一个伟大的发明！
+现在，你可以将所有建筑与生产方式纳入完全电子化的自动化控制之中，让他们自行评估各种生产的优劣，达到最稳定的市场平衡！
+
+
+您将可以：
+
+让建筑自行升级生产方式，如果更高级的生产方式利润更高。对建造部门而言，按照建造力单价计算
+让建筑根据当地劳动人口和失业率，调整自动化生产线。可以增加自动化生产以减少人力需求，也可以降低自动化生产以产生就业岗位。
+修改和添加了许多原版自动扩张的方式，包括建造部门、大学、港口等建筑。
+您还可以直接按照利润排名，直接扩建国内最赚钱的建筑。
+任何自动扩张方式，无论是原版的还是由本MOD提供的，都可以由您自定义几项额外功能：吸纳失业、消灭自给农、建造力优先、禁止非整合
+你还可以自定义你想要建筑的类型以及每次建造的次数
+
+
+现在一切交给市场，双手离开键盘，享受数字化OGAS带给你的全自动市场经济！
+
+
+
+详细说明：
+
+生产方式升级：
+根据当地价格，若高级生产方式利润比当前高，则会升级生产方式。对建造部门而言，计算建造力单价。
+
+劳动力平衡：
+如果该地区的劳动力不足则升级自动化。并且如果该地区的失业率 > 10%还可以降级，用于吸纳失业人口。
+
+你可以自定义更改的频率与次数。
+
+自动最优利润建筑：
+寻找国内最赚钱的建筑，然后进行升级，尝试填满建造力队列。此功能将在原版自动扩建之后进行。
+
+自动最优建造部门：
+按照当前科技，寻找最佳建筑部门建造地点，尝试填满建造力队列。此功能将在原版自动扩建之后进行。
+
+自定义建造配置：
+您可以禁止OGAS在建造力修正为负的地区进行建造。
+您可以让OGAS只在有失业人口/自给农人口的地区建造。
+您可以让OGAS只在整合地区建造。
+您可以指定OGAS建造的工厂类型。
+您可以指定每次OGAS升级建筑时升多少级。
+
+
+警告：本MOD将只使用原版配方，亦不支持其他MOD建筑。若您使用了修改原版数据的MOD，本MOD依然按照原版配方计算。若与您预期的数据不一致，本MOD概不负责。
+本MOD在文件夹中附赠了一个自动化适配其他MOD建筑的脚本，若您是MOD作者，欢迎使用此脚本为您的MOD添加对本MOD的支持。参考视频链接：
+www.bilibili.com/video/BV1YKrQBvEsX
+
+注意：安装多个大型MOD导致不兼容是游戏本身的原因。因为游戏mod制作的局限性，相当多数据无法使用代码，只能向游戏中注入大量脚本值代替，游戏中可以接受mod注入的校本值是有上限的。
+
+如果您对本MOD有任何疑问或讨论，可以加qq群168419758，记得注明群号来源。
+
+The computer is a great invention! 
+Now you can bring all building and production methods under fully electronic automated control, allowing them to evaluate the advantages and disadvantages of various production methods on their own to achieve the most stable market balance!
+
+
+
+You will be able to:
+
+
+Let buildings upgrade production methods on their own, if new production method has more profit. For the construction sector, means unit price of construction power.
+
+Let the building adjust the automated production methods line to the local workforce and unemployment rate. Automated production methods can be increased to reduce workforce requirements, or decreased to generate jobs.
+
+Modifications and additions have been made to many of the vanilla auto-expand rule, including construct sector, universities, harbors, and other buildings.
+You can also expand the most profitable buildings in the country directly by ranking them in terms of profit.
+
+Any of the automatic expansion methods, either vanilla or provided by this mod, can be customized by you with several additional features: absorbing unemployment, eliminating subsistence, prioritizing construction power, only incorporated.
+Also you can define the Building Types you need to expand, and expand amonut each time.
+
+
+
+
+Now leave everything to the market, AFK and enjoy the fully automated market economy that digitized OGAS brings you!
+
+
+Detailed Description:
+
+
+PM Upgrade:
+Based on local prices, upgrades the production method if the advanced production method is more profitable than the current one.
+
+Labor Balance:
+Upgrade the production method, if there is no employee in state. And, it is also possible to downgrade the production method, if the unemployment rate in the state > 10%.
+
+You can define the frequence and times.
+
+
+Automatic Optimum Profit Buildings:
+Find the most profitable building in the country, then try to fill construction queue. This feature will be available after the vanilla Auto Expand.
+
+Automatic +1 Optimal Construction Sector:
+Finds the best place to build a construction sector according to current technology, then try to fill construction queue. This feature will be available after the vanilla Auto Expand.
+
+Custom construct configuration:
+You can prohibit OGAS in state with negative construction power.
+You can have OGAS only build in state with unemployed/self-sufficient.
+You can have OGAS only build in incorporated state.
+You can specify the building type built by OGAS.
+
+Warning: This MOD will only use the vanilla recipe and does not support other MOD buildings. If you use a MOD that modifies the vanilla data, this MOD will still calculate according to the vanilla recipe. If the data does not match your expectations, this MOD will not responsible.
+This mod has a tool to help other mod authors adapt their buildings to be compatible with this mod. If you are a mod author, please use this script to add support for this mod to your mod.
+
+Note: Incompatibility caused by installing multiple large mods is due to the game itself. Due to the limitations of game mod development, a considerable amount of data cannot be coded, and instead, a large number of script values are injected into the game. There is an upper limit to the number of script values that can be injected into the game through mods. 

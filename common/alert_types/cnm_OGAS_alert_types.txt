@@ -1,0 +1,64 @@
+﻿cnm_not_enough_workers_in_state = {
+	texture = "gfx/interface/icons/generic_icons/goods_shortage.dds"
+	script_context = player_state
+
+	valid = {
+		cnm_state_available_workers < 1000
+	}
+
+	open_panel = states_panel|buildings
+	type = important_action
+	alert_group = cnm_not_enough_workers_in_state_group
+}
+
+cnm_no_available_state_workers = {
+	texture = "gfx/interface/icons/alert_icons/low_legitimacy.dds"
+	script_context = player_country
+
+	valid = {
+		not = {
+			any_scope_state = {
+				cnm_state_available_workers > 5000
+			}
+		}
+		root.var:cnm_construct_rule_ban_available_workers_low = 1
+	}
+
+	open_panel = journal
+	type = alert
+	color = yellow
+}
+cnm_no_available_state_unemployee = {
+	texture = "gfx/interface/icons/alert_icons/low_legitimacy.dds"
+	script_context = player_country
+
+	valid = {
+		not = {
+			any_scope_state = {
+				cnm_state_unemployed > 5000
+			}
+		}
+		root.var:cnm_construct_rule_ban_unemployed_low = 1
+	}
+
+	open_panel = journal
+	type = alert
+	color = yellow
+}
+cnm_no_available_state_construct_power = {
+	texture = "gfx/interface/icons/alert_icons/low_legitimacy.dds"
+	script_context = player_country
+
+	valid = {
+		not = {
+			any_scope_state = {
+				modifier:state_construction_mult >= 0
+			}
+		}
+		root.var:cnm_construct_rule_ban_construct_power_low = 1
+	}
+
+	open_panel = journal
+	type = alert
+	color = yellow
+}

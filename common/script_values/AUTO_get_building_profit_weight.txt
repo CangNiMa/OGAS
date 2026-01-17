@@ -1,0 +1,266 @@
+﻿get_building_profit_weight = {
+    if = {
+        limit = {
+            is_building_type = building_food_industry
+        }
+        value = owner.var:cnm_auto_construct_building_food_industry
+    }
+    if = {
+        limit = {
+            is_building_type = building_textile_mill
+        }
+        value = owner.var:cnm_auto_construct_building_textile_mill
+    }
+    if = {
+        limit = {
+            is_building_type = building_furniture_manufactory
+        }
+        value = owner.var:cnm_auto_construct_building_furniture_manufactory
+    }
+    if = {
+        limit = {
+            is_building_type = building_glassworks
+        }
+        value = owner.var:cnm_auto_construct_building_glassworks
+    }
+    if = {
+        limit = {
+            is_building_type = building_tooling_workshop
+        }
+        value = owner.var:cnm_auto_construct_building_tooling_workshop
+    }
+    if = {
+        limit = {
+            is_building_type = building_paper_mill
+        }
+        value = owner.var:cnm_auto_construct_building_paper_mill
+    }
+    if = {
+        limit = {
+            is_building_type = building_chemical_plant
+        }
+        value = owner.var:cnm_auto_construct_building_chemical_plant
+    }
+    if = {
+        limit = {
+            is_building_type = building_explosives_factory
+        }
+        value = owner.var:cnm_auto_construct_building_explosives_factory
+    }
+    if = {
+        limit = {
+            is_building_type = building_synthetics_plant
+        }
+        value = owner.var:cnm_auto_construct_building_synthetics_plant
+    }
+    if = {
+        limit = {
+            is_building_type = building_steel_mill
+        }
+        value = owner.var:cnm_auto_construct_building_steel_mill
+    }
+    if = {
+        limit = {
+            is_building_type = building_motor_industry
+        }
+        value = owner.var:cnm_auto_construct_building_motor_industry
+    }
+    if = {
+        limit = {
+            is_building_type = building_shipyard
+        }
+        value = owner.var:cnm_auto_construct_building_shipyard
+    }
+    if = {
+        limit = {
+            is_building_type = building_automotive_industry
+        }
+        value = owner.var:cnm_auto_construct_building_automotive_industry
+    }
+    if = {
+        limit = {
+            is_building_type = building_electrics_industry
+        }
+        value = owner.var:cnm_auto_construct_building_electrics_industry
+    }
+    if = {
+        limit = {
+            is_building_type = building_rye_farm
+        }
+        value = owner.var:cnm_auto_construct_building_rye_farm
+    }
+    if = {
+        limit = {
+            is_building_type = building_wheat_farm
+        }
+        value = owner.var:cnm_auto_construct_building_wheat_farm
+    }
+    if = {
+        limit = {
+            is_building_type = building_rice_farm
+        }
+        value = owner.var:cnm_auto_construct_building_rice_farm
+    }
+    if = {
+        limit = {
+            is_building_type = building_maize_farm
+        }
+        value = owner.var:cnm_auto_construct_building_maize_farm
+    }
+    if = {
+        limit = {
+            is_building_type = building_millet_farm
+        }
+        value = owner.var:cnm_auto_construct_building_millet_farm
+    }
+    if = {
+        limit = {
+            is_building_type = building_livestock_ranch
+        }
+        value = owner.var:cnm_auto_construct_building_livestock_ranch
+    }
+    if = {
+        limit = {
+            is_building_type = building_vineyard
+        }
+        value = owner.var:cnm_auto_construct_building_vineyard
+    }
+    if = {
+        limit = {
+            is_building_type = building_coal_mine
+        }
+        value = owner.var:cnm_auto_construct_building_coal_mine
+    }
+    if = {
+        limit = {
+            is_building_type = building_iron_mine
+        }
+        value = owner.var:cnm_auto_construct_building_iron_mine
+    }
+    if = {
+        limit = {
+            is_building_type = building_lead_mine
+        }
+        value = owner.var:cnm_auto_construct_building_lead_mine
+    }
+    if = {
+        limit = {
+            is_building_type = building_sulfur_mine
+        }
+        value = owner.var:cnm_auto_construct_building_sulfur_mine
+    }
+    if = {
+        limit = {
+            is_building_type = building_gold_mine
+        }
+        value = owner.var:cnm_auto_construct_building_gold_mine
+    }
+    if = {
+        limit = {
+            is_building_type = building_coffee_plantation
+        }
+        value = owner.var:cnm_auto_construct_building_coffee_plantation
+    }
+    if = {
+        limit = {
+            is_building_type = building_cotton_plantation
+        }
+        value = owner.var:cnm_auto_construct_building_cotton_plantation
+    }
+    if = {
+        limit = {
+            is_building_type = building_dye_plantation
+        }
+        value = owner.var:cnm_auto_construct_building_dye_plantation
+    }
+    if = {
+        limit = {
+            is_building_type = building_opium_plantation
+        }
+        value = owner.var:cnm_auto_construct_building_opium_plantation
+    }
+    if = {
+        limit = {
+            is_building_type = building_tea_plantation
+        }
+        value = owner.var:cnm_auto_construct_building_tea_plantation
+    }
+    if = {
+        limit = {
+            is_building_type = building_tobacco_plantation
+        }
+        value = owner.var:cnm_auto_construct_building_tobacco_plantation
+    }
+    if = {
+        limit = {
+            is_building_type = building_sugar_plantation
+        }
+        value = owner.var:cnm_auto_construct_building_sugar_plantation
+    }
+    if = {
+        limit = {
+            is_building_type = building_banana_plantation
+        }
+        value = owner.var:cnm_auto_construct_building_banana_plantation
+    }
+    if = {
+        limit = {
+            is_building_type = building_silk_plantation
+        }
+        value = owner.var:cnm_auto_construct_building_silk_plantation
+    }
+    if = {
+        limit = {
+            is_building_type = building_art_academy
+        }
+        value = owner.var:cnm_auto_construct_building_art_academy
+    }
+    if = {
+        limit = {
+            is_building_type = building_logging_camp
+        }
+        value = owner.var:cnm_auto_construct_building_logging_camp
+    }
+    if = {
+        limit = {
+            is_building_type = building_rubber_plantation
+        }
+        value = owner.var:cnm_auto_construct_building_rubber_plantation
+    }
+    if = {
+        limit = {
+            is_building_type = building_fishing_wharf
+        }
+        value = owner.var:cnm_auto_construct_building_fishing_wharf
+    }
+    if = {
+        limit = {
+            is_building_type = building_whaling_station
+        }
+        value = owner.var:cnm_auto_construct_building_whaling_station
+    }
+    if = {
+        limit = {
+            is_building_type = building_oil_rig
+        }
+        value = owner.var:cnm_auto_construct_building_oil_rig
+    }
+    if = {
+        limit = {
+            is_building_type = building_railway
+        }
+        value = owner.var:cnm_auto_construct_building_railway
+    }
+    if = {
+        limit = {
+            is_building_type = building_uranium_mine
+        }
+        value = owner.var:cnm_auto_construct_building_uranium_mine
+    }
+    if = {
+        limit = {
+            is_building_type = building_airport
+        }
+        value = owner.var:cnm_auto_construct_building_airport
+    }
+}

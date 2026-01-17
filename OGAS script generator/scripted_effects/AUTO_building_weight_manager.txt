@@ -1,0 +1,10 @@
+﻿OGAS_default_building_weight_manager = {
+    set_variable = {
+        name = cnm_auto_construct_building_uranium_mine
+        value = 1
+    }
+    set_variable = {
+        name = cnm_auto_construct_building_airport
+        value = 1
+    }
+}

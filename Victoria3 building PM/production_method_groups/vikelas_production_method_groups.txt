@@ -1,0 +1,125 @@
+﻿######################################
+# VIKELAS PRODUCTION METHODS GROUPS  #
+######################################
+
+#by Lord R&Marco Dandolo
+
+############################
+
+#Sports Facilities
+
+pmg_vikelas_sports_grounds = {
+	texture = "gfx/interface/icons/production_method_icons/vikelas_sports_stadium.dds"
+	ai_selection = most_productive
+
+	production_methods = {
+		pm_vikelas_sports_field
+		pm_vikelas_sports_facility
+		pm_vikelas_sports_stadium
+	}
+}
+
+pmg_vikelas_sports_cricket = {
+	texture = "gfx/interface/icons/production_method_icons/vikelas_sports_stadium.dds"
+	ai_selection = most_productive
+
+	production_methods = {
+		pm_vikelas_no_cricket_club
+		pm_vikelas_cricket_club
+	}
+}
+
+pmg_vikelas_sports_baseball = {
+	texture = "gfx/interface/icons/production_method_icons/vikelas_sports_stadium.dds"
+	ai_selection = most_productive
+
+	production_methods = {
+		pm_vikelas_no_baseball_club
+		pm_vikelas_baseball_club
+	}
+}
+
+pmg_vikelas_sports_football = {
+	texture = "gfx/interface/icons/production_method_icons/vikelas_sports_stadium.dds"
+	ai_selection = most_productive
+
+	production_methods = {
+		pm_vikelas_no_football_club
+		pm_vikelas_football_club
+	}
+}
+
+pmg_vikelas_sports_basketball = {
+	texture = "gfx/interface/icons/production_method_icons/vikelas_sports_stadium.dds"
+	ai_selection = most_productive
+
+	production_methods = {
+		pm_vikelas_no_basketball_club
+		pm_vikelas_basketball_club
+	}
+}
+
+#IOC HQ
+
+pmg_vikelas_ioc = {
+	texture = "gfx/interface/icons/production_method_icons/vikelas_sports_stadium.dds"
+	ai_selection = most_productive
+
+	production_methods = {
+		pm_vikelas_ioc
+	}
+}
+
+#AIACR HQ
+
+pmg_vikelas_aiacr = {
+	texture = "gfx/interface/icons/production_method_icons/vikelas_sports_stadium.dds"
+	ai_selection = most_productive
+
+	production_methods = {
+		pm_vikelas_aiacr
+	}
+}
+
+#FIFA HQ
+
+pmg_vikelas_fifa = {
+	texture = "gfx/interface/icons/production_method_icons/vikelas_sports_stadium.dds"
+	ai_selection = most_productive
+
+	production_methods = {
+		pm_vikelas_fifa
+	}
+}
+
+#Circuit
+
+pmg_vikelas_circuit_status = {
+	texture = "gfx/interface/icons/production_method_icons/vikelas_sports_stadium.dds"
+	ai_selection = most_productive
+
+	production_methods = {
+		pm_vikelas_normal_circuit
+		pm_vikelas_grand_prix_circuit
+	}
+}
+
+pmg_vikelas_circuit_paddock = {
+	texture = "gfx/interface/icons/production_method_icons/vikelas_sports_stadium.dds"
+	ai_selection = most_productive
+
+	production_methods = {
+		pm_vikelas_basic_paddock
+		pm_vikelas_modern_paddock
+	}
+}
+
+pmg_vikelas_circuit_tribunes = {
+	texture = "gfx/interface/icons/production_method_icons/vikelas_sports_stadium.dds"
+	ai_selection = most_productive
+
+	production_methods = {
+		pm_vikelas_normal_tribunes
+		pm_vikelas_panoramical_tribunes
+	}
+}

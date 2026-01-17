@@ -1,0 +1,178 @@
+﻿OGAS_default_building_weight_manager = {
+    set_variable = {
+        name = cnm_auto_construct_building_food_industry
+        value = 1
+    }
+    set_variable = {
+        name = cnm_auto_construct_building_textile_mill
+        value = 1
+    }
+    set_variable = {
+        name = cnm_auto_construct_building_furniture_manufactory
+        value = 1
+    }
+    set_variable = {
+        name = cnm_auto_construct_building_glassworks
+        value = 1
+    }
+    set_variable = {
+        name = cnm_auto_construct_building_tooling_workshop
+        value = 1
+    }
+    set_variable = {
+        name = cnm_auto_construct_building_paper_mill
+        value = 1
+    }
+    set_variable = {
+        name = cnm_auto_construct_building_chemical_plant
+        value = 1
+    }
+    set_variable = {
+        name = cnm_auto_construct_building_explosives_factory
+        value = 1
+    }
+    set_variable = {
+        name = cnm_auto_construct_building_synthetics_plant
+        value = 1
+    }
+    set_variable = {
+        name = cnm_auto_construct_building_steel_mill
+        value = 1
+    }
+    set_variable = {
+        name = cnm_auto_construct_building_motor_industry
+        value = 1
+    }
+    set_variable = {
+        name = cnm_auto_construct_building_shipyard
+        value = 1
+    }
+    set_variable = {
+        name = cnm_auto_construct_building_automotive_industry
+        value = 1
+    }
+    set_variable = {
+        name = cnm_auto_construct_building_electrics_industry
+        value = 1
+    }
+    set_variable = {
+        name = cnm_auto_construct_building_rye_farm
+        value = 1
+    }
+    set_variable = {
+        name = cnm_auto_construct_building_wheat_farm
+        value = 1
+    }
+    set_variable = {
+        name = cnm_auto_construct_building_rice_farm
+        value = 1
+    }
+    set_variable = {
+        name = cnm_auto_construct_building_maize_farm
+        value = 1
+    }
+    set_variable = {
+        name = cnm_auto_construct_building_millet_farm
+        value = 1
+    }
+    set_variable = {
+        name = cnm_auto_construct_building_livestock_ranch
+        value = 1
+    }
+    set_variable = {
+        name = cnm_auto_construct_building_vineyard
+        value = 1
+    }
+    set_variable = {
+        name = cnm_auto_construct_building_coal_mine
+        value = 1
+    }
+    set_variable = {
+        name = cnm_auto_construct_building_iron_mine
+        value = 1
+    }
+    set_variable = {
+        name = cnm_auto_construct_building_lead_mine
+        value = 1
+    }
+    set_variable = {
+        name = cnm_auto_construct_building_sulfur_mine
+        value = 1
+    }
+    set_variable = {
+        name = cnm_auto_construct_building_gold_mine
+        value = 1
+    }
+    set_variable = {
+        name = cnm_auto_construct_building_coffee_plantation
+        value = 1
+    }
+    set_variable = {
+        name = cnm_auto_construct_building_cotton_plantation
+        value = 1
+    }
+    set_variable = {
+        name = cnm_auto_construct_building_dye_plantation
+        value = 1
+    }
+    set_variable = {
+        name = cnm_auto_construct_building_opium_plantation
+        value = 1
+    }
+    set_variable = {
+        name = cnm_auto_construct_building_tea_plantation
+        value = 1
+    }
+    set_variable = {
+        name = cnm_auto_construct_building_tobacco_plantation
+        value = 1
+    }
+    set_variable = {
+        name = cnm_auto_construct_building_sugar_plantation
+        value = 1
+    }
+    set_variable = {
+        name = cnm_auto_construct_building_banana_plantation
+        value = 1
+    }
+    set_variable = {
+        name = cnm_auto_construct_building_silk_plantation
+        value = 1
+    }
+    set_variable = {
+        name = cnm_auto_construct_building_art_academy
+        value = 1
+    }
+    set_variable = {
+        name = cnm_auto_construct_building_logging_camp
+        value = 1
+    }
+    set_variable = {
+        name = cnm_auto_construct_building_rubber_plantation
+        value = 1
+    }
+    set_variable = {
+        name = cnm_auto_construct_building_fishing_wharf
+        value = 1
+    }
+    set_variable = {
+        name = cnm_auto_construct_building_whaling_station
+        value = 1
+    }
+    set_variable = {
+        name = cnm_auto_construct_building_oil_rig
+        value = 1
+    }
+    set_variable = {
+        name = cnm_auto_construct_building_railway
+        value = 1
+    }
+    set_variable = {
+        name = cnm_auto_construct_building_uranium_mine
+        value = 1
+    }
+    set_variable = {
+        name = cnm_auto_construct_building_airport
+        value = 1
+    }
+}

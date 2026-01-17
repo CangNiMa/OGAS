@@ -1,0 +1,40 @@
+﻿#notification_example = {													#notification key
+#	type = country 															#include notification type
+#   group = "some_group"                                                    # group for "Current Situation". Also adds this notification to the Message Settings list.
+#	texture = "gfx/interface/icons/notification_icons/technology.dds" 		#texture icon. Mandatory if notification has a group. Otherwise, you will get a pink face placeholder in feed notifications.
+#
+#	notification_type = feed/toast/popup									#how the notification will be presented
+#	popup_name = acquired_technology_popup 									#gui specification for popups, must be in gui/popups.gui
+# 	colore = bad/neutral/good army											#colors the notification 
+#
+#	on_created_soundeffect = "event:/SFX/UI/Notifications/notification" 	#notification on creationg sound
+#}
+
+
+#       ####### ####### ####### ######
+#       #       #       #       #     # 
+#       #       #       #       #     # 
+#       #####   #####   #####   #     # 
+#       #       #       #       #     # 
+#       #       #       #       #     # 
+#       #       ####### ####### ######  
+
+OGAS_construct_fail_notification = {
+	type = country
+	group = "OGAS_construct_fail_notification_group"
+	
+	texture = "gfx/interface/icons/notification_icons/technology.dds"
+
+	notification_type = feed
+	color = bad
+}
+
+OGAS_rest_version_notification = {
+	type = country
+	group = "OGAS_rest_version_notification_group"
+	
+	texture = "gfx/interface/icons/notification_icons/technology.dds"
+
+	notification_type = feed
+	color = bad
+}

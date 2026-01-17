@@ -1,0 +1,110 @@
+﻿######################
+# VANILLA BUILDINGS  #
+######################
+
+#by Lord R & Marco Dandolo
+
+##########################
+
+#Government Administration: Add Hospital
+TRY_INJECT:building_government_administration = {
+	production_method_groups = {
+		pmg_panum_hospital #MORGENRÖTE
+	}
+}
+
+#University: Add University Focus
+TRY_INJECT:building_university = {
+	production_method_groups = {
+		pmg_university_focus #MORGENRÖTE
+	}
+}
+
+#Arts Academy: Add Academy Focus and Academy Sculpture
+TRY_INJECT:building_art_academy = {
+	production_method_groups = {
+		pmg_arts_academy_focus #MORGENRÖTE
+		pmg_arts_academy_sculpture #MORGENRÖTE
+	}
+}
+
+#Railway: Telegraph and Radio Stations
+TRY_INJECT:building_railway = {
+	production_method_groups = {
+		pmg_gaudi_communication #MORGENRÖTE
+	}
+}
+
+##########################
+
+###Monuments###
+
+#Cristo Redentor
+
+TRY_INJECT:building_cristo_redentor = {
+	unlocking_technologies = {
+		steel_frame_buildings #Morgenröte added
+		elgar_art_deco_tech #Morgenröte added
+	}
+
+	### MOD ###
+	can_build_government = {
+		custom_tooltip = {
+			text = gaudi_cristo_can_construct_tt
+			has_global_variable = gaudi_cristo_finished
+		}
+	}
+	### MOD END ###
+}
+
+#Eiffel Tower
+TRY_INJECT:building_eiffel_tower = {
+	###Morgenröte###
+	can_build_government = {
+		custom_tooltip = {
+			text = gaudi_eiffel_can_construct_tt
+			has_global_variable = gaudi_eiffel_finished
+		}
+	}
+	###End###
+}
+
+#Statue of Liberty
+TRY_INJECT:building_statue_of_liberty = {
+	###Morgenröte###
+	can_build_government = {
+		custom_tooltip = {
+			text = gaudi_liberty_can_construct_tt
+			has_global_variable = gaudi_liberty_finished
+		}
+	}
+	###End###
+}
+
+#Big Ben
+TRY_INJECT:building_big_ben = {
+	###Morgenröte###
+	can_build_government = {
+		custom_tooltip = {
+			text = gaudi_ben_can_construct_tt
+			has_global_variable = gaudi_ben_finished
+		}
+	}
+	###End###
+}
+
+#Machu Picchu
+TRY_INJECT:building_machu_picchu = {
+	###Morgenröte###
+	unlocking_technologies = {
+	}
+	
+	required_construction = construction_cost_monument
+
+	potential = {
+		state_region = s:STATE_ICA
+	}
+	
+	ai_value = 10000
+	###End###
+}

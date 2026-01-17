@@ -1,0 +1,78 @@
+﻿cnm_default_pm_manager = {
+	set_variable = {
+		name = cnm_upgrade_tolerance_pm_manager
+		value = pm_upgrade_tolerance_high
+	}
+	set_variable = {
+		name = cnm_upgrade_pm_manager
+		value = 0
+	}
+	set_variable = {
+		name = cnm_balance_pm_manager
+		value = 0
+	}
+	set_variable = {
+		name = cnm_workforce_employment_pm_manager
+		value = 1
+	}
+
+	set_variable = {
+		name = cnm_pm_manage_amount
+		value = 1
+	}
+
+	set_variable = {
+		name = cnm_pm_manage_frequency
+		value = 2
+	}
+}
+cnm_default_construct_manager = {
+	set_variable = {
+		name = cnm_auto_construct_manager
+		value = 0
+	}
+	set_variable = {
+		name = cnm_auto_railway_manager
+		value = 0
+	}
+	set_variable = {
+		name = cnm_auto_construction_sector_manager
+		value = 0
+	}
+	set_variable = {
+		name = cnm_construct_rule_ban_construct_power_low
+		value = 1
+	}
+	set_variable = {
+		name = cnm_construct_rule_ban_unemployed_low
+		value = 0
+	}
+	set_variable = {
+		name = cnm_construct_rule_ban_available_workers_low
+		value = 1
+	}
+	set_variable = {
+		name = cnm_construct_rule_ban_no_incorporated
+		value = 1
+	}
+	set_variable = {
+		name = cnm_rule_use_state_construction_mult
+		value = 1
+	}
+	set_variable = {
+		name = OGAS_building_unit_config
+		value = 1
+	}
+	set_variable = {
+		name = OGAS_building_queue_config
+		value = 16
+	}
+
+	set_variable = {
+		name = cnm_mod_running_version
+		value = cnm_mod_version
+	}
+}
+cnm_default_building_manager = {
+	OGAS_default_building_weight_manager = yes
+}

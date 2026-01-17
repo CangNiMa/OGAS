@@ -1,0 +1,39 @@
+﻿####################
+# CURIE BUILDINGS  #
+####################
+
+#by Marco Dandolo
+
+######################
+
+###### URANIUM MINE ###########################################################
+
+building_uranium_mine = {
+	building_group = bg_uranium_mining
+	icon = "gfx/interface/icons/building_icons/building_curie_uranium_mine.dds"
+	city_type = mine
+	levels_per_mesh = 50
+	has_max_level = yes
+	ignore_stateregion_max_level = yes
+	required_construction = construction_cost_medium
+	terrain_manipulator = mining
+
+	unlocking_technologies = {
+		verrier_radioactivity_tech
+	}
+
+	production_method_groups = {
+		pmg_curie_mining_equipment_building_uranium_mine
+		pmg_curie_explosives_building_uranium_mine
+		pmg_curie_steam_automation_building_uranium_mine
+		pmg_curie_train_automation_building_uranium_mine
+	}
+
+	potential = {
+		has_modifier = curie_uranium_ressources_modifier
+	}
+
+	ownership_type = self
+
+	background = "gfx/interface/icons/building_icons/backgrounds/building_panel_bg_mining.dds"
+}

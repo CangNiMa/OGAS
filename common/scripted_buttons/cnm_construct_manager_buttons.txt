@@ -1,0 +1,305 @@
+﻿construct_manager = {
+	name = "construct_manager"
+	desc = "construct_manager_desc"
+
+	effect = {
+		ordered_scope_building = {
+			limit = {
+				OGAS_possible_construct_building = yes
+			}
+			order_by = cnm_building_profit_weight
+			max = 1
+			check_range_bounds = no 
+			#save_scope_as = debug_profit_building
+			OGAS_find_best_profit_building = yes
+		}
+	}
+}
+add_best_building_construction_sector = {
+	name = "add_best_building_construction_sector"
+	desc = "add_best_building_construction_sector_desc"
+
+	effect = {
+		if = {
+			limit = {
+				any_scope_state = {
+					#20260110添加，不做全局建造部门预测，只做升级了
+					has_active_building = building_construction_sector
+					cnm_state_can_building_construction_sector = yes
+					cnm_base_state_can_build_rule = yes
+				}
+			}
+			cnm_find_best_building_construction_sector = yes
+		}
+		else = {
+			post_notification = OGAS_construct_fail_notification
+		}
+	}
+}
+
+active_auto_construct_manager = {
+	name = "active_auto_construct_manager"
+	desc = "active_auto_construct_manager_desc"
+
+	effect = {
+		if = {
+			limit = {
+				root.var:cnm_auto_construct_manager = 0
+			}
+			set_variable = {
+				name = cnm_auto_construct_manager
+				value = 1
+			}
+		}
+		else_if = {
+			limit = {
+				root.var:cnm_auto_construct_manager = 1
+			}
+			set_variable = {
+				name = cnm_auto_construct_manager
+				value = 0
+			}
+		}
+	}
+}
+
+active_auto_railway_manager = {
+	name = "active_auto_railway_manager"
+	desc = "active_auto_railway_manager_desc"
+
+	effect = {
+		if = {
+			limit = {
+				root.var:cnm_auto_railway_manager = 0
+			}
+			set_variable = {
+				name = cnm_auto_railway_manager
+				value = 1
+			}
+		}
+		else_if = {
+			limit = {
+				root.var:cnm_auto_railway_manager = 1
+			}
+			set_variable = {
+				name = cnm_auto_railway_manager
+				value = 0
+			}
+		}
+	}
+}
+
+active_auto_construction_sector_manager = {
+	name = "active_auto_construction_sector_manager"
+	desc = "active_auto_construction_sector_manager_desc"
+
+	effect = {
+		if = {
+			limit = {
+				root.var:cnm_auto_construction_sector_manager = 0
+			}
+			set_variable = {
+				name = cnm_auto_construction_sector_manager
+				value = 1
+			}
+		}
+		else_if = {
+			limit = {
+				root.var:cnm_auto_construction_sector_manager = 1
+			}
+			set_variable = {
+				name = cnm_auto_construction_sector_manager
+				value = 0
+			}
+		}
+	}
+}
+
+active_ban_construct_power_low = {
+	name = "active_ban_construct_power_low"
+	desc = "active_ban_construct_power_low_desc"
+
+	effect = {
+		if = {
+			limit = {
+				root.var:cnm_construct_rule_ban_construct_power_low = 0
+			}
+			set_variable = {
+				name = cnm_construct_rule_ban_construct_power_low
+				value = 1
+			}
+		}
+		else_if = {
+			limit = {
+				root.var:cnm_construct_rule_ban_construct_power_low = 1
+			}
+			set_variable = {
+				name = cnm_construct_rule_ban_construct_power_low
+				value = 0
+			}
+		}
+	}
+}
+active_ban_unemployed_low = {
+	name = "active_ban_unemployed_low"
+	desc = "active_ban_unemployed_low_desc"
+
+	effect = {
+		if = {
+			limit = {
+				root.var:cnm_construct_rule_ban_unemployed_low = 0
+			}
+			set_variable = {
+				name = cnm_construct_rule_ban_unemployed_low
+				value = 1
+			}
+		}
+		else_if = {
+			limit = {
+				root.var:cnm_construct_rule_ban_unemployed_low = 1
+			}
+			set_variable = {
+				name = cnm_construct_rule_ban_unemployed_low
+				value = 0
+			}
+		}
+	}
+}
+
+active_ban_available_workers_low = {
+	name = "active_ban_available_workers_low"
+	desc = "active_ban_available_workers_low_desc"
+
+	effect = {
+		if = {
+			limit = {
+				root.var:cnm_construct_rule_ban_available_workers_low = 0
+			}
+			set_variable = {
+				name = cnm_construct_rule_ban_available_workers_low
+				value = 1
+			}
+		}
+		else_if = {
+			limit = {
+				root.var:cnm_construct_rule_ban_available_workers_low = 1
+			}
+			set_variable = {
+				name = cnm_construct_rule_ban_available_workers_low
+				value = 0
+			}
+		}
+	}
+}
+active_ban_no_incorporated = {
+	name = "active_ban_no_incorporated"
+	desc = "active_ban_no_incorporated_desc"
+
+	effect = {
+		if = {
+			limit = {
+				root.var:cnm_construct_rule_ban_no_incorporated = 0
+			}
+			set_variable = {
+				name = cnm_construct_rule_ban_no_incorporated
+				value = 1
+			}
+		}
+		else_if = {
+			limit = {
+				root.var:cnm_construct_rule_ban_no_incorporated = 1
+			}
+			set_variable = {
+				name = cnm_construct_rule_ban_no_incorporated
+				value = 0
+			}
+		}
+	}
+}
+active_use_state_construction_mult = {
+	name = "active_use_state_construction_mult"
+	desc = "active_use_state_construction_mult_desc"
+
+	effect = {
+		if = {
+			limit = {
+				root.var:cnm_rule_use_state_construction_mult = 0
+			}
+			set_variable = {
+				name = cnm_rule_use_state_construction_mult
+				value = 1
+			}
+		}
+		else_if = {
+			limit = {
+				root.var:cnm_rule_use_state_construction_mult = 1
+			}
+			set_variable = {
+				name = cnm_rule_use_state_construction_mult
+				value = 0
+			}
+		}
+	}
+}
+
+reset_construct_manager = {
+	name = "reset_construct_manager"
+	desc = "reset_construct_manager_desc"
+
+
+	effect = {
+		cnm_default_construct_manager = yes
+	}
+}
+
+
+OGAS_building_unit_add = {
+	name = "OGAS_building_unit_add"
+	desc = "OGAS_building_unit_add_desc"
+
+	effect = {
+		change_variable = {
+			name = OGAS_building_unit_config
+			add = 1
+		}
+	}
+}
+OGAS_building_unit_sub = {
+	name = "OGAS_building_unit_sub"
+	desc = "OGAS_building_unit_sub_desc"
+
+	effect = {
+		if = {
+			limit = {
+				root.var:OGAS_building_unit_config > 1
+			}
+			change_variable = {
+				name = OGAS_building_unit_config
+				subtract = 1
+			}
+		}
+	}
+}
+
+OGAS_building_queue_add = {
+	name = "OGAS_building_queue_add"
+	desc = "OGAS_building_queue_add_desc"
+
+	effect = {
+		change_variable = {
+			name = OGAS_building_queue_config
+			add = 0.5
+		}
+	}
+}
+OGAS_building_queue_sub = {
+	name = "OGAS_building_queue_sub"
+	desc = "OGAS_building_queue_sub_desc"
+
+	effect = {
+		change_variable = {
+			name = OGAS_building_queue_config
+			subtract = 0.5
+		}
+	}
+}

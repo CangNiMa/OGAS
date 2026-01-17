@@ -1,0 +1,43 @@
+﻿l_polish:
+
+ag_cnm_not_enough_workers_in_state_group_name: "Workforce shortage"
+ag_cnm_not_enough_workers_in_state_group_desc: "Workforce shortage"
+ag_cnm_not_enough_workers_in_state_group_tooltip: "Workforce shortage"
+
+cnm_not_enough_workers_in_state_setting_name: "OGAS Workforce shortage Warn"
+alert_cnm_not_enough_workers_in_state_name: "[SCOPE.GetRootScope.GetState.GetName] Workforce shortage"
+alert_cnm_not_enough_workers_in_state_hint: "[SCOPE.GetRootScope.GetState.GetName] Workforce shortage"
+alert_cnm_not_enough_workers_in_state_action: "To State pannel"
+
+cnm_no_available_state_workers_setting_name: "OGAS Workforce shortage Warn"
+alert_cnm_no_available_state_workers_name: "OGAS Workforce shortage Warn"
+alert_cnm_no_available_state_workers_hint: "You actived Eradicate subsistence, but there are no state meet the condition"
+alert_cnm_no_available_state_workers_action: "To State pannel"
+
+cnm_no_available_state_unemployee_setting_name: "OGAS unemployee shortage Warn"
+alert_cnm_no_available_state_unemployee_name: "OGAS unemployee shortage Warn"
+alert_cnm_no_available_state_unemployee_hint: "You actived Eradicate unemployment, but there are no state meet the condition"
+alert_cnm_no_available_state_unemployee_action: "To State pannel"
+
+cnm_no_available_state_construct_power_setting_name: "OGAS no positive construct power Warn"
+alert_cnm_no_available_state_construct_power_name: "OGAS no positive construct power Warn"
+alert_cnm_no_available_state_construct_power_hint: "You actived Ban construct power low, but there are no state meet the condition"
+alert_cnm_no_available_state_construct_power_action: "To State pannel"
+
+cnm_no_available_construct_building_manager_value_setting_name: "OGAS no selected building type Warn"
+alert_cnm_no_available_construct_building_manager_value_name: "OGAS no selected building type Warn"
+alert_cnm_no_available_construct_building_manager_value_hint: "In case you forget, you have disabled all building type configurations, and OGAS will not be able to construct any type of building"
+alert_cnm_no_available_construct_building_manager_value_action: "To State pannel"
+
+cnm_Reset_decision: "Reset MOD JE"
+cnm_Reset_decision_desc: "For players who do not see JE after updates, this method can be used to reset MOD JE"
+
+OGAS_rest_version_notification_group: "OGAS version update"
+notification_OGAS_rest_version_notification_name: "OGAS version update!"
+notification_OGAS_rest_version_notification_desc: "Your OGAS has new version setting! OGAS setting has been set to default."
+notification_OGAS_rest_version_notification_tooltip: "$notification_OGAS_rest_version_notification_name$\n$notification_OGAS_rest_version_notification_desc$"
+
+OGAS_construct_fail_notification_group: "OGAS$concept_alert_settings_alert$"
+notification_OGAS_construct_fail_notification_name: "OGAS$concept_alert_settings_alert$"
+notification_OGAS_construct_fail_notification_desc: "OGAS has filled all available building! The remaining construction power will be handed over to you for manual operation. You can increase the magnification of each construction or lay new buildings to increase the available buildings for OGAS."
+notification_OGAS_construct_fail_notification_tooltip: "$notification_OGAS_construct_fail_notification_name$\n$notification_OGAS_construct_fail_notification_desc$"

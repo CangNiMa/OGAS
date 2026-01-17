@@ -1,0 +1,12 @@
+{
+    "name":"The OGAS - Your build advisor",
+    "id":"3092955121",
+    "version":"",
+    "supported_game_version":"",
+    "short_description":"",
+    "tags":[],
+    "relationships":[],
+    "game_custom_data" : {
+        "multiplayer_synchronized" : true
+    }
+}

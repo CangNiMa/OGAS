@@ -1,0 +1,40 @@
+﻿increase_building_uranium_mine = {
+    name = "increase_building_uranium_mine"
+    desc = "increase_building_uranium_mine_desc"
+    effect = {
+        change_variable = {
+            name = cnm_auto_construct_building_uranium_mine
+            add = 0.1
+        }
+    }
+}
+decrease_building_uranium_mine = {
+    name = "decrease_building_uranium_mine"
+    desc = "decrease_building_uranium_mine_desc"
+    effect = {
+        change_variable = {
+            name = cnm_auto_construct_building_uranium_mine
+            add = -0.1
+        }
+    }
+}
+increase_building_airport = {
+    name = "increase_building_airport"
+    desc = "increase_building_airport_desc"
+    effect = {
+        change_variable = {
+            name = cnm_auto_construct_building_airport
+            add = 0.1
+        }
+    }
+}
+decrease_building_airport = {
+    name = "decrease_building_airport"
+    desc = "decrease_building_airport_desc"
+    effect = {
+        change_variable = {
+            name = cnm_auto_construct_building_airport
+            add = -0.1
+        }
+    }
+}

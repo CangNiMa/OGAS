@@ -1,0 +1,59 @@
+﻿cnm_find_best_building_construction_sector = {
+	if = {
+		limit = { 
+			has_technology_researched = arc_welding
+		}
+		ordered_scope_state = {
+			limit = {
+				has_active_building = building_construction_sector
+				cnm_state_can_building_construction_sector = yes
+			}
+			order_by = b:building_construction_sector.building_construction_sector_unit_profit_pm_arc_welded_buildings
+			max = 1
+			check_range_bounds = no
+			start_building_construction = building_construction_sector
+		}
+	}
+	else_if = {
+		limit = { 
+			has_technology_researched = steel_frame_buildings
+		}
+		ordered_scope_state = {
+			limit = {
+				has_active_building = building_construction_sector
+				cnm_state_can_building_construction_sector = yes
+			}
+			order_by = b:building_construction_sector.building_construction_sector_unit_profit_pm_steel_frame_buildings
+			max = 1
+			check_range_bounds = no
+			start_building_construction = building_construction_sector
+		}
+	}
+	else_if = {
+		limit = { 
+			has_technology_researched = urban_planning
+		}
+		ordered_scope_state = {
+			limit = {
+				has_active_building = building_construction_sector
+				cnm_state_can_building_construction_sector = yes
+			}
+			order_by = b:building_construction_sector.building_construction_sector_unit_profit_pm_iron_frame_buildings
+			max = 1
+			check_range_bounds = no
+			start_building_construction = building_construction_sector
+		}
+	}
+	else = {
+		ordered_scope_state = {
+			limit = {
+				has_active_building = building_construction_sector
+				cnm_state_can_building_construction_sector = yes
+			}
+			order_by = b:building_construction_sector.building_construction_sector_unit_profit_pm_wooden_buildings
+			max = 1
+			check_range_bounds = no
+			start_building_construction = building_construction_sector
+		}
+	}
+}

@@ -1,0 +1,58 @@
+﻿l_simp_chinese:
+
+je_cnm_construct_manager: "OGAS$pmg_automation$$concept_construct$"
+#je_cnm_construct_manager_status_desc: "$construction_unit_price$\n$construct_power_queue_price$\n$construct_power_cost$\n$OGAS_building_unit_config$\n$OGAS_building_queue_config$"
+je_cnm_construct_manager_status_desc: "$OGAS_building_unit_config$\n$OGAS_building_queue_config$"
+construction_unit_price: "$concept_construction$单价@money![Scope.GetCountry.MakeScope.ScriptValue('cnm_current_construct_power_unit_price')|D]"
+construct_power_queue_price: "队列单价@money![Scope.GetCountry.MakeScope.ScriptValue('cnm_current_construct_power_queue_price')|D]"
+construct_power_cost: "$concept_construct$总花费@money![Scope.GetCountry.MakeScope.ScriptValue('cnm_current_construct_power_cost')|D]"
+OGAS_building_unit_config: "$concept_construct$倍率：[Scope.GetCountry.MakeScope.Var('OGAS_building_unit_config').GetValue]"
+OGAS_building_queue_config: "$concept_construction_queue$时间：[Scope.GetCountry.MakeScope.Var('OGAS_building_queue_config').GetValue]周"
+
+construct_manager: "+1最优$concept_building_balance_profit$$concept_building$"
+construct_manager_desc: "$AUTO_EXPAND$一个国内$concept_building_balance_profit$最高的$concept_building$"
+
+add_best_building_construction_sector: "+1最优$building_construction_sector$"
+add_best_building_construction_sector_desc: "$AUTO_EXPAND$一个国内最优单价$concept_construction$ $building_construction_sector$"
+
+active_auto_construct_manager: "[SelectLocalization( EqualTo_CFixedPoint( Scope.GetCountry.MakeScope.Var('cnm_auto_construct_manager').GetValue,'(CFixedPoint)0'), '@simple_box!', '@green_checkmark_box!')]$active_auto_construct_manager_no_icon$"
+active_auto_construct_manager_no_icon: "$pmg_automation$$concept_construct$"
+active_auto_construct_manager_desc: "OGAS将$pmg_automation$把最优$concept_building_balance_profit$$concept_building$补满$concept_construction_queue$。\n如果没有$concept_construct$，有可能是禁用条件过多，建议您使用$construct_manager$进行自检。\n本功能将在原版$AUTO_EXPAND$和$active_auto_railway_manager_no_icon$之后运行。"
+
+active_auto_railway_manager: "[SelectLocalization( EqualTo_CFixedPoint( Scope.GetCountry.MakeScope.Var('cnm_auto_railway_manager').GetValue,'(CFixedPoint)0'), '@simple_box!', '@green_checkmark_box!')]$active_auto_railway_manager_no_icon$"
+active_auto_railway_manager_no_icon: "$pmg_automation$$building_railway$$concept_infrastructure$"
+active_auto_railway_manager_desc: "$pmg_automation$$concept_construct$$building_railway$，补满$concept_infrastructure$。\n本功能优先级低于原版$AUTO_EXPAND$，但是高于$je_cnm_construct_manager$。\n请注意，本功能$concept_construct$的$building_railway$与$je_cnm_construct_manager$所基于$concept_building_balance_profit$建造的$building_railway$不同。"
+
+active_auto_construction_sector_manager: "[SelectLocalization( EqualTo_CFixedPoint( Scope.GetCountry.MakeScope.Var('cnm_auto_construction_sector_manager').GetValue,'(CFixedPoint)0'), '@simple_box!', '@green_checkmark_box!')]$active_auto_construction_sector_manager_no_icon$"
+active_auto_construction_sector_manager_no_icon: "$pmg_automation$$building_construction_sector$"
+active_auto_construction_sector_manager_desc: "$pmg_automation$$concept_construct$$building_construction_sector$，如果你有充足$BALANCE$并且$TRIGGER_HAS_WASTED_CONSTRUCTION_NOT$。"
+
+
+add_best_contruction: "+1最优地点$building_construction_sector$"
+add_best_contruction_desc: "可以在最佳单价$concept_construction$州$concept_construct$$building_construction_sector$"
+
+active_ban_construct_power_low: "[SelectLocalization( EqualTo_CFixedPoint( Scope.GetCountry.MakeScope.Var('cnm_construct_rule_ban_construct_power_low').GetValue,'(CFixedPoint)0'), '@simple_box!', '@green_checkmark_box!')]禁止$concept_construction$过低"
+active_ban_construct_power_low_desc: "$je_cnm_construct_manager$将不会选择$state_construction_mult$ < 0的$concept_state$"
+active_ban_no_incorporated: "[SelectLocalization( EqualTo_CFixedPoint( Scope.GetCountry.MakeScope.Var('cnm_construct_rule_ban_no_incorporated').GetValue,'(CFixedPoint)0'), '@simple_box!', '@green_checkmark_box!')]仅限$incorporate_state$"
+active_ban_no_incorporated_desc: "$je_cnm_construct_manager$将只选择$incorporate_state$"
+active_ban_unemployed_low: "[SelectLocalization( EqualTo_CFixedPoint( Scope.GetCountry.MakeScope.Var('cnm_construct_rule_ban_unemployed_low').GetValue,'(CFixedPoint)0'), '@simple_box!', '@green_checkmark_box!')]$DECREASE$$concept_unemployed$"
+active_ban_unemployed_low_desc: "$je_cnm_construct_manager$将只选择$concept_unemployed$ > 5000的$concept_state$"
+active_ban_available_workers_low: "[SelectLocalization( EqualTo_CFixedPoint( Scope.GetCountry.MakeScope.Var('cnm_construct_rule_ban_available_workers_low').GetValue,'(CFixedPoint)0'), '@simple_box!', '@green_checkmark_box!')]$DECREASE$$peasants_no_icon$"
+active_ban_available_workers_low_desc: "$je_cnm_construct_manager$将只选择$concept_unemployed$+$peasants_no_icon$ > 5000的$concept_state$"
+active_use_state_construction_mult: "[SelectLocalization( EqualTo_CFixedPoint( Scope.GetCountry.MakeScope.Var('cnm_rule_use_state_construction_mult').GetValue,'(CFixedPoint)0'), '@simple_box!', '@green_checkmark_box!')]计算$state_construction_mult$权重"
+active_use_state_construction_mult_desc: "将把$state_construction_mult$加入建造权重计算，这有利于建筑力花费的节省。例如，您可以使用$decree_road_maintenance$$concept_decree$来影响OGAS建造位置的倾向。"
+
+reset_construct_manager: "$OPTION_DEFAULT$"
+reset_construct_manager_desc: "$OPTION_DEFAULT$"
+
+OGAS_building_unit_add: "+1每次$concept_construct$$POP_AMOUNT$@arrow_up!"
+OGAS_building_unit_add_desc: ""
+OGAS_building_unit_sub: "-1每次$concept_construct$$POP_AMOUNT$@arrow_down!"
+OGAS_building_unit_sub_desc: ""
+OGAS_building_queue_add: "+0.5周$concept_construction_queue$排队时间@arrow_up!"
+OGAS_building_queue_add_desc: "如果你发现OGAS没有填满建造队列，可以提高OGAS允许的建筑排队时间。"
+OGAS_building_queue_sub: "-0.5周$concept_construction_queue$排队时间@arrow_down!"
+OGAS_building_queue_sub_desc: "如果你发现OGAS添加的建造队列过长，可以减少OGAS允许的建筑排队时间，以此加强OGAS对经济形势的响应速度。"
+
+
+je_cnm_construct_manager_reason: "$concept_construction$单价：\n每点$concept_construction$花费的金额，根据你当前投入的比例会有一定误差，$concept_construction$越多误差越小。\n队列单价：\n每个在建的队列花费的金额，队列越多误差越小。\n$concept_construct$总花费：\n$building_construction_sector$的总花费，包括物资与工资\n\n注意，必须要存在的$concept_building$，才可扩建。没办法获知一个没建好的$concept_building$的$concept_building_balance_profit$。\n\n如果OGAS出现没有$concept_construct$的情况，说明$concept_building$的禁用条件过多。请自行检查$concept_building$的禁用条件。若'$construct_manager$'可用但没有进行建造，就代表问题不出在OGAS上。\n\n建造规则：\n满员率95%\n没有在建造中\n以及您的自定义条件\n\n如果您不想看到OGAS建造报告，您可以在报告的设置中将其关闭。"

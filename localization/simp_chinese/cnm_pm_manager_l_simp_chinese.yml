@@ -1,0 +1,25 @@
+﻿l_simp_chinese:
+
+je_cnm_pm_manager: "OGAS$pmg_automation$$CHANGE$$concept_production_method$"
+cnm_pm_manager_status_desc: "$cnm_pm_manager_status_desc_tolerance_pm_manager$\n$cnm_pm_manager_status_desc_pm_manage_frequency$"
+cnm_pm_manager_status_desc_tolerance_pm_manager: "$concept_production_method$平衡策略：[AddTextIf(EqualTo_CFixedPoint(Scope.GetCountry.MakeScope.Var('cnm_upgrade_tolerance_pm_manager').GetValue,Scope.GetCountry.MakeScope.ScriptValue('pm_upgrade_tolerance_low')), '$MUSIC_PLAYER_DENSITY_INTENSE$')][AddTextIf(EqualTo_CFixedPoint(Scope.GetCountry.MakeScope.Var('cnm_upgrade_tolerance_pm_manager').GetValue,Scope.GetCountry.MakeScope.ScriptValue('pm_upgrade_tolerance_medium')), '$MUSIC_PLAYER_DENSITY_BALANCED$')][AddTextIf(EqualTo_CFixedPoint(Scope.GetCountry.MakeScope.Var('cnm_upgrade_tolerance_pm_manager').GetValue,Scope.GetCountry.MakeScope.ScriptValue('pm_upgrade_tolerance_high')), '$MUSIC_PLAYER_DENSITY_RELAXED$')]"
+cnm_pm_manager_status_desc_pm_manage_frequency: "$CHANGE$频率：[AddTextIf(EqualTo_CFixedPoint(Scope.GetCountry.MakeScope.Var('cnm_pm_manage_frequency').GetValue,'(CFixedPoint)0'), '关闭')][AddTextIf(EqualTo_CFixedPoint(Scope.GetCountry.MakeScope.Var('cnm_pm_manage_frequency').GetValue,'(CFixedPoint)1'), '每周')][AddTextIf(EqualTo_CFixedPoint(Scope.GetCountry.MakeScope.Var('cnm_pm_manage_frequency').GetValue,'(CFixedPoint)2'), '每月')][AddTextIf(EqualTo_CFixedPoint(Scope.GetCountry.MakeScope.Var('cnm_pm_manage_frequency').GetValue,'(CFixedPoint)3'), '每年')][Scope.GetCountry.MakeScope.Var('cnm_pm_manage_amount').GetValue]次"
+active_upgrade_pm_manager: "[SelectLocalization( EqualTo_CFixedPoint( Scope.GetCountry.MakeScope.Var('cnm_upgrade_pm_manager').GetValue,'(CFixedPoint)0'), '@simple_box!', '@green_checkmark_box!')]$pmg_automation$$buildings_upgrade$主要$concept_production_method$"
+active_upgrade_pm_manager_desc: "当预期利润更高时，OGAS会$pmg_automation$$buildings_upgrade$主要$concept_production_method$以提高生产效率。"
+active_balance_pm_manager: "[SelectLocalization( EqualTo_CFixedPoint( Scope.GetCountry.MakeScope.Var('cnm_balance_pm_manager').GetValue,'(CFixedPoint)0'), '@simple_box!', '@green_checkmark_box!')]$pmg_automation$平衡次要$concept_production_method$"
+active_balance_pm_manager_desc: "将次要$concept_production_method$平衡交由OGAS代管。只要预期利润更高，OGAS就会在$concept_production_method$之间切换以平衡生产。"
+balance_tolerance_pm_manager_switch: "设置$concept_production_method$平衡策略"
+balance_tolerance_pm_manager_switch_desc: "可用的$concept_production_method$平衡策略为：\n$MUSIC_PLAYER_DENSITY_INTENSE$：预期利润高20%时切换\n$MUSIC_PLAYER_DENSITY_BALANCED$：预期利润高35%时切换\n$MUSIC_PLAYER_DENSITY_RELAXED$：预期利润高50%时切换\n使用更保守的策略可以有效降低市场冲击，用更激进的策略可以提高市场响应效率。"
+pm_manage_amount_add: "+1$CHANGE$$AMOUNT$"
+pm_manage_amount_sub: "-1$CHANGE$$AMOUNT$"
+pm_manage_amount_add_desc: "$pm_manage_amount_add$"
+pm_manage_amount_sub_desc: "$pm_manage_amount_sub$"
+active_workforce_employment_pm_manager: "[SelectLocalization( EqualTo_CFixedPoint(Scope.GetCountry.MakeScope.Var('cnm_workforce_employment_pm_manager').GetValue,'(CFixedPoint)0'), '@simple_box!', '@green_checkmark_box!')]$pmg_automation$$CHANGE$$concept_workforce$"
+active_workforce_employment_pm_manager_desc: "当$concept_workforce$不足5000时$buildings_upgrade$$pmg_automation$$concept_production_method$$INCREASE$$concept_workforce$，当$concept_unemployment$ > 10%时降级$pmg_automation$$concept_production_method$以$DECREASE$$concept_unemployed$。"
+pm_manage_frequency_switch: "切换$CHANGE$频率"
+pm_manage_frequency_switch_desc: "可用的$CHANGE$频率为：每周/每月/每年"
+
+reset_pm_manager: "$OPTION_DEFAULT$"
+reset_pm_manager_desc: "$OPTION_DEFAULT$"
+
+je_cnm_pm_manager_reason: "您可以在此处设置OGAS自动调节生产方式的功能。"

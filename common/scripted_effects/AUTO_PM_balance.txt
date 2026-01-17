@@ -1,0 +1,1685 @@
+﻿PM_balance = {
+    ordered_scope_state = {
+        limit = {
+            has_active_building = building_synthetics_plant
+            b:building_synthetics_plant.occupancy > 0.01
+            can_activate_production_method = {
+                building_type = building_synthetics_plant
+                production_method = pm_no_artificial_fibers
+            }
+            trigger_if = {
+                limit = {
+                    or = {
+                        can_activate_production_method = {
+                            building_type = building_synthetics_plant
+                            production_method = pm_rayon
+                        }
+                        is_production_method_active = {
+                            building_type = building_synthetics_plant
+                            production_method = pm_rayon
+                        }
+                    }
+                }
+                b:building_synthetics_plant.pmg_synthetic_silk_pm_no_artificial_fibers_profit_prediction > b:building_synthetics_plant.pmg_synthetic_silk_pm_rayon_profit_prediction_weighted
+            }
+        }
+        order_by = b:building_synthetics_plant.pmg_synthetic_silk_pm_no_artificial_fibers_profit_prediction
+        max = owner.var:cnm_pm_manage_amount
+        check_range_bounds = no
+        activate_production_method = {
+            building_type = building_synthetics_plant
+            production_method = pm_no_artificial_fibers
+        }
+    }
+    ordered_scope_state = {
+        limit = {
+            has_active_building = building_synthetics_plant
+            b:building_synthetics_plant.occupancy > 0.01
+            can_activate_production_method = {
+                building_type = building_synthetics_plant
+                production_method = pm_rayon
+            }
+            trigger_if = {
+                limit = {
+                    or = {
+                        can_activate_production_method = {
+                            building_type = building_synthetics_plant
+                            production_method = pm_no_artificial_fibers
+                        }
+                        is_production_method_active = {
+                            building_type = building_synthetics_plant
+                            production_method = pm_no_artificial_fibers
+                        }
+                    }
+                }
+                b:building_synthetics_plant.pmg_synthetic_silk_pm_rayon_profit_prediction > b:building_synthetics_plant.pmg_synthetic_silk_pm_no_artificial_fibers_profit_prediction_weighted
+            }
+        }
+        order_by = b:building_synthetics_plant.pmg_synthetic_silk_pm_rayon_profit_prediction
+        max = owner.var:cnm_pm_manage_amount
+        check_range_bounds = no
+        activate_production_method = {
+            building_type = building_synthetics_plant
+            production_method = pm_rayon
+        }
+    }
+    ordered_scope_state = {
+        limit = {
+            has_active_building = building_automotive_industry
+            b:building_automotive_industry.occupancy > 0.01
+            can_activate_production_method = {
+                building_type = building_automotive_industry
+                production_method = pm_no_aeroplane_production
+            }
+            trigger_if = {
+                limit = {
+                    or = {
+                        can_activate_production_method = {
+                            building_type = building_automotive_industry
+                            production_method = pm_aeroplane_production
+                        }
+                        is_production_method_active = {
+                            building_type = building_automotive_industry
+                            production_method = pm_aeroplane_production
+                        }
+                    }
+                }
+                b:building_automotive_industry.pmg_aeroplanes_pm_no_aeroplane_production_profit_prediction > b:building_automotive_industry.pmg_aeroplanes_pm_aeroplane_production_profit_prediction_weighted
+            }
+        }
+        order_by = b:building_automotive_industry.pmg_aeroplanes_pm_no_aeroplane_production_profit_prediction
+        max = owner.var:cnm_pm_manage_amount
+        check_range_bounds = no
+        activate_production_method = {
+            building_type = building_automotive_industry
+            production_method = pm_no_aeroplane_production
+        }
+    }
+    ordered_scope_state = {
+        limit = {
+            has_active_building = building_automotive_industry
+            b:building_automotive_industry.occupancy > 0.01
+            can_activate_production_method = {
+                building_type = building_automotive_industry
+                production_method = pm_aeroplane_production
+            }
+            trigger_if = {
+                limit = {
+                    or = {
+                        can_activate_production_method = {
+                            building_type = building_automotive_industry
+                            production_method = pm_no_aeroplane_production
+                        }
+                        is_production_method_active = {
+                            building_type = building_automotive_industry
+                            production_method = pm_no_aeroplane_production
+                        }
+                    }
+                }
+                b:building_automotive_industry.pmg_aeroplanes_pm_aeroplane_production_profit_prediction > b:building_automotive_industry.pmg_aeroplanes_pm_no_aeroplane_production_profit_prediction_weighted
+            }
+        }
+        order_by = b:building_automotive_industry.pmg_aeroplanes_pm_aeroplane_production_profit_prediction
+        max = owner.var:cnm_pm_manage_amount
+        check_range_bounds = no
+        activate_production_method = {
+            building_type = building_automotive_industry
+            production_method = pm_aeroplane_production
+        }
+    }
+    ordered_scope_state = {
+        limit = {
+            has_active_building = building_automotive_industry
+            b:building_automotive_industry.occupancy > 0.01
+            can_activate_production_method = {
+                building_type = building_automotive_industry
+                production_method = pm_no_tank_production
+            }
+            trigger_if = {
+                limit = {
+                    or = {
+                        can_activate_production_method = {
+                            building_type = building_automotive_industry
+                            production_method = pm_tank_production
+                        }
+                        is_production_method_active = {
+                            building_type = building_automotive_industry
+                            production_method = pm_tank_production
+                        }
+                    }
+                }
+                b:building_automotive_industry.pmg_tanks_pm_no_tank_production_profit_prediction > b:building_automotive_industry.pmg_tanks_pm_tank_production_profit_prediction_weighted
+            }
+        }
+        order_by = b:building_automotive_industry.pmg_tanks_pm_no_tank_production_profit_prediction
+        max = owner.var:cnm_pm_manage_amount
+        check_range_bounds = no
+        activate_production_method = {
+            building_type = building_automotive_industry
+            production_method = pm_no_tank_production
+        }
+    }
+    ordered_scope_state = {
+        limit = {
+            has_active_building = building_automotive_industry
+            b:building_automotive_industry.occupancy > 0.01
+            can_activate_production_method = {
+                building_type = building_automotive_industry
+                production_method = pm_tank_production
+            }
+            trigger_if = {
+                limit = {
+                    or = {
+                        can_activate_production_method = {
+                            building_type = building_automotive_industry
+                            production_method = pm_no_tank_production
+                        }
+                        is_production_method_active = {
+                            building_type = building_automotive_industry
+                            production_method = pm_no_tank_production
+                        }
+                    }
+                }
+                b:building_automotive_industry.pmg_tanks_pm_tank_production_profit_prediction > b:building_automotive_industry.pmg_tanks_pm_no_tank_production_profit_prediction_weighted
+            }
+        }
+        order_by = b:building_automotive_industry.pmg_tanks_pm_tank_production_profit_prediction
+        max = owner.var:cnm_pm_manage_amount
+        check_range_bounds = no
+        activate_production_method = {
+            building_type = building_automotive_industry
+            production_method = pm_tank_production
+        }
+    }
+    ordered_scope_state = {
+        limit = {
+            has_active_building = building_electrics_industry
+            b:building_electrics_industry.occupancy > 0.01
+            can_activate_production_method = {
+                building_type = building_electrics_industry
+                production_method = pm_no_radios
+            }
+            trigger_if = {
+                limit = {
+                    or = {
+                        can_activate_production_method = {
+                            building_type = building_electrics_industry
+                            production_method = pm_radios
+                        }
+                        is_production_method_active = {
+                            building_type = building_electrics_industry
+                            production_method = pm_radios
+                        }
+                    }
+                }
+                b:building_electrics_industry.pmg_radios_category_pm_no_radios_profit_prediction > b:building_electrics_industry.pmg_radios_category_pm_radios_profit_prediction_weighted
+            }
+        }
+        order_by = b:building_electrics_industry.pmg_radios_category_pm_no_radios_profit_prediction
+        max = owner.var:cnm_pm_manage_amount
+        check_range_bounds = no
+        activate_production_method = {
+            building_type = building_electrics_industry
+            production_method = pm_no_radios
+        }
+    }
+    ordered_scope_state = {
+        limit = {
+            has_active_building = building_electrics_industry
+            b:building_electrics_industry.occupancy > 0.01
+            can_activate_production_method = {
+                building_type = building_electrics_industry
+                production_method = pm_radios
+            }
+            trigger_if = {
+                limit = {
+                    or = {
+                        can_activate_production_method = {
+                            building_type = building_electrics_industry
+                            production_method = pm_no_radios
+                        }
+                        is_production_method_active = {
+                            building_type = building_electrics_industry
+                            production_method = pm_no_radios
+                        }
+                    }
+                }
+                b:building_electrics_industry.pmg_radios_category_pm_radios_profit_prediction > b:building_electrics_industry.pmg_radios_category_pm_no_radios_profit_prediction_weighted
+            }
+        }
+        order_by = b:building_electrics_industry.pmg_radios_category_pm_radios_profit_prediction
+        max = owner.var:cnm_pm_manage_amount
+        check_range_bounds = no
+        activate_production_method = {
+            building_type = building_electrics_industry
+            production_method = pm_radios
+        }
+    }
+    ordered_scope_state = {
+        limit = {
+            has_active_building = building_rye_farm
+            b:building_rye_farm.occupancy > 0.01
+            can_activate_production_method = {
+                building_type = building_rye_farm
+                production_method = pm_no_secondary
+            }
+            trigger_if = {
+                limit = {
+                    or = {
+                        can_activate_production_method = {
+                            building_type = building_rye_farm
+                            production_method = pm_potatoes
+                        }
+                        is_production_method_active = {
+                            building_type = building_rye_farm
+                            production_method = pm_potatoes
+                        }
+                    }
+                }
+                b:building_rye_farm.pmg_secondary_building_rye_farm_pm_no_secondary_profit_prediction > b:building_rye_farm.pmg_secondary_building_rye_farm_pm_potatoes_profit_prediction_weighted
+            }
+            trigger_if = {
+                limit = {
+                    or = {
+                        can_activate_production_method = {
+                            building_type = building_rye_farm
+                            production_method = pm_apple_orchards
+                        }
+                        is_production_method_active = {
+                            building_type = building_rye_farm
+                            production_method = pm_apple_orchards
+                        }
+                    }
+                }
+                b:building_rye_farm.pmg_secondary_building_rye_farm_pm_no_secondary_profit_prediction > b:building_rye_farm.pmg_secondary_building_rye_farm_pm_apple_orchards_profit_prediction_weighted
+            }
+            trigger_if = {
+                limit = {
+                    or = {
+                        can_activate_production_method = {
+                            building_type = building_rye_farm
+                            production_method = pm_sugar_beets
+                        }
+                        is_production_method_active = {
+                            building_type = building_rye_farm
+                            production_method = pm_sugar_beets
+                        }
+                    }
+                }
+                b:building_rye_farm.pmg_secondary_building_rye_farm_pm_no_secondary_profit_prediction > b:building_rye_farm.pmg_secondary_building_rye_farm_pm_sugar_beets_profit_prediction_weighted
+            }
+        }
+        order_by = b:building_rye_farm.pmg_secondary_building_rye_farm_pm_no_secondary_profit_prediction
+        max = owner.var:cnm_pm_manage_amount
+        check_range_bounds = no
+        activate_production_method = {
+            building_type = building_rye_farm
+            production_method = pm_no_secondary
+        }
+    }
+    ordered_scope_state = {
+        limit = {
+            has_active_building = building_rye_farm
+            b:building_rye_farm.occupancy > 0.01
+            can_activate_production_method = {
+                building_type = building_rye_farm
+                production_method = pm_potatoes
+            }
+            trigger_if = {
+                limit = {
+                    or = {
+                        can_activate_production_method = {
+                            building_type = building_rye_farm
+                            production_method = pm_no_secondary
+                        }
+                        is_production_method_active = {
+                            building_type = building_rye_farm
+                            production_method = pm_no_secondary
+                        }
+                    }
+                }
+                b:building_rye_farm.pmg_secondary_building_rye_farm_pm_potatoes_profit_prediction > b:building_rye_farm.pmg_secondary_building_rye_farm_pm_no_secondary_profit_prediction_weighted
+            }
+            trigger_if = {
+                limit = {
+                    or = {
+                        can_activate_production_method = {
+                            building_type = building_rye_farm
+                            production_method = pm_apple_orchards
+                        }
+                        is_production_method_active = {
+                            building_type = building_rye_farm
+                            production_method = pm_apple_orchards
+                        }
+                    }
+                }
+                b:building_rye_farm.pmg_secondary_building_rye_farm_pm_potatoes_profit_prediction > b:building_rye_farm.pmg_secondary_building_rye_farm_pm_apple_orchards_profit_prediction_weighted
+            }
+            trigger_if = {
+                limit = {
+                    or = {
+                        can_activate_production_method = {
+                            building_type = building_rye_farm
+                            production_method = pm_sugar_beets
+                        }
+                        is_production_method_active = {
+                            building_type = building_rye_farm
+                            production_method = pm_sugar_beets
+                        }
+                    }
+                }
+                b:building_rye_farm.pmg_secondary_building_rye_farm_pm_potatoes_profit_prediction > b:building_rye_farm.pmg_secondary_building_rye_farm_pm_sugar_beets_profit_prediction_weighted
+            }
+        }
+        order_by = b:building_rye_farm.pmg_secondary_building_rye_farm_pm_potatoes_profit_prediction
+        max = owner.var:cnm_pm_manage_amount
+        check_range_bounds = no
+        activate_production_method = {
+            building_type = building_rye_farm
+            production_method = pm_potatoes
+        }
+    }
+    ordered_scope_state = {
+        limit = {
+            has_active_building = building_rye_farm
+            b:building_rye_farm.occupancy > 0.01
+            can_activate_production_method = {
+                building_type = building_rye_farm
+                production_method = pm_apple_orchards
+            }
+            trigger_if = {
+                limit = {
+                    or = {
+                        can_activate_production_method = {
+                            building_type = building_rye_farm
+                            production_method = pm_no_secondary
+                        }
+                        is_production_method_active = {
+                            building_type = building_rye_farm
+                            production_method = pm_no_secondary
+                        }
+                    }
+                }
+                b:building_rye_farm.pmg_secondary_building_rye_farm_pm_apple_orchards_profit_prediction > b:building_rye_farm.pmg_secondary_building_rye_farm_pm_no_secondary_profit_prediction_weighted
+            }
+            trigger_if = {
+                limit = {
+                    or = {
+                        can_activate_production_method = {
+                            building_type = building_rye_farm
+                            production_method = pm_potatoes
+                        }
+                        is_production_method_active = {
+                            building_type = building_rye_farm
+                            production_method = pm_potatoes
+                        }
+                    }
+                }
+                b:building_rye_farm.pmg_secondary_building_rye_farm_pm_apple_orchards_profit_prediction > b:building_rye_farm.pmg_secondary_building_rye_farm_pm_potatoes_profit_prediction_weighted
+            }
+            trigger_if = {
+                limit = {
+                    or = {
+                        can_activate_production_method = {
+                            building_type = building_rye_farm
+                            production_method = pm_sugar_beets
+                        }
+                        is_production_method_active = {
+                            building_type = building_rye_farm
+                            production_method = pm_sugar_beets
+                        }
+                    }
+                }
+                b:building_rye_farm.pmg_secondary_building_rye_farm_pm_apple_orchards_profit_prediction > b:building_rye_farm.pmg_secondary_building_rye_farm_pm_sugar_beets_profit_prediction_weighted
+            }
+        }
+        order_by = b:building_rye_farm.pmg_secondary_building_rye_farm_pm_apple_orchards_profit_prediction
+        max = owner.var:cnm_pm_manage_amount
+        check_range_bounds = no
+        activate_production_method = {
+            building_type = building_rye_farm
+            production_method = pm_apple_orchards
+        }
+    }
+    ordered_scope_state = {
+        limit = {
+            has_active_building = building_rye_farm
+            b:building_rye_farm.occupancy > 0.01
+            can_activate_production_method = {
+                building_type = building_rye_farm
+                production_method = pm_sugar_beets
+            }
+            trigger_if = {
+                limit = {
+                    or = {
+                        can_activate_production_method = {
+                            building_type = building_rye_farm
+                            production_method = pm_no_secondary
+                        }
+                        is_production_method_active = {
+                            building_type = building_rye_farm
+                            production_method = pm_no_secondary
+                        }
+                    }
+                }
+                b:building_rye_farm.pmg_secondary_building_rye_farm_pm_sugar_beets_profit_prediction > b:building_rye_farm.pmg_secondary_building_rye_farm_pm_no_secondary_profit_prediction_weighted
+            }
+            trigger_if = {
+                limit = {
+                    or = {
+                        can_activate_production_method = {
+                            building_type = building_rye_farm
+                            production_method = pm_potatoes
+                        }
+                        is_production_method_active = {
+                            building_type = building_rye_farm
+                            production_method = pm_potatoes
+                        }
+                    }
+                }
+                b:building_rye_farm.pmg_secondary_building_rye_farm_pm_sugar_beets_profit_prediction > b:building_rye_farm.pmg_secondary_building_rye_farm_pm_potatoes_profit_prediction_weighted
+            }
+            trigger_if = {
+                limit = {
+                    or = {
+                        can_activate_production_method = {
+                            building_type = building_rye_farm
+                            production_method = pm_apple_orchards
+                        }
+                        is_production_method_active = {
+                            building_type = building_rye_farm
+                            production_method = pm_apple_orchards
+                        }
+                    }
+                }
+                b:building_rye_farm.pmg_secondary_building_rye_farm_pm_sugar_beets_profit_prediction > b:building_rye_farm.pmg_secondary_building_rye_farm_pm_apple_orchards_profit_prediction_weighted
+            }
+        }
+        order_by = b:building_rye_farm.pmg_secondary_building_rye_farm_pm_sugar_beets_profit_prediction
+        max = owner.var:cnm_pm_manage_amount
+        check_range_bounds = no
+        activate_production_method = {
+            building_type = building_rye_farm
+            production_method = pm_sugar_beets
+        }
+    }
+    ordered_scope_state = {
+        limit = {
+            has_active_building = building_wheat_farm
+            b:building_wheat_farm.occupancy > 0.01
+            can_activate_production_method = {
+                building_type = building_wheat_farm
+                production_method = pm_no_secondary
+            }
+            trigger_if = {
+                limit = {
+                    or = {
+                        can_activate_production_method = {
+                            building_type = building_wheat_farm
+                            production_method = pm_citrus_orchards
+                        }
+                        is_production_method_active = {
+                            building_type = building_wheat_farm
+                            production_method = pm_citrus_orchards
+                        }
+                    }
+                }
+                b:building_wheat_farm.pmg_secondary_building_wheat_farm_pm_no_secondary_profit_prediction > b:building_wheat_farm.pmg_secondary_building_wheat_farm_pm_citrus_orchards_profit_prediction_weighted
+            }
+            trigger_if = {
+                limit = {
+                    or = {
+                        can_activate_production_method = {
+                            building_type = building_wheat_farm
+                            production_method = pm_sugar_beets
+                        }
+                        is_production_method_active = {
+                            building_type = building_wheat_farm
+                            production_method = pm_sugar_beets
+                        }
+                    }
+                }
+                b:building_wheat_farm.pmg_secondary_building_wheat_farm_pm_no_secondary_profit_prediction > b:building_wheat_farm.pmg_secondary_building_wheat_farm_pm_sugar_beets_profit_prediction_weighted
+            }
+        }
+        order_by = b:building_wheat_farm.pmg_secondary_building_wheat_farm_pm_no_secondary_profit_prediction
+        max = owner.var:cnm_pm_manage_amount
+        check_range_bounds = no
+        activate_production_method = {
+            building_type = building_wheat_farm
+            production_method = pm_no_secondary
+        }
+    }
+    ordered_scope_state = {
+        limit = {
+            has_active_building = building_wheat_farm
+            b:building_wheat_farm.occupancy > 0.01
+            can_activate_production_method = {
+                building_type = building_wheat_farm
+                production_method = pm_citrus_orchards
+            }
+            trigger_if = {
+                limit = {
+                    or = {
+                        can_activate_production_method = {
+                            building_type = building_wheat_farm
+                            production_method = pm_no_secondary
+                        }
+                        is_production_method_active = {
+                            building_type = building_wheat_farm
+                            production_method = pm_no_secondary
+                        }
+                    }
+                }
+                b:building_wheat_farm.pmg_secondary_building_wheat_farm_pm_citrus_orchards_profit_prediction > b:building_wheat_farm.pmg_secondary_building_wheat_farm_pm_no_secondary_profit_prediction_weighted
+            }
+            trigger_if = {
+                limit = {
+                    or = {
+                        can_activate_production_method = {
+                            building_type = building_wheat_farm
+                            production_method = pm_sugar_beets
+                        }
+                        is_production_method_active = {
+                            building_type = building_wheat_farm
+                            production_method = pm_sugar_beets
+                        }
+                    }
+                }
+                b:building_wheat_farm.pmg_secondary_building_wheat_farm_pm_citrus_orchards_profit_prediction > b:building_wheat_farm.pmg_secondary_building_wheat_farm_pm_sugar_beets_profit_prediction_weighted
+            }
+        }
+        order_by = b:building_wheat_farm.pmg_secondary_building_wheat_farm_pm_citrus_orchards_profit_prediction
+        max = owner.var:cnm_pm_manage_amount
+        check_range_bounds = no
+        activate_production_method = {
+            building_type = building_wheat_farm
+            production_method = pm_citrus_orchards
+        }
+    }
+    ordered_scope_state = {
+        limit = {
+            has_active_building = building_wheat_farm
+            b:building_wheat_farm.occupancy > 0.01
+            can_activate_production_method = {
+                building_type = building_wheat_farm
+                production_method = pm_sugar_beets
+            }
+            trigger_if = {
+                limit = {
+                    or = {
+                        can_activate_production_method = {
+                            building_type = building_wheat_farm
+                            production_method = pm_no_secondary
+                        }
+                        is_production_method_active = {
+                            building_type = building_wheat_farm
+                            production_method = pm_no_secondary
+                        }
+                    }
+                }
+                b:building_wheat_farm.pmg_secondary_building_wheat_farm_pm_sugar_beets_profit_prediction > b:building_wheat_farm.pmg_secondary_building_wheat_farm_pm_no_secondary_profit_prediction_weighted
+            }
+            trigger_if = {
+                limit = {
+                    or = {
+                        can_activate_production_method = {
+                            building_type = building_wheat_farm
+                            production_method = pm_citrus_orchards
+                        }
+                        is_production_method_active = {
+                            building_type = building_wheat_farm
+                            production_method = pm_citrus_orchards
+                        }
+                    }
+                }
+                b:building_wheat_farm.pmg_secondary_building_wheat_farm_pm_sugar_beets_profit_prediction > b:building_wheat_farm.pmg_secondary_building_wheat_farm_pm_citrus_orchards_profit_prediction_weighted
+            }
+        }
+        order_by = b:building_wheat_farm.pmg_secondary_building_wheat_farm_pm_sugar_beets_profit_prediction
+        max = owner.var:cnm_pm_manage_amount
+        check_range_bounds = no
+        activate_production_method = {
+            building_type = building_wheat_farm
+            production_method = pm_sugar_beets
+        }
+    }
+    ordered_scope_state = {
+        limit = {
+            has_active_building = building_rice_farm
+            b:building_rice_farm.occupancy > 0.01
+            can_activate_production_method = {
+                building_type = building_rice_farm
+                production_method = pm_no_secondary
+            }
+            trigger_if = {
+                limit = {
+                    or = {
+                        can_activate_production_method = {
+                            building_type = building_rice_farm
+                            production_method = pm_fig_orchards_building_rice_farm
+                        }
+                        is_production_method_active = {
+                            building_type = building_rice_farm
+                            production_method = pm_fig_orchards_building_rice_farm
+                        }
+                    }
+                }
+                b:building_rice_farm.pmg_secondary_building_rice_farm_pm_no_secondary_profit_prediction > b:building_rice_farm.pmg_secondary_building_rice_farm_pm_fig_orchards_building_rice_farm_profit_prediction_weighted
+            }
+        }
+        order_by = b:building_rice_farm.pmg_secondary_building_rice_farm_pm_no_secondary_profit_prediction
+        max = owner.var:cnm_pm_manage_amount
+        check_range_bounds = no
+        activate_production_method = {
+            building_type = building_rice_farm
+            production_method = pm_no_secondary
+        }
+    }
+    ordered_scope_state = {
+        limit = {
+            has_active_building = building_rice_farm
+            b:building_rice_farm.occupancy > 0.01
+            can_activate_production_method = {
+                building_type = building_rice_farm
+                production_method = pm_fig_orchards_building_rice_farm
+            }
+            trigger_if = {
+                limit = {
+                    or = {
+                        can_activate_production_method = {
+                            building_type = building_rice_farm
+                            production_method = pm_no_secondary
+                        }
+                        is_production_method_active = {
+                            building_type = building_rice_farm
+                            production_method = pm_no_secondary
+                        }
+                    }
+                }
+                b:building_rice_farm.pmg_secondary_building_rice_farm_pm_fig_orchards_building_rice_farm_profit_prediction > b:building_rice_farm.pmg_secondary_building_rice_farm_pm_no_secondary_profit_prediction_weighted
+            }
+        }
+        order_by = b:building_rice_farm.pmg_secondary_building_rice_farm_pm_fig_orchards_building_rice_farm_profit_prediction
+        max = owner.var:cnm_pm_manage_amount
+        check_range_bounds = no
+        activate_production_method = {
+            building_type = building_rice_farm
+            production_method = pm_fig_orchards_building_rice_farm
+        }
+    }
+    ordered_scope_state = {
+        limit = {
+            has_active_building = building_maize_farm
+            b:building_maize_farm.occupancy > 0.01
+            can_activate_production_method = {
+                building_type = building_maize_farm
+                production_method = pm_no_secondary
+            }
+            trigger_if = {
+                limit = {
+                    or = {
+                        can_activate_production_method = {
+                            building_type = building_maize_farm
+                            production_method = pm_citrus_orchards
+                        }
+                        is_production_method_active = {
+                            building_type = building_maize_farm
+                            production_method = pm_citrus_orchards
+                        }
+                    }
+                }
+                b:building_maize_farm.pmg_secondary_building_maize_farm_pm_no_secondary_profit_prediction > b:building_maize_farm.pmg_secondary_building_maize_farm_pm_citrus_orchards_profit_prediction_weighted
+            }
+        }
+        order_by = b:building_maize_farm.pmg_secondary_building_maize_farm_pm_no_secondary_profit_prediction
+        max = owner.var:cnm_pm_manage_amount
+        check_range_bounds = no
+        activate_production_method = {
+            building_type = building_maize_farm
+            production_method = pm_no_secondary
+        }
+    }
+    ordered_scope_state = {
+        limit = {
+            has_active_building = building_maize_farm
+            b:building_maize_farm.occupancy > 0.01
+            can_activate_production_method = {
+                building_type = building_maize_farm
+                production_method = pm_citrus_orchards
+            }
+            trigger_if = {
+                limit = {
+                    or = {
+                        can_activate_production_method = {
+                            building_type = building_maize_farm
+                            production_method = pm_no_secondary
+                        }
+                        is_production_method_active = {
+                            building_type = building_maize_farm
+                            production_method = pm_no_secondary
+                        }
+                    }
+                }
+                b:building_maize_farm.pmg_secondary_building_maize_farm_pm_citrus_orchards_profit_prediction > b:building_maize_farm.pmg_secondary_building_maize_farm_pm_no_secondary_profit_prediction_weighted
+            }
+        }
+        order_by = b:building_maize_farm.pmg_secondary_building_maize_farm_pm_citrus_orchards_profit_prediction
+        max = owner.var:cnm_pm_manage_amount
+        check_range_bounds = no
+        activate_production_method = {
+            building_type = building_maize_farm
+            production_method = pm_citrus_orchards
+        }
+    }
+    ordered_scope_state = {
+        limit = {
+            has_active_building = building_millet_farm
+            b:building_millet_farm.occupancy > 0.01
+            can_activate_production_method = {
+                building_type = building_millet_farm
+                production_method = pm_no_secondary
+            }
+            trigger_if = {
+                limit = {
+                    or = {
+                        can_activate_production_method = {
+                            building_type = building_millet_farm
+                            production_method = pm_fig_orchards
+                        }
+                        is_production_method_active = {
+                            building_type = building_millet_farm
+                            production_method = pm_fig_orchards
+                        }
+                    }
+                }
+                b:building_millet_farm.pmg_secondary_building_millet_farm_pm_no_secondary_profit_prediction > b:building_millet_farm.pmg_secondary_building_millet_farm_pm_fig_orchards_profit_prediction_weighted
+            }
+        }
+        order_by = b:building_millet_farm.pmg_secondary_building_millet_farm_pm_no_secondary_profit_prediction
+        max = owner.var:cnm_pm_manage_amount
+        check_range_bounds = no
+        activate_production_method = {
+            building_type = building_millet_farm
+            production_method = pm_no_secondary
+        }
+    }
+    ordered_scope_state = {
+        limit = {
+            has_active_building = building_millet_farm
+            b:building_millet_farm.occupancy > 0.01
+            can_activate_production_method = {
+                building_type = building_millet_farm
+                production_method = pm_fig_orchards
+            }
+            trigger_if = {
+                limit = {
+                    or = {
+                        can_activate_production_method = {
+                            building_type = building_millet_farm
+                            production_method = pm_no_secondary
+                        }
+                        is_production_method_active = {
+                            building_type = building_millet_farm
+                            production_method = pm_no_secondary
+                        }
+                    }
+                }
+                b:building_millet_farm.pmg_secondary_building_millet_farm_pm_fig_orchards_profit_prediction > b:building_millet_farm.pmg_secondary_building_millet_farm_pm_no_secondary_profit_prediction_weighted
+            }
+        }
+        order_by = b:building_millet_farm.pmg_secondary_building_millet_farm_pm_fig_orchards_profit_prediction
+        max = owner.var:cnm_pm_manage_amount
+        check_range_bounds = no
+        activate_production_method = {
+            building_type = building_millet_farm
+            production_method = pm_fig_orchards
+        }
+    }
+    ordered_scope_state = {
+        limit = {
+            has_active_building = building_food_industry
+            b:building_food_industry.occupancy > 0.01
+            can_activate_production_method = {
+                building_type = building_food_industry
+                production_method = pm_disabled_distillery
+            }
+            trigger_if = {
+                limit = {
+                    or = {
+                        can_activate_production_method = {
+                            building_type = building_food_industry
+                            production_method = pm_pot_stills
+                        }
+                        is_production_method_active = {
+                            building_type = building_food_industry
+                            production_method = pm_pot_stills
+                        }
+                    }
+                }
+                b:building_food_industry.pmg_distillery_pm_disabled_distillery_profit_prediction > b:building_food_industry.pmg_distillery_pm_pot_stills_profit_prediction_weighted
+            }
+            trigger_if = {
+                limit = {
+                    or = {
+                        can_activate_production_method = {
+                            building_type = building_food_industry
+                            production_method = pm_patent_stills
+                        }
+                        is_production_method_active = {
+                            building_type = building_food_industry
+                            production_method = pm_patent_stills
+                        }
+                    }
+                }
+                b:building_food_industry.pmg_distillery_pm_disabled_distillery_profit_prediction > b:building_food_industry.pmg_distillery_pm_patent_stills_profit_prediction_weighted
+            }
+        }
+        order_by = b:building_food_industry.pmg_distillery_pm_disabled_distillery_profit_prediction
+        max = owner.var:cnm_pm_manage_amount
+        check_range_bounds = no
+        activate_production_method = {
+            building_type = building_food_industry
+            production_method = pm_disabled_distillery
+        }
+    }
+    ordered_scope_state = {
+        limit = {
+            has_active_building = building_food_industry
+            b:building_food_industry.occupancy > 0.01
+            can_activate_production_method = {
+                building_type = building_food_industry
+                production_method = pm_pot_stills
+            }
+            trigger_if = {
+                limit = {
+                    or = {
+                        can_activate_production_method = {
+                            building_type = building_food_industry
+                            production_method = pm_disabled_distillery
+                        }
+                        is_production_method_active = {
+                            building_type = building_food_industry
+                            production_method = pm_disabled_distillery
+                        }
+                    }
+                }
+                b:building_food_industry.pmg_distillery_pm_pot_stills_profit_prediction > b:building_food_industry.pmg_distillery_pm_disabled_distillery_profit_prediction_weighted
+            }
+            trigger_if = {
+                limit = {
+                    or = {
+                        can_activate_production_method = {
+                            building_type = building_food_industry
+                            production_method = pm_patent_stills
+                        }
+                        is_production_method_active = {
+                            building_type = building_food_industry
+                            production_method = pm_patent_stills
+                        }
+                    }
+                }
+                b:building_food_industry.pmg_distillery_pm_pot_stills_profit_prediction > b:building_food_industry.pmg_distillery_pm_patent_stills_profit_prediction_weighted
+            }
+        }
+        order_by = b:building_food_industry.pmg_distillery_pm_pot_stills_profit_prediction
+        max = owner.var:cnm_pm_manage_amount
+        check_range_bounds = no
+        activate_production_method = {
+            building_type = building_food_industry
+            production_method = pm_pot_stills
+        }
+    }
+    ordered_scope_state = {
+        limit = {
+            has_active_building = building_food_industry
+            b:building_food_industry.occupancy > 0.01
+            can_activate_production_method = {
+                building_type = building_food_industry
+                production_method = pm_patent_stills
+            }
+            trigger_if = {
+                limit = {
+                    or = {
+                        can_activate_production_method = {
+                            building_type = building_food_industry
+                            production_method = pm_disabled_distillery
+                        }
+                        is_production_method_active = {
+                            building_type = building_food_industry
+                            production_method = pm_disabled_distillery
+                        }
+                    }
+                }
+                b:building_food_industry.pmg_distillery_pm_patent_stills_profit_prediction > b:building_food_industry.pmg_distillery_pm_disabled_distillery_profit_prediction_weighted
+            }
+            trigger_if = {
+                limit = {
+                    or = {
+                        can_activate_production_method = {
+                            building_type = building_food_industry
+                            production_method = pm_pot_stills
+                        }
+                        is_production_method_active = {
+                            building_type = building_food_industry
+                            production_method = pm_pot_stills
+                        }
+                    }
+                }
+                b:building_food_industry.pmg_distillery_pm_patent_stills_profit_prediction > b:building_food_industry.pmg_distillery_pm_pot_stills_profit_prediction_weighted
+            }
+        }
+        order_by = b:building_food_industry.pmg_distillery_pm_patent_stills_profit_prediction
+        max = owner.var:cnm_pm_manage_amount
+        check_range_bounds = no
+        activate_production_method = {
+            building_type = building_food_industry
+            production_method = pm_patent_stills
+        }
+    }
+    ordered_scope_state = {
+        limit = {
+            has_active_building = building_textile_mill
+            b:building_textile_mill.occupancy > 0.01
+            can_activate_production_method = {
+                building_type = building_textile_mill
+                production_method = pm_no_luxury_clothes
+            }
+            trigger_if = {
+                limit = {
+                    or = {
+                        can_activate_production_method = {
+                            building_type = building_textile_mill
+                            production_method = pm_craftsman_sewing
+                        }
+                        is_production_method_active = {
+                            building_type = building_textile_mill
+                            production_method = pm_craftsman_sewing
+                        }
+                    }
+                }
+                b:building_textile_mill.pmg_luxury_building_textile_mill_pm_no_luxury_clothes_profit_prediction > b:building_textile_mill.pmg_luxury_building_textile_mill_pm_craftsman_sewing_profit_prediction_weighted
+            }
+            trigger_if = {
+                limit = {
+                    or = {
+                        can_activate_production_method = {
+                            building_type = building_textile_mill
+                            production_method = pm_elastics
+                        }
+                        is_production_method_active = {
+                            building_type = building_textile_mill
+                            production_method = pm_elastics
+                        }
+                    }
+                }
+                b:building_textile_mill.pmg_luxury_building_textile_mill_pm_no_luxury_clothes_profit_prediction > b:building_textile_mill.pmg_luxury_building_textile_mill_pm_elastics_profit_prediction_weighted
+            }
+        }
+        order_by = b:building_textile_mill.pmg_luxury_building_textile_mill_pm_no_luxury_clothes_profit_prediction
+        max = owner.var:cnm_pm_manage_amount
+        check_range_bounds = no
+        activate_production_method = {
+            building_type = building_textile_mill
+            production_method = pm_no_luxury_clothes
+        }
+    }
+    ordered_scope_state = {
+        limit = {
+            has_active_building = building_textile_mill
+            b:building_textile_mill.occupancy > 0.01
+            can_activate_production_method = {
+                building_type = building_textile_mill
+                production_method = pm_craftsman_sewing
+            }
+            trigger_if = {
+                limit = {
+                    or = {
+                        can_activate_production_method = {
+                            building_type = building_textile_mill
+                            production_method = pm_no_luxury_clothes
+                        }
+                        is_production_method_active = {
+                            building_type = building_textile_mill
+                            production_method = pm_no_luxury_clothes
+                        }
+                    }
+                }
+                b:building_textile_mill.pmg_luxury_building_textile_mill_pm_craftsman_sewing_profit_prediction > b:building_textile_mill.pmg_luxury_building_textile_mill_pm_no_luxury_clothes_profit_prediction_weighted
+            }
+            trigger_if = {
+                limit = {
+                    or = {
+                        can_activate_production_method = {
+                            building_type = building_textile_mill
+                            production_method = pm_elastics
+                        }
+                        is_production_method_active = {
+                            building_type = building_textile_mill
+                            production_method = pm_elastics
+                        }
+                    }
+                }
+                b:building_textile_mill.pmg_luxury_building_textile_mill_pm_craftsman_sewing_profit_prediction > b:building_textile_mill.pmg_luxury_building_textile_mill_pm_elastics_profit_prediction_weighted
+            }
+        }
+        order_by = b:building_textile_mill.pmg_luxury_building_textile_mill_pm_craftsman_sewing_profit_prediction
+        max = owner.var:cnm_pm_manage_amount
+        check_range_bounds = no
+        activate_production_method = {
+            building_type = building_textile_mill
+            production_method = pm_craftsman_sewing
+        }
+    }
+    ordered_scope_state = {
+        limit = {
+            has_active_building = building_textile_mill
+            b:building_textile_mill.occupancy > 0.01
+            can_activate_production_method = {
+                building_type = building_textile_mill
+                production_method = pm_elastics
+            }
+            trigger_if = {
+                limit = {
+                    or = {
+                        can_activate_production_method = {
+                            building_type = building_textile_mill
+                            production_method = pm_no_luxury_clothes
+                        }
+                        is_production_method_active = {
+                            building_type = building_textile_mill
+                            production_method = pm_no_luxury_clothes
+                        }
+                    }
+                }
+                b:building_textile_mill.pmg_luxury_building_textile_mill_pm_elastics_profit_prediction > b:building_textile_mill.pmg_luxury_building_textile_mill_pm_no_luxury_clothes_profit_prediction_weighted
+            }
+            trigger_if = {
+                limit = {
+                    or = {
+                        can_activate_production_method = {
+                            building_type = building_textile_mill
+                            production_method = pm_craftsman_sewing
+                        }
+                        is_production_method_active = {
+                            building_type = building_textile_mill
+                            production_method = pm_craftsman_sewing
+                        }
+                    }
+                }
+                b:building_textile_mill.pmg_luxury_building_textile_mill_pm_elastics_profit_prediction > b:building_textile_mill.pmg_luxury_building_textile_mill_pm_craftsman_sewing_profit_prediction_weighted
+            }
+        }
+        order_by = b:building_textile_mill.pmg_luxury_building_textile_mill_pm_elastics_profit_prediction
+        max = owner.var:cnm_pm_manage_amount
+        check_range_bounds = no
+        activate_production_method = {
+            building_type = building_textile_mill
+            production_method = pm_elastics
+        }
+    }
+    ordered_scope_state = {
+        limit = {
+            has_active_building = building_furniture_manufactory
+            b:building_furniture_manufactory.occupancy > 0.01
+            can_activate_production_method = {
+                building_type = building_furniture_manufactory
+                production_method = pm_no_luxuries
+            }
+            trigger_if = {
+                limit = {
+                    or = {
+                        can_activate_production_method = {
+                            building_type = building_furniture_manufactory
+                            production_method = pm_luxury_furniture
+                        }
+                        is_production_method_active = {
+                            building_type = building_furniture_manufactory
+                            production_method = pm_luxury_furniture
+                        }
+                    }
+                }
+                b:building_furniture_manufactory.pmg_luxury_building_furniture_manufactory_pm_no_luxuries_profit_prediction > b:building_furniture_manufactory.pmg_luxury_building_furniture_manufactory_pm_luxury_furniture_profit_prediction_weighted
+            }
+            trigger_if = {
+                limit = {
+                    or = {
+                        can_activate_production_method = {
+                            building_type = building_furniture_manufactory
+                            production_method = pm_precision_tools
+                        }
+                        is_production_method_active = {
+                            building_type = building_furniture_manufactory
+                            production_method = pm_precision_tools
+                        }
+                    }
+                }
+                b:building_furniture_manufactory.pmg_luxury_building_furniture_manufactory_pm_no_luxuries_profit_prediction > b:building_furniture_manufactory.pmg_luxury_building_furniture_manufactory_pm_precision_tools_profit_prediction_weighted
+            }
+        }
+        order_by = b:building_furniture_manufactory.pmg_luxury_building_furniture_manufactory_pm_no_luxuries_profit_prediction
+        max = owner.var:cnm_pm_manage_amount
+        check_range_bounds = no
+        activate_production_method = {
+            building_type = building_furniture_manufactory
+            production_method = pm_no_luxuries
+        }
+    }
+    ordered_scope_state = {
+        limit = {
+            has_active_building = building_furniture_manufactory
+            b:building_furniture_manufactory.occupancy > 0.01
+            can_activate_production_method = {
+                building_type = building_furniture_manufactory
+                production_method = pm_luxury_furniture
+            }
+            trigger_if = {
+                limit = {
+                    or = {
+                        can_activate_production_method = {
+                            building_type = building_furniture_manufactory
+                            production_method = pm_no_luxuries
+                        }
+                        is_production_method_active = {
+                            building_type = building_furniture_manufactory
+                            production_method = pm_no_luxuries
+                        }
+                    }
+                }
+                b:building_furniture_manufactory.pmg_luxury_building_furniture_manufactory_pm_luxury_furniture_profit_prediction > b:building_furniture_manufactory.pmg_luxury_building_furniture_manufactory_pm_no_luxuries_profit_prediction_weighted
+            }
+            trigger_if = {
+                limit = {
+                    or = {
+                        can_activate_production_method = {
+                            building_type = building_furniture_manufactory
+                            production_method = pm_precision_tools
+                        }
+                        is_production_method_active = {
+                            building_type = building_furniture_manufactory
+                            production_method = pm_precision_tools
+                        }
+                    }
+                }
+                b:building_furniture_manufactory.pmg_luxury_building_furniture_manufactory_pm_luxury_furniture_profit_prediction > b:building_furniture_manufactory.pmg_luxury_building_furniture_manufactory_pm_precision_tools_profit_prediction_weighted
+            }
+        }
+        order_by = b:building_furniture_manufactory.pmg_luxury_building_furniture_manufactory_pm_luxury_furniture_profit_prediction
+        max = owner.var:cnm_pm_manage_amount
+        check_range_bounds = no
+        activate_production_method = {
+            building_type = building_furniture_manufactory
+            production_method = pm_luxury_furniture
+        }
+    }
+    ordered_scope_state = {
+        limit = {
+            has_active_building = building_furniture_manufactory
+            b:building_furniture_manufactory.occupancy > 0.01
+            can_activate_production_method = {
+                building_type = building_furniture_manufactory
+                production_method = pm_precision_tools
+            }
+            trigger_if = {
+                limit = {
+                    or = {
+                        can_activate_production_method = {
+                            building_type = building_furniture_manufactory
+                            production_method = pm_no_luxuries
+                        }
+                        is_production_method_active = {
+                            building_type = building_furniture_manufactory
+                            production_method = pm_no_luxuries
+                        }
+                    }
+                }
+                b:building_furniture_manufactory.pmg_luxury_building_furniture_manufactory_pm_precision_tools_profit_prediction > b:building_furniture_manufactory.pmg_luxury_building_furniture_manufactory_pm_no_luxuries_profit_prediction_weighted
+            }
+            trigger_if = {
+                limit = {
+                    or = {
+                        can_activate_production_method = {
+                            building_type = building_furniture_manufactory
+                            production_method = pm_luxury_furniture
+                        }
+                        is_production_method_active = {
+                            building_type = building_furniture_manufactory
+                            production_method = pm_luxury_furniture
+                        }
+                    }
+                }
+                b:building_furniture_manufactory.pmg_luxury_building_furniture_manufactory_pm_precision_tools_profit_prediction > b:building_furniture_manufactory.pmg_luxury_building_furniture_manufactory_pm_luxury_furniture_profit_prediction_weighted
+            }
+        }
+        order_by = b:building_furniture_manufactory.pmg_luxury_building_furniture_manufactory_pm_precision_tools_profit_prediction
+        max = owner.var:cnm_pm_manage_amount
+        check_range_bounds = no
+        activate_production_method = {
+            building_type = building_furniture_manufactory
+            production_method = pm_precision_tools
+        }
+    }
+    ordered_scope_state = {
+        limit = {
+            has_active_building = building_glassworks
+            b:building_glassworks.occupancy > 0.01
+            can_activate_production_method = {
+                building_type = building_glassworks
+                production_method = pm_disabled_ceramics
+            }
+            trigger_if = {
+                limit = {
+                    or = {
+                        can_activate_production_method = {
+                            building_type = building_glassworks
+                            production_method = pm_ceramics
+                        }
+                        is_production_method_active = {
+                            building_type = building_glassworks
+                            production_method = pm_ceramics
+                        }
+                    }
+                }
+                b:building_glassworks.pmg_luxury_building_glassworks_pm_disabled_ceramics_profit_prediction > b:building_glassworks.pmg_luxury_building_glassworks_pm_ceramics_profit_prediction_weighted
+            }
+            trigger_if = {
+                limit = {
+                    or = {
+                        can_activate_production_method = {
+                            building_type = building_glassworks
+                            production_method = pm_bone_china
+                        }
+                        is_production_method_active = {
+                            building_type = building_glassworks
+                            production_method = pm_bone_china
+                        }
+                    }
+                }
+                b:building_glassworks.pmg_luxury_building_glassworks_pm_disabled_ceramics_profit_prediction > b:building_glassworks.pmg_luxury_building_glassworks_pm_bone_china_profit_prediction_weighted
+            }
+        }
+        order_by = b:building_glassworks.pmg_luxury_building_glassworks_pm_disabled_ceramics_profit_prediction
+        max = owner.var:cnm_pm_manage_amount
+        check_range_bounds = no
+        activate_production_method = {
+            building_type = building_glassworks
+            production_method = pm_disabled_ceramics
+        }
+    }
+    ordered_scope_state = {
+        limit = {
+            has_active_building = building_glassworks
+            b:building_glassworks.occupancy > 0.01
+            can_activate_production_method = {
+                building_type = building_glassworks
+                production_method = pm_ceramics
+            }
+            trigger_if = {
+                limit = {
+                    or = {
+                        can_activate_production_method = {
+                            building_type = building_glassworks
+                            production_method = pm_disabled_ceramics
+                        }
+                        is_production_method_active = {
+                            building_type = building_glassworks
+                            production_method = pm_disabled_ceramics
+                        }
+                    }
+                }
+                b:building_glassworks.pmg_luxury_building_glassworks_pm_ceramics_profit_prediction > b:building_glassworks.pmg_luxury_building_glassworks_pm_disabled_ceramics_profit_prediction_weighted
+            }
+            trigger_if = {
+                limit = {
+                    or = {
+                        can_activate_production_method = {
+                            building_type = building_glassworks
+                            production_method = pm_bone_china
+                        }
+                        is_production_method_active = {
+                            building_type = building_glassworks
+                            production_method = pm_bone_china
+                        }
+                    }
+                }
+                b:building_glassworks.pmg_luxury_building_glassworks_pm_ceramics_profit_prediction > b:building_glassworks.pmg_luxury_building_glassworks_pm_bone_china_profit_prediction_weighted
+            }
+        }
+        order_by = b:building_glassworks.pmg_luxury_building_glassworks_pm_ceramics_profit_prediction
+        max = owner.var:cnm_pm_manage_amount
+        check_range_bounds = no
+        activate_production_method = {
+            building_type = building_glassworks
+            production_method = pm_ceramics
+        }
+    }
+    ordered_scope_state = {
+        limit = {
+            has_active_building = building_glassworks
+            b:building_glassworks.occupancy > 0.01
+            can_activate_production_method = {
+                building_type = building_glassworks
+                production_method = pm_bone_china
+            }
+            trigger_if = {
+                limit = {
+                    or = {
+                        can_activate_production_method = {
+                            building_type = building_glassworks
+                            production_method = pm_disabled_ceramics
+                        }
+                        is_production_method_active = {
+                            building_type = building_glassworks
+                            production_method = pm_disabled_ceramics
+                        }
+                    }
+                }
+                b:building_glassworks.pmg_luxury_building_glassworks_pm_bone_china_profit_prediction > b:building_glassworks.pmg_luxury_building_glassworks_pm_disabled_ceramics_profit_prediction_weighted
+            }
+            trigger_if = {
+                limit = {
+                    or = {
+                        can_activate_production_method = {
+                            building_type = building_glassworks
+                            production_method = pm_ceramics
+                        }
+                        is_production_method_active = {
+                            building_type = building_glassworks
+                            production_method = pm_ceramics
+                        }
+                    }
+                }
+                b:building_glassworks.pmg_luxury_building_glassworks_pm_bone_china_profit_prediction > b:building_glassworks.pmg_luxury_building_glassworks_pm_ceramics_profit_prediction_weighted
+            }
+        }
+        order_by = b:building_glassworks.pmg_luxury_building_glassworks_pm_bone_china_profit_prediction
+        max = owner.var:cnm_pm_manage_amount
+        check_range_bounds = no
+        activate_production_method = {
+            building_type = building_glassworks
+            production_method = pm_bone_china
+        }
+    }
+    ordered_scope_state = {
+        limit = {
+            has_active_building = building_logging_camp
+            b:building_logging_camp.occupancy > 0.01
+            can_activate_production_method = {
+                building_type = building_logging_camp
+                production_method = pm_no_hardwood
+            }
+            trigger_if = {
+                limit = {
+                    or = {
+                        can_activate_production_method = {
+                            building_type = building_logging_camp
+                            production_method = pm_hardwood
+                        }
+                        is_production_method_active = {
+                            building_type = building_logging_camp
+                            production_method = pm_hardwood
+                        }
+                    }
+                }
+                b:building_logging_camp.pmg_hardwood_pm_no_hardwood_profit_prediction > b:building_logging_camp.pmg_hardwood_pm_hardwood_profit_prediction_weighted
+            }
+            trigger_if = {
+                limit = {
+                    or = {
+                        can_activate_production_method = {
+                            building_type = building_logging_camp
+                            production_method = pm_increased_hardwood
+                        }
+                        is_production_method_active = {
+                            building_type = building_logging_camp
+                            production_method = pm_increased_hardwood
+                        }
+                    }
+                }
+                b:building_logging_camp.pmg_hardwood_pm_no_hardwood_profit_prediction > b:building_logging_camp.pmg_hardwood_pm_increased_hardwood_profit_prediction_weighted
+            }
+        }
+        order_by = b:building_logging_camp.pmg_hardwood_pm_no_hardwood_profit_prediction
+        max = owner.var:cnm_pm_manage_amount
+        check_range_bounds = no
+        activate_production_method = {
+            building_type = building_logging_camp
+            production_method = pm_no_hardwood
+        }
+    }
+    ordered_scope_state = {
+        limit = {
+            has_active_building = building_logging_camp
+            b:building_logging_camp.occupancy > 0.01
+            can_activate_production_method = {
+                building_type = building_logging_camp
+                production_method = pm_hardwood
+            }
+            trigger_if = {
+                limit = {
+                    or = {
+                        can_activate_production_method = {
+                            building_type = building_logging_camp
+                            production_method = pm_no_hardwood
+                        }
+                        is_production_method_active = {
+                            building_type = building_logging_camp
+                            production_method = pm_no_hardwood
+                        }
+                    }
+                }
+                b:building_logging_camp.pmg_hardwood_pm_hardwood_profit_prediction > b:building_logging_camp.pmg_hardwood_pm_no_hardwood_profit_prediction_weighted
+            }
+            trigger_if = {
+                limit = {
+                    or = {
+                        can_activate_production_method = {
+                            building_type = building_logging_camp
+                            production_method = pm_increased_hardwood
+                        }
+                        is_production_method_active = {
+                            building_type = building_logging_camp
+                            production_method = pm_increased_hardwood
+                        }
+                    }
+                }
+                b:building_logging_camp.pmg_hardwood_pm_hardwood_profit_prediction > b:building_logging_camp.pmg_hardwood_pm_increased_hardwood_profit_prediction_weighted
+            }
+        }
+        order_by = b:building_logging_camp.pmg_hardwood_pm_hardwood_profit_prediction
+        max = owner.var:cnm_pm_manage_amount
+        check_range_bounds = no
+        activate_production_method = {
+            building_type = building_logging_camp
+            production_method = pm_hardwood
+        }
+    }
+    ordered_scope_state = {
+        limit = {
+            has_active_building = building_logging_camp
+            b:building_logging_camp.occupancy > 0.01
+            can_activate_production_method = {
+                building_type = building_logging_camp
+                production_method = pm_increased_hardwood
+            }
+            trigger_if = {
+                limit = {
+                    or = {
+                        can_activate_production_method = {
+                            building_type = building_logging_camp
+                            production_method = pm_no_hardwood
+                        }
+                        is_production_method_active = {
+                            building_type = building_logging_camp
+                            production_method = pm_no_hardwood
+                        }
+                    }
+                }
+                b:building_logging_camp.pmg_hardwood_pm_increased_hardwood_profit_prediction > b:building_logging_camp.pmg_hardwood_pm_no_hardwood_profit_prediction_weighted
+            }
+            trigger_if = {
+                limit = {
+                    or = {
+                        can_activate_production_method = {
+                            building_type = building_logging_camp
+                            production_method = pm_hardwood
+                        }
+                        is_production_method_active = {
+                            building_type = building_logging_camp
+                            production_method = pm_hardwood
+                        }
+                    }
+                }
+                b:building_logging_camp.pmg_hardwood_pm_increased_hardwood_profit_prediction > b:building_logging_camp.pmg_hardwood_pm_hardwood_profit_prediction_weighted
+            }
+        }
+        order_by = b:building_logging_camp.pmg_hardwood_pm_increased_hardwood_profit_prediction
+        max = owner.var:cnm_pm_manage_amount
+        check_range_bounds = no
+        activate_production_method = {
+            building_type = building_logging_camp
+            production_method = pm_increased_hardwood
+        }
+    }
+    ordered_scope_state = {
+        limit = {
+            has_active_building = building_railway
+            b:building_railway.occupancy > 0.01
+            can_activate_production_method = {
+                building_type = building_railway
+                production_method = pm_no_passenger_trains
+            }
+            trigger_if = {
+                limit = {
+                    or = {
+                        can_activate_production_method = {
+                            building_type = building_railway
+                            production_method = pm_wooden_passenger_carriages
+                        }
+                        is_production_method_active = {
+                            building_type = building_railway
+                            production_method = pm_wooden_passenger_carriages
+                        }
+                    }
+                }
+                b:building_railway.pmg_passenger_trains_pm_no_passenger_trains_profit_prediction > b:building_railway.pmg_passenger_trains_pm_wooden_passenger_carriages_profit_prediction_weighted
+            }
+            trigger_if = {
+                limit = {
+                    or = {
+                        can_activate_production_method = {
+                            building_type = building_railway
+                            production_method = pm_steel_passenger_carriages
+                        }
+                        is_production_method_active = {
+                            building_type = building_railway
+                            production_method = pm_steel_passenger_carriages
+                        }
+                    }
+                }
+                b:building_railway.pmg_passenger_trains_pm_no_passenger_trains_profit_prediction > b:building_railway.pmg_passenger_trains_pm_steel_passenger_carriages_profit_prediction_weighted
+            }
+        }
+        order_by = b:building_railway.pmg_passenger_trains_pm_no_passenger_trains_profit_prediction
+        max = owner.var:cnm_pm_manage_amount
+        check_range_bounds = no
+        activate_production_method = {
+            building_type = building_railway
+            production_method = pm_no_passenger_trains
+        }
+    }
+    ordered_scope_state = {
+        limit = {
+            has_active_building = building_railway
+            b:building_railway.occupancy > 0.01
+            can_activate_production_method = {
+                building_type = building_railway
+                production_method = pm_wooden_passenger_carriages
+            }
+            trigger_if = {
+                limit = {
+                    or = {
+                        can_activate_production_method = {
+                            building_type = building_railway
+                            production_method = pm_no_passenger_trains
+                        }
+                        is_production_method_active = {
+                            building_type = building_railway
+                            production_method = pm_no_passenger_trains
+                        }
+                    }
+                }
+                b:building_railway.pmg_passenger_trains_pm_wooden_passenger_carriages_profit_prediction > b:building_railway.pmg_passenger_trains_pm_no_passenger_trains_profit_prediction_weighted
+            }
+            trigger_if = {
+                limit = {
+                    or = {
+                        can_activate_production_method = {
+                            building_type = building_railway
+                            production_method = pm_steel_passenger_carriages
+                        }
+                        is_production_method_active = {
+                            building_type = building_railway
+                            production_method = pm_steel_passenger_carriages
+                        }
+                    }
+                }
+                b:building_railway.pmg_passenger_trains_pm_wooden_passenger_carriages_profit_prediction > b:building_railway.pmg_passenger_trains_pm_steel_passenger_carriages_profit_prediction_weighted
+            }
+        }
+        order_by = b:building_railway.pmg_passenger_trains_pm_wooden_passenger_carriages_profit_prediction
+        max = owner.var:cnm_pm_manage_amount
+        check_range_bounds = no
+        activate_production_method = {
+            building_type = building_railway
+            production_method = pm_wooden_passenger_carriages
+        }
+    }
+    ordered_scope_state = {
+        limit = {
+            has_active_building = building_railway
+            b:building_railway.occupancy > 0.01
+            can_activate_production_method = {
+                building_type = building_railway
+                production_method = pm_steel_passenger_carriages
+            }
+            trigger_if = {
+                limit = {
+                    or = {
+                        can_activate_production_method = {
+                            building_type = building_railway
+                            production_method = pm_no_passenger_trains
+                        }
+                        is_production_method_active = {
+                            building_type = building_railway
+                            production_method = pm_no_passenger_trains
+                        }
+                    }
+                }
+                b:building_railway.pmg_passenger_trains_pm_steel_passenger_carriages_profit_prediction > b:building_railway.pmg_passenger_trains_pm_no_passenger_trains_profit_prediction_weighted
+            }
+            trigger_if = {
+                limit = {
+                    or = {
+                        can_activate_production_method = {
+                            building_type = building_railway
+                            production_method = pm_wooden_passenger_carriages
+                        }
+                        is_production_method_active = {
+                            building_type = building_railway
+                            production_method = pm_wooden_passenger_carriages
+                        }
+                    }
+                }
+                b:building_railway.pmg_passenger_trains_pm_steel_passenger_carriages_profit_prediction > b:building_railway.pmg_passenger_trains_pm_wooden_passenger_carriages_profit_prediction_weighted
+            }
+        }
+        order_by = b:building_railway.pmg_passenger_trains_pm_steel_passenger_carriages_profit_prediction
+        max = owner.var:cnm_pm_manage_amount
+        check_range_bounds = no
+        activate_production_method = {
+            building_type = building_railway
+            production_method = pm_steel_passenger_carriages
+        }
+    }
+}

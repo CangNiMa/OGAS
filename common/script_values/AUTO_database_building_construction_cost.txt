@@ -1,0 +1,266 @@
+﻿building_construction_cost = {
+    if = {
+        limit = {
+            is_building_type = building_airport
+        }
+        value = construction_cost_high
+    }
+    if = {
+        limit = {
+            is_building_type = building_art_academy
+        }
+        value = construction_cost_medium
+    }
+    if = {
+        limit = {
+            is_building_type = building_automotive_industry
+        }
+        value = construction_cost_very_high
+    }
+    if = {
+        limit = {
+            is_building_type = building_banana_plantation
+        }
+        value = construction_cost_low
+    }
+    if = {
+        limit = {
+            is_building_type = building_chemical_plant
+        }
+        value = construction_cost_very_high
+    }
+    if = {
+        limit = {
+            is_building_type = building_coal_mine
+        }
+        value = construction_cost_medium
+    }
+    if = {
+        limit = {
+            is_building_type = building_coffee_plantation
+        }
+        value = construction_cost_low
+    }
+    if = {
+        limit = {
+            is_building_type = building_cotton_plantation
+        }
+        value = construction_cost_low
+    }
+    if = {
+        limit = {
+            is_building_type = building_dye_plantation
+        }
+        value = construction_cost_low
+    }
+    if = {
+        limit = {
+            is_building_type = building_electrics_industry
+        }
+        value = construction_cost_very_high
+    }
+    if = {
+        limit = {
+            is_building_type = building_explosives_factory
+        }
+        value = construction_cost_very_high
+    }
+    if = {
+        limit = {
+            is_building_type = building_fishing_wharf
+        }
+        value = construction_cost_low
+    }
+    if = {
+        limit = {
+            is_building_type = building_food_industry
+        }
+        value = construction_cost_high
+    }
+    if = {
+        limit = {
+            is_building_type = building_furniture_manufactory
+        }
+        value = construction_cost_high
+    }
+    if = {
+        limit = {
+            is_building_type = building_glassworks
+        }
+        value = construction_cost_high
+    }
+    if = {
+        limit = {
+            is_building_type = building_gold_mine
+        }
+        value = construction_cost_medium
+    }
+    if = {
+        limit = {
+            is_building_type = building_iron_mine
+        }
+        value = construction_cost_medium
+    }
+    if = {
+        limit = {
+            is_building_type = building_lead_mine
+        }
+        value = construction_cost_medium
+    }
+    if = {
+        limit = {
+            is_building_type = building_livestock_ranch
+        }
+        value = construction_cost_low
+    }
+    if = {
+        limit = {
+            is_building_type = building_logging_camp
+        }
+        value = construction_cost_low
+    }
+    if = {
+        limit = {
+            is_building_type = building_maize_farm
+        }
+        value = construction_cost_low
+    }
+    if = {
+        limit = {
+            is_building_type = building_millet_farm
+        }
+        value = construction_cost_low
+    }
+    if = {
+        limit = {
+            is_building_type = building_motor_industry
+        }
+        value = construction_cost_very_high
+    }
+    if = {
+        limit = {
+            is_building_type = building_oil_rig
+        }
+        value = construction_cost_medium
+    }
+    if = {
+        limit = {
+            is_building_type = building_opium_plantation
+        }
+        value = construction_cost_low
+    }
+    if = {
+        limit = {
+            is_building_type = building_paper_mill
+        }
+        value = construction_cost_high
+    }
+    if = {
+        limit = {
+            is_building_type = building_railway
+        }
+        value = construction_cost_very_high
+    }
+    if = {
+        limit = {
+            is_building_type = building_rice_farm
+        }
+        value = construction_cost_low
+    }
+    if = {
+        limit = {
+            is_building_type = building_rubber_plantation
+        }
+        value = construction_cost_low
+    }
+    if = {
+        limit = {
+            is_building_type = building_rye_farm
+        }
+        value = construction_cost_low
+    }
+    if = {
+        limit = {
+            is_building_type = building_shipyard
+        }
+        value = construction_cost_high
+    }
+    if = {
+        limit = {
+            is_building_type = building_silk_plantation
+        }
+        value = construction_cost_low
+    }
+    if = {
+        limit = {
+            is_building_type = building_steel_mill
+        }
+        value = construction_cost_very_high
+    }
+    if = {
+        limit = {
+            is_building_type = building_sugar_plantation
+        }
+        value = construction_cost_low
+    }
+    if = {
+        limit = {
+            is_building_type = building_sulfur_mine
+        }
+        value = construction_cost_medium
+    }
+    if = {
+        limit = {
+            is_building_type = building_synthetics_plant
+        }
+        value = construction_cost_very_high
+    }
+    if = {
+        limit = {
+            is_building_type = building_tea_plantation
+        }
+        value = construction_cost_low
+    }
+    if = {
+        limit = {
+            is_building_type = building_textile_mill
+        }
+        value = construction_cost_high
+    }
+    if = {
+        limit = {
+            is_building_type = building_tobacco_plantation
+        }
+        value = construction_cost_low
+    }
+    if = {
+        limit = {
+            is_building_type = building_tooling_workshop
+        }
+        value = construction_cost_high
+    }
+    if = {
+        limit = {
+            is_building_type = building_uranium_mine
+        }
+        value = construction_cost_medium
+    }
+    if = {
+        limit = {
+            is_building_type = building_vineyard
+        }
+        value = construction_cost_low
+    }
+    if = {
+        limit = {
+            is_building_type = building_whaling_station
+        }
+        value = construction_cost_low
+    }
+    if = {
+        limit = {
+            is_building_type = building_wheat_farm
+        }
+        value = construction_cost_low
+    }
+}

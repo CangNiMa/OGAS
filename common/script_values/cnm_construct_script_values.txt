@@ -1,0 +1,118 @@
+﻿cnm_building_profit_per_level = {
+	value = weekly_profit
+	divide = level
+}
+
+cnm_building_profit_per_level_per_construct_power = {
+	value = cnm_building_profit_per_level
+	divide = building_construction_cost
+}
+
+cnm_building_profit_weight = {
+	value = cnm_building_profit_per_level_per_construct_power
+	if = {
+		limit = {
+			owner.var:cnm_rule_use_state_construction_mult = 1
+		}
+		multiply = {
+			value = 1
+			add = state.modifier:state_construction_mult
+		}
+	}
+	multiply = get_building_profit_weight
+}
+
+building_work_efficiency = {
+    value = occupancy
+    multiply = {
+        value = 1
+        add = modifier:building_throughput_add
+    }
+	multiply = level
+}
+
+#workers
+cnm_state_available_workers = {
+	value = cnm_state_subsistence_workers
+	add = cnm_state_unemployed
+}
+cnm_state_unemployed = {
+	add = state_population
+	multiply = state_unemployment_rate
+}
+cnm_state_subsistence_workers = {
+	every_scope_building = {
+		limit = {
+			is_subsistence_building = yes
+		}
+		add = {
+			add = {
+				add = modifier:building_employment_peasants_add
+				add = modifier:building_employment_clergymen_add
+				add = modifier:building_employment_aristocrats_add
+				add = modifier:building_employment_farmers_add
+				add = modifier:building_employment_bureaucrats_add
+			}
+			multiply = occupancy
+		}
+	}
+}
+#construct power cost
+cnm_current_construct_power_cost = {
+	value =  {
+		every_scope_building = {
+			limit = {
+				is_building_type = building_construction_sector
+			}
+			add = weekly_profit
+		}
+	}
+}
+cnm_current_construct_power_queue_price = {
+	value = cnm_current_construct_power_cost
+	divide = {
+		value = modifier:country_construction_add
+		divide = modifier:country_max_weekly_construction_progress_add
+	}
+	#num_queued_constructions gives all queue, not active queue
+	#if = {
+	#	limit = {
+	#		num_queued_constructions = 0
+	#	}
+	#	value = 0
+	#}
+	#else = {
+	#	divide = {
+	#		value = num_queued_constructions
+	#		multiply = modifier:country_max_weekly_construction_progress_add
+	#	}
+	#}
+}
+cnm_current_construct_power_unit_price = {
+	value = cnm_current_construct_power_cost
+	divide = modifier:country_construction_add
+}
+cnm_current_construct_sector_unit_price = {
+	value = cnm_current_construct_power_unit_price
+	if = {
+		limit = { 
+			has_technology_researched = arc_welding
+		}
+		multiply = cnm_construct_power_pm_arc_welded_buildings
+	}
+	else_if = {
+		limit = { 
+			has_technology_researched = steel_frame_buildings
+		}
+		multiply = cnm_construct_power_pm_steel_frame_buildings
+	}
+	else_if = {
+		limit = { 
+			has_technology_researched = urban_planning
+		}
+		multiply = cnm_construct_power_pm_iron_frame_buildings
+	}
+	else = {
+		multiply = cnm_construct_power_pm_wooden_buildings
+	}
+}

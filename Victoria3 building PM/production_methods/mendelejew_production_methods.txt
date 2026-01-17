@@ -1,0 +1,191 @@
+﻿##################################
+# MENDELEJEW PRODUCTION METHODS #
+##################################
+
+#by Marco Dandolo
+
+##############################
+
+pm_mendelejew_chemistry_classical = {
+	texture = "gfx/interface/icons/production_method_icons/mendelejew_chemistry_classical_pm.dds"
+
+	unlocking_technologies = {
+		distillation
+	}
+
+	state_modifiers = {
+		workforce_scaled = {
+			state_education_access_add = 0.01
+		}
+	}
+
+	building_modifiers = {
+		workforce_scaled = { 
+			# input goods
+			goods_input_glass_add = 1
+			goods_input_wood_add = 1
+
+			building_employment_academics_add = 100
+		}				
+	}
+
+	ai_value = 0
+}
+
+pm_mendelejew_chemistry = {
+	texture = "gfx/interface/icons/production_method_icons/mendelejew_chemistry_pm.dds"
+	
+	unlocking_technologies = {
+		verrier_chemistry_tech
+	}
+
+	state_modifiers = {
+		workforce_scaled = {
+			state_education_access_add = 0.025
+		}
+	}
+
+	building_modifiers = {
+		workforce_scaled = { 
+			# input goods
+			goods_input_glass_add = 1
+			goods_input_coal_add = 1
+			goods_input_sulfur_add = 1
+			goods_input_lead_add = 1
+			goods_input_iron_add = 1
+
+			building_employment_academics_add = 100
+		}				
+	}
+
+	ai_value = 2000
+}
+
+pm_mendelejew_spectroscopy = {
+	texture = "gfx/interface/icons/production_method_icons/mendelejew_spectroscopy_pm.dds"
+
+	unlocking_technologies = {
+		verrier_spectroscopy_tech
+	}
+
+	country_modifiers = {
+		unscaled = {
+			country_verrier_decorative_astronomical_objectes_add = 3
+		}
+	}
+
+	state_modifiers = {
+		workforce_scaled = {
+			state_education_access_add = 0.05
+		}
+	}
+
+	building_modifiers = {
+		workforce_scaled = { 
+			# input goods
+			goods_input_glass_add = 5
+			goods_input_coal_add = 2
+			goods_input_sulfur_add = 2
+			goods_input_lead_add = 2
+			goods_input_iron_add = 2
+
+			building_employment_academics_add = 100
+		}				
+	}
+
+	ai_value = 3000
+}
+
+pm_mendelejew_cyclotron = {
+	texture = "gfx/interface/icons/production_method_icons/mendelejew_cyclotron_pm.dds"
+
+	unlocking_technologies = {
+		verrier_nuclear_physics_tech
+	}
+
+	country_modifiers = {
+		unscaled = {
+			country_verrier_decorative_astronomical_objectes_add = 3
+		}
+	}
+
+	state_modifiers = {
+		workforce_scaled = {
+			state_education_access_add = 0.1
+		}
+	}
+
+	building_modifiers = {
+		workforce_scaled = { 
+			# input goods
+			goods_input_glass_add = 10
+			goods_input_coal_add = 5
+			goods_input_sulfur_add = 5
+			goods_input_lead_add = 5
+			goods_input_iron_add = 5
+			goods_input_good_uranium_add = 20
+			goods_input_electricity_add = 100
+
+			building_employment_academics_add = 100
+		}				
+	}
+
+	required_input_goods = electricity
+
+	ai_value = 3000
+}
+
+##############################
+
+pm_mendelejew_coal_liquefaction = {
+	texture = "gfx/interface/icons/production_method_icons/mendelejew_coal_liquefaction_pm.dds"
+
+	unlocking_technologies = {
+	}
+
+	building_modifiers = {
+		workforce_scaled = { 
+			# input goods
+			goods_input_coal_add = 70 #2100
+			goods_input_electricity_add = 10 #300 #2400
+
+			# output goods
+			goods_output_oil_add = 90
+		}				
+
+		level_scaled = {
+			building_employment_laborers_add = 2000
+			building_employment_machinists_add = 1000
+			building_employment_engineers_add = 1000
+		}
+	}
+
+	ai_value = 3000
+}
+
+pm_mendelejew_isoprene = {
+	texture = "gfx/interface/icons/production_method_icons/mendelejew_isoprene_pm.dds"
+
+	unlocking_technologies = {
+	}
+
+	building_modifiers = {
+		workforce_scaled = { 
+			# input goods
+			goods_input_sulfur_add = 8	# 400
+			goods_input_oil_add = 20	# 800
+			goods_input_silk_add = 30	# 1200	#2400
+
+			# output goods
+			goods_output_rubber_add = 90
+		}				
+
+		level_scaled = {
+			building_employment_laborers_add = 2000
+			building_employment_machinists_add = 1000
+			building_employment_engineers_add = 1000
+		}
+	}
+
+	ai_value = 3000
+}
