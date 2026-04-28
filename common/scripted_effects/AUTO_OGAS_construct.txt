@@ -337,21 +337,5 @@
                 start_building_construction = building_railway
             }
         }
-        if = {
-            limit = { 
-                is_building_type = building_uranium_mine
-            }
-            state = {
-                start_building_construction = building_uranium_mine
-            }
-        }
-        if = {
-            limit = { 
-                is_building_type = building_airport
-            }
-            state = {
-                start_building_construction = building_airport
-            }
-        }
     }
 }

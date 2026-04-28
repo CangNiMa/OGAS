@@ -1,12 +1,6 @@
 ﻿building_construction_cost = {
     if = {
         limit = {
-            is_building_type = building_airport
-        }
-        value = construction_cost_high
-    }
-    if = {
-        limit = {
             is_building_type = building_art_academy
         }
         value = construction_cost_medium
@@ -238,12 +232,6 @@
             is_building_type = building_tooling_workshop
         }
         value = construction_cost_high
-    }
-    if = {
-        limit = {
-            is_building_type = building_uranium_mine
-        }
-        value = construction_cost_medium
     }
     if = {
         limit = {

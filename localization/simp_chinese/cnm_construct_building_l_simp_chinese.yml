@@ -98,7 +98,6 @@ increase_building_oil_rig: "[Scope.GetCountry.MakeScope.Var('cnm_auto_construct_
 increase_building_oil_rig_desc: "$increase_building_OGAS_desc$"
 increase_building_railway: "[Scope.GetCountry.MakeScope.Var('cnm_auto_construct_building_railway').GetValue]@transportation!$building_railway$@arrow_up!"
 increase_building_railway_desc: "$increase_building_OGAS_desc$"
-increase_building_uranium_mine: "[Scope.GetCountry.MakeScope.Var('cnm_auto_construct_building_uranium_mine').GetValue]@transportation!$building_uranium_mine$@arrow_up!"
 
 increase_building_OGAS_desc: "提高该建筑权重0.1"
 

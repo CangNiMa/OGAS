@@ -554,6 +554,155 @@ pmg_canning_pm_vacuum_canning_principle_3_profit_prediction_weighted = {
     multiply = owner.var:cnm_upgrade_tolerance_pm_manager
 }
 
+pmg_distillery_pm_disabled_distillery_profit_prediction = {
+    value = 0
+    divide = level
+}
+
+pmg_distillery_pm_disabled_distillery_profit_prediction_weighted = {
+    value = pmg_distillery_pm_disabled_distillery_profit_prediction
+    multiply = owner.var:cnm_upgrade_tolerance_pm_manager
+}
+
+pmg_distillery_pm_pot_stills_profit_prediction = {
+    value = 0
+    add = {
+        value = pm_pot_stills_groceries
+        multiply = building_work_efficiency
+        save_temporary_value_as = pm_pot_stills_groceries_prediction
+        value = state_groceries_production_if_no_pmg_distillery
+        save_temporary_value_as = state_groceries_production_prediction
+        value = state_groceries_consumption_if_no_pmg_distillery
+        subtract = scope:pm_pot_stills_groceries_prediction
+        save_temporary_value_as = state_groceries_consumption_prediction
+        value = market_groceries_production_if_no_pmg_distillery
+        save_temporary_value_as = market_groceries_production_prediction
+        value = market_groceries_consumption_if_no_pmg_distillery
+        subtract = scope:pm_pot_stills_groceries_prediction
+        save_temporary_value_as = market_groceries_consumption_prediction
+        value = groceries_price_prediction
+        multiply = scope:pm_pot_stills_groceries_prediction
+    }
+    add = {
+        value = pm_pot_stills_liquor
+        multiply = building_work_efficiency
+        save_temporary_value_as = pm_pot_stills_liquor_prediction
+        value = state_liquor_production_if_no_pmg_distillery
+        add = scope:pm_pot_stills_liquor_prediction
+        save_temporary_value_as = state_liquor_production_prediction
+        value = state_liquor_consumption_if_no_pmg_distillery
+        save_temporary_value_as = state_liquor_consumption_prediction
+        value = market_liquor_production_if_no_pmg_distillery
+        add = scope:pm_pot_stills_liquor_prediction
+        save_temporary_value_as = market_liquor_production_prediction
+        value = market_liquor_consumption_if_no_pmg_distillery
+        save_temporary_value_as = market_liquor_consumption_prediction
+        value = liquor_price_prediction
+        multiply = scope:pm_pot_stills_liquor_prediction
+    }
+    add = {
+        value = pm_pot_stills_sugar
+        multiply = building_work_efficiency
+        save_temporary_value_as = pm_pot_stills_sugar_prediction
+        value = state_sugar_production_if_no_pmg_distillery
+        save_temporary_value_as = state_sugar_production_prediction
+        value = state_sugar_consumption_if_no_pmg_distillery
+        subtract = scope:pm_pot_stills_sugar_prediction
+        save_temporary_value_as = state_sugar_consumption_prediction
+        value = market_sugar_production_if_no_pmg_distillery
+        save_temporary_value_as = market_sugar_production_prediction
+        value = market_sugar_consumption_if_no_pmg_distillery
+        subtract = scope:pm_pot_stills_sugar_prediction
+        save_temporary_value_as = market_sugar_consumption_prediction
+        value = sugar_price_prediction
+        multiply = scope:pm_pot_stills_sugar_prediction
+    }
+    divide = level
+}
+
+pmg_distillery_pm_pot_stills_profit_prediction_weighted = {
+    value = pmg_distillery_pm_pot_stills_profit_prediction
+    multiply = owner.var:cnm_upgrade_tolerance_pm_manager
+}
+
+pmg_distillery_pm_patent_stills_profit_prediction = {
+    value = 0
+    add = {
+        value = pm_patent_stills_groceries
+        multiply = building_work_efficiency
+        save_temporary_value_as = pm_patent_stills_groceries_prediction
+        value = state_groceries_production_if_no_pmg_distillery
+        save_temporary_value_as = state_groceries_production_prediction
+        value = state_groceries_consumption_if_no_pmg_distillery
+        subtract = scope:pm_patent_stills_groceries_prediction
+        save_temporary_value_as = state_groceries_consumption_prediction
+        value = market_groceries_production_if_no_pmg_distillery
+        save_temporary_value_as = market_groceries_production_prediction
+        value = market_groceries_consumption_if_no_pmg_distillery
+        subtract = scope:pm_patent_stills_groceries_prediction
+        save_temporary_value_as = market_groceries_consumption_prediction
+        value = groceries_price_prediction
+        multiply = scope:pm_patent_stills_groceries_prediction
+    }
+    add = {
+        value = pm_patent_stills_glass
+        multiply = building_work_efficiency
+        save_temporary_value_as = pm_patent_stills_glass_prediction
+        value = state_glass_production_if_no_pmg_distillery
+        save_temporary_value_as = state_glass_production_prediction
+        value = state_glass_consumption_if_no_pmg_distillery
+        subtract = scope:pm_patent_stills_glass_prediction
+        save_temporary_value_as = state_glass_consumption_prediction
+        value = market_glass_production_if_no_pmg_distillery
+        save_temporary_value_as = market_glass_production_prediction
+        value = market_glass_consumption_if_no_pmg_distillery
+        subtract = scope:pm_patent_stills_glass_prediction
+        save_temporary_value_as = market_glass_consumption_prediction
+        value = glass_price_prediction
+        multiply = scope:pm_patent_stills_glass_prediction
+    }
+    add = {
+        value = pm_patent_stills_liquor
+        multiply = building_work_efficiency
+        save_temporary_value_as = pm_patent_stills_liquor_prediction
+        value = state_liquor_production_if_no_pmg_distillery
+        add = scope:pm_patent_stills_liquor_prediction
+        save_temporary_value_as = state_liquor_production_prediction
+        value = state_liquor_consumption_if_no_pmg_distillery
+        save_temporary_value_as = state_liquor_consumption_prediction
+        value = market_liquor_production_if_no_pmg_distillery
+        add = scope:pm_patent_stills_liquor_prediction
+        save_temporary_value_as = market_liquor_production_prediction
+        value = market_liquor_consumption_if_no_pmg_distillery
+        save_temporary_value_as = market_liquor_consumption_prediction
+        value = liquor_price_prediction
+        multiply = scope:pm_patent_stills_liquor_prediction
+    }
+    add = {
+        value = pm_patent_stills_sugar
+        multiply = building_work_efficiency
+        save_temporary_value_as = pm_patent_stills_sugar_prediction
+        value = state_sugar_production_if_no_pmg_distillery
+        save_temporary_value_as = state_sugar_production_prediction
+        value = state_sugar_consumption_if_no_pmg_distillery
+        subtract = scope:pm_patent_stills_sugar_prediction
+        save_temporary_value_as = state_sugar_consumption_prediction
+        value = market_sugar_production_if_no_pmg_distillery
+        save_temporary_value_as = market_sugar_production_prediction
+        value = market_sugar_consumption_if_no_pmg_distillery
+        subtract = scope:pm_patent_stills_sugar_prediction
+        save_temporary_value_as = market_sugar_consumption_prediction
+        value = sugar_price_prediction
+        multiply = scope:pm_patent_stills_sugar_prediction
+    }
+    divide = level
+}
+
+pmg_distillery_pm_patent_stills_profit_prediction_weighted = {
+    value = pmg_distillery_pm_patent_stills_profit_prediction
+    multiply = owner.var:cnm_upgrade_tolerance_pm_manager
+}
+
 pmg_base_building_textile_mill_pm_handsewn_clothes_profit_prediction = {
     value = 0
     add = {
@@ -832,6 +981,189 @@ pmg_base_building_textile_mill_pm_electric_sewing_machines_profit_prediction_wei
     multiply = owner.var:cnm_upgrade_tolerance_pm_manager
 }
 
+pmg_luxury_building_textile_mill_pm_no_luxury_clothes_profit_prediction = {
+    value = 0
+    divide = level
+}
+
+pmg_luxury_building_textile_mill_pm_no_luxury_clothes_profit_prediction_weighted = {
+    value = pmg_luxury_building_textile_mill_pm_no_luxury_clothes_profit_prediction
+    multiply = owner.var:cnm_upgrade_tolerance_pm_manager
+}
+
+pmg_luxury_building_textile_mill_pm_craftsman_sewing_profit_prediction = {
+    value = 0
+    add = {
+        value = pm_craftsman_sewing_fabric
+        multiply = building_work_efficiency
+        save_temporary_value_as = pm_craftsman_sewing_fabric_prediction
+        value = state_fabric_production_if_no_pmg_luxury_building_textile_mill
+        add = scope:pm_craftsman_sewing_fabric_prediction
+        save_temporary_value_as = state_fabric_production_prediction
+        value = state_fabric_consumption_if_no_pmg_luxury_building_textile_mill
+        save_temporary_value_as = state_fabric_consumption_prediction
+        value = market_fabric_production_if_no_pmg_luxury_building_textile_mill
+        add = scope:pm_craftsman_sewing_fabric_prediction
+        save_temporary_value_as = market_fabric_production_prediction
+        value = market_fabric_consumption_if_no_pmg_luxury_building_textile_mill
+        save_temporary_value_as = market_fabric_consumption_prediction
+        value = fabric_price_prediction
+        multiply = scope:pm_craftsman_sewing_fabric_prediction
+    }
+    add = {
+        value = pm_craftsman_sewing_clothes
+        multiply = building_work_efficiency
+        save_temporary_value_as = pm_craftsman_sewing_clothes_prediction
+        value = state_clothes_production_if_no_pmg_luxury_building_textile_mill
+        save_temporary_value_as = state_clothes_production_prediction
+        value = state_clothes_consumption_if_no_pmg_luxury_building_textile_mill
+        subtract = scope:pm_craftsman_sewing_clothes_prediction
+        save_temporary_value_as = state_clothes_consumption_prediction
+        value = market_clothes_production_if_no_pmg_luxury_building_textile_mill
+        save_temporary_value_as = market_clothes_production_prediction
+        value = market_clothes_consumption_if_no_pmg_luxury_building_textile_mill
+        subtract = scope:pm_craftsman_sewing_clothes_prediction
+        save_temporary_value_as = market_clothes_consumption_prediction
+        value = clothes_price_prediction
+        multiply = scope:pm_craftsman_sewing_clothes_prediction
+    }
+    add = {
+        value = pm_craftsman_sewing_silk
+        multiply = building_work_efficiency
+        save_temporary_value_as = pm_craftsman_sewing_silk_prediction
+        value = state_silk_production_if_no_pmg_luxury_building_textile_mill
+        save_temporary_value_as = state_silk_production_prediction
+        value = state_silk_consumption_if_no_pmg_luxury_building_textile_mill
+        subtract = scope:pm_craftsman_sewing_silk_prediction
+        save_temporary_value_as = state_silk_consumption_prediction
+        value = market_silk_production_if_no_pmg_luxury_building_textile_mill
+        save_temporary_value_as = market_silk_production_prediction
+        value = market_silk_consumption_if_no_pmg_luxury_building_textile_mill
+        subtract = scope:pm_craftsman_sewing_silk_prediction
+        save_temporary_value_as = market_silk_consumption_prediction
+        value = silk_price_prediction
+        multiply = scope:pm_craftsman_sewing_silk_prediction
+    }
+    add = {
+        value = pm_craftsman_sewing_luxury_clothes
+        multiply = building_work_efficiency
+        save_temporary_value_as = pm_craftsman_sewing_luxury_clothes_prediction
+        value = state_luxury_clothes_production_if_no_pmg_luxury_building_textile_mill
+        add = scope:pm_craftsman_sewing_luxury_clothes_prediction
+        save_temporary_value_as = state_luxury_clothes_production_prediction
+        value = state_luxury_clothes_consumption_if_no_pmg_luxury_building_textile_mill
+        save_temporary_value_as = state_luxury_clothes_consumption_prediction
+        value = market_luxury_clothes_production_if_no_pmg_luxury_building_textile_mill
+        add = scope:pm_craftsman_sewing_luxury_clothes_prediction
+        save_temporary_value_as = market_luxury_clothes_production_prediction
+        value = market_luxury_clothes_consumption_if_no_pmg_luxury_building_textile_mill
+        save_temporary_value_as = market_luxury_clothes_consumption_prediction
+        value = luxury_clothes_price_prediction
+        multiply = scope:pm_craftsman_sewing_luxury_clothes_prediction
+    }
+    divide = level
+}
+
+pmg_luxury_building_textile_mill_pm_craftsman_sewing_profit_prediction_weighted = {
+    value = pmg_luxury_building_textile_mill_pm_craftsman_sewing_profit_prediction
+    multiply = owner.var:cnm_upgrade_tolerance_pm_manager
+}
+
+pmg_luxury_building_textile_mill_pm_elastics_profit_prediction = {
+    value = 0
+    add = {
+        value = pm_elastics_fabric
+        multiply = building_work_efficiency
+        save_temporary_value_as = pm_elastics_fabric_prediction
+        value = state_fabric_production_if_no_pmg_luxury_building_textile_mill
+        add = scope:pm_elastics_fabric_prediction
+        save_temporary_value_as = state_fabric_production_prediction
+        value = state_fabric_consumption_if_no_pmg_luxury_building_textile_mill
+        save_temporary_value_as = state_fabric_consumption_prediction
+        value = market_fabric_production_if_no_pmg_luxury_building_textile_mill
+        add = scope:pm_elastics_fabric_prediction
+        save_temporary_value_as = market_fabric_production_prediction
+        value = market_fabric_consumption_if_no_pmg_luxury_building_textile_mill
+        save_temporary_value_as = market_fabric_consumption_prediction
+        value = fabric_price_prediction
+        multiply = scope:pm_elastics_fabric_prediction
+    }
+    add = {
+        value = pm_elastics_clothes
+        multiply = building_work_efficiency
+        save_temporary_value_as = pm_elastics_clothes_prediction
+        value = state_clothes_production_if_no_pmg_luxury_building_textile_mill
+        save_temporary_value_as = state_clothes_production_prediction
+        value = state_clothes_consumption_if_no_pmg_luxury_building_textile_mill
+        subtract = scope:pm_elastics_clothes_prediction
+        save_temporary_value_as = state_clothes_consumption_prediction
+        value = market_clothes_production_if_no_pmg_luxury_building_textile_mill
+        save_temporary_value_as = market_clothes_production_prediction
+        value = market_clothes_consumption_if_no_pmg_luxury_building_textile_mill
+        subtract = scope:pm_elastics_clothes_prediction
+        save_temporary_value_as = market_clothes_consumption_prediction
+        value = clothes_price_prediction
+        multiply = scope:pm_elastics_clothes_prediction
+    }
+    add = {
+        value = pm_elastics_silk
+        multiply = building_work_efficiency
+        save_temporary_value_as = pm_elastics_silk_prediction
+        value = state_silk_production_if_no_pmg_luxury_building_textile_mill
+        save_temporary_value_as = state_silk_production_prediction
+        value = state_silk_consumption_if_no_pmg_luxury_building_textile_mill
+        subtract = scope:pm_elastics_silk_prediction
+        save_temporary_value_as = state_silk_consumption_prediction
+        value = market_silk_production_if_no_pmg_luxury_building_textile_mill
+        save_temporary_value_as = market_silk_production_prediction
+        value = market_silk_consumption_if_no_pmg_luxury_building_textile_mill
+        subtract = scope:pm_elastics_silk_prediction
+        save_temporary_value_as = market_silk_consumption_prediction
+        value = silk_price_prediction
+        multiply = scope:pm_elastics_silk_prediction
+    }
+    add = {
+        value = pm_elastics_rubber
+        multiply = building_work_efficiency
+        save_temporary_value_as = pm_elastics_rubber_prediction
+        value = state_rubber_production_if_no_pmg_luxury_building_textile_mill
+        save_temporary_value_as = state_rubber_production_prediction
+        value = state_rubber_consumption_if_no_pmg_luxury_building_textile_mill
+        subtract = scope:pm_elastics_rubber_prediction
+        save_temporary_value_as = state_rubber_consumption_prediction
+        value = market_rubber_production_if_no_pmg_luxury_building_textile_mill
+        save_temporary_value_as = market_rubber_production_prediction
+        value = market_rubber_consumption_if_no_pmg_luxury_building_textile_mill
+        subtract = scope:pm_elastics_rubber_prediction
+        save_temporary_value_as = market_rubber_consumption_prediction
+        value = rubber_price_prediction
+        multiply = scope:pm_elastics_rubber_prediction
+    }
+    add = {
+        value = pm_elastics_luxury_clothes
+        multiply = building_work_efficiency
+        save_temporary_value_as = pm_elastics_luxury_clothes_prediction
+        value = state_luxury_clothes_production_if_no_pmg_luxury_building_textile_mill
+        add = scope:pm_elastics_luxury_clothes_prediction
+        save_temporary_value_as = state_luxury_clothes_production_prediction
+        value = state_luxury_clothes_consumption_if_no_pmg_luxury_building_textile_mill
+        save_temporary_value_as = state_luxury_clothes_consumption_prediction
+        value = market_luxury_clothes_production_if_no_pmg_luxury_building_textile_mill
+        add = scope:pm_elastics_luxury_clothes_prediction
+        save_temporary_value_as = market_luxury_clothes_production_prediction
+        value = market_luxury_clothes_consumption_if_no_pmg_luxury_building_textile_mill
+        save_temporary_value_as = market_luxury_clothes_consumption_prediction
+        value = luxury_clothes_price_prediction
+        multiply = scope:pm_elastics_luxury_clothes_prediction
+    }
+    divide = level
+}
+
+pmg_luxury_building_textile_mill_pm_elastics_profit_prediction_weighted = {
+    value = pmg_luxury_building_textile_mill_pm_elastics_profit_prediction
+    multiply = owner.var:cnm_upgrade_tolerance_pm_manager
+}
+
 pmg_base_building_furniture_manufactory_pm_handcrafted_furniture_profit_prediction = {
     value = 0
     add = {
@@ -1049,6 +1381,189 @@ pmg_base_building_furniture_manufactory_pm_mechanized_workshops_profit_predictio
     multiply = owner.var:cnm_upgrade_tolerance_pm_manager
 }
 
+pmg_luxury_building_furniture_manufactory_pm_no_luxuries_profit_prediction = {
+    value = 0
+    divide = level
+}
+
+pmg_luxury_building_furniture_manufactory_pm_no_luxuries_profit_prediction_weighted = {
+    value = pmg_luxury_building_furniture_manufactory_pm_no_luxuries_profit_prediction
+    multiply = owner.var:cnm_upgrade_tolerance_pm_manager
+}
+
+pmg_luxury_building_furniture_manufactory_pm_luxury_furniture_profit_prediction = {
+    value = 0
+    add = {
+        value = pm_luxury_furniture_wood
+        multiply = building_work_efficiency
+        save_temporary_value_as = pm_luxury_furniture_wood_prediction
+        value = state_wood_production_if_no_pmg_luxury_building_furniture_manufactory
+        add = scope:pm_luxury_furniture_wood_prediction
+        save_temporary_value_as = state_wood_production_prediction
+        value = state_wood_consumption_if_no_pmg_luxury_building_furniture_manufactory
+        save_temporary_value_as = state_wood_consumption_prediction
+        value = market_wood_production_if_no_pmg_luxury_building_furniture_manufactory
+        add = scope:pm_luxury_furniture_wood_prediction
+        save_temporary_value_as = market_wood_production_prediction
+        value = market_wood_consumption_if_no_pmg_luxury_building_furniture_manufactory
+        save_temporary_value_as = market_wood_consumption_prediction
+        value = wood_price_prediction
+        multiply = scope:pm_luxury_furniture_wood_prediction
+    }
+    add = {
+        value = pm_luxury_furniture_furniture
+        multiply = building_work_efficiency
+        save_temporary_value_as = pm_luxury_furniture_furniture_prediction
+        value = state_furniture_production_if_no_pmg_luxury_building_furniture_manufactory
+        save_temporary_value_as = state_furniture_production_prediction
+        value = state_furniture_consumption_if_no_pmg_luxury_building_furniture_manufactory
+        subtract = scope:pm_luxury_furniture_furniture_prediction
+        save_temporary_value_as = state_furniture_consumption_prediction
+        value = market_furniture_production_if_no_pmg_luxury_building_furniture_manufactory
+        save_temporary_value_as = market_furniture_production_prediction
+        value = market_furniture_consumption_if_no_pmg_luxury_building_furniture_manufactory
+        subtract = scope:pm_luxury_furniture_furniture_prediction
+        save_temporary_value_as = market_furniture_consumption_prediction
+        value = furniture_price_prediction
+        multiply = scope:pm_luxury_furniture_furniture_prediction
+    }
+    add = {
+        value = pm_luxury_furniture_hardwood
+        multiply = building_work_efficiency
+        save_temporary_value_as = pm_luxury_furniture_hardwood_prediction
+        value = state_hardwood_production_if_no_pmg_luxury_building_furniture_manufactory
+        save_temporary_value_as = state_hardwood_production_prediction
+        value = state_hardwood_consumption_if_no_pmg_luxury_building_furniture_manufactory
+        subtract = scope:pm_luxury_furniture_hardwood_prediction
+        save_temporary_value_as = state_hardwood_consumption_prediction
+        value = market_hardwood_production_if_no_pmg_luxury_building_furniture_manufactory
+        save_temporary_value_as = market_hardwood_production_prediction
+        value = market_hardwood_consumption_if_no_pmg_luxury_building_furniture_manufactory
+        subtract = scope:pm_luxury_furniture_hardwood_prediction
+        save_temporary_value_as = market_hardwood_consumption_prediction
+        value = hardwood_price_prediction
+        multiply = scope:pm_luxury_furniture_hardwood_prediction
+    }
+    add = {
+        value = pm_luxury_furniture_luxury_furniture
+        multiply = building_work_efficiency
+        save_temporary_value_as = pm_luxury_furniture_luxury_furniture_prediction
+        value = state_luxury_furniture_production_if_no_pmg_luxury_building_furniture_manufactory
+        add = scope:pm_luxury_furniture_luxury_furniture_prediction
+        save_temporary_value_as = state_luxury_furniture_production_prediction
+        value = state_luxury_furniture_consumption_if_no_pmg_luxury_building_furniture_manufactory
+        save_temporary_value_as = state_luxury_furniture_consumption_prediction
+        value = market_luxury_furniture_production_if_no_pmg_luxury_building_furniture_manufactory
+        add = scope:pm_luxury_furniture_luxury_furniture_prediction
+        save_temporary_value_as = market_luxury_furniture_production_prediction
+        value = market_luxury_furniture_consumption_if_no_pmg_luxury_building_furniture_manufactory
+        save_temporary_value_as = market_luxury_furniture_consumption_prediction
+        value = luxury_furniture_price_prediction
+        multiply = scope:pm_luxury_furniture_luxury_furniture_prediction
+    }
+    divide = level
+}
+
+pmg_luxury_building_furniture_manufactory_pm_luxury_furniture_profit_prediction_weighted = {
+    value = pmg_luxury_building_furniture_manufactory_pm_luxury_furniture_profit_prediction
+    multiply = owner.var:cnm_upgrade_tolerance_pm_manager
+}
+
+pmg_luxury_building_furniture_manufactory_pm_precision_tools_profit_prediction = {
+    value = 0
+    add = {
+        value = pm_precision_tools_wood
+        multiply = building_work_efficiency
+        save_temporary_value_as = pm_precision_tools_wood_prediction
+        value = state_wood_production_if_no_pmg_luxury_building_furniture_manufactory
+        add = scope:pm_precision_tools_wood_prediction
+        save_temporary_value_as = state_wood_production_prediction
+        value = state_wood_consumption_if_no_pmg_luxury_building_furniture_manufactory
+        save_temporary_value_as = state_wood_consumption_prediction
+        value = market_wood_production_if_no_pmg_luxury_building_furniture_manufactory
+        add = scope:pm_precision_tools_wood_prediction
+        save_temporary_value_as = market_wood_production_prediction
+        value = market_wood_consumption_if_no_pmg_luxury_building_furniture_manufactory
+        save_temporary_value_as = market_wood_consumption_prediction
+        value = wood_price_prediction
+        multiply = scope:pm_precision_tools_wood_prediction
+    }
+    add = {
+        value = pm_precision_tools_furniture
+        multiply = building_work_efficiency
+        save_temporary_value_as = pm_precision_tools_furniture_prediction
+        value = state_furniture_production_if_no_pmg_luxury_building_furniture_manufactory
+        save_temporary_value_as = state_furniture_production_prediction
+        value = state_furniture_consumption_if_no_pmg_luxury_building_furniture_manufactory
+        subtract = scope:pm_precision_tools_furniture_prediction
+        save_temporary_value_as = state_furniture_consumption_prediction
+        value = market_furniture_production_if_no_pmg_luxury_building_furniture_manufactory
+        save_temporary_value_as = market_furniture_production_prediction
+        value = market_furniture_consumption_if_no_pmg_luxury_building_furniture_manufactory
+        subtract = scope:pm_precision_tools_furniture_prediction
+        save_temporary_value_as = market_furniture_consumption_prediction
+        value = furniture_price_prediction
+        multiply = scope:pm_precision_tools_furniture_prediction
+    }
+    add = {
+        value = pm_precision_tools_hardwood
+        multiply = building_work_efficiency
+        save_temporary_value_as = pm_precision_tools_hardwood_prediction
+        value = state_hardwood_production_if_no_pmg_luxury_building_furniture_manufactory
+        save_temporary_value_as = state_hardwood_production_prediction
+        value = state_hardwood_consumption_if_no_pmg_luxury_building_furniture_manufactory
+        subtract = scope:pm_precision_tools_hardwood_prediction
+        save_temporary_value_as = state_hardwood_consumption_prediction
+        value = market_hardwood_production_if_no_pmg_luxury_building_furniture_manufactory
+        save_temporary_value_as = market_hardwood_production_prediction
+        value = market_hardwood_consumption_if_no_pmg_luxury_building_furniture_manufactory
+        subtract = scope:pm_precision_tools_hardwood_prediction
+        save_temporary_value_as = market_hardwood_consumption_prediction
+        value = hardwood_price_prediction
+        multiply = scope:pm_precision_tools_hardwood_prediction
+    }
+    add = {
+        value = pm_precision_tools_tools
+        multiply = building_work_efficiency
+        save_temporary_value_as = pm_precision_tools_tools_prediction
+        value = state_tools_production_if_no_pmg_luxury_building_furniture_manufactory
+        save_temporary_value_as = state_tools_production_prediction
+        value = state_tools_consumption_if_no_pmg_luxury_building_furniture_manufactory
+        subtract = scope:pm_precision_tools_tools_prediction
+        save_temporary_value_as = state_tools_consumption_prediction
+        value = market_tools_production_if_no_pmg_luxury_building_furniture_manufactory
+        save_temporary_value_as = market_tools_production_prediction
+        value = market_tools_consumption_if_no_pmg_luxury_building_furniture_manufactory
+        subtract = scope:pm_precision_tools_tools_prediction
+        save_temporary_value_as = market_tools_consumption_prediction
+        value = tools_price_prediction
+        multiply = scope:pm_precision_tools_tools_prediction
+    }
+    add = {
+        value = pm_precision_tools_luxury_furniture
+        multiply = building_work_efficiency
+        save_temporary_value_as = pm_precision_tools_luxury_furniture_prediction
+        value = state_luxury_furniture_production_if_no_pmg_luxury_building_furniture_manufactory
+        add = scope:pm_precision_tools_luxury_furniture_prediction
+        save_temporary_value_as = state_luxury_furniture_production_prediction
+        value = state_luxury_furniture_consumption_if_no_pmg_luxury_building_furniture_manufactory
+        save_temporary_value_as = state_luxury_furniture_consumption_prediction
+        value = market_luxury_furniture_production_if_no_pmg_luxury_building_furniture_manufactory
+        add = scope:pm_precision_tools_luxury_furniture_prediction
+        save_temporary_value_as = market_luxury_furniture_production_prediction
+        value = market_luxury_furniture_consumption_if_no_pmg_luxury_building_furniture_manufactory
+        save_temporary_value_as = market_luxury_furniture_consumption_prediction
+        value = luxury_furniture_price_prediction
+        multiply = scope:pm_precision_tools_luxury_furniture_prediction
+    }
+    divide = level
+}
+
+pmg_luxury_building_furniture_manufactory_pm_precision_tools_profit_prediction_weighted = {
+    value = pmg_luxury_building_furniture_manufactory_pm_precision_tools_profit_prediction
+    multiply = owner.var:cnm_upgrade_tolerance_pm_manager
+}
+
 pmg_base_building_glassworks_pm_forest_glass_profit_prediction = {
     value = 0
     add = {
@@ -1256,6 +1771,138 @@ pmg_base_building_glassworks_pm_houseware_plastics_profit_prediction = {
 
 pmg_base_building_glassworks_pm_houseware_plastics_profit_prediction_weighted = {
     value = pmg_base_building_glassworks_pm_houseware_plastics_profit_prediction
+    multiply = owner.var:cnm_upgrade_tolerance_pm_manager
+}
+
+pmg_luxury_building_glassworks_pm_disabled_ceramics_profit_prediction = {
+    value = 0
+    divide = level
+}
+
+pmg_luxury_building_glassworks_pm_disabled_ceramics_profit_prediction_weighted = {
+    value = pmg_luxury_building_glassworks_pm_disabled_ceramics_profit_prediction
+    multiply = owner.var:cnm_upgrade_tolerance_pm_manager
+}
+
+pmg_luxury_building_glassworks_pm_ceramics_profit_prediction = {
+    value = 0
+    add = {
+        value = pm_ceramics_dye
+        multiply = building_work_efficiency
+        save_temporary_value_as = pm_ceramics_dye_prediction
+        value = state_dye_production_if_no_pmg_luxury_building_glassworks
+        save_temporary_value_as = state_dye_production_prediction
+        value = state_dye_consumption_if_no_pmg_luxury_building_glassworks
+        subtract = scope:pm_ceramics_dye_prediction
+        save_temporary_value_as = state_dye_consumption_prediction
+        value = market_dye_production_if_no_pmg_luxury_building_glassworks
+        save_temporary_value_as = market_dye_production_prediction
+        value = market_dye_consumption_if_no_pmg_luxury_building_glassworks
+        subtract = scope:pm_ceramics_dye_prediction
+        save_temporary_value_as = market_dye_consumption_prediction
+        value = dye_price_prediction
+        multiply = scope:pm_ceramics_dye_prediction
+    }
+    add = {
+        value = pm_ceramics_glass
+        multiply = building_work_efficiency
+        save_temporary_value_as = pm_ceramics_glass_prediction
+        value = state_glass_production_if_no_pmg_luxury_building_glassworks
+        save_temporary_value_as = state_glass_production_prediction
+        value = state_glass_consumption_if_no_pmg_luxury_building_glassworks
+        subtract = scope:pm_ceramics_glass_prediction
+        save_temporary_value_as = state_glass_consumption_prediction
+        value = market_glass_production_if_no_pmg_luxury_building_glassworks
+        save_temporary_value_as = market_glass_production_prediction
+        value = market_glass_consumption_if_no_pmg_luxury_building_glassworks
+        subtract = scope:pm_ceramics_glass_prediction
+        save_temporary_value_as = market_glass_consumption_prediction
+        value = glass_price_prediction
+        multiply = scope:pm_ceramics_glass_prediction
+    }
+    add = {
+        value = pm_ceramics_porcelain
+        multiply = building_work_efficiency
+        save_temporary_value_as = pm_ceramics_porcelain_prediction
+        value = state_porcelain_production_if_no_pmg_luxury_building_glassworks
+        add = scope:pm_ceramics_porcelain_prediction
+        save_temporary_value_as = state_porcelain_production_prediction
+        value = state_porcelain_consumption_if_no_pmg_luxury_building_glassworks
+        save_temporary_value_as = state_porcelain_consumption_prediction
+        value = market_porcelain_production_if_no_pmg_luxury_building_glassworks
+        add = scope:pm_ceramics_porcelain_prediction
+        save_temporary_value_as = market_porcelain_production_prediction
+        value = market_porcelain_consumption_if_no_pmg_luxury_building_glassworks
+        save_temporary_value_as = market_porcelain_consumption_prediction
+        value = porcelain_price_prediction
+        multiply = scope:pm_ceramics_porcelain_prediction
+    }
+    divide = level
+}
+
+pmg_luxury_building_glassworks_pm_ceramics_profit_prediction_weighted = {
+    value = pmg_luxury_building_glassworks_pm_ceramics_profit_prediction
+    multiply = owner.var:cnm_upgrade_tolerance_pm_manager
+}
+
+pmg_luxury_building_glassworks_pm_bone_china_profit_prediction = {
+    value = 0
+    add = {
+        value = pm_bone_china_dye
+        multiply = building_work_efficiency
+        save_temporary_value_as = pm_bone_china_dye_prediction
+        value = state_dye_production_if_no_pmg_luxury_building_glassworks
+        save_temporary_value_as = state_dye_production_prediction
+        value = state_dye_consumption_if_no_pmg_luxury_building_glassworks
+        subtract = scope:pm_bone_china_dye_prediction
+        save_temporary_value_as = state_dye_consumption_prediction
+        value = market_dye_production_if_no_pmg_luxury_building_glassworks
+        save_temporary_value_as = market_dye_production_prediction
+        value = market_dye_consumption_if_no_pmg_luxury_building_glassworks
+        subtract = scope:pm_bone_china_dye_prediction
+        save_temporary_value_as = market_dye_consumption_prediction
+        value = dye_price_prediction
+        multiply = scope:pm_bone_china_dye_prediction
+    }
+    add = {
+        value = pm_bone_china_glass
+        multiply = building_work_efficiency
+        save_temporary_value_as = pm_bone_china_glass_prediction
+        value = state_glass_production_if_no_pmg_luxury_building_glassworks
+        save_temporary_value_as = state_glass_production_prediction
+        value = state_glass_consumption_if_no_pmg_luxury_building_glassworks
+        subtract = scope:pm_bone_china_glass_prediction
+        save_temporary_value_as = state_glass_consumption_prediction
+        value = market_glass_production_if_no_pmg_luxury_building_glassworks
+        save_temporary_value_as = market_glass_production_prediction
+        value = market_glass_consumption_if_no_pmg_luxury_building_glassworks
+        subtract = scope:pm_bone_china_glass_prediction
+        save_temporary_value_as = market_glass_consumption_prediction
+        value = glass_price_prediction
+        multiply = scope:pm_bone_china_glass_prediction
+    }
+    add = {
+        value = pm_bone_china_porcelain
+        multiply = building_work_efficiency
+        save_temporary_value_as = pm_bone_china_porcelain_prediction
+        value = state_porcelain_production_if_no_pmg_luxury_building_glassworks
+        add = scope:pm_bone_china_porcelain_prediction
+        save_temporary_value_as = state_porcelain_production_prediction
+        value = state_porcelain_consumption_if_no_pmg_luxury_building_glassworks
+        save_temporary_value_as = state_porcelain_consumption_prediction
+        value = market_porcelain_production_if_no_pmg_luxury_building_glassworks
+        add = scope:pm_bone_china_porcelain_prediction
+        save_temporary_value_as = market_porcelain_production_prediction
+        value = market_porcelain_consumption_if_no_pmg_luxury_building_glassworks
+        save_temporary_value_as = market_porcelain_consumption_prediction
+        value = porcelain_price_prediction
+        multiply = scope:pm_bone_china_porcelain_prediction
+    }
+    divide = level
+}
+
+pmg_luxury_building_glassworks_pm_bone_china_profit_prediction_weighted = {
+    value = pmg_luxury_building_glassworks_pm_bone_china_profit_prediction
     multiply = owner.var:cnm_upgrade_tolerance_pm_manager
 }
 
@@ -8084,653 +8731,6 @@ pmg_base_building_logging_camp_pm_electric_saw_mills_profit_prediction_weighted 
     multiply = owner.var:cnm_upgrade_tolerance_pm_manager
 }
 
-pmg_distillery_pm_disabled_distillery_profit_prediction = {
-    value = 0
-    divide = level
-}
-
-pmg_distillery_pm_disabled_distillery_profit_prediction_weighted = {
-    value = pmg_distillery_pm_disabled_distillery_profit_prediction
-    multiply = owner.var:cnm_upgrade_tolerance_pm_manager
-}
-
-pmg_distillery_pm_pot_stills_profit_prediction = {
-    value = 0
-    add = {
-        value = pm_pot_stills_groceries
-        multiply = building_work_efficiency
-        save_temporary_value_as = pm_pot_stills_groceries_prediction
-        value = state_groceries_production_if_no_pmg_distillery
-        save_temporary_value_as = state_groceries_production_prediction
-        value = state_groceries_consumption_if_no_pmg_distillery
-        subtract = scope:pm_pot_stills_groceries_prediction
-        save_temporary_value_as = state_groceries_consumption_prediction
-        value = market_groceries_production_if_no_pmg_distillery
-        save_temporary_value_as = market_groceries_production_prediction
-        value = market_groceries_consumption_if_no_pmg_distillery
-        subtract = scope:pm_pot_stills_groceries_prediction
-        save_temporary_value_as = market_groceries_consumption_prediction
-        value = groceries_price_prediction
-        multiply = scope:pm_pot_stills_groceries_prediction
-    }
-    add = {
-        value = pm_pot_stills_liquor
-        multiply = building_work_efficiency
-        save_temporary_value_as = pm_pot_stills_liquor_prediction
-        value = state_liquor_production_if_no_pmg_distillery
-        add = scope:pm_pot_stills_liquor_prediction
-        save_temporary_value_as = state_liquor_production_prediction
-        value = state_liquor_consumption_if_no_pmg_distillery
-        save_temporary_value_as = state_liquor_consumption_prediction
-        value = market_liquor_production_if_no_pmg_distillery
-        add = scope:pm_pot_stills_liquor_prediction
-        save_temporary_value_as = market_liquor_production_prediction
-        value = market_liquor_consumption_if_no_pmg_distillery
-        save_temporary_value_as = market_liquor_consumption_prediction
-        value = liquor_price_prediction
-        multiply = scope:pm_pot_stills_liquor_prediction
-    }
-    add = {
-        value = pm_pot_stills_sugar
-        multiply = building_work_efficiency
-        save_temporary_value_as = pm_pot_stills_sugar_prediction
-        value = state_sugar_production_if_no_pmg_distillery
-        save_temporary_value_as = state_sugar_production_prediction
-        value = state_sugar_consumption_if_no_pmg_distillery
-        subtract = scope:pm_pot_stills_sugar_prediction
-        save_temporary_value_as = state_sugar_consumption_prediction
-        value = market_sugar_production_if_no_pmg_distillery
-        save_temporary_value_as = market_sugar_production_prediction
-        value = market_sugar_consumption_if_no_pmg_distillery
-        subtract = scope:pm_pot_stills_sugar_prediction
-        save_temporary_value_as = market_sugar_consumption_prediction
-        value = sugar_price_prediction
-        multiply = scope:pm_pot_stills_sugar_prediction
-    }
-    divide = level
-}
-
-pmg_distillery_pm_pot_stills_profit_prediction_weighted = {
-    value = pmg_distillery_pm_pot_stills_profit_prediction
-    multiply = owner.var:cnm_upgrade_tolerance_pm_manager
-}
-
-pmg_distillery_pm_patent_stills_profit_prediction = {
-    value = 0
-    add = {
-        value = pm_patent_stills_groceries
-        multiply = building_work_efficiency
-        save_temporary_value_as = pm_patent_stills_groceries_prediction
-        value = state_groceries_production_if_no_pmg_distillery
-        save_temporary_value_as = state_groceries_production_prediction
-        value = state_groceries_consumption_if_no_pmg_distillery
-        subtract = scope:pm_patent_stills_groceries_prediction
-        save_temporary_value_as = state_groceries_consumption_prediction
-        value = market_groceries_production_if_no_pmg_distillery
-        save_temporary_value_as = market_groceries_production_prediction
-        value = market_groceries_consumption_if_no_pmg_distillery
-        subtract = scope:pm_patent_stills_groceries_prediction
-        save_temporary_value_as = market_groceries_consumption_prediction
-        value = groceries_price_prediction
-        multiply = scope:pm_patent_stills_groceries_prediction
-    }
-    add = {
-        value = pm_patent_stills_glass
-        multiply = building_work_efficiency
-        save_temporary_value_as = pm_patent_stills_glass_prediction
-        value = state_glass_production_if_no_pmg_distillery
-        save_temporary_value_as = state_glass_production_prediction
-        value = state_glass_consumption_if_no_pmg_distillery
-        subtract = scope:pm_patent_stills_glass_prediction
-        save_temporary_value_as = state_glass_consumption_prediction
-        value = market_glass_production_if_no_pmg_distillery
-        save_temporary_value_as = market_glass_production_prediction
-        value = market_glass_consumption_if_no_pmg_distillery
-        subtract = scope:pm_patent_stills_glass_prediction
-        save_temporary_value_as = market_glass_consumption_prediction
-        value = glass_price_prediction
-        multiply = scope:pm_patent_stills_glass_prediction
-    }
-    add = {
-        value = pm_patent_stills_liquor
-        multiply = building_work_efficiency
-        save_temporary_value_as = pm_patent_stills_liquor_prediction
-        value = state_liquor_production_if_no_pmg_distillery
-        add = scope:pm_patent_stills_liquor_prediction
-        save_temporary_value_as = state_liquor_production_prediction
-        value = state_liquor_consumption_if_no_pmg_distillery
-        save_temporary_value_as = state_liquor_consumption_prediction
-        value = market_liquor_production_if_no_pmg_distillery
-        add = scope:pm_patent_stills_liquor_prediction
-        save_temporary_value_as = market_liquor_production_prediction
-        value = market_liquor_consumption_if_no_pmg_distillery
-        save_temporary_value_as = market_liquor_consumption_prediction
-        value = liquor_price_prediction
-        multiply = scope:pm_patent_stills_liquor_prediction
-    }
-    add = {
-        value = pm_patent_stills_sugar
-        multiply = building_work_efficiency
-        save_temporary_value_as = pm_patent_stills_sugar_prediction
-        value = state_sugar_production_if_no_pmg_distillery
-        save_temporary_value_as = state_sugar_production_prediction
-        value = state_sugar_consumption_if_no_pmg_distillery
-        subtract = scope:pm_patent_stills_sugar_prediction
-        save_temporary_value_as = state_sugar_consumption_prediction
-        value = market_sugar_production_if_no_pmg_distillery
-        save_temporary_value_as = market_sugar_production_prediction
-        value = market_sugar_consumption_if_no_pmg_distillery
-        subtract = scope:pm_patent_stills_sugar_prediction
-        save_temporary_value_as = market_sugar_consumption_prediction
-        value = sugar_price_prediction
-        multiply = scope:pm_patent_stills_sugar_prediction
-    }
-    divide = level
-}
-
-pmg_distillery_pm_patent_stills_profit_prediction_weighted = {
-    value = pmg_distillery_pm_patent_stills_profit_prediction
-    multiply = owner.var:cnm_upgrade_tolerance_pm_manager
-}
-
-pmg_luxury_building_textile_mill_pm_no_luxury_clothes_profit_prediction = {
-    value = 0
-    divide = level
-}
-
-pmg_luxury_building_textile_mill_pm_no_luxury_clothes_profit_prediction_weighted = {
-    value = pmg_luxury_building_textile_mill_pm_no_luxury_clothes_profit_prediction
-    multiply = owner.var:cnm_upgrade_tolerance_pm_manager
-}
-
-pmg_luxury_building_textile_mill_pm_craftsman_sewing_profit_prediction = {
-    value = 0
-    add = {
-        value = pm_craftsman_sewing_fabric
-        multiply = building_work_efficiency
-        save_temporary_value_as = pm_craftsman_sewing_fabric_prediction
-        value = state_fabric_production_if_no_pmg_luxury_building_textile_mill
-        add = scope:pm_craftsman_sewing_fabric_prediction
-        save_temporary_value_as = state_fabric_production_prediction
-        value = state_fabric_consumption_if_no_pmg_luxury_building_textile_mill
-        save_temporary_value_as = state_fabric_consumption_prediction
-        value = market_fabric_production_if_no_pmg_luxury_building_textile_mill
-        add = scope:pm_craftsman_sewing_fabric_prediction
-        save_temporary_value_as = market_fabric_production_prediction
-        value = market_fabric_consumption_if_no_pmg_luxury_building_textile_mill
-        save_temporary_value_as = market_fabric_consumption_prediction
-        value = fabric_price_prediction
-        multiply = scope:pm_craftsman_sewing_fabric_prediction
-    }
-    add = {
-        value = pm_craftsman_sewing_clothes
-        multiply = building_work_efficiency
-        save_temporary_value_as = pm_craftsman_sewing_clothes_prediction
-        value = state_clothes_production_if_no_pmg_luxury_building_textile_mill
-        save_temporary_value_as = state_clothes_production_prediction
-        value = state_clothes_consumption_if_no_pmg_luxury_building_textile_mill
-        subtract = scope:pm_craftsman_sewing_clothes_prediction
-        save_temporary_value_as = state_clothes_consumption_prediction
-        value = market_clothes_production_if_no_pmg_luxury_building_textile_mill
-        save_temporary_value_as = market_clothes_production_prediction
-        value = market_clothes_consumption_if_no_pmg_luxury_building_textile_mill
-        subtract = scope:pm_craftsman_sewing_clothes_prediction
-        save_temporary_value_as = market_clothes_consumption_prediction
-        value = clothes_price_prediction
-        multiply = scope:pm_craftsman_sewing_clothes_prediction
-    }
-    add = {
-        value = pm_craftsman_sewing_silk
-        multiply = building_work_efficiency
-        save_temporary_value_as = pm_craftsman_sewing_silk_prediction
-        value = state_silk_production_if_no_pmg_luxury_building_textile_mill
-        save_temporary_value_as = state_silk_production_prediction
-        value = state_silk_consumption_if_no_pmg_luxury_building_textile_mill
-        subtract = scope:pm_craftsman_sewing_silk_prediction
-        save_temporary_value_as = state_silk_consumption_prediction
-        value = market_silk_production_if_no_pmg_luxury_building_textile_mill
-        save_temporary_value_as = market_silk_production_prediction
-        value = market_silk_consumption_if_no_pmg_luxury_building_textile_mill
-        subtract = scope:pm_craftsman_sewing_silk_prediction
-        save_temporary_value_as = market_silk_consumption_prediction
-        value = silk_price_prediction
-        multiply = scope:pm_craftsman_sewing_silk_prediction
-    }
-    add = {
-        value = pm_craftsman_sewing_luxury_clothes
-        multiply = building_work_efficiency
-        save_temporary_value_as = pm_craftsman_sewing_luxury_clothes_prediction
-        value = state_luxury_clothes_production_if_no_pmg_luxury_building_textile_mill
-        add = scope:pm_craftsman_sewing_luxury_clothes_prediction
-        save_temporary_value_as = state_luxury_clothes_production_prediction
-        value = state_luxury_clothes_consumption_if_no_pmg_luxury_building_textile_mill
-        save_temporary_value_as = state_luxury_clothes_consumption_prediction
-        value = market_luxury_clothes_production_if_no_pmg_luxury_building_textile_mill
-        add = scope:pm_craftsman_sewing_luxury_clothes_prediction
-        save_temporary_value_as = market_luxury_clothes_production_prediction
-        value = market_luxury_clothes_consumption_if_no_pmg_luxury_building_textile_mill
-        save_temporary_value_as = market_luxury_clothes_consumption_prediction
-        value = luxury_clothes_price_prediction
-        multiply = scope:pm_craftsman_sewing_luxury_clothes_prediction
-    }
-    divide = level
-}
-
-pmg_luxury_building_textile_mill_pm_craftsman_sewing_profit_prediction_weighted = {
-    value = pmg_luxury_building_textile_mill_pm_craftsman_sewing_profit_prediction
-    multiply = owner.var:cnm_upgrade_tolerance_pm_manager
-}
-
-pmg_luxury_building_textile_mill_pm_elastics_profit_prediction = {
-    value = 0
-    add = {
-        value = pm_elastics_fabric
-        multiply = building_work_efficiency
-        save_temporary_value_as = pm_elastics_fabric_prediction
-        value = state_fabric_production_if_no_pmg_luxury_building_textile_mill
-        add = scope:pm_elastics_fabric_prediction
-        save_temporary_value_as = state_fabric_production_prediction
-        value = state_fabric_consumption_if_no_pmg_luxury_building_textile_mill
-        save_temporary_value_as = state_fabric_consumption_prediction
-        value = market_fabric_production_if_no_pmg_luxury_building_textile_mill
-        add = scope:pm_elastics_fabric_prediction
-        save_temporary_value_as = market_fabric_production_prediction
-        value = market_fabric_consumption_if_no_pmg_luxury_building_textile_mill
-        save_temporary_value_as = market_fabric_consumption_prediction
-        value = fabric_price_prediction
-        multiply = scope:pm_elastics_fabric_prediction
-    }
-    add = {
-        value = pm_elastics_clothes
-        multiply = building_work_efficiency
-        save_temporary_value_as = pm_elastics_clothes_prediction
-        value = state_clothes_production_if_no_pmg_luxury_building_textile_mill
-        save_temporary_value_as = state_clothes_production_prediction
-        value = state_clothes_consumption_if_no_pmg_luxury_building_textile_mill
-        subtract = scope:pm_elastics_clothes_prediction
-        save_temporary_value_as = state_clothes_consumption_prediction
-        value = market_clothes_production_if_no_pmg_luxury_building_textile_mill
-        save_temporary_value_as = market_clothes_production_prediction
-        value = market_clothes_consumption_if_no_pmg_luxury_building_textile_mill
-        subtract = scope:pm_elastics_clothes_prediction
-        save_temporary_value_as = market_clothes_consumption_prediction
-        value = clothes_price_prediction
-        multiply = scope:pm_elastics_clothes_prediction
-    }
-    add = {
-        value = pm_elastics_silk
-        multiply = building_work_efficiency
-        save_temporary_value_as = pm_elastics_silk_prediction
-        value = state_silk_production_if_no_pmg_luxury_building_textile_mill
-        save_temporary_value_as = state_silk_production_prediction
-        value = state_silk_consumption_if_no_pmg_luxury_building_textile_mill
-        subtract = scope:pm_elastics_silk_prediction
-        save_temporary_value_as = state_silk_consumption_prediction
-        value = market_silk_production_if_no_pmg_luxury_building_textile_mill
-        save_temporary_value_as = market_silk_production_prediction
-        value = market_silk_consumption_if_no_pmg_luxury_building_textile_mill
-        subtract = scope:pm_elastics_silk_prediction
-        save_temporary_value_as = market_silk_consumption_prediction
-        value = silk_price_prediction
-        multiply = scope:pm_elastics_silk_prediction
-    }
-    add = {
-        value = pm_elastics_rubber
-        multiply = building_work_efficiency
-        save_temporary_value_as = pm_elastics_rubber_prediction
-        value = state_rubber_production_if_no_pmg_luxury_building_textile_mill
-        save_temporary_value_as = state_rubber_production_prediction
-        value = state_rubber_consumption_if_no_pmg_luxury_building_textile_mill
-        subtract = scope:pm_elastics_rubber_prediction
-        save_temporary_value_as = state_rubber_consumption_prediction
-        value = market_rubber_production_if_no_pmg_luxury_building_textile_mill
-        save_temporary_value_as = market_rubber_production_prediction
-        value = market_rubber_consumption_if_no_pmg_luxury_building_textile_mill
-        subtract = scope:pm_elastics_rubber_prediction
-        save_temporary_value_as = market_rubber_consumption_prediction
-        value = rubber_price_prediction
-        multiply = scope:pm_elastics_rubber_prediction
-    }
-    add = {
-        value = pm_elastics_luxury_clothes
-        multiply = building_work_efficiency
-        save_temporary_value_as = pm_elastics_luxury_clothes_prediction
-        value = state_luxury_clothes_production_if_no_pmg_luxury_building_textile_mill
-        add = scope:pm_elastics_luxury_clothes_prediction
-        save_temporary_value_as = state_luxury_clothes_production_prediction
-        value = state_luxury_clothes_consumption_if_no_pmg_luxury_building_textile_mill
-        save_temporary_value_as = state_luxury_clothes_consumption_prediction
-        value = market_luxury_clothes_production_if_no_pmg_luxury_building_textile_mill
-        add = scope:pm_elastics_luxury_clothes_prediction
-        save_temporary_value_as = market_luxury_clothes_production_prediction
-        value = market_luxury_clothes_consumption_if_no_pmg_luxury_building_textile_mill
-        save_temporary_value_as = market_luxury_clothes_consumption_prediction
-        value = luxury_clothes_price_prediction
-        multiply = scope:pm_elastics_luxury_clothes_prediction
-    }
-    divide = level
-}
-
-pmg_luxury_building_textile_mill_pm_elastics_profit_prediction_weighted = {
-    value = pmg_luxury_building_textile_mill_pm_elastics_profit_prediction
-    multiply = owner.var:cnm_upgrade_tolerance_pm_manager
-}
-
-pmg_luxury_building_furniture_manufactory_pm_no_luxuries_profit_prediction = {
-    value = 0
-    divide = level
-}
-
-pmg_luxury_building_furniture_manufactory_pm_no_luxuries_profit_prediction_weighted = {
-    value = pmg_luxury_building_furniture_manufactory_pm_no_luxuries_profit_prediction
-    multiply = owner.var:cnm_upgrade_tolerance_pm_manager
-}
-
-pmg_luxury_building_furniture_manufactory_pm_luxury_furniture_profit_prediction = {
-    value = 0
-    add = {
-        value = pm_luxury_furniture_wood
-        multiply = building_work_efficiency
-        save_temporary_value_as = pm_luxury_furniture_wood_prediction
-        value = state_wood_production_if_no_pmg_luxury_building_furniture_manufactory
-        add = scope:pm_luxury_furniture_wood_prediction
-        save_temporary_value_as = state_wood_production_prediction
-        value = state_wood_consumption_if_no_pmg_luxury_building_furniture_manufactory
-        save_temporary_value_as = state_wood_consumption_prediction
-        value = market_wood_production_if_no_pmg_luxury_building_furniture_manufactory
-        add = scope:pm_luxury_furniture_wood_prediction
-        save_temporary_value_as = market_wood_production_prediction
-        value = market_wood_consumption_if_no_pmg_luxury_building_furniture_manufactory
-        save_temporary_value_as = market_wood_consumption_prediction
-        value = wood_price_prediction
-        multiply = scope:pm_luxury_furniture_wood_prediction
-    }
-    add = {
-        value = pm_luxury_furniture_furniture
-        multiply = building_work_efficiency
-        save_temporary_value_as = pm_luxury_furniture_furniture_prediction
-        value = state_furniture_production_if_no_pmg_luxury_building_furniture_manufactory
-        save_temporary_value_as = state_furniture_production_prediction
-        value = state_furniture_consumption_if_no_pmg_luxury_building_furniture_manufactory
-        subtract = scope:pm_luxury_furniture_furniture_prediction
-        save_temporary_value_as = state_furniture_consumption_prediction
-        value = market_furniture_production_if_no_pmg_luxury_building_furniture_manufactory
-        save_temporary_value_as = market_furniture_production_prediction
-        value = market_furniture_consumption_if_no_pmg_luxury_building_furniture_manufactory
-        subtract = scope:pm_luxury_furniture_furniture_prediction
-        save_temporary_value_as = market_furniture_consumption_prediction
-        value = furniture_price_prediction
-        multiply = scope:pm_luxury_furniture_furniture_prediction
-    }
-    add = {
-        value = pm_luxury_furniture_hardwood
-        multiply = building_work_efficiency
-        save_temporary_value_as = pm_luxury_furniture_hardwood_prediction
-        value = state_hardwood_production_if_no_pmg_luxury_building_furniture_manufactory
-        save_temporary_value_as = state_hardwood_production_prediction
-        value = state_hardwood_consumption_if_no_pmg_luxury_building_furniture_manufactory
-        subtract = scope:pm_luxury_furniture_hardwood_prediction
-        save_temporary_value_as = state_hardwood_consumption_prediction
-        value = market_hardwood_production_if_no_pmg_luxury_building_furniture_manufactory
-        save_temporary_value_as = market_hardwood_production_prediction
-        value = market_hardwood_consumption_if_no_pmg_luxury_building_furniture_manufactory
-        subtract = scope:pm_luxury_furniture_hardwood_prediction
-        save_temporary_value_as = market_hardwood_consumption_prediction
-        value = hardwood_price_prediction
-        multiply = scope:pm_luxury_furniture_hardwood_prediction
-    }
-    add = {
-        value = pm_luxury_furniture_luxury_furniture
-        multiply = building_work_efficiency
-        save_temporary_value_as = pm_luxury_furniture_luxury_furniture_prediction
-        value = state_luxury_furniture_production_if_no_pmg_luxury_building_furniture_manufactory
-        add = scope:pm_luxury_furniture_luxury_furniture_prediction
-        save_temporary_value_as = state_luxury_furniture_production_prediction
-        value = state_luxury_furniture_consumption_if_no_pmg_luxury_building_furniture_manufactory
-        save_temporary_value_as = state_luxury_furniture_consumption_prediction
-        value = market_luxury_furniture_production_if_no_pmg_luxury_building_furniture_manufactory
-        add = scope:pm_luxury_furniture_luxury_furniture_prediction
-        save_temporary_value_as = market_luxury_furniture_production_prediction
-        value = market_luxury_furniture_consumption_if_no_pmg_luxury_building_furniture_manufactory
-        save_temporary_value_as = market_luxury_furniture_consumption_prediction
-        value = luxury_furniture_price_prediction
-        multiply = scope:pm_luxury_furniture_luxury_furniture_prediction
-    }
-    divide = level
-}
-
-pmg_luxury_building_furniture_manufactory_pm_luxury_furniture_profit_prediction_weighted = {
-    value = pmg_luxury_building_furniture_manufactory_pm_luxury_furniture_profit_prediction
-    multiply = owner.var:cnm_upgrade_tolerance_pm_manager
-}
-
-pmg_luxury_building_furniture_manufactory_pm_precision_tools_profit_prediction = {
-    value = 0
-    add = {
-        value = pm_precision_tools_wood
-        multiply = building_work_efficiency
-        save_temporary_value_as = pm_precision_tools_wood_prediction
-        value = state_wood_production_if_no_pmg_luxury_building_furniture_manufactory
-        add = scope:pm_precision_tools_wood_prediction
-        save_temporary_value_as = state_wood_production_prediction
-        value = state_wood_consumption_if_no_pmg_luxury_building_furniture_manufactory
-        save_temporary_value_as = state_wood_consumption_prediction
-        value = market_wood_production_if_no_pmg_luxury_building_furniture_manufactory
-        add = scope:pm_precision_tools_wood_prediction
-        save_temporary_value_as = market_wood_production_prediction
-        value = market_wood_consumption_if_no_pmg_luxury_building_furniture_manufactory
-        save_temporary_value_as = market_wood_consumption_prediction
-        value = wood_price_prediction
-        multiply = scope:pm_precision_tools_wood_prediction
-    }
-    add = {
-        value = pm_precision_tools_furniture
-        multiply = building_work_efficiency
-        save_temporary_value_as = pm_precision_tools_furniture_prediction
-        value = state_furniture_production_if_no_pmg_luxury_building_furniture_manufactory
-        save_temporary_value_as = state_furniture_production_prediction
-        value = state_furniture_consumption_if_no_pmg_luxury_building_furniture_manufactory
-        subtract = scope:pm_precision_tools_furniture_prediction
-        save_temporary_value_as = state_furniture_consumption_prediction
-        value = market_furniture_production_if_no_pmg_luxury_building_furniture_manufactory
-        save_temporary_value_as = market_furniture_production_prediction
-        value = market_furniture_consumption_if_no_pmg_luxury_building_furniture_manufactory
-        subtract = scope:pm_precision_tools_furniture_prediction
-        save_temporary_value_as = market_furniture_consumption_prediction
-        value = furniture_price_prediction
-        multiply = scope:pm_precision_tools_furniture_prediction
-    }
-    add = {
-        value = pm_precision_tools_hardwood
-        multiply = building_work_efficiency
-        save_temporary_value_as = pm_precision_tools_hardwood_prediction
-        value = state_hardwood_production_if_no_pmg_luxury_building_furniture_manufactory
-        save_temporary_value_as = state_hardwood_production_prediction
-        value = state_hardwood_consumption_if_no_pmg_luxury_building_furniture_manufactory
-        subtract = scope:pm_precision_tools_hardwood_prediction
-        save_temporary_value_as = state_hardwood_consumption_prediction
-        value = market_hardwood_production_if_no_pmg_luxury_building_furniture_manufactory
-        save_temporary_value_as = market_hardwood_production_prediction
-        value = market_hardwood_consumption_if_no_pmg_luxury_building_furniture_manufactory
-        subtract = scope:pm_precision_tools_hardwood_prediction
-        save_temporary_value_as = market_hardwood_consumption_prediction
-        value = hardwood_price_prediction
-        multiply = scope:pm_precision_tools_hardwood_prediction
-    }
-    add = {
-        value = pm_precision_tools_tools
-        multiply = building_work_efficiency
-        save_temporary_value_as = pm_precision_tools_tools_prediction
-        value = state_tools_production_if_no_pmg_luxury_building_furniture_manufactory
-        save_temporary_value_as = state_tools_production_prediction
-        value = state_tools_consumption_if_no_pmg_luxury_building_furniture_manufactory
-        subtract = scope:pm_precision_tools_tools_prediction
-        save_temporary_value_as = state_tools_consumption_prediction
-        value = market_tools_production_if_no_pmg_luxury_building_furniture_manufactory
-        save_temporary_value_as = market_tools_production_prediction
-        value = market_tools_consumption_if_no_pmg_luxury_building_furniture_manufactory
-        subtract = scope:pm_precision_tools_tools_prediction
-        save_temporary_value_as = market_tools_consumption_prediction
-        value = tools_price_prediction
-        multiply = scope:pm_precision_tools_tools_prediction
-    }
-    add = {
-        value = pm_precision_tools_luxury_furniture
-        multiply = building_work_efficiency
-        save_temporary_value_as = pm_precision_tools_luxury_furniture_prediction
-        value = state_luxury_furniture_production_if_no_pmg_luxury_building_furniture_manufactory
-        add = scope:pm_precision_tools_luxury_furniture_prediction
-        save_temporary_value_as = state_luxury_furniture_production_prediction
-        value = state_luxury_furniture_consumption_if_no_pmg_luxury_building_furniture_manufactory
-        save_temporary_value_as = state_luxury_furniture_consumption_prediction
-        value = market_luxury_furniture_production_if_no_pmg_luxury_building_furniture_manufactory
-        add = scope:pm_precision_tools_luxury_furniture_prediction
-        save_temporary_value_as = market_luxury_furniture_production_prediction
-        value = market_luxury_furniture_consumption_if_no_pmg_luxury_building_furniture_manufactory
-        save_temporary_value_as = market_luxury_furniture_consumption_prediction
-        value = luxury_furniture_price_prediction
-        multiply = scope:pm_precision_tools_luxury_furniture_prediction
-    }
-    divide = level
-}
-
-pmg_luxury_building_furniture_manufactory_pm_precision_tools_profit_prediction_weighted = {
-    value = pmg_luxury_building_furniture_manufactory_pm_precision_tools_profit_prediction
-    multiply = owner.var:cnm_upgrade_tolerance_pm_manager
-}
-
-pmg_luxury_building_glassworks_pm_disabled_ceramics_profit_prediction = {
-    value = 0
-    divide = level
-}
-
-pmg_luxury_building_glassworks_pm_disabled_ceramics_profit_prediction_weighted = {
-    value = pmg_luxury_building_glassworks_pm_disabled_ceramics_profit_prediction
-    multiply = owner.var:cnm_upgrade_tolerance_pm_manager
-}
-
-pmg_luxury_building_glassworks_pm_ceramics_profit_prediction = {
-    value = 0
-    add = {
-        value = pm_ceramics_dye
-        multiply = building_work_efficiency
-        save_temporary_value_as = pm_ceramics_dye_prediction
-        value = state_dye_production_if_no_pmg_luxury_building_glassworks
-        save_temporary_value_as = state_dye_production_prediction
-        value = state_dye_consumption_if_no_pmg_luxury_building_glassworks
-        subtract = scope:pm_ceramics_dye_prediction
-        save_temporary_value_as = state_dye_consumption_prediction
-        value = market_dye_production_if_no_pmg_luxury_building_glassworks
-        save_temporary_value_as = market_dye_production_prediction
-        value = market_dye_consumption_if_no_pmg_luxury_building_glassworks
-        subtract = scope:pm_ceramics_dye_prediction
-        save_temporary_value_as = market_dye_consumption_prediction
-        value = dye_price_prediction
-        multiply = scope:pm_ceramics_dye_prediction
-    }
-    add = {
-        value = pm_ceramics_glass
-        multiply = building_work_efficiency
-        save_temporary_value_as = pm_ceramics_glass_prediction
-        value = state_glass_production_if_no_pmg_luxury_building_glassworks
-        save_temporary_value_as = state_glass_production_prediction
-        value = state_glass_consumption_if_no_pmg_luxury_building_glassworks
-        subtract = scope:pm_ceramics_glass_prediction
-        save_temporary_value_as = state_glass_consumption_prediction
-        value = market_glass_production_if_no_pmg_luxury_building_glassworks
-        save_temporary_value_as = market_glass_production_prediction
-        value = market_glass_consumption_if_no_pmg_luxury_building_glassworks
-        subtract = scope:pm_ceramics_glass_prediction
-        save_temporary_value_as = market_glass_consumption_prediction
-        value = glass_price_prediction
-        multiply = scope:pm_ceramics_glass_prediction
-    }
-    add = {
-        value = pm_ceramics_porcelain
-        multiply = building_work_efficiency
-        save_temporary_value_as = pm_ceramics_porcelain_prediction
-        value = state_porcelain_production_if_no_pmg_luxury_building_glassworks
-        add = scope:pm_ceramics_porcelain_prediction
-        save_temporary_value_as = state_porcelain_production_prediction
-        value = state_porcelain_consumption_if_no_pmg_luxury_building_glassworks
-        save_temporary_value_as = state_porcelain_consumption_prediction
-        value = market_porcelain_production_if_no_pmg_luxury_building_glassworks
-        add = scope:pm_ceramics_porcelain_prediction
-        save_temporary_value_as = market_porcelain_production_prediction
-        value = market_porcelain_consumption_if_no_pmg_luxury_building_glassworks
-        save_temporary_value_as = market_porcelain_consumption_prediction
-        value = porcelain_price_prediction
-        multiply = scope:pm_ceramics_porcelain_prediction
-    }
-    divide = level
-}
-
-pmg_luxury_building_glassworks_pm_ceramics_profit_prediction_weighted = {
-    value = pmg_luxury_building_glassworks_pm_ceramics_profit_prediction
-    multiply = owner.var:cnm_upgrade_tolerance_pm_manager
-}
-
-pmg_luxury_building_glassworks_pm_bone_china_profit_prediction = {
-    value = 0
-    add = {
-        value = pm_bone_china_dye
-        multiply = building_work_efficiency
-        save_temporary_value_as = pm_bone_china_dye_prediction
-        value = state_dye_production_if_no_pmg_luxury_building_glassworks
-        save_temporary_value_as = state_dye_production_prediction
-        value = state_dye_consumption_if_no_pmg_luxury_building_glassworks
-        subtract = scope:pm_bone_china_dye_prediction
-        save_temporary_value_as = state_dye_consumption_prediction
-        value = market_dye_production_if_no_pmg_luxury_building_glassworks
-        save_temporary_value_as = market_dye_production_prediction
-        value = market_dye_consumption_if_no_pmg_luxury_building_glassworks
-        subtract = scope:pm_bone_china_dye_prediction
-        save_temporary_value_as = market_dye_consumption_prediction
-        value = dye_price_prediction
-        multiply = scope:pm_bone_china_dye_prediction
-    }
-    add = {
-        value = pm_bone_china_glass
-        multiply = building_work_efficiency
-        save_temporary_value_as = pm_bone_china_glass_prediction
-        value = state_glass_production_if_no_pmg_luxury_building_glassworks
-        save_temporary_value_as = state_glass_production_prediction
-        value = state_glass_consumption_if_no_pmg_luxury_building_glassworks
-        subtract = scope:pm_bone_china_glass_prediction
-        save_temporary_value_as = state_glass_consumption_prediction
-        value = market_glass_production_if_no_pmg_luxury_building_glassworks
-        save_temporary_value_as = market_glass_production_prediction
-        value = market_glass_consumption_if_no_pmg_luxury_building_glassworks
-        subtract = scope:pm_bone_china_glass_prediction
-        save_temporary_value_as = market_glass_consumption_prediction
-        value = glass_price_prediction
-        multiply = scope:pm_bone_china_glass_prediction
-    }
-    add = {
-        value = pm_bone_china_porcelain
-        multiply = building_work_efficiency
-        save_temporary_value_as = pm_bone_china_porcelain_prediction
-        value = state_porcelain_production_if_no_pmg_luxury_building_glassworks
-        add = scope:pm_bone_china_porcelain_prediction
-        save_temporary_value_as = state_porcelain_production_prediction
-        value = state_porcelain_consumption_if_no_pmg_luxury_building_glassworks
-        save_temporary_value_as = state_porcelain_consumption_prediction
-        value = market_porcelain_production_if_no_pmg_luxury_building_glassworks
-        add = scope:pm_bone_china_porcelain_prediction
-        save_temporary_value_as = market_porcelain_production_prediction
-        value = market_porcelain_consumption_if_no_pmg_luxury_building_glassworks
-        save_temporary_value_as = market_porcelain_consumption_prediction
-        value = porcelain_price_prediction
-        multiply = scope:pm_bone_china_porcelain_prediction
-    }
-    divide = level
-}
-
-pmg_luxury_building_glassworks_pm_bone_china_profit_prediction_weighted = {
-    value = pmg_luxury_building_glassworks_pm_bone_china_profit_prediction
-    multiply = owner.var:cnm_upgrade_tolerance_pm_manager
-}
-
 pmg_hardwood_pm_no_hardwood_profit_prediction = {
     value = 0
     divide = level
@@ -9415,762 +9415,6 @@ pmg_passenger_trains_pm_steel_passenger_carriages_profit_prediction = {
 
 pmg_passenger_trains_pm_steel_passenger_carriages_profit_prediction_weighted = {
     value = pmg_passenger_trains_pm_steel_passenger_carriages_profit_prediction
-    multiply = owner.var:cnm_upgrade_tolerance_pm_manager
-}
-
-pmg_curie_mining_equipment_building_uranium_mine_pm_curie_picks_and_shovels_building_uranium_mine_profit_prediction = {
-    value = 0
-    add = {
-        value = pm_curie_picks_and_shovels_building_uranium_mine_tools
-        multiply = building_work_efficiency
-        save_temporary_value_as = pm_curie_picks_and_shovels_building_uranium_mine_tools_prediction
-        value = state_tools_production_if_no_pmg_curie_mining_equipment_building_uranium_mine
-        save_temporary_value_as = state_tools_production_prediction
-        value = state_tools_consumption_if_no_pmg_curie_mining_equipment_building_uranium_mine
-        subtract = scope:pm_curie_picks_and_shovels_building_uranium_mine_tools_prediction
-        save_temporary_value_as = state_tools_consumption_prediction
-        value = market_tools_production_if_no_pmg_curie_mining_equipment_building_uranium_mine
-        save_temporary_value_as = market_tools_production_prediction
-        value = market_tools_consumption_if_no_pmg_curie_mining_equipment_building_uranium_mine
-        subtract = scope:pm_curie_picks_and_shovels_building_uranium_mine_tools_prediction
-        save_temporary_value_as = market_tools_consumption_prediction
-        value = tools_price_prediction
-        multiply = scope:pm_curie_picks_and_shovels_building_uranium_mine_tools_prediction
-    }
-    add = {
-        value = pm_curie_picks_and_shovels_building_uranium_mine_good_uranium
-        multiply = building_work_efficiency
-        save_temporary_value_as = pm_curie_picks_and_shovels_building_uranium_mine_good_uranium_prediction
-        value = state_good_uranium_production_if_no_pmg_curie_mining_equipment_building_uranium_mine
-        add = scope:pm_curie_picks_and_shovels_building_uranium_mine_good_uranium_prediction
-        save_temporary_value_as = state_good_uranium_production_prediction
-        value = state_good_uranium_consumption_if_no_pmg_curie_mining_equipment_building_uranium_mine
-        save_temporary_value_as = state_good_uranium_consumption_prediction
-        value = market_good_uranium_production_if_no_pmg_curie_mining_equipment_building_uranium_mine
-        add = scope:pm_curie_picks_and_shovels_building_uranium_mine_good_uranium_prediction
-        save_temporary_value_as = market_good_uranium_production_prediction
-        value = market_good_uranium_consumption_if_no_pmg_curie_mining_equipment_building_uranium_mine
-        save_temporary_value_as = market_good_uranium_consumption_prediction
-        value = good_uranium_price_prediction
-        multiply = scope:pm_curie_picks_and_shovels_building_uranium_mine_good_uranium_prediction
-    }
-    divide = level
-}
-
-pmg_curie_mining_equipment_building_uranium_mine_pm_curie_picks_and_shovels_building_uranium_mine_profit_prediction_weighted = {
-    value = pmg_curie_mining_equipment_building_uranium_mine_pm_curie_picks_and_shovels_building_uranium_mine_profit_prediction
-    multiply = owner.var:cnm_upgrade_tolerance_pm_manager
-}
-
-pmg_curie_mining_equipment_building_uranium_mine_pm_curie_atmospheric_engine_pump_building_uranium_mine_profit_prediction = {
-    value = 0
-    add = {
-        value = pm_curie_atmospheric_engine_pump_building_uranium_mine_coal
-        multiply = building_work_efficiency
-        save_temporary_value_as = pm_curie_atmospheric_engine_pump_building_uranium_mine_coal_prediction
-        value = state_coal_production_if_no_pmg_curie_mining_equipment_building_uranium_mine
-        save_temporary_value_as = state_coal_production_prediction
-        value = state_coal_consumption_if_no_pmg_curie_mining_equipment_building_uranium_mine
-        subtract = scope:pm_curie_atmospheric_engine_pump_building_uranium_mine_coal_prediction
-        save_temporary_value_as = state_coal_consumption_prediction
-        value = market_coal_production_if_no_pmg_curie_mining_equipment_building_uranium_mine
-        save_temporary_value_as = market_coal_production_prediction
-        value = market_coal_consumption_if_no_pmg_curie_mining_equipment_building_uranium_mine
-        subtract = scope:pm_curie_atmospheric_engine_pump_building_uranium_mine_coal_prediction
-        save_temporary_value_as = market_coal_consumption_prediction
-        value = coal_price_prediction
-        multiply = scope:pm_curie_atmospheric_engine_pump_building_uranium_mine_coal_prediction
-    }
-    add = {
-        value = pm_curie_atmospheric_engine_pump_building_uranium_mine_tools
-        multiply = building_work_efficiency
-        save_temporary_value_as = pm_curie_atmospheric_engine_pump_building_uranium_mine_tools_prediction
-        value = state_tools_production_if_no_pmg_curie_mining_equipment_building_uranium_mine
-        save_temporary_value_as = state_tools_production_prediction
-        value = state_tools_consumption_if_no_pmg_curie_mining_equipment_building_uranium_mine
-        subtract = scope:pm_curie_atmospheric_engine_pump_building_uranium_mine_tools_prediction
-        save_temporary_value_as = state_tools_consumption_prediction
-        value = market_tools_production_if_no_pmg_curie_mining_equipment_building_uranium_mine
-        save_temporary_value_as = market_tools_production_prediction
-        value = market_tools_consumption_if_no_pmg_curie_mining_equipment_building_uranium_mine
-        subtract = scope:pm_curie_atmospheric_engine_pump_building_uranium_mine_tools_prediction
-        save_temporary_value_as = market_tools_consumption_prediction
-        value = tools_price_prediction
-        multiply = scope:pm_curie_atmospheric_engine_pump_building_uranium_mine_tools_prediction
-    }
-    add = {
-        value = pm_curie_atmospheric_engine_pump_building_uranium_mine_good_uranium
-        multiply = building_work_efficiency
-        save_temporary_value_as = pm_curie_atmospheric_engine_pump_building_uranium_mine_good_uranium_prediction
-        value = state_good_uranium_production_if_no_pmg_curie_mining_equipment_building_uranium_mine
-        add = scope:pm_curie_atmospheric_engine_pump_building_uranium_mine_good_uranium_prediction
-        save_temporary_value_as = state_good_uranium_production_prediction
-        value = state_good_uranium_consumption_if_no_pmg_curie_mining_equipment_building_uranium_mine
-        save_temporary_value_as = state_good_uranium_consumption_prediction
-        value = market_good_uranium_production_if_no_pmg_curie_mining_equipment_building_uranium_mine
-        add = scope:pm_curie_atmospheric_engine_pump_building_uranium_mine_good_uranium_prediction
-        save_temporary_value_as = market_good_uranium_production_prediction
-        value = market_good_uranium_consumption_if_no_pmg_curie_mining_equipment_building_uranium_mine
-        save_temporary_value_as = market_good_uranium_consumption_prediction
-        value = good_uranium_price_prediction
-        multiply = scope:pm_curie_atmospheric_engine_pump_building_uranium_mine_good_uranium_prediction
-    }
-    divide = level
-}
-
-pmg_curie_mining_equipment_building_uranium_mine_pm_curie_atmospheric_engine_pump_building_uranium_mine_profit_prediction_weighted = {
-    value = pmg_curie_mining_equipment_building_uranium_mine_pm_curie_atmospheric_engine_pump_building_uranium_mine_profit_prediction
-    multiply = owner.var:cnm_upgrade_tolerance_pm_manager
-}
-
-pmg_curie_mining_equipment_building_uranium_mine_pm_curie_condensing_engine_pump_building_uranium_mine_profit_prediction = {
-    value = 0
-    add = {
-        value = pm_curie_condensing_engine_pump_building_uranium_mine_coal
-        multiply = building_work_efficiency
-        save_temporary_value_as = pm_curie_condensing_engine_pump_building_uranium_mine_coal_prediction
-        value = state_coal_production_if_no_pmg_curie_mining_equipment_building_uranium_mine
-        save_temporary_value_as = state_coal_production_prediction
-        value = state_coal_consumption_if_no_pmg_curie_mining_equipment_building_uranium_mine
-        subtract = scope:pm_curie_condensing_engine_pump_building_uranium_mine_coal_prediction
-        save_temporary_value_as = state_coal_consumption_prediction
-        value = market_coal_production_if_no_pmg_curie_mining_equipment_building_uranium_mine
-        save_temporary_value_as = market_coal_production_prediction
-        value = market_coal_consumption_if_no_pmg_curie_mining_equipment_building_uranium_mine
-        subtract = scope:pm_curie_condensing_engine_pump_building_uranium_mine_coal_prediction
-        save_temporary_value_as = market_coal_consumption_prediction
-        value = coal_price_prediction
-        multiply = scope:pm_curie_condensing_engine_pump_building_uranium_mine_coal_prediction
-    }
-    add = {
-        value = pm_curie_condensing_engine_pump_building_uranium_mine_tools
-        multiply = building_work_efficiency
-        save_temporary_value_as = pm_curie_condensing_engine_pump_building_uranium_mine_tools_prediction
-        value = state_tools_production_if_no_pmg_curie_mining_equipment_building_uranium_mine
-        save_temporary_value_as = state_tools_production_prediction
-        value = state_tools_consumption_if_no_pmg_curie_mining_equipment_building_uranium_mine
-        subtract = scope:pm_curie_condensing_engine_pump_building_uranium_mine_tools_prediction
-        save_temporary_value_as = state_tools_consumption_prediction
-        value = market_tools_production_if_no_pmg_curie_mining_equipment_building_uranium_mine
-        save_temporary_value_as = market_tools_production_prediction
-        value = market_tools_consumption_if_no_pmg_curie_mining_equipment_building_uranium_mine
-        subtract = scope:pm_curie_condensing_engine_pump_building_uranium_mine_tools_prediction
-        save_temporary_value_as = market_tools_consumption_prediction
-        value = tools_price_prediction
-        multiply = scope:pm_curie_condensing_engine_pump_building_uranium_mine_tools_prediction
-    }
-    add = {
-        value = pm_curie_condensing_engine_pump_building_uranium_mine_good_uranium
-        multiply = building_work_efficiency
-        save_temporary_value_as = pm_curie_condensing_engine_pump_building_uranium_mine_good_uranium_prediction
-        value = state_good_uranium_production_if_no_pmg_curie_mining_equipment_building_uranium_mine
-        add = scope:pm_curie_condensing_engine_pump_building_uranium_mine_good_uranium_prediction
-        save_temporary_value_as = state_good_uranium_production_prediction
-        value = state_good_uranium_consumption_if_no_pmg_curie_mining_equipment_building_uranium_mine
-        save_temporary_value_as = state_good_uranium_consumption_prediction
-        value = market_good_uranium_production_if_no_pmg_curie_mining_equipment_building_uranium_mine
-        add = scope:pm_curie_condensing_engine_pump_building_uranium_mine_good_uranium_prediction
-        save_temporary_value_as = market_good_uranium_production_prediction
-        value = market_good_uranium_consumption_if_no_pmg_curie_mining_equipment_building_uranium_mine
-        save_temporary_value_as = market_good_uranium_consumption_prediction
-        value = good_uranium_price_prediction
-        multiply = scope:pm_curie_condensing_engine_pump_building_uranium_mine_good_uranium_prediction
-    }
-    divide = level
-}
-
-pmg_curie_mining_equipment_building_uranium_mine_pm_curie_condensing_engine_pump_building_uranium_mine_profit_prediction_weighted = {
-    value = pmg_curie_mining_equipment_building_uranium_mine_pm_curie_condensing_engine_pump_building_uranium_mine_profit_prediction
-    multiply = owner.var:cnm_upgrade_tolerance_pm_manager
-}
-
-pmg_curie_mining_equipment_building_uranium_mine_pm_curie_diesel_pump_building_uranium_mine_profit_prediction = {
-    value = 0
-    add = {
-        value = pm_curie_diesel_pump_building_uranium_mine_oil
-        multiply = building_work_efficiency
-        save_temporary_value_as = pm_curie_diesel_pump_building_uranium_mine_oil_prediction
-        value = state_oil_production_if_no_pmg_curie_mining_equipment_building_uranium_mine
-        save_temporary_value_as = state_oil_production_prediction
-        value = state_oil_consumption_if_no_pmg_curie_mining_equipment_building_uranium_mine
-        subtract = scope:pm_curie_diesel_pump_building_uranium_mine_oil_prediction
-        save_temporary_value_as = state_oil_consumption_prediction
-        value = market_oil_production_if_no_pmg_curie_mining_equipment_building_uranium_mine
-        save_temporary_value_as = market_oil_production_prediction
-        value = market_oil_consumption_if_no_pmg_curie_mining_equipment_building_uranium_mine
-        subtract = scope:pm_curie_diesel_pump_building_uranium_mine_oil_prediction
-        save_temporary_value_as = market_oil_consumption_prediction
-        value = oil_price_prediction
-        multiply = scope:pm_curie_diesel_pump_building_uranium_mine_oil_prediction
-    }
-    add = {
-        value = pm_curie_diesel_pump_building_uranium_mine_tools
-        multiply = building_work_efficiency
-        save_temporary_value_as = pm_curie_diesel_pump_building_uranium_mine_tools_prediction
-        value = state_tools_production_if_no_pmg_curie_mining_equipment_building_uranium_mine
-        save_temporary_value_as = state_tools_production_prediction
-        value = state_tools_consumption_if_no_pmg_curie_mining_equipment_building_uranium_mine
-        subtract = scope:pm_curie_diesel_pump_building_uranium_mine_tools_prediction
-        save_temporary_value_as = state_tools_consumption_prediction
-        value = market_tools_production_if_no_pmg_curie_mining_equipment_building_uranium_mine
-        save_temporary_value_as = market_tools_production_prediction
-        value = market_tools_consumption_if_no_pmg_curie_mining_equipment_building_uranium_mine
-        subtract = scope:pm_curie_diesel_pump_building_uranium_mine_tools_prediction
-        save_temporary_value_as = market_tools_consumption_prediction
-        value = tools_price_prediction
-        multiply = scope:pm_curie_diesel_pump_building_uranium_mine_tools_prediction
-    }
-    add = {
-        value = pm_curie_diesel_pump_building_uranium_mine_good_uranium
-        multiply = building_work_efficiency
-        save_temporary_value_as = pm_curie_diesel_pump_building_uranium_mine_good_uranium_prediction
-        value = state_good_uranium_production_if_no_pmg_curie_mining_equipment_building_uranium_mine
-        add = scope:pm_curie_diesel_pump_building_uranium_mine_good_uranium_prediction
-        save_temporary_value_as = state_good_uranium_production_prediction
-        value = state_good_uranium_consumption_if_no_pmg_curie_mining_equipment_building_uranium_mine
-        save_temporary_value_as = state_good_uranium_consumption_prediction
-        value = market_good_uranium_production_if_no_pmg_curie_mining_equipment_building_uranium_mine
-        add = scope:pm_curie_diesel_pump_building_uranium_mine_good_uranium_prediction
-        save_temporary_value_as = market_good_uranium_production_prediction
-        value = market_good_uranium_consumption_if_no_pmg_curie_mining_equipment_building_uranium_mine
-        save_temporary_value_as = market_good_uranium_consumption_prediction
-        value = good_uranium_price_prediction
-        multiply = scope:pm_curie_diesel_pump_building_uranium_mine_good_uranium_prediction
-    }
-    divide = level
-}
-
-pmg_curie_mining_equipment_building_uranium_mine_pm_curie_diesel_pump_building_uranium_mine_profit_prediction_weighted = {
-    value = pmg_curie_mining_equipment_building_uranium_mine_pm_curie_diesel_pump_building_uranium_mine_profit_prediction
-    multiply = owner.var:cnm_upgrade_tolerance_pm_manager
-}
-
-pmg_curie_explosives_building_uranium_mine_pm_no_explosives_profit_prediction = {
-    value = 0
-    divide = level
-}
-
-pmg_curie_explosives_building_uranium_mine_pm_no_explosives_profit_prediction_weighted = {
-    value = pmg_curie_explosives_building_uranium_mine_pm_no_explosives_profit_prediction
-    multiply = owner.var:cnm_upgrade_tolerance_pm_manager
-}
-
-pmg_curie_explosives_building_uranium_mine_pm_curie_nitroglycerin_building_uranium_mine_profit_prediction = {
-    value = 0
-    add = {
-        value = pm_curie_nitroglycerin_building_uranium_mine_explosives
-        multiply = building_work_efficiency
-        save_temporary_value_as = pm_curie_nitroglycerin_building_uranium_mine_explosives_prediction
-        value = state_explosives_production_if_no_pmg_curie_explosives_building_uranium_mine
-        save_temporary_value_as = state_explosives_production_prediction
-        value = state_explosives_consumption_if_no_pmg_curie_explosives_building_uranium_mine
-        subtract = scope:pm_curie_nitroglycerin_building_uranium_mine_explosives_prediction
-        save_temporary_value_as = state_explosives_consumption_prediction
-        value = market_explosives_production_if_no_pmg_curie_explosives_building_uranium_mine
-        save_temporary_value_as = market_explosives_production_prediction
-        value = market_explosives_consumption_if_no_pmg_curie_explosives_building_uranium_mine
-        subtract = scope:pm_curie_nitroglycerin_building_uranium_mine_explosives_prediction
-        save_temporary_value_as = market_explosives_consumption_prediction
-        value = explosives_price_prediction
-        multiply = scope:pm_curie_nitroglycerin_building_uranium_mine_explosives_prediction
-    }
-    add = {
-        value = pm_curie_nitroglycerin_building_uranium_mine_good_uranium
-        multiply = building_work_efficiency
-        save_temporary_value_as = pm_curie_nitroglycerin_building_uranium_mine_good_uranium_prediction
-        value = state_good_uranium_production_if_no_pmg_curie_explosives_building_uranium_mine
-        add = scope:pm_curie_nitroglycerin_building_uranium_mine_good_uranium_prediction
-        save_temporary_value_as = state_good_uranium_production_prediction
-        value = state_good_uranium_consumption_if_no_pmg_curie_explosives_building_uranium_mine
-        save_temporary_value_as = state_good_uranium_consumption_prediction
-        value = market_good_uranium_production_if_no_pmg_curie_explosives_building_uranium_mine
-        add = scope:pm_curie_nitroglycerin_building_uranium_mine_good_uranium_prediction
-        save_temporary_value_as = market_good_uranium_production_prediction
-        value = market_good_uranium_consumption_if_no_pmg_curie_explosives_building_uranium_mine
-        save_temporary_value_as = market_good_uranium_consumption_prediction
-        value = good_uranium_price_prediction
-        multiply = scope:pm_curie_nitroglycerin_building_uranium_mine_good_uranium_prediction
-    }
-    divide = level
-}
-
-pmg_curie_explosives_building_uranium_mine_pm_curie_nitroglycerin_building_uranium_mine_profit_prediction_weighted = {
-    value = pmg_curie_explosives_building_uranium_mine_pm_curie_nitroglycerin_building_uranium_mine_profit_prediction
-    multiply = owner.var:cnm_upgrade_tolerance_pm_manager
-}
-
-pmg_curie_explosives_building_uranium_mine_pm_curie_dynamite_building_uranium_mine_profit_prediction = {
-    value = 0
-    divide = level
-}
-
-pmg_curie_explosives_building_uranium_mine_pm_curie_dynamite_building_uranium_mine_profit_prediction_weighted = {
-    value = pmg_curie_explosives_building_uranium_mine_pm_curie_dynamite_building_uranium_mine_profit_prediction
-    multiply = owner.var:cnm_upgrade_tolerance_pm_manager
-}
-
-pmg_base_building_airport_pm_private_charters_profit_prediction = {
-    value = 0
-    add = {
-        value = pm_private_charters_aeroplanes
-        multiply = building_work_efficiency
-        save_temporary_value_as = pm_private_charters_aeroplanes_prediction
-        value = state_aeroplanes_production_if_no_pmg_base_building_airport
-        save_temporary_value_as = state_aeroplanes_production_prediction
-        value = state_aeroplanes_consumption_if_no_pmg_base_building_airport
-        subtract = scope:pm_private_charters_aeroplanes_prediction
-        save_temporary_value_as = state_aeroplanes_consumption_prediction
-        value = market_aeroplanes_production_if_no_pmg_base_building_airport
-        save_temporary_value_as = market_aeroplanes_production_prediction
-        value = market_aeroplanes_consumption_if_no_pmg_base_building_airport
-        subtract = scope:pm_private_charters_aeroplanes_prediction
-        save_temporary_value_as = market_aeroplanes_consumption_prediction
-        value = aeroplanes_price_prediction
-        multiply = scope:pm_private_charters_aeroplanes_prediction
-    }
-    add = {
-        value = pm_private_charters_paper
-        multiply = building_work_efficiency
-        save_temporary_value_as = pm_private_charters_paper_prediction
-        value = state_paper_production_if_no_pmg_base_building_airport
-        save_temporary_value_as = state_paper_production_prediction
-        value = state_paper_consumption_if_no_pmg_base_building_airport
-        subtract = scope:pm_private_charters_paper_prediction
-        save_temporary_value_as = state_paper_consumption_prediction
-        value = market_paper_production_if_no_pmg_base_building_airport
-        save_temporary_value_as = market_paper_production_prediction
-        value = market_paper_consumption_if_no_pmg_base_building_airport
-        subtract = scope:pm_private_charters_paper_prediction
-        save_temporary_value_as = market_paper_consumption_prediction
-        value = paper_price_prediction
-        multiply = scope:pm_private_charters_paper_prediction
-    }
-    add = {
-        value = pm_private_charters_oil
-        multiply = building_work_efficiency
-        save_temporary_value_as = pm_private_charters_oil_prediction
-        value = state_oil_production_if_no_pmg_base_building_airport
-        save_temporary_value_as = state_oil_production_prediction
-        value = state_oil_consumption_if_no_pmg_base_building_airport
-        subtract = scope:pm_private_charters_oil_prediction
-        save_temporary_value_as = state_oil_consumption_prediction
-        value = market_oil_production_if_no_pmg_base_building_airport
-        save_temporary_value_as = market_oil_production_prediction
-        value = market_oil_consumption_if_no_pmg_base_building_airport
-        subtract = scope:pm_private_charters_oil_prediction
-        save_temporary_value_as = market_oil_consumption_prediction
-        value = oil_price_prediction
-        multiply = scope:pm_private_charters_oil_prediction
-    }
-    add = {
-        value = pm_private_charters_tools
-        multiply = building_work_efficiency
-        save_temporary_value_as = pm_private_charters_tools_prediction
-        value = state_tools_production_if_no_pmg_base_building_airport
-        save_temporary_value_as = state_tools_production_prediction
-        value = state_tools_consumption_if_no_pmg_base_building_airport
-        subtract = scope:pm_private_charters_tools_prediction
-        save_temporary_value_as = state_tools_consumption_prediction
-        value = market_tools_production_if_no_pmg_base_building_airport
-        save_temporary_value_as = market_tools_production_prediction
-        value = market_tools_consumption_if_no_pmg_base_building_airport
-        subtract = scope:pm_private_charters_tools_prediction
-        save_temporary_value_as = market_tools_consumption_prediction
-        value = tools_price_prediction
-        multiply = scope:pm_private_charters_tools_prediction
-    }
-    add = {
-        value = pm_private_charters_air_travel
-        multiply = building_work_efficiency
-        save_temporary_value_as = pm_private_charters_air_travel_prediction
-        value = state_air_travel_production_if_no_pmg_base_building_airport
-        add = scope:pm_private_charters_air_travel_prediction
-        save_temporary_value_as = state_air_travel_production_prediction
-        value = state_air_travel_consumption_if_no_pmg_base_building_airport
-        save_temporary_value_as = state_air_travel_consumption_prediction
-        value = market_air_travel_production_if_no_pmg_base_building_airport
-        add = scope:pm_private_charters_air_travel_prediction
-        save_temporary_value_as = market_air_travel_production_prediction
-        value = market_air_travel_consumption_if_no_pmg_base_building_airport
-        save_temporary_value_as = market_air_travel_consumption_prediction
-        value = air_travel_price_prediction
-        multiply = scope:pm_private_charters_air_travel_prediction
-    }
-    divide = level
-}
-
-pmg_base_building_airport_pm_private_charters_profit_prediction_weighted = {
-    value = pmg_base_building_airport_pm_private_charters_profit_prediction
-    multiply = owner.var:cnm_upgrade_tolerance_pm_manager
-}
-
-pmg_base_building_airport_pm_regional_routes_profit_prediction = {
-    value = 0
-    add = {
-        value = pm_regional_routes_aeroplanes
-        multiply = building_work_efficiency
-        save_temporary_value_as = pm_regional_routes_aeroplanes_prediction
-        value = state_aeroplanes_production_if_no_pmg_base_building_airport
-        save_temporary_value_as = state_aeroplanes_production_prediction
-        value = state_aeroplanes_consumption_if_no_pmg_base_building_airport
-        subtract = scope:pm_regional_routes_aeroplanes_prediction
-        save_temporary_value_as = state_aeroplanes_consumption_prediction
-        value = market_aeroplanes_production_if_no_pmg_base_building_airport
-        save_temporary_value_as = market_aeroplanes_production_prediction
-        value = market_aeroplanes_consumption_if_no_pmg_base_building_airport
-        subtract = scope:pm_regional_routes_aeroplanes_prediction
-        save_temporary_value_as = market_aeroplanes_consumption_prediction
-        value = aeroplanes_price_prediction
-        multiply = scope:pm_regional_routes_aeroplanes_prediction
-    }
-    add = {
-        value = pm_regional_routes_electricity
-        multiply = building_work_efficiency
-        save_temporary_value_as = pm_regional_routes_electricity_prediction
-        value = state_electricity_production_if_no_pmg_base_building_airport
-        save_temporary_value_as = state_electricity_production_prediction
-        value = state_electricity_consumption_if_no_pmg_base_building_airport
-        subtract = scope:pm_regional_routes_electricity_prediction
-        save_temporary_value_as = state_electricity_consumption_prediction
-        value = market_electricity_production_if_no_pmg_base_building_airport
-        save_temporary_value_as = market_electricity_production_prediction
-        value = market_electricity_consumption_if_no_pmg_base_building_airport
-        subtract = scope:pm_regional_routes_electricity_prediction
-        save_temporary_value_as = market_electricity_consumption_prediction
-        value = electricity_price_prediction
-        multiply = scope:pm_regional_routes_electricity_prediction
-    }
-    add = {
-        value = pm_regional_routes_oil
-        multiply = building_work_efficiency
-        save_temporary_value_as = pm_regional_routes_oil_prediction
-        value = state_oil_production_if_no_pmg_base_building_airport
-        save_temporary_value_as = state_oil_production_prediction
-        value = state_oil_consumption_if_no_pmg_base_building_airport
-        subtract = scope:pm_regional_routes_oil_prediction
-        save_temporary_value_as = state_oil_consumption_prediction
-        value = market_oil_production_if_no_pmg_base_building_airport
-        save_temporary_value_as = market_oil_production_prediction
-        value = market_oil_consumption_if_no_pmg_base_building_airport
-        subtract = scope:pm_regional_routes_oil_prediction
-        save_temporary_value_as = market_oil_consumption_prediction
-        value = oil_price_prediction
-        multiply = scope:pm_regional_routes_oil_prediction
-    }
-    add = {
-        value = pm_regional_routes_tools
-        multiply = building_work_efficiency
-        save_temporary_value_as = pm_regional_routes_tools_prediction
-        value = state_tools_production_if_no_pmg_base_building_airport
-        save_temporary_value_as = state_tools_production_prediction
-        value = state_tools_consumption_if_no_pmg_base_building_airport
-        subtract = scope:pm_regional_routes_tools_prediction
-        save_temporary_value_as = state_tools_consumption_prediction
-        value = market_tools_production_if_no_pmg_base_building_airport
-        save_temporary_value_as = market_tools_production_prediction
-        value = market_tools_consumption_if_no_pmg_base_building_airport
-        subtract = scope:pm_regional_routes_tools_prediction
-        save_temporary_value_as = market_tools_consumption_prediction
-        value = tools_price_prediction
-        multiply = scope:pm_regional_routes_tools_prediction
-    }
-    add = {
-        value = pm_regional_routes_telephones
-        multiply = building_work_efficiency
-        save_temporary_value_as = pm_regional_routes_telephones_prediction
-        value = state_telephones_production_if_no_pmg_base_building_airport
-        save_temporary_value_as = state_telephones_production_prediction
-        value = state_telephones_consumption_if_no_pmg_base_building_airport
-        subtract = scope:pm_regional_routes_telephones_prediction
-        save_temporary_value_as = state_telephones_consumption_prediction
-        value = market_telephones_production_if_no_pmg_base_building_airport
-        save_temporary_value_as = market_telephones_production_prediction
-        value = market_telephones_consumption_if_no_pmg_base_building_airport
-        subtract = scope:pm_regional_routes_telephones_prediction
-        save_temporary_value_as = market_telephones_consumption_prediction
-        value = telephones_price_prediction
-        multiply = scope:pm_regional_routes_telephones_prediction
-    }
-    add = {
-        value = pm_regional_routes_air_travel
-        multiply = building_work_efficiency
-        save_temporary_value_as = pm_regional_routes_air_travel_prediction
-        value = state_air_travel_production_if_no_pmg_base_building_airport
-        add = scope:pm_regional_routes_air_travel_prediction
-        save_temporary_value_as = state_air_travel_production_prediction
-        value = state_air_travel_consumption_if_no_pmg_base_building_airport
-        save_temporary_value_as = state_air_travel_consumption_prediction
-        value = market_air_travel_production_if_no_pmg_base_building_airport
-        add = scope:pm_regional_routes_air_travel_prediction
-        save_temporary_value_as = market_air_travel_production_prediction
-        value = market_air_travel_consumption_if_no_pmg_base_building_airport
-        save_temporary_value_as = market_air_travel_consumption_prediction
-        value = air_travel_price_prediction
-        multiply = scope:pm_regional_routes_air_travel_prediction
-    }
-    divide = level
-}
-
-pmg_base_building_airport_pm_regional_routes_profit_prediction_weighted = {
-    value = pmg_base_building_airport_pm_regional_routes_profit_prediction
-    multiply = owner.var:cnm_upgrade_tolerance_pm_manager
-}
-
-pmg_base_building_airport_pm_domestic_routes_profit_prediction = {
-    value = 0
-    add = {
-        value = pm_domestic_routes_aeroplanes
-        multiply = building_work_efficiency
-        save_temporary_value_as = pm_domestic_routes_aeroplanes_prediction
-        value = state_aeroplanes_production_if_no_pmg_base_building_airport
-        save_temporary_value_as = state_aeroplanes_production_prediction
-        value = state_aeroplanes_consumption_if_no_pmg_base_building_airport
-        subtract = scope:pm_domestic_routes_aeroplanes_prediction
-        save_temporary_value_as = state_aeroplanes_consumption_prediction
-        value = market_aeroplanes_production_if_no_pmg_base_building_airport
-        save_temporary_value_as = market_aeroplanes_production_prediction
-        value = market_aeroplanes_consumption_if_no_pmg_base_building_airport
-        subtract = scope:pm_domestic_routes_aeroplanes_prediction
-        save_temporary_value_as = market_aeroplanes_consumption_prediction
-        value = aeroplanes_price_prediction
-        multiply = scope:pm_domestic_routes_aeroplanes_prediction
-    }
-    add = {
-        value = pm_domestic_routes_electricity
-        multiply = building_work_efficiency
-        save_temporary_value_as = pm_domestic_routes_electricity_prediction
-        value = state_electricity_production_if_no_pmg_base_building_airport
-        save_temporary_value_as = state_electricity_production_prediction
-        value = state_electricity_consumption_if_no_pmg_base_building_airport
-        subtract = scope:pm_domestic_routes_electricity_prediction
-        save_temporary_value_as = state_electricity_consumption_prediction
-        value = market_electricity_production_if_no_pmg_base_building_airport
-        save_temporary_value_as = market_electricity_production_prediction
-        value = market_electricity_consumption_if_no_pmg_base_building_airport
-        subtract = scope:pm_domestic_routes_electricity_prediction
-        save_temporary_value_as = market_electricity_consumption_prediction
-        value = electricity_price_prediction
-        multiply = scope:pm_domestic_routes_electricity_prediction
-    }
-    add = {
-        value = pm_domestic_routes_oil
-        multiply = building_work_efficiency
-        save_temporary_value_as = pm_domestic_routes_oil_prediction
-        value = state_oil_production_if_no_pmg_base_building_airport
-        save_temporary_value_as = state_oil_production_prediction
-        value = state_oil_consumption_if_no_pmg_base_building_airport
-        subtract = scope:pm_domestic_routes_oil_prediction
-        save_temporary_value_as = state_oil_consumption_prediction
-        value = market_oil_production_if_no_pmg_base_building_airport
-        save_temporary_value_as = market_oil_production_prediction
-        value = market_oil_consumption_if_no_pmg_base_building_airport
-        subtract = scope:pm_domestic_routes_oil_prediction
-        save_temporary_value_as = market_oil_consumption_prediction
-        value = oil_price_prediction
-        multiply = scope:pm_domestic_routes_oil_prediction
-    }
-    add = {
-        value = pm_domestic_routes_tools
-        multiply = building_work_efficiency
-        save_temporary_value_as = pm_domestic_routes_tools_prediction
-        value = state_tools_production_if_no_pmg_base_building_airport
-        save_temporary_value_as = state_tools_production_prediction
-        value = state_tools_consumption_if_no_pmg_base_building_airport
-        subtract = scope:pm_domestic_routes_tools_prediction
-        save_temporary_value_as = state_tools_consumption_prediction
-        value = market_tools_production_if_no_pmg_base_building_airport
-        save_temporary_value_as = market_tools_production_prediction
-        value = market_tools_consumption_if_no_pmg_base_building_airport
-        subtract = scope:pm_domestic_routes_tools_prediction
-        save_temporary_value_as = market_tools_consumption_prediction
-        value = tools_price_prediction
-        multiply = scope:pm_domestic_routes_tools_prediction
-    }
-    add = {
-        value = pm_domestic_routes_telephones
-        multiply = building_work_efficiency
-        save_temporary_value_as = pm_domestic_routes_telephones_prediction
-        value = state_telephones_production_if_no_pmg_base_building_airport
-        save_temporary_value_as = state_telephones_production_prediction
-        value = state_telephones_consumption_if_no_pmg_base_building_airport
-        subtract = scope:pm_domestic_routes_telephones_prediction
-        save_temporary_value_as = state_telephones_consumption_prediction
-        value = market_telephones_production_if_no_pmg_base_building_airport
-        save_temporary_value_as = market_telephones_production_prediction
-        value = market_telephones_consumption_if_no_pmg_base_building_airport
-        subtract = scope:pm_domestic_routes_telephones_prediction
-        save_temporary_value_as = market_telephones_consumption_prediction
-        value = telephones_price_prediction
-        multiply = scope:pm_domestic_routes_telephones_prediction
-    }
-    add = {
-        value = pm_domestic_routes_radios
-        multiply = building_work_efficiency
-        save_temporary_value_as = pm_domestic_routes_radios_prediction
-        value = state_radios_production_if_no_pmg_base_building_airport
-        save_temporary_value_as = state_radios_production_prediction
-        value = state_radios_consumption_if_no_pmg_base_building_airport
-        subtract = scope:pm_domestic_routes_radios_prediction
-        save_temporary_value_as = state_radios_consumption_prediction
-        value = market_radios_production_if_no_pmg_base_building_airport
-        save_temporary_value_as = market_radios_production_prediction
-        value = market_radios_consumption_if_no_pmg_base_building_airport
-        subtract = scope:pm_domestic_routes_radios_prediction
-        save_temporary_value_as = market_radios_consumption_prediction
-        value = radios_price_prediction
-        multiply = scope:pm_domestic_routes_radios_prediction
-    }
-    add = {
-        value = pm_domestic_routes_air_travel
-        multiply = building_work_efficiency
-        save_temporary_value_as = pm_domestic_routes_air_travel_prediction
-        value = state_air_travel_production_if_no_pmg_base_building_airport
-        add = scope:pm_domestic_routes_air_travel_prediction
-        save_temporary_value_as = state_air_travel_production_prediction
-        value = state_air_travel_consumption_if_no_pmg_base_building_airport
-        save_temporary_value_as = state_air_travel_consumption_prediction
-        value = market_air_travel_production_if_no_pmg_base_building_airport
-        add = scope:pm_domestic_routes_air_travel_prediction
-        save_temporary_value_as = market_air_travel_production_prediction
-        value = market_air_travel_consumption_if_no_pmg_base_building_airport
-        save_temporary_value_as = market_air_travel_consumption_prediction
-        value = air_travel_price_prediction
-        multiply = scope:pm_domestic_routes_air_travel_prediction
-    }
-    divide = level
-}
-
-pmg_base_building_airport_pm_domestic_routes_profit_prediction_weighted = {
-    value = pmg_base_building_airport_pm_domestic_routes_profit_prediction
-    multiply = owner.var:cnm_upgrade_tolerance_pm_manager
-}
-
-pmg_base_building_airport_pm_international_routes_profit_prediction = {
-    value = 0
-    add = {
-        value = pm_international_routes_aeroplanes
-        multiply = building_work_efficiency
-        save_temporary_value_as = pm_international_routes_aeroplanes_prediction
-        value = state_aeroplanes_production_if_no_pmg_base_building_airport
-        save_temporary_value_as = state_aeroplanes_production_prediction
-        value = state_aeroplanes_consumption_if_no_pmg_base_building_airport
-        subtract = scope:pm_international_routes_aeroplanes_prediction
-        save_temporary_value_as = state_aeroplanes_consumption_prediction
-        value = market_aeroplanes_production_if_no_pmg_base_building_airport
-        save_temporary_value_as = market_aeroplanes_production_prediction
-        value = market_aeroplanes_consumption_if_no_pmg_base_building_airport
-        subtract = scope:pm_international_routes_aeroplanes_prediction
-        save_temporary_value_as = market_aeroplanes_consumption_prediction
-        value = aeroplanes_price_prediction
-        multiply = scope:pm_international_routes_aeroplanes_prediction
-    }
-    add = {
-        value = pm_international_routes_electricity
-        multiply = building_work_efficiency
-        save_temporary_value_as = pm_international_routes_electricity_prediction
-        value = state_electricity_production_if_no_pmg_base_building_airport
-        save_temporary_value_as = state_electricity_production_prediction
-        value = state_electricity_consumption_if_no_pmg_base_building_airport
-        subtract = scope:pm_international_routes_electricity_prediction
-        save_temporary_value_as = state_electricity_consumption_prediction
-        value = market_electricity_production_if_no_pmg_base_building_airport
-        save_temporary_value_as = market_electricity_production_prediction
-        value = market_electricity_consumption_if_no_pmg_base_building_airport
-        subtract = scope:pm_international_routes_electricity_prediction
-        save_temporary_value_as = market_electricity_consumption_prediction
-        value = electricity_price_prediction
-        multiply = scope:pm_international_routes_electricity_prediction
-    }
-    add = {
-        value = pm_international_routes_oil
-        multiply = building_work_efficiency
-        save_temporary_value_as = pm_international_routes_oil_prediction
-        value = state_oil_production_if_no_pmg_base_building_airport
-        save_temporary_value_as = state_oil_production_prediction
-        value = state_oil_consumption_if_no_pmg_base_building_airport
-        subtract = scope:pm_international_routes_oil_prediction
-        save_temporary_value_as = state_oil_consumption_prediction
-        value = market_oil_production_if_no_pmg_base_building_airport
-        save_temporary_value_as = market_oil_production_prediction
-        value = market_oil_consumption_if_no_pmg_base_building_airport
-        subtract = scope:pm_international_routes_oil_prediction
-        save_temporary_value_as = market_oil_consumption_prediction
-        value = oil_price_prediction
-        multiply = scope:pm_international_routes_oil_prediction
-    }
-    add = {
-        value = pm_international_routes_tools
-        multiply = building_work_efficiency
-        save_temporary_value_as = pm_international_routes_tools_prediction
-        value = state_tools_production_if_no_pmg_base_building_airport
-        save_temporary_value_as = state_tools_production_prediction
-        value = state_tools_consumption_if_no_pmg_base_building_airport
-        subtract = scope:pm_international_routes_tools_prediction
-        save_temporary_value_as = state_tools_consumption_prediction
-        value = market_tools_production_if_no_pmg_base_building_airport
-        save_temporary_value_as = market_tools_production_prediction
-        value = market_tools_consumption_if_no_pmg_base_building_airport
-        subtract = scope:pm_international_routes_tools_prediction
-        save_temporary_value_as = market_tools_consumption_prediction
-        value = tools_price_prediction
-        multiply = scope:pm_international_routes_tools_prediction
-    }
-    add = {
-        value = pm_international_routes_telephones
-        multiply = building_work_efficiency
-        save_temporary_value_as = pm_international_routes_telephones_prediction
-        value = state_telephones_production_if_no_pmg_base_building_airport
-        save_temporary_value_as = state_telephones_production_prediction
-        value = state_telephones_consumption_if_no_pmg_base_building_airport
-        subtract = scope:pm_international_routes_telephones_prediction
-        save_temporary_value_as = state_telephones_consumption_prediction
-        value = market_telephones_production_if_no_pmg_base_building_airport
-        save_temporary_value_as = market_telephones_production_prediction
-        value = market_telephones_consumption_if_no_pmg_base_building_airport
-        subtract = scope:pm_international_routes_telephones_prediction
-        save_temporary_value_as = market_telephones_consumption_prediction
-        value = telephones_price_prediction
-        multiply = scope:pm_international_routes_telephones_prediction
-    }
-    add = {
-        value = pm_international_routes_radios
-        multiply = building_work_efficiency
-        save_temporary_value_as = pm_international_routes_radios_prediction
-        value = state_radios_production_if_no_pmg_base_building_airport
-        save_temporary_value_as = state_radios_production_prediction
-        value = state_radios_consumption_if_no_pmg_base_building_airport
-        subtract = scope:pm_international_routes_radios_prediction
-        save_temporary_value_as = state_radios_consumption_prediction
-        value = market_radios_production_if_no_pmg_base_building_airport
-        save_temporary_value_as = market_radios_production_prediction
-        value = market_radios_consumption_if_no_pmg_base_building_airport
-        subtract = scope:pm_international_routes_radios_prediction
-        save_temporary_value_as = market_radios_consumption_prediction
-        value = radios_price_prediction
-        multiply = scope:pm_international_routes_radios_prediction
-    }
-    add = {
-        value = pm_international_routes_air_travel
-        multiply = building_work_efficiency
-        save_temporary_value_as = pm_international_routes_air_travel_prediction
-        value = state_air_travel_production_if_no_pmg_base_building_airport
-        add = scope:pm_international_routes_air_travel_prediction
-        save_temporary_value_as = state_air_travel_production_prediction
-        value = state_air_travel_consumption_if_no_pmg_base_building_airport
-        save_temporary_value_as = state_air_travel_consumption_prediction
-        value = market_air_travel_production_if_no_pmg_base_building_airport
-        add = scope:pm_international_routes_air_travel_prediction
-        save_temporary_value_as = market_air_travel_production_prediction
-        value = market_air_travel_consumption_if_no_pmg_base_building_airport
-        save_temporary_value_as = market_air_travel_consumption_prediction
-        value = air_travel_price_prediction
-        multiply = scope:pm_international_routes_air_travel_prediction
-    }
-    divide = level
-}
-
-pmg_base_building_airport_pm_international_routes_profit_prediction_weighted = {
-    value = pmg_base_building_airport_pm_international_routes_profit_prediction
     multiply = owner.var:cnm_upgrade_tolerance_pm_manager
 }
 

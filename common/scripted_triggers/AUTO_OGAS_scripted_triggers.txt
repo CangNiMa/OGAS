@@ -335,22 +335,6 @@
             is_building_type = building_railway
         }
     }
-    trigger_if = {
-        limit = { 
-            root.var:cnm_auto_construct_building_uranium_mine <= 0
-        }
-        not = {
-            is_building_type = building_uranium_mine
-        }
-    }
-    trigger_if = {
-        limit = { 
-            root.var:cnm_auto_construct_building_airport <= 0
-        }
-        not = {
-            is_building_type = building_airport
-        }
-    }
 }
 
 OGAS_possible_building = {
@@ -397,7 +381,5 @@ OGAS_possible_building = {
         is_building_type = building_whaling_station
         is_building_type = building_oil_rig
         is_building_type = building_railway
-        is_building_type = building_uranium_mine
-        is_building_type = building_airport
     }
 }

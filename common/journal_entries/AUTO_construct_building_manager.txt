@@ -86,10 +86,6 @@
     scripted_button = decrease_building_oil_rig
     scripted_button = increase_building_railway
     scripted_button = decrease_building_railway
-    scripted_button = increase_building_uranium_mine
-    scripted_button = decrease_building_uranium_mine
-    scripted_button = increase_building_airport
-    scripted_button = decrease_building_airport
-	scripted_button = default_all_construct_building
+    scripted_button = default_all_construct_building
 	should_be_pinned_by_default = yes
 }

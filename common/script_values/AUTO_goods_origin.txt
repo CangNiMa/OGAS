@@ -673,6 +673,274 @@ market_oil_consumption_if_no_pmg_canning = {
     }
 }
 
+pmg_distillery_groceries_current = {
+    if = {
+        limit = {
+            has_active_production_method = pm_disabled_distillery
+        }
+        value = pm_disabled_distillery_groceries
+    }
+    else_if = {
+        limit = {
+            has_active_production_method = pm_pot_stills
+        }
+        value = pm_pot_stills_groceries
+    }
+    else_if = {
+        limit = {
+            has_active_production_method = pm_patent_stills
+        }
+        value = pm_patent_stills_groceries
+    }
+    else = {
+        value = 0.0
+    }
+    multiply = building_work_efficiency
+}
+
+state_groceries_production_if_no_pmg_distillery = {
+	value = state.sg:groceries.state_goods_production
+    if = {
+        limit = {
+            pmg_distillery_groceries_current > 0.0
+        }
+	subtract = pmg_distillery_groceries_current
+    }
+}
+
+state_groceries_consumption_if_no_pmg_distillery = {
+	value = state.sg:groceries.state_goods_consumption
+    if = {
+        limit = {
+            pmg_distillery_groceries_current < 0.0
+        }
+	add = pmg_distillery_groceries_current
+    }
+}
+
+market_groceries_production_if_no_pmg_distillery = {
+	value = market.mg:groceries.market_goods_sell_orders
+    if = {
+        limit = {
+            pmg_distillery_groceries_current > 0.0
+        }
+	subtract = pmg_distillery_groceries_current
+        multiply = state.market_access
+    }
+}
+
+market_groceries_consumption_if_no_pmg_distillery = {
+	value = market.mg:groceries.market_goods_buy_orders
+    if = {
+        limit = {
+            pmg_distillery_groceries_current < 0.0
+        }
+	add = pmg_distillery_groceries_current
+        multiply = state.market_access
+    }
+}
+
+pmg_distillery_liquor_current = {
+    if = {
+        limit = {
+            has_active_production_method = pm_disabled_distillery
+        }
+        value = pm_disabled_distillery_liquor
+    }
+    else_if = {
+        limit = {
+            has_active_production_method = pm_pot_stills
+        }
+        value = pm_pot_stills_liquor
+    }
+    else_if = {
+        limit = {
+            has_active_production_method = pm_patent_stills
+        }
+        value = pm_patent_stills_liquor
+    }
+    else = {
+        value = 0.0
+    }
+    multiply = building_work_efficiency
+}
+
+state_liquor_production_if_no_pmg_distillery = {
+	value = state.sg:liquor.state_goods_production
+    if = {
+        limit = {
+            pmg_distillery_liquor_current > 0.0
+        }
+	subtract = pmg_distillery_liquor_current
+    }
+}
+
+state_liquor_consumption_if_no_pmg_distillery = {
+	value = state.sg:liquor.state_goods_consumption
+    if = {
+        limit = {
+            pmg_distillery_liquor_current < 0.0
+        }
+	add = pmg_distillery_liquor_current
+    }
+}
+
+market_liquor_production_if_no_pmg_distillery = {
+	value = market.mg:liquor.market_goods_sell_orders
+    if = {
+        limit = {
+            pmg_distillery_liquor_current > 0.0
+        }
+	subtract = pmg_distillery_liquor_current
+        multiply = state.market_access
+    }
+}
+
+market_liquor_consumption_if_no_pmg_distillery = {
+	value = market.mg:liquor.market_goods_buy_orders
+    if = {
+        limit = {
+            pmg_distillery_liquor_current < 0.0
+        }
+	add = pmg_distillery_liquor_current
+        multiply = state.market_access
+    }
+}
+
+pmg_distillery_sugar_current = {
+    if = {
+        limit = {
+            has_active_production_method = pm_disabled_distillery
+        }
+        value = pm_disabled_distillery_sugar
+    }
+    else_if = {
+        limit = {
+            has_active_production_method = pm_pot_stills
+        }
+        value = pm_pot_stills_sugar
+    }
+    else_if = {
+        limit = {
+            has_active_production_method = pm_patent_stills
+        }
+        value = pm_patent_stills_sugar
+    }
+    else = {
+        value = 0.0
+    }
+    multiply = building_work_efficiency
+}
+
+state_sugar_production_if_no_pmg_distillery = {
+	value = state.sg:sugar.state_goods_production
+    if = {
+        limit = {
+            pmg_distillery_sugar_current > 0.0
+        }
+	subtract = pmg_distillery_sugar_current
+    }
+}
+
+state_sugar_consumption_if_no_pmg_distillery = {
+	value = state.sg:sugar.state_goods_consumption
+    if = {
+        limit = {
+            pmg_distillery_sugar_current < 0.0
+        }
+	add = pmg_distillery_sugar_current
+    }
+}
+
+market_sugar_production_if_no_pmg_distillery = {
+	value = market.mg:sugar.market_goods_sell_orders
+    if = {
+        limit = {
+            pmg_distillery_sugar_current > 0.0
+        }
+	subtract = pmg_distillery_sugar_current
+        multiply = state.market_access
+    }
+}
+
+market_sugar_consumption_if_no_pmg_distillery = {
+	value = market.mg:sugar.market_goods_buy_orders
+    if = {
+        limit = {
+            pmg_distillery_sugar_current < 0.0
+        }
+	add = pmg_distillery_sugar_current
+        multiply = state.market_access
+    }
+}
+
+pmg_distillery_glass_current = {
+    if = {
+        limit = {
+            has_active_production_method = pm_disabled_distillery
+        }
+        value = pm_disabled_distillery_glass
+    }
+    else_if = {
+        limit = {
+            has_active_production_method = pm_pot_stills
+        }
+        value = pm_pot_stills_glass
+    }
+    else_if = {
+        limit = {
+            has_active_production_method = pm_patent_stills
+        }
+        value = pm_patent_stills_glass
+    }
+    else = {
+        value = 0.0
+    }
+    multiply = building_work_efficiency
+}
+
+state_glass_production_if_no_pmg_distillery = {
+	value = state.sg:glass.state_goods_production
+    if = {
+        limit = {
+            pmg_distillery_glass_current > 0.0
+        }
+	subtract = pmg_distillery_glass_current
+    }
+}
+
+state_glass_consumption_if_no_pmg_distillery = {
+	value = state.sg:glass.state_goods_consumption
+    if = {
+        limit = {
+            pmg_distillery_glass_current < 0.0
+        }
+	add = pmg_distillery_glass_current
+    }
+}
+
+market_glass_production_if_no_pmg_distillery = {
+	value = market.mg:glass.market_goods_sell_orders
+    if = {
+        limit = {
+            pmg_distillery_glass_current > 0.0
+        }
+	subtract = pmg_distillery_glass_current
+        multiply = state.market_access
+    }
+}
+
+market_glass_consumption_if_no_pmg_distillery = {
+	value = market.mg:glass.market_goods_buy_orders
+    if = {
+        limit = {
+            pmg_distillery_glass_current < 0.0
+        }
+	add = pmg_distillery_glass_current
+        multiply = state.market_access
+    }
+}
+
 pmg_base_building_textile_mill_fabric_current = {
     if = {
         limit = {
@@ -1038,6 +1306,341 @@ market_electricity_consumption_if_no_pmg_base_building_textile_mill = {
     }
 }
 
+pmg_luxury_building_textile_mill_fabric_current = {
+    if = {
+        limit = {
+            has_active_production_method = pm_no_luxury_clothes
+        }
+        value = pm_no_luxury_clothes_fabric
+    }
+    else_if = {
+        limit = {
+            has_active_production_method = pm_craftsman_sewing
+        }
+        value = pm_craftsman_sewing_fabric
+    }
+    else_if = {
+        limit = {
+            has_active_production_method = pm_elastics
+        }
+        value = pm_elastics_fabric
+    }
+    else = {
+        value = 0.0
+    }
+    multiply = building_work_efficiency
+}
+
+state_fabric_production_if_no_pmg_luxury_building_textile_mill = {
+	value = state.sg:fabric.state_goods_production
+    if = {
+        limit = {
+            pmg_luxury_building_textile_mill_fabric_current > 0.0
+        }
+	subtract = pmg_luxury_building_textile_mill_fabric_current
+    }
+}
+
+state_fabric_consumption_if_no_pmg_luxury_building_textile_mill = {
+	value = state.sg:fabric.state_goods_consumption
+    if = {
+        limit = {
+            pmg_luxury_building_textile_mill_fabric_current < 0.0
+        }
+	add = pmg_luxury_building_textile_mill_fabric_current
+    }
+}
+
+market_fabric_production_if_no_pmg_luxury_building_textile_mill = {
+	value = market.mg:fabric.market_goods_sell_orders
+    if = {
+        limit = {
+            pmg_luxury_building_textile_mill_fabric_current > 0.0
+        }
+	subtract = pmg_luxury_building_textile_mill_fabric_current
+        multiply = state.market_access
+    }
+}
+
+market_fabric_consumption_if_no_pmg_luxury_building_textile_mill = {
+	value = market.mg:fabric.market_goods_buy_orders
+    if = {
+        limit = {
+            pmg_luxury_building_textile_mill_fabric_current < 0.0
+        }
+	add = pmg_luxury_building_textile_mill_fabric_current
+        multiply = state.market_access
+    }
+}
+
+pmg_luxury_building_textile_mill_clothes_current = {
+    if = {
+        limit = {
+            has_active_production_method = pm_no_luxury_clothes
+        }
+        value = pm_no_luxury_clothes_clothes
+    }
+    else_if = {
+        limit = {
+            has_active_production_method = pm_craftsman_sewing
+        }
+        value = pm_craftsman_sewing_clothes
+    }
+    else_if = {
+        limit = {
+            has_active_production_method = pm_elastics
+        }
+        value = pm_elastics_clothes
+    }
+    else = {
+        value = 0.0
+    }
+    multiply = building_work_efficiency
+}
+
+state_clothes_production_if_no_pmg_luxury_building_textile_mill = {
+	value = state.sg:clothes.state_goods_production
+    if = {
+        limit = {
+            pmg_luxury_building_textile_mill_clothes_current > 0.0
+        }
+	subtract = pmg_luxury_building_textile_mill_clothes_current
+    }
+}
+
+state_clothes_consumption_if_no_pmg_luxury_building_textile_mill = {
+	value = state.sg:clothes.state_goods_consumption
+    if = {
+        limit = {
+            pmg_luxury_building_textile_mill_clothes_current < 0.0
+        }
+	add = pmg_luxury_building_textile_mill_clothes_current
+    }
+}
+
+market_clothes_production_if_no_pmg_luxury_building_textile_mill = {
+	value = market.mg:clothes.market_goods_sell_orders
+    if = {
+        limit = {
+            pmg_luxury_building_textile_mill_clothes_current > 0.0
+        }
+	subtract = pmg_luxury_building_textile_mill_clothes_current
+        multiply = state.market_access
+    }
+}
+
+market_clothes_consumption_if_no_pmg_luxury_building_textile_mill = {
+	value = market.mg:clothes.market_goods_buy_orders
+    if = {
+        limit = {
+            pmg_luxury_building_textile_mill_clothes_current < 0.0
+        }
+	add = pmg_luxury_building_textile_mill_clothes_current
+        multiply = state.market_access
+    }
+}
+
+pmg_luxury_building_textile_mill_silk_current = {
+    if = {
+        limit = {
+            has_active_production_method = pm_no_luxury_clothes
+        }
+        value = pm_no_luxury_clothes_silk
+    }
+    else_if = {
+        limit = {
+            has_active_production_method = pm_craftsman_sewing
+        }
+        value = pm_craftsman_sewing_silk
+    }
+    else_if = {
+        limit = {
+            has_active_production_method = pm_elastics
+        }
+        value = pm_elastics_silk
+    }
+    else = {
+        value = 0.0
+    }
+    multiply = building_work_efficiency
+}
+
+state_silk_production_if_no_pmg_luxury_building_textile_mill = {
+	value = state.sg:silk.state_goods_production
+    if = {
+        limit = {
+            pmg_luxury_building_textile_mill_silk_current > 0.0
+        }
+	subtract = pmg_luxury_building_textile_mill_silk_current
+    }
+}
+
+state_silk_consumption_if_no_pmg_luxury_building_textile_mill = {
+	value = state.sg:silk.state_goods_consumption
+    if = {
+        limit = {
+            pmg_luxury_building_textile_mill_silk_current < 0.0
+        }
+	add = pmg_luxury_building_textile_mill_silk_current
+    }
+}
+
+market_silk_production_if_no_pmg_luxury_building_textile_mill = {
+	value = market.mg:silk.market_goods_sell_orders
+    if = {
+        limit = {
+            pmg_luxury_building_textile_mill_silk_current > 0.0
+        }
+	subtract = pmg_luxury_building_textile_mill_silk_current
+        multiply = state.market_access
+    }
+}
+
+market_silk_consumption_if_no_pmg_luxury_building_textile_mill = {
+	value = market.mg:silk.market_goods_buy_orders
+    if = {
+        limit = {
+            pmg_luxury_building_textile_mill_silk_current < 0.0
+        }
+	add = pmg_luxury_building_textile_mill_silk_current
+        multiply = state.market_access
+    }
+}
+
+pmg_luxury_building_textile_mill_luxury_clothes_current = {
+    if = {
+        limit = {
+            has_active_production_method = pm_no_luxury_clothes
+        }
+        value = pm_no_luxury_clothes_luxury_clothes
+    }
+    else_if = {
+        limit = {
+            has_active_production_method = pm_craftsman_sewing
+        }
+        value = pm_craftsman_sewing_luxury_clothes
+    }
+    else_if = {
+        limit = {
+            has_active_production_method = pm_elastics
+        }
+        value = pm_elastics_luxury_clothes
+    }
+    else = {
+        value = 0.0
+    }
+    multiply = building_work_efficiency
+}
+
+state_luxury_clothes_production_if_no_pmg_luxury_building_textile_mill = {
+	value = state.sg:luxury_clothes.state_goods_production
+    if = {
+        limit = {
+            pmg_luxury_building_textile_mill_luxury_clothes_current > 0.0
+        }
+	subtract = pmg_luxury_building_textile_mill_luxury_clothes_current
+    }
+}
+
+state_luxury_clothes_consumption_if_no_pmg_luxury_building_textile_mill = {
+	value = state.sg:luxury_clothes.state_goods_consumption
+    if = {
+        limit = {
+            pmg_luxury_building_textile_mill_luxury_clothes_current < 0.0
+        }
+	add = pmg_luxury_building_textile_mill_luxury_clothes_current
+    }
+}
+
+market_luxury_clothes_production_if_no_pmg_luxury_building_textile_mill = {
+	value = market.mg:luxury_clothes.market_goods_sell_orders
+    if = {
+        limit = {
+            pmg_luxury_building_textile_mill_luxury_clothes_current > 0.0
+        }
+	subtract = pmg_luxury_building_textile_mill_luxury_clothes_current
+        multiply = state.market_access
+    }
+}
+
+market_luxury_clothes_consumption_if_no_pmg_luxury_building_textile_mill = {
+	value = market.mg:luxury_clothes.market_goods_buy_orders
+    if = {
+        limit = {
+            pmg_luxury_building_textile_mill_luxury_clothes_current < 0.0
+        }
+	add = pmg_luxury_building_textile_mill_luxury_clothes_current
+        multiply = state.market_access
+    }
+}
+
+pmg_luxury_building_textile_mill_rubber_current = {
+    if = {
+        limit = {
+            has_active_production_method = pm_no_luxury_clothes
+        }
+        value = pm_no_luxury_clothes_rubber
+    }
+    else_if = {
+        limit = {
+            has_active_production_method = pm_craftsman_sewing
+        }
+        value = pm_craftsman_sewing_rubber
+    }
+    else_if = {
+        limit = {
+            has_active_production_method = pm_elastics
+        }
+        value = pm_elastics_rubber
+    }
+    else = {
+        value = 0.0
+    }
+    multiply = building_work_efficiency
+}
+
+state_rubber_production_if_no_pmg_luxury_building_textile_mill = {
+	value = state.sg:rubber.state_goods_production
+    if = {
+        limit = {
+            pmg_luxury_building_textile_mill_rubber_current > 0.0
+        }
+	subtract = pmg_luxury_building_textile_mill_rubber_current
+    }
+}
+
+state_rubber_consumption_if_no_pmg_luxury_building_textile_mill = {
+	value = state.sg:rubber.state_goods_consumption
+    if = {
+        limit = {
+            pmg_luxury_building_textile_mill_rubber_current < 0.0
+        }
+	add = pmg_luxury_building_textile_mill_rubber_current
+    }
+}
+
+market_rubber_production_if_no_pmg_luxury_building_textile_mill = {
+	value = market.mg:rubber.market_goods_sell_orders
+    if = {
+        limit = {
+            pmg_luxury_building_textile_mill_rubber_current > 0.0
+        }
+	subtract = pmg_luxury_building_textile_mill_rubber_current
+        multiply = state.market_access
+    }
+}
+
+market_rubber_consumption_if_no_pmg_luxury_building_textile_mill = {
+	value = market.mg:rubber.market_goods_buy_orders
+    if = {
+        limit = {
+            pmg_luxury_building_textile_mill_rubber_current < 0.0
+        }
+	add = pmg_luxury_building_textile_mill_rubber_current
+        multiply = state.market_access
+    }
+}
+
 pmg_base_building_furniture_manufactory_fabric_current = {
     if = {
         limit = {
@@ -1302,6 +1905,341 @@ market_tools_consumption_if_no_pmg_base_building_furniture_manufactory = {
             pmg_base_building_furniture_manufactory_tools_current < 0.0
         }
 	add = pmg_base_building_furniture_manufactory_tools_current
+        multiply = state.market_access
+    }
+}
+
+pmg_luxury_building_furniture_manufactory_wood_current = {
+    if = {
+        limit = {
+            has_active_production_method = pm_no_luxuries
+        }
+        value = pm_no_luxuries_wood
+    }
+    else_if = {
+        limit = {
+            has_active_production_method = pm_luxury_furniture
+        }
+        value = pm_luxury_furniture_wood
+    }
+    else_if = {
+        limit = {
+            has_active_production_method = pm_precision_tools
+        }
+        value = pm_precision_tools_wood
+    }
+    else = {
+        value = 0.0
+    }
+    multiply = building_work_efficiency
+}
+
+state_wood_production_if_no_pmg_luxury_building_furniture_manufactory = {
+	value = state.sg:wood.state_goods_production
+    if = {
+        limit = {
+            pmg_luxury_building_furniture_manufactory_wood_current > 0.0
+        }
+	subtract = pmg_luxury_building_furniture_manufactory_wood_current
+    }
+}
+
+state_wood_consumption_if_no_pmg_luxury_building_furniture_manufactory = {
+	value = state.sg:wood.state_goods_consumption
+    if = {
+        limit = {
+            pmg_luxury_building_furniture_manufactory_wood_current < 0.0
+        }
+	add = pmg_luxury_building_furniture_manufactory_wood_current
+    }
+}
+
+market_wood_production_if_no_pmg_luxury_building_furniture_manufactory = {
+	value = market.mg:wood.market_goods_sell_orders
+    if = {
+        limit = {
+            pmg_luxury_building_furniture_manufactory_wood_current > 0.0
+        }
+	subtract = pmg_luxury_building_furniture_manufactory_wood_current
+        multiply = state.market_access
+    }
+}
+
+market_wood_consumption_if_no_pmg_luxury_building_furniture_manufactory = {
+	value = market.mg:wood.market_goods_buy_orders
+    if = {
+        limit = {
+            pmg_luxury_building_furniture_manufactory_wood_current < 0.0
+        }
+	add = pmg_luxury_building_furniture_manufactory_wood_current
+        multiply = state.market_access
+    }
+}
+
+pmg_luxury_building_furniture_manufactory_furniture_current = {
+    if = {
+        limit = {
+            has_active_production_method = pm_no_luxuries
+        }
+        value = pm_no_luxuries_furniture
+    }
+    else_if = {
+        limit = {
+            has_active_production_method = pm_luxury_furniture
+        }
+        value = pm_luxury_furniture_furniture
+    }
+    else_if = {
+        limit = {
+            has_active_production_method = pm_precision_tools
+        }
+        value = pm_precision_tools_furniture
+    }
+    else = {
+        value = 0.0
+    }
+    multiply = building_work_efficiency
+}
+
+state_furniture_production_if_no_pmg_luxury_building_furniture_manufactory = {
+	value = state.sg:furniture.state_goods_production
+    if = {
+        limit = {
+            pmg_luxury_building_furniture_manufactory_furniture_current > 0.0
+        }
+	subtract = pmg_luxury_building_furniture_manufactory_furniture_current
+    }
+}
+
+state_furniture_consumption_if_no_pmg_luxury_building_furniture_manufactory = {
+	value = state.sg:furniture.state_goods_consumption
+    if = {
+        limit = {
+            pmg_luxury_building_furniture_manufactory_furniture_current < 0.0
+        }
+	add = pmg_luxury_building_furniture_manufactory_furniture_current
+    }
+}
+
+market_furniture_production_if_no_pmg_luxury_building_furniture_manufactory = {
+	value = market.mg:furniture.market_goods_sell_orders
+    if = {
+        limit = {
+            pmg_luxury_building_furniture_manufactory_furniture_current > 0.0
+        }
+	subtract = pmg_luxury_building_furniture_manufactory_furniture_current
+        multiply = state.market_access
+    }
+}
+
+market_furniture_consumption_if_no_pmg_luxury_building_furniture_manufactory = {
+	value = market.mg:furniture.market_goods_buy_orders
+    if = {
+        limit = {
+            pmg_luxury_building_furniture_manufactory_furniture_current < 0.0
+        }
+	add = pmg_luxury_building_furniture_manufactory_furniture_current
+        multiply = state.market_access
+    }
+}
+
+pmg_luxury_building_furniture_manufactory_hardwood_current = {
+    if = {
+        limit = {
+            has_active_production_method = pm_no_luxuries
+        }
+        value = pm_no_luxuries_hardwood
+    }
+    else_if = {
+        limit = {
+            has_active_production_method = pm_luxury_furniture
+        }
+        value = pm_luxury_furniture_hardwood
+    }
+    else_if = {
+        limit = {
+            has_active_production_method = pm_precision_tools
+        }
+        value = pm_precision_tools_hardwood
+    }
+    else = {
+        value = 0.0
+    }
+    multiply = building_work_efficiency
+}
+
+state_hardwood_production_if_no_pmg_luxury_building_furniture_manufactory = {
+	value = state.sg:hardwood.state_goods_production
+    if = {
+        limit = {
+            pmg_luxury_building_furniture_manufactory_hardwood_current > 0.0
+        }
+	subtract = pmg_luxury_building_furniture_manufactory_hardwood_current
+    }
+}
+
+state_hardwood_consumption_if_no_pmg_luxury_building_furniture_manufactory = {
+	value = state.sg:hardwood.state_goods_consumption
+    if = {
+        limit = {
+            pmg_luxury_building_furniture_manufactory_hardwood_current < 0.0
+        }
+	add = pmg_luxury_building_furniture_manufactory_hardwood_current
+    }
+}
+
+market_hardwood_production_if_no_pmg_luxury_building_furniture_manufactory = {
+	value = market.mg:hardwood.market_goods_sell_orders
+    if = {
+        limit = {
+            pmg_luxury_building_furniture_manufactory_hardwood_current > 0.0
+        }
+	subtract = pmg_luxury_building_furniture_manufactory_hardwood_current
+        multiply = state.market_access
+    }
+}
+
+market_hardwood_consumption_if_no_pmg_luxury_building_furniture_manufactory = {
+	value = market.mg:hardwood.market_goods_buy_orders
+    if = {
+        limit = {
+            pmg_luxury_building_furniture_manufactory_hardwood_current < 0.0
+        }
+	add = pmg_luxury_building_furniture_manufactory_hardwood_current
+        multiply = state.market_access
+    }
+}
+
+pmg_luxury_building_furniture_manufactory_luxury_furniture_current = {
+    if = {
+        limit = {
+            has_active_production_method = pm_no_luxuries
+        }
+        value = pm_no_luxuries_luxury_furniture
+    }
+    else_if = {
+        limit = {
+            has_active_production_method = pm_luxury_furniture
+        }
+        value = pm_luxury_furniture_luxury_furniture
+    }
+    else_if = {
+        limit = {
+            has_active_production_method = pm_precision_tools
+        }
+        value = pm_precision_tools_luxury_furniture
+    }
+    else = {
+        value = 0.0
+    }
+    multiply = building_work_efficiency
+}
+
+state_luxury_furniture_production_if_no_pmg_luxury_building_furniture_manufactory = {
+	value = state.sg:luxury_furniture.state_goods_production
+    if = {
+        limit = {
+            pmg_luxury_building_furniture_manufactory_luxury_furniture_current > 0.0
+        }
+	subtract = pmg_luxury_building_furniture_manufactory_luxury_furniture_current
+    }
+}
+
+state_luxury_furniture_consumption_if_no_pmg_luxury_building_furniture_manufactory = {
+	value = state.sg:luxury_furniture.state_goods_consumption
+    if = {
+        limit = {
+            pmg_luxury_building_furniture_manufactory_luxury_furniture_current < 0.0
+        }
+	add = pmg_luxury_building_furniture_manufactory_luxury_furniture_current
+    }
+}
+
+market_luxury_furniture_production_if_no_pmg_luxury_building_furniture_manufactory = {
+	value = market.mg:luxury_furniture.market_goods_sell_orders
+    if = {
+        limit = {
+            pmg_luxury_building_furniture_manufactory_luxury_furniture_current > 0.0
+        }
+	subtract = pmg_luxury_building_furniture_manufactory_luxury_furniture_current
+        multiply = state.market_access
+    }
+}
+
+market_luxury_furniture_consumption_if_no_pmg_luxury_building_furniture_manufactory = {
+	value = market.mg:luxury_furniture.market_goods_buy_orders
+    if = {
+        limit = {
+            pmg_luxury_building_furniture_manufactory_luxury_furniture_current < 0.0
+        }
+	add = pmg_luxury_building_furniture_manufactory_luxury_furniture_current
+        multiply = state.market_access
+    }
+}
+
+pmg_luxury_building_furniture_manufactory_tools_current = {
+    if = {
+        limit = {
+            has_active_production_method = pm_no_luxuries
+        }
+        value = pm_no_luxuries_tools
+    }
+    else_if = {
+        limit = {
+            has_active_production_method = pm_luxury_furniture
+        }
+        value = pm_luxury_furniture_tools
+    }
+    else_if = {
+        limit = {
+            has_active_production_method = pm_precision_tools
+        }
+        value = pm_precision_tools_tools
+    }
+    else = {
+        value = 0.0
+    }
+    multiply = building_work_efficiency
+}
+
+state_tools_production_if_no_pmg_luxury_building_furniture_manufactory = {
+	value = state.sg:tools.state_goods_production
+    if = {
+        limit = {
+            pmg_luxury_building_furniture_manufactory_tools_current > 0.0
+        }
+	subtract = pmg_luxury_building_furniture_manufactory_tools_current
+    }
+}
+
+state_tools_consumption_if_no_pmg_luxury_building_furniture_manufactory = {
+	value = state.sg:tools.state_goods_consumption
+    if = {
+        limit = {
+            pmg_luxury_building_furniture_manufactory_tools_current < 0.0
+        }
+	add = pmg_luxury_building_furniture_manufactory_tools_current
+    }
+}
+
+market_tools_production_if_no_pmg_luxury_building_furniture_manufactory = {
+	value = market.mg:tools.market_goods_sell_orders
+    if = {
+        limit = {
+            pmg_luxury_building_furniture_manufactory_tools_current > 0.0
+        }
+	subtract = pmg_luxury_building_furniture_manufactory_tools_current
+        multiply = state.market_access
+    }
+}
+
+market_tools_consumption_if_no_pmg_luxury_building_furniture_manufactory = {
+	value = market.mg:tools.market_goods_buy_orders
+    if = {
+        limit = {
+            pmg_luxury_building_furniture_manufactory_tools_current < 0.0
+        }
+	add = pmg_luxury_building_furniture_manufactory_tools_current
         multiply = state.market_access
     }
 }
@@ -1594,6 +2532,207 @@ market_oil_consumption_if_no_pmg_base_building_glassworks = {
             pmg_base_building_glassworks_oil_current < 0.0
         }
 	add = pmg_base_building_glassworks_oil_current
+        multiply = state.market_access
+    }
+}
+
+pmg_luxury_building_glassworks_dye_current = {
+    if = {
+        limit = {
+            has_active_production_method = pm_disabled_ceramics
+        }
+        value = pm_disabled_ceramics_dye
+    }
+    else_if = {
+        limit = {
+            has_active_production_method = pm_ceramics
+        }
+        value = pm_ceramics_dye
+    }
+    else_if = {
+        limit = {
+            has_active_production_method = pm_bone_china
+        }
+        value = pm_bone_china_dye
+    }
+    else = {
+        value = 0.0
+    }
+    multiply = building_work_efficiency
+}
+
+state_dye_production_if_no_pmg_luxury_building_glassworks = {
+	value = state.sg:dye.state_goods_production
+    if = {
+        limit = {
+            pmg_luxury_building_glassworks_dye_current > 0.0
+        }
+	subtract = pmg_luxury_building_glassworks_dye_current
+    }
+}
+
+state_dye_consumption_if_no_pmg_luxury_building_glassworks = {
+	value = state.sg:dye.state_goods_consumption
+    if = {
+        limit = {
+            pmg_luxury_building_glassworks_dye_current < 0.0
+        }
+	add = pmg_luxury_building_glassworks_dye_current
+    }
+}
+
+market_dye_production_if_no_pmg_luxury_building_glassworks = {
+	value = market.mg:dye.market_goods_sell_orders
+    if = {
+        limit = {
+            pmg_luxury_building_glassworks_dye_current > 0.0
+        }
+	subtract = pmg_luxury_building_glassworks_dye_current
+        multiply = state.market_access
+    }
+}
+
+market_dye_consumption_if_no_pmg_luxury_building_glassworks = {
+	value = market.mg:dye.market_goods_buy_orders
+    if = {
+        limit = {
+            pmg_luxury_building_glassworks_dye_current < 0.0
+        }
+	add = pmg_luxury_building_glassworks_dye_current
+        multiply = state.market_access
+    }
+}
+
+pmg_luxury_building_glassworks_glass_current = {
+    if = {
+        limit = {
+            has_active_production_method = pm_disabled_ceramics
+        }
+        value = pm_disabled_ceramics_glass
+    }
+    else_if = {
+        limit = {
+            has_active_production_method = pm_ceramics
+        }
+        value = pm_ceramics_glass
+    }
+    else_if = {
+        limit = {
+            has_active_production_method = pm_bone_china
+        }
+        value = pm_bone_china_glass
+    }
+    else = {
+        value = 0.0
+    }
+    multiply = building_work_efficiency
+}
+
+state_glass_production_if_no_pmg_luxury_building_glassworks = {
+	value = state.sg:glass.state_goods_production
+    if = {
+        limit = {
+            pmg_luxury_building_glassworks_glass_current > 0.0
+        }
+	subtract = pmg_luxury_building_glassworks_glass_current
+    }
+}
+
+state_glass_consumption_if_no_pmg_luxury_building_glassworks = {
+	value = state.sg:glass.state_goods_consumption
+    if = {
+        limit = {
+            pmg_luxury_building_glassworks_glass_current < 0.0
+        }
+	add = pmg_luxury_building_glassworks_glass_current
+    }
+}
+
+market_glass_production_if_no_pmg_luxury_building_glassworks = {
+	value = market.mg:glass.market_goods_sell_orders
+    if = {
+        limit = {
+            pmg_luxury_building_glassworks_glass_current > 0.0
+        }
+	subtract = pmg_luxury_building_glassworks_glass_current
+        multiply = state.market_access
+    }
+}
+
+market_glass_consumption_if_no_pmg_luxury_building_glassworks = {
+	value = market.mg:glass.market_goods_buy_orders
+    if = {
+        limit = {
+            pmg_luxury_building_glassworks_glass_current < 0.0
+        }
+	add = pmg_luxury_building_glassworks_glass_current
+        multiply = state.market_access
+    }
+}
+
+pmg_luxury_building_glassworks_porcelain_current = {
+    if = {
+        limit = {
+            has_active_production_method = pm_disabled_ceramics
+        }
+        value = pm_disabled_ceramics_porcelain
+    }
+    else_if = {
+        limit = {
+            has_active_production_method = pm_ceramics
+        }
+        value = pm_ceramics_porcelain
+    }
+    else_if = {
+        limit = {
+            has_active_production_method = pm_bone_china
+        }
+        value = pm_bone_china_porcelain
+    }
+    else = {
+        value = 0.0
+    }
+    multiply = building_work_efficiency
+}
+
+state_porcelain_production_if_no_pmg_luxury_building_glassworks = {
+	value = state.sg:porcelain.state_goods_production
+    if = {
+        limit = {
+            pmg_luxury_building_glassworks_porcelain_current > 0.0
+        }
+	subtract = pmg_luxury_building_glassworks_porcelain_current
+    }
+}
+
+state_porcelain_consumption_if_no_pmg_luxury_building_glassworks = {
+	value = state.sg:porcelain.state_goods_consumption
+    if = {
+        limit = {
+            pmg_luxury_building_glassworks_porcelain_current < 0.0
+        }
+	add = pmg_luxury_building_glassworks_porcelain_current
+    }
+}
+
+market_porcelain_production_if_no_pmg_luxury_building_glassworks = {
+	value = market.mg:porcelain.market_goods_sell_orders
+    if = {
+        limit = {
+            pmg_luxury_building_glassworks_porcelain_current > 0.0
+        }
+	subtract = pmg_luxury_building_glassworks_porcelain_current
+        multiply = state.market_access
+    }
+}
+
+market_porcelain_consumption_if_no_pmg_luxury_building_glassworks = {
+	value = market.mg:porcelain.market_goods_buy_orders
+    if = {
+        limit = {
+            pmg_luxury_building_glassworks_porcelain_current < 0.0
+        }
+	add = pmg_luxury_building_glassworks_porcelain_current
         multiply = state.market_access
     }
 }
@@ -11762,1145 +12901,6 @@ market_electricity_consumption_if_no_pmg_base_building_logging_camp = {
     }
 }
 
-pmg_distillery_groceries_current = {
-    if = {
-        limit = {
-            has_active_production_method = pm_disabled_distillery
-        }
-        value = pm_disabled_distillery_groceries
-    }
-    else_if = {
-        limit = {
-            has_active_production_method = pm_pot_stills
-        }
-        value = pm_pot_stills_groceries
-    }
-    else_if = {
-        limit = {
-            has_active_production_method = pm_patent_stills
-        }
-        value = pm_patent_stills_groceries
-    }
-    else = {
-        value = 0.0
-    }
-    multiply = building_work_efficiency
-}
-
-state_groceries_production_if_no_pmg_distillery = {
-	value = state.sg:groceries.state_goods_production
-    if = {
-        limit = {
-            pmg_distillery_groceries_current > 0.0
-        }
-	subtract = pmg_distillery_groceries_current
-    }
-}
-
-state_groceries_consumption_if_no_pmg_distillery = {
-	value = state.sg:groceries.state_goods_consumption
-    if = {
-        limit = {
-            pmg_distillery_groceries_current < 0.0
-        }
-	add = pmg_distillery_groceries_current
-    }
-}
-
-market_groceries_production_if_no_pmg_distillery = {
-	value = market.mg:groceries.market_goods_sell_orders
-    if = {
-        limit = {
-            pmg_distillery_groceries_current > 0.0
-        }
-	subtract = pmg_distillery_groceries_current
-        multiply = state.market_access
-    }
-}
-
-market_groceries_consumption_if_no_pmg_distillery = {
-	value = market.mg:groceries.market_goods_buy_orders
-    if = {
-        limit = {
-            pmg_distillery_groceries_current < 0.0
-        }
-	add = pmg_distillery_groceries_current
-        multiply = state.market_access
-    }
-}
-
-pmg_distillery_liquor_current = {
-    if = {
-        limit = {
-            has_active_production_method = pm_disabled_distillery
-        }
-        value = pm_disabled_distillery_liquor
-    }
-    else_if = {
-        limit = {
-            has_active_production_method = pm_pot_stills
-        }
-        value = pm_pot_stills_liquor
-    }
-    else_if = {
-        limit = {
-            has_active_production_method = pm_patent_stills
-        }
-        value = pm_patent_stills_liquor
-    }
-    else = {
-        value = 0.0
-    }
-    multiply = building_work_efficiency
-}
-
-state_liquor_production_if_no_pmg_distillery = {
-	value = state.sg:liquor.state_goods_production
-    if = {
-        limit = {
-            pmg_distillery_liquor_current > 0.0
-        }
-	subtract = pmg_distillery_liquor_current
-    }
-}
-
-state_liquor_consumption_if_no_pmg_distillery = {
-	value = state.sg:liquor.state_goods_consumption
-    if = {
-        limit = {
-            pmg_distillery_liquor_current < 0.0
-        }
-	add = pmg_distillery_liquor_current
-    }
-}
-
-market_liquor_production_if_no_pmg_distillery = {
-	value = market.mg:liquor.market_goods_sell_orders
-    if = {
-        limit = {
-            pmg_distillery_liquor_current > 0.0
-        }
-	subtract = pmg_distillery_liquor_current
-        multiply = state.market_access
-    }
-}
-
-market_liquor_consumption_if_no_pmg_distillery = {
-	value = market.mg:liquor.market_goods_buy_orders
-    if = {
-        limit = {
-            pmg_distillery_liquor_current < 0.0
-        }
-	add = pmg_distillery_liquor_current
-        multiply = state.market_access
-    }
-}
-
-pmg_distillery_sugar_current = {
-    if = {
-        limit = {
-            has_active_production_method = pm_disabled_distillery
-        }
-        value = pm_disabled_distillery_sugar
-    }
-    else_if = {
-        limit = {
-            has_active_production_method = pm_pot_stills
-        }
-        value = pm_pot_stills_sugar
-    }
-    else_if = {
-        limit = {
-            has_active_production_method = pm_patent_stills
-        }
-        value = pm_patent_stills_sugar
-    }
-    else = {
-        value = 0.0
-    }
-    multiply = building_work_efficiency
-}
-
-state_sugar_production_if_no_pmg_distillery = {
-	value = state.sg:sugar.state_goods_production
-    if = {
-        limit = {
-            pmg_distillery_sugar_current > 0.0
-        }
-	subtract = pmg_distillery_sugar_current
-    }
-}
-
-state_sugar_consumption_if_no_pmg_distillery = {
-	value = state.sg:sugar.state_goods_consumption
-    if = {
-        limit = {
-            pmg_distillery_sugar_current < 0.0
-        }
-	add = pmg_distillery_sugar_current
-    }
-}
-
-market_sugar_production_if_no_pmg_distillery = {
-	value = market.mg:sugar.market_goods_sell_orders
-    if = {
-        limit = {
-            pmg_distillery_sugar_current > 0.0
-        }
-	subtract = pmg_distillery_sugar_current
-        multiply = state.market_access
-    }
-}
-
-market_sugar_consumption_if_no_pmg_distillery = {
-	value = market.mg:sugar.market_goods_buy_orders
-    if = {
-        limit = {
-            pmg_distillery_sugar_current < 0.0
-        }
-	add = pmg_distillery_sugar_current
-        multiply = state.market_access
-    }
-}
-
-pmg_distillery_glass_current = {
-    if = {
-        limit = {
-            has_active_production_method = pm_disabled_distillery
-        }
-        value = pm_disabled_distillery_glass
-    }
-    else_if = {
-        limit = {
-            has_active_production_method = pm_pot_stills
-        }
-        value = pm_pot_stills_glass
-    }
-    else_if = {
-        limit = {
-            has_active_production_method = pm_patent_stills
-        }
-        value = pm_patent_stills_glass
-    }
-    else = {
-        value = 0.0
-    }
-    multiply = building_work_efficiency
-}
-
-state_glass_production_if_no_pmg_distillery = {
-	value = state.sg:glass.state_goods_production
-    if = {
-        limit = {
-            pmg_distillery_glass_current > 0.0
-        }
-	subtract = pmg_distillery_glass_current
-    }
-}
-
-state_glass_consumption_if_no_pmg_distillery = {
-	value = state.sg:glass.state_goods_consumption
-    if = {
-        limit = {
-            pmg_distillery_glass_current < 0.0
-        }
-	add = pmg_distillery_glass_current
-    }
-}
-
-market_glass_production_if_no_pmg_distillery = {
-	value = market.mg:glass.market_goods_sell_orders
-    if = {
-        limit = {
-            pmg_distillery_glass_current > 0.0
-        }
-	subtract = pmg_distillery_glass_current
-        multiply = state.market_access
-    }
-}
-
-market_glass_consumption_if_no_pmg_distillery = {
-	value = market.mg:glass.market_goods_buy_orders
-    if = {
-        limit = {
-            pmg_distillery_glass_current < 0.0
-        }
-	add = pmg_distillery_glass_current
-        multiply = state.market_access
-    }
-}
-
-pmg_luxury_building_textile_mill_fabric_current = {
-    if = {
-        limit = {
-            has_active_production_method = pm_no_luxury_clothes
-        }
-        value = pm_no_luxury_clothes_fabric
-    }
-    else_if = {
-        limit = {
-            has_active_production_method = pm_craftsman_sewing
-        }
-        value = pm_craftsman_sewing_fabric
-    }
-    else_if = {
-        limit = {
-            has_active_production_method = pm_elastics
-        }
-        value = pm_elastics_fabric
-    }
-    else = {
-        value = 0.0
-    }
-    multiply = building_work_efficiency
-}
-
-state_fabric_production_if_no_pmg_luxury_building_textile_mill = {
-	value = state.sg:fabric.state_goods_production
-    if = {
-        limit = {
-            pmg_luxury_building_textile_mill_fabric_current > 0.0
-        }
-	subtract = pmg_luxury_building_textile_mill_fabric_current
-    }
-}
-
-state_fabric_consumption_if_no_pmg_luxury_building_textile_mill = {
-	value = state.sg:fabric.state_goods_consumption
-    if = {
-        limit = {
-            pmg_luxury_building_textile_mill_fabric_current < 0.0
-        }
-	add = pmg_luxury_building_textile_mill_fabric_current
-    }
-}
-
-market_fabric_production_if_no_pmg_luxury_building_textile_mill = {
-	value = market.mg:fabric.market_goods_sell_orders
-    if = {
-        limit = {
-            pmg_luxury_building_textile_mill_fabric_current > 0.0
-        }
-	subtract = pmg_luxury_building_textile_mill_fabric_current
-        multiply = state.market_access
-    }
-}
-
-market_fabric_consumption_if_no_pmg_luxury_building_textile_mill = {
-	value = market.mg:fabric.market_goods_buy_orders
-    if = {
-        limit = {
-            pmg_luxury_building_textile_mill_fabric_current < 0.0
-        }
-	add = pmg_luxury_building_textile_mill_fabric_current
-        multiply = state.market_access
-    }
-}
-
-pmg_luxury_building_textile_mill_clothes_current = {
-    if = {
-        limit = {
-            has_active_production_method = pm_no_luxury_clothes
-        }
-        value = pm_no_luxury_clothes_clothes
-    }
-    else_if = {
-        limit = {
-            has_active_production_method = pm_craftsman_sewing
-        }
-        value = pm_craftsman_sewing_clothes
-    }
-    else_if = {
-        limit = {
-            has_active_production_method = pm_elastics
-        }
-        value = pm_elastics_clothes
-    }
-    else = {
-        value = 0.0
-    }
-    multiply = building_work_efficiency
-}
-
-state_clothes_production_if_no_pmg_luxury_building_textile_mill = {
-	value = state.sg:clothes.state_goods_production
-    if = {
-        limit = {
-            pmg_luxury_building_textile_mill_clothes_current > 0.0
-        }
-	subtract = pmg_luxury_building_textile_mill_clothes_current
-    }
-}
-
-state_clothes_consumption_if_no_pmg_luxury_building_textile_mill = {
-	value = state.sg:clothes.state_goods_consumption
-    if = {
-        limit = {
-            pmg_luxury_building_textile_mill_clothes_current < 0.0
-        }
-	add = pmg_luxury_building_textile_mill_clothes_current
-    }
-}
-
-market_clothes_production_if_no_pmg_luxury_building_textile_mill = {
-	value = market.mg:clothes.market_goods_sell_orders
-    if = {
-        limit = {
-            pmg_luxury_building_textile_mill_clothes_current > 0.0
-        }
-	subtract = pmg_luxury_building_textile_mill_clothes_current
-        multiply = state.market_access
-    }
-}
-
-market_clothes_consumption_if_no_pmg_luxury_building_textile_mill = {
-	value = market.mg:clothes.market_goods_buy_orders
-    if = {
-        limit = {
-            pmg_luxury_building_textile_mill_clothes_current < 0.0
-        }
-	add = pmg_luxury_building_textile_mill_clothes_current
-        multiply = state.market_access
-    }
-}
-
-pmg_luxury_building_textile_mill_silk_current = {
-    if = {
-        limit = {
-            has_active_production_method = pm_no_luxury_clothes
-        }
-        value = pm_no_luxury_clothes_silk
-    }
-    else_if = {
-        limit = {
-            has_active_production_method = pm_craftsman_sewing
-        }
-        value = pm_craftsman_sewing_silk
-    }
-    else_if = {
-        limit = {
-            has_active_production_method = pm_elastics
-        }
-        value = pm_elastics_silk
-    }
-    else = {
-        value = 0.0
-    }
-    multiply = building_work_efficiency
-}
-
-state_silk_production_if_no_pmg_luxury_building_textile_mill = {
-	value = state.sg:silk.state_goods_production
-    if = {
-        limit = {
-            pmg_luxury_building_textile_mill_silk_current > 0.0
-        }
-	subtract = pmg_luxury_building_textile_mill_silk_current
-    }
-}
-
-state_silk_consumption_if_no_pmg_luxury_building_textile_mill = {
-	value = state.sg:silk.state_goods_consumption
-    if = {
-        limit = {
-            pmg_luxury_building_textile_mill_silk_current < 0.0
-        }
-	add = pmg_luxury_building_textile_mill_silk_current
-    }
-}
-
-market_silk_production_if_no_pmg_luxury_building_textile_mill = {
-	value = market.mg:silk.market_goods_sell_orders
-    if = {
-        limit = {
-            pmg_luxury_building_textile_mill_silk_current > 0.0
-        }
-	subtract = pmg_luxury_building_textile_mill_silk_current
-        multiply = state.market_access
-    }
-}
-
-market_silk_consumption_if_no_pmg_luxury_building_textile_mill = {
-	value = market.mg:silk.market_goods_buy_orders
-    if = {
-        limit = {
-            pmg_luxury_building_textile_mill_silk_current < 0.0
-        }
-	add = pmg_luxury_building_textile_mill_silk_current
-        multiply = state.market_access
-    }
-}
-
-pmg_luxury_building_textile_mill_luxury_clothes_current = {
-    if = {
-        limit = {
-            has_active_production_method = pm_no_luxury_clothes
-        }
-        value = pm_no_luxury_clothes_luxury_clothes
-    }
-    else_if = {
-        limit = {
-            has_active_production_method = pm_craftsman_sewing
-        }
-        value = pm_craftsman_sewing_luxury_clothes
-    }
-    else_if = {
-        limit = {
-            has_active_production_method = pm_elastics
-        }
-        value = pm_elastics_luxury_clothes
-    }
-    else = {
-        value = 0.0
-    }
-    multiply = building_work_efficiency
-}
-
-state_luxury_clothes_production_if_no_pmg_luxury_building_textile_mill = {
-	value = state.sg:luxury_clothes.state_goods_production
-    if = {
-        limit = {
-            pmg_luxury_building_textile_mill_luxury_clothes_current > 0.0
-        }
-	subtract = pmg_luxury_building_textile_mill_luxury_clothes_current
-    }
-}
-
-state_luxury_clothes_consumption_if_no_pmg_luxury_building_textile_mill = {
-	value = state.sg:luxury_clothes.state_goods_consumption
-    if = {
-        limit = {
-            pmg_luxury_building_textile_mill_luxury_clothes_current < 0.0
-        }
-	add = pmg_luxury_building_textile_mill_luxury_clothes_current
-    }
-}
-
-market_luxury_clothes_production_if_no_pmg_luxury_building_textile_mill = {
-	value = market.mg:luxury_clothes.market_goods_sell_orders
-    if = {
-        limit = {
-            pmg_luxury_building_textile_mill_luxury_clothes_current > 0.0
-        }
-	subtract = pmg_luxury_building_textile_mill_luxury_clothes_current
-        multiply = state.market_access
-    }
-}
-
-market_luxury_clothes_consumption_if_no_pmg_luxury_building_textile_mill = {
-	value = market.mg:luxury_clothes.market_goods_buy_orders
-    if = {
-        limit = {
-            pmg_luxury_building_textile_mill_luxury_clothes_current < 0.0
-        }
-	add = pmg_luxury_building_textile_mill_luxury_clothes_current
-        multiply = state.market_access
-    }
-}
-
-pmg_luxury_building_textile_mill_rubber_current = {
-    if = {
-        limit = {
-            has_active_production_method = pm_no_luxury_clothes
-        }
-        value = pm_no_luxury_clothes_rubber
-    }
-    else_if = {
-        limit = {
-            has_active_production_method = pm_craftsman_sewing
-        }
-        value = pm_craftsman_sewing_rubber
-    }
-    else_if = {
-        limit = {
-            has_active_production_method = pm_elastics
-        }
-        value = pm_elastics_rubber
-    }
-    else = {
-        value = 0.0
-    }
-    multiply = building_work_efficiency
-}
-
-state_rubber_production_if_no_pmg_luxury_building_textile_mill = {
-	value = state.sg:rubber.state_goods_production
-    if = {
-        limit = {
-            pmg_luxury_building_textile_mill_rubber_current > 0.0
-        }
-	subtract = pmg_luxury_building_textile_mill_rubber_current
-    }
-}
-
-state_rubber_consumption_if_no_pmg_luxury_building_textile_mill = {
-	value = state.sg:rubber.state_goods_consumption
-    if = {
-        limit = {
-            pmg_luxury_building_textile_mill_rubber_current < 0.0
-        }
-	add = pmg_luxury_building_textile_mill_rubber_current
-    }
-}
-
-market_rubber_production_if_no_pmg_luxury_building_textile_mill = {
-	value = market.mg:rubber.market_goods_sell_orders
-    if = {
-        limit = {
-            pmg_luxury_building_textile_mill_rubber_current > 0.0
-        }
-	subtract = pmg_luxury_building_textile_mill_rubber_current
-        multiply = state.market_access
-    }
-}
-
-market_rubber_consumption_if_no_pmg_luxury_building_textile_mill = {
-	value = market.mg:rubber.market_goods_buy_orders
-    if = {
-        limit = {
-            pmg_luxury_building_textile_mill_rubber_current < 0.0
-        }
-	add = pmg_luxury_building_textile_mill_rubber_current
-        multiply = state.market_access
-    }
-}
-
-pmg_luxury_building_furniture_manufactory_wood_current = {
-    if = {
-        limit = {
-            has_active_production_method = pm_no_luxuries
-        }
-        value = pm_no_luxuries_wood
-    }
-    else_if = {
-        limit = {
-            has_active_production_method = pm_luxury_furniture
-        }
-        value = pm_luxury_furniture_wood
-    }
-    else_if = {
-        limit = {
-            has_active_production_method = pm_precision_tools
-        }
-        value = pm_precision_tools_wood
-    }
-    else = {
-        value = 0.0
-    }
-    multiply = building_work_efficiency
-}
-
-state_wood_production_if_no_pmg_luxury_building_furniture_manufactory = {
-	value = state.sg:wood.state_goods_production
-    if = {
-        limit = {
-            pmg_luxury_building_furniture_manufactory_wood_current > 0.0
-        }
-	subtract = pmg_luxury_building_furniture_manufactory_wood_current
-    }
-}
-
-state_wood_consumption_if_no_pmg_luxury_building_furniture_manufactory = {
-	value = state.sg:wood.state_goods_consumption
-    if = {
-        limit = {
-            pmg_luxury_building_furniture_manufactory_wood_current < 0.0
-        }
-	add = pmg_luxury_building_furniture_manufactory_wood_current
-    }
-}
-
-market_wood_production_if_no_pmg_luxury_building_furniture_manufactory = {
-	value = market.mg:wood.market_goods_sell_orders
-    if = {
-        limit = {
-            pmg_luxury_building_furniture_manufactory_wood_current > 0.0
-        }
-	subtract = pmg_luxury_building_furniture_manufactory_wood_current
-        multiply = state.market_access
-    }
-}
-
-market_wood_consumption_if_no_pmg_luxury_building_furniture_manufactory = {
-	value = market.mg:wood.market_goods_buy_orders
-    if = {
-        limit = {
-            pmg_luxury_building_furniture_manufactory_wood_current < 0.0
-        }
-	add = pmg_luxury_building_furniture_manufactory_wood_current
-        multiply = state.market_access
-    }
-}
-
-pmg_luxury_building_furniture_manufactory_furniture_current = {
-    if = {
-        limit = {
-            has_active_production_method = pm_no_luxuries
-        }
-        value = pm_no_luxuries_furniture
-    }
-    else_if = {
-        limit = {
-            has_active_production_method = pm_luxury_furniture
-        }
-        value = pm_luxury_furniture_furniture
-    }
-    else_if = {
-        limit = {
-            has_active_production_method = pm_precision_tools
-        }
-        value = pm_precision_tools_furniture
-    }
-    else = {
-        value = 0.0
-    }
-    multiply = building_work_efficiency
-}
-
-state_furniture_production_if_no_pmg_luxury_building_furniture_manufactory = {
-	value = state.sg:furniture.state_goods_production
-    if = {
-        limit = {
-            pmg_luxury_building_furniture_manufactory_furniture_current > 0.0
-        }
-	subtract = pmg_luxury_building_furniture_manufactory_furniture_current
-    }
-}
-
-state_furniture_consumption_if_no_pmg_luxury_building_furniture_manufactory = {
-	value = state.sg:furniture.state_goods_consumption
-    if = {
-        limit = {
-            pmg_luxury_building_furniture_manufactory_furniture_current < 0.0
-        }
-	add = pmg_luxury_building_furniture_manufactory_furniture_current
-    }
-}
-
-market_furniture_production_if_no_pmg_luxury_building_furniture_manufactory = {
-	value = market.mg:furniture.market_goods_sell_orders
-    if = {
-        limit = {
-            pmg_luxury_building_furniture_manufactory_furniture_current > 0.0
-        }
-	subtract = pmg_luxury_building_furniture_manufactory_furniture_current
-        multiply = state.market_access
-    }
-}
-
-market_furniture_consumption_if_no_pmg_luxury_building_furniture_manufactory = {
-	value = market.mg:furniture.market_goods_buy_orders
-    if = {
-        limit = {
-            pmg_luxury_building_furniture_manufactory_furniture_current < 0.0
-        }
-	add = pmg_luxury_building_furniture_manufactory_furniture_current
-        multiply = state.market_access
-    }
-}
-
-pmg_luxury_building_furniture_manufactory_hardwood_current = {
-    if = {
-        limit = {
-            has_active_production_method = pm_no_luxuries
-        }
-        value = pm_no_luxuries_hardwood
-    }
-    else_if = {
-        limit = {
-            has_active_production_method = pm_luxury_furniture
-        }
-        value = pm_luxury_furniture_hardwood
-    }
-    else_if = {
-        limit = {
-            has_active_production_method = pm_precision_tools
-        }
-        value = pm_precision_tools_hardwood
-    }
-    else = {
-        value = 0.0
-    }
-    multiply = building_work_efficiency
-}
-
-state_hardwood_production_if_no_pmg_luxury_building_furniture_manufactory = {
-	value = state.sg:hardwood.state_goods_production
-    if = {
-        limit = {
-            pmg_luxury_building_furniture_manufactory_hardwood_current > 0.0
-        }
-	subtract = pmg_luxury_building_furniture_manufactory_hardwood_current
-    }
-}
-
-state_hardwood_consumption_if_no_pmg_luxury_building_furniture_manufactory = {
-	value = state.sg:hardwood.state_goods_consumption
-    if = {
-        limit = {
-            pmg_luxury_building_furniture_manufactory_hardwood_current < 0.0
-        }
-	add = pmg_luxury_building_furniture_manufactory_hardwood_current
-    }
-}
-
-market_hardwood_production_if_no_pmg_luxury_building_furniture_manufactory = {
-	value = market.mg:hardwood.market_goods_sell_orders
-    if = {
-        limit = {
-            pmg_luxury_building_furniture_manufactory_hardwood_current > 0.0
-        }
-	subtract = pmg_luxury_building_furniture_manufactory_hardwood_current
-        multiply = state.market_access
-    }
-}
-
-market_hardwood_consumption_if_no_pmg_luxury_building_furniture_manufactory = {
-	value = market.mg:hardwood.market_goods_buy_orders
-    if = {
-        limit = {
-            pmg_luxury_building_furniture_manufactory_hardwood_current < 0.0
-        }
-	add = pmg_luxury_building_furniture_manufactory_hardwood_current
-        multiply = state.market_access
-    }
-}
-
-pmg_luxury_building_furniture_manufactory_luxury_furniture_current = {
-    if = {
-        limit = {
-            has_active_production_method = pm_no_luxuries
-        }
-        value = pm_no_luxuries_luxury_furniture
-    }
-    else_if = {
-        limit = {
-            has_active_production_method = pm_luxury_furniture
-        }
-        value = pm_luxury_furniture_luxury_furniture
-    }
-    else_if = {
-        limit = {
-            has_active_production_method = pm_precision_tools
-        }
-        value = pm_precision_tools_luxury_furniture
-    }
-    else = {
-        value = 0.0
-    }
-    multiply = building_work_efficiency
-}
-
-state_luxury_furniture_production_if_no_pmg_luxury_building_furniture_manufactory = {
-	value = state.sg:luxury_furniture.state_goods_production
-    if = {
-        limit = {
-            pmg_luxury_building_furniture_manufactory_luxury_furniture_current > 0.0
-        }
-	subtract = pmg_luxury_building_furniture_manufactory_luxury_furniture_current
-    }
-}
-
-state_luxury_furniture_consumption_if_no_pmg_luxury_building_furniture_manufactory = {
-	value = state.sg:luxury_furniture.state_goods_consumption
-    if = {
-        limit = {
-            pmg_luxury_building_furniture_manufactory_luxury_furniture_current < 0.0
-        }
-	add = pmg_luxury_building_furniture_manufactory_luxury_furniture_current
-    }
-}
-
-market_luxury_furniture_production_if_no_pmg_luxury_building_furniture_manufactory = {
-	value = market.mg:luxury_furniture.market_goods_sell_orders
-    if = {
-        limit = {
-            pmg_luxury_building_furniture_manufactory_luxury_furniture_current > 0.0
-        }
-	subtract = pmg_luxury_building_furniture_manufactory_luxury_furniture_current
-        multiply = state.market_access
-    }
-}
-
-market_luxury_furniture_consumption_if_no_pmg_luxury_building_furniture_manufactory = {
-	value = market.mg:luxury_furniture.market_goods_buy_orders
-    if = {
-        limit = {
-            pmg_luxury_building_furniture_manufactory_luxury_furniture_current < 0.0
-        }
-	add = pmg_luxury_building_furniture_manufactory_luxury_furniture_current
-        multiply = state.market_access
-    }
-}
-
-pmg_luxury_building_furniture_manufactory_tools_current = {
-    if = {
-        limit = {
-            has_active_production_method = pm_no_luxuries
-        }
-        value = pm_no_luxuries_tools
-    }
-    else_if = {
-        limit = {
-            has_active_production_method = pm_luxury_furniture
-        }
-        value = pm_luxury_furniture_tools
-    }
-    else_if = {
-        limit = {
-            has_active_production_method = pm_precision_tools
-        }
-        value = pm_precision_tools_tools
-    }
-    else = {
-        value = 0.0
-    }
-    multiply = building_work_efficiency
-}
-
-state_tools_production_if_no_pmg_luxury_building_furniture_manufactory = {
-	value = state.sg:tools.state_goods_production
-    if = {
-        limit = {
-            pmg_luxury_building_furniture_manufactory_tools_current > 0.0
-        }
-	subtract = pmg_luxury_building_furniture_manufactory_tools_current
-    }
-}
-
-state_tools_consumption_if_no_pmg_luxury_building_furniture_manufactory = {
-	value = state.sg:tools.state_goods_consumption
-    if = {
-        limit = {
-            pmg_luxury_building_furniture_manufactory_tools_current < 0.0
-        }
-	add = pmg_luxury_building_furniture_manufactory_tools_current
-    }
-}
-
-market_tools_production_if_no_pmg_luxury_building_furniture_manufactory = {
-	value = market.mg:tools.market_goods_sell_orders
-    if = {
-        limit = {
-            pmg_luxury_building_furniture_manufactory_tools_current > 0.0
-        }
-	subtract = pmg_luxury_building_furniture_manufactory_tools_current
-        multiply = state.market_access
-    }
-}
-
-market_tools_consumption_if_no_pmg_luxury_building_furniture_manufactory = {
-	value = market.mg:tools.market_goods_buy_orders
-    if = {
-        limit = {
-            pmg_luxury_building_furniture_manufactory_tools_current < 0.0
-        }
-	add = pmg_luxury_building_furniture_manufactory_tools_current
-        multiply = state.market_access
-    }
-}
-
-pmg_luxury_building_glassworks_dye_current = {
-    if = {
-        limit = {
-            has_active_production_method = pm_disabled_ceramics
-        }
-        value = pm_disabled_ceramics_dye
-    }
-    else_if = {
-        limit = {
-            has_active_production_method = pm_ceramics
-        }
-        value = pm_ceramics_dye
-    }
-    else_if = {
-        limit = {
-            has_active_production_method = pm_bone_china
-        }
-        value = pm_bone_china_dye
-    }
-    else = {
-        value = 0.0
-    }
-    multiply = building_work_efficiency
-}
-
-state_dye_production_if_no_pmg_luxury_building_glassworks = {
-	value = state.sg:dye.state_goods_production
-    if = {
-        limit = {
-            pmg_luxury_building_glassworks_dye_current > 0.0
-        }
-	subtract = pmg_luxury_building_glassworks_dye_current
-    }
-}
-
-state_dye_consumption_if_no_pmg_luxury_building_glassworks = {
-	value = state.sg:dye.state_goods_consumption
-    if = {
-        limit = {
-            pmg_luxury_building_glassworks_dye_current < 0.0
-        }
-	add = pmg_luxury_building_glassworks_dye_current
-    }
-}
-
-market_dye_production_if_no_pmg_luxury_building_glassworks = {
-	value = market.mg:dye.market_goods_sell_orders
-    if = {
-        limit = {
-            pmg_luxury_building_glassworks_dye_current > 0.0
-        }
-	subtract = pmg_luxury_building_glassworks_dye_current
-        multiply = state.market_access
-    }
-}
-
-market_dye_consumption_if_no_pmg_luxury_building_glassworks = {
-	value = market.mg:dye.market_goods_buy_orders
-    if = {
-        limit = {
-            pmg_luxury_building_glassworks_dye_current < 0.0
-        }
-	add = pmg_luxury_building_glassworks_dye_current
-        multiply = state.market_access
-    }
-}
-
-pmg_luxury_building_glassworks_glass_current = {
-    if = {
-        limit = {
-            has_active_production_method = pm_disabled_ceramics
-        }
-        value = pm_disabled_ceramics_glass
-    }
-    else_if = {
-        limit = {
-            has_active_production_method = pm_ceramics
-        }
-        value = pm_ceramics_glass
-    }
-    else_if = {
-        limit = {
-            has_active_production_method = pm_bone_china
-        }
-        value = pm_bone_china_glass
-    }
-    else = {
-        value = 0.0
-    }
-    multiply = building_work_efficiency
-}
-
-state_glass_production_if_no_pmg_luxury_building_glassworks = {
-	value = state.sg:glass.state_goods_production
-    if = {
-        limit = {
-            pmg_luxury_building_glassworks_glass_current > 0.0
-        }
-	subtract = pmg_luxury_building_glassworks_glass_current
-    }
-}
-
-state_glass_consumption_if_no_pmg_luxury_building_glassworks = {
-	value = state.sg:glass.state_goods_consumption
-    if = {
-        limit = {
-            pmg_luxury_building_glassworks_glass_current < 0.0
-        }
-	add = pmg_luxury_building_glassworks_glass_current
-    }
-}
-
-market_glass_production_if_no_pmg_luxury_building_glassworks = {
-	value = market.mg:glass.market_goods_sell_orders
-    if = {
-        limit = {
-            pmg_luxury_building_glassworks_glass_current > 0.0
-        }
-	subtract = pmg_luxury_building_glassworks_glass_current
-        multiply = state.market_access
-    }
-}
-
-market_glass_consumption_if_no_pmg_luxury_building_glassworks = {
-	value = market.mg:glass.market_goods_buy_orders
-    if = {
-        limit = {
-            pmg_luxury_building_glassworks_glass_current < 0.0
-        }
-	add = pmg_luxury_building_glassworks_glass_current
-        multiply = state.market_access
-    }
-}
-
-pmg_luxury_building_glassworks_porcelain_current = {
-    if = {
-        limit = {
-            has_active_production_method = pm_disabled_ceramics
-        }
-        value = pm_disabled_ceramics_porcelain
-    }
-    else_if = {
-        limit = {
-            has_active_production_method = pm_ceramics
-        }
-        value = pm_ceramics_porcelain
-    }
-    else_if = {
-        limit = {
-            has_active_production_method = pm_bone_china
-        }
-        value = pm_bone_china_porcelain
-    }
-    else = {
-        value = 0.0
-    }
-    multiply = building_work_efficiency
-}
-
-state_porcelain_production_if_no_pmg_luxury_building_glassworks = {
-	value = state.sg:porcelain.state_goods_production
-    if = {
-        limit = {
-            pmg_luxury_building_glassworks_porcelain_current > 0.0
-        }
-	subtract = pmg_luxury_building_glassworks_porcelain_current
-    }
-}
-
-state_porcelain_consumption_if_no_pmg_luxury_building_glassworks = {
-	value = state.sg:porcelain.state_goods_consumption
-    if = {
-        limit = {
-            pmg_luxury_building_glassworks_porcelain_current < 0.0
-        }
-	add = pmg_luxury_building_glassworks_porcelain_current
-    }
-}
-
-market_porcelain_production_if_no_pmg_luxury_building_glassworks = {
-	value = market.mg:porcelain.market_goods_sell_orders
-    if = {
-        limit = {
-            pmg_luxury_building_glassworks_porcelain_current > 0.0
-        }
-	subtract = pmg_luxury_building_glassworks_porcelain_current
-        multiply = state.market_access
-    }
-}
-
-market_porcelain_consumption_if_no_pmg_luxury_building_glassworks = {
-	value = market.mg:porcelain.market_goods_buy_orders
-    if = {
-        limit = {
-            pmg_luxury_building_glassworks_porcelain_current < 0.0
-        }
-	add = pmg_luxury_building_glassworks_porcelain_current
-        multiply = state.market_access
-    }
-}
-
 pmg_hardwood_wood_current = {
     if = {
         limit = {
@@ -14140,1016 +14140,6 @@ market_steel_consumption_if_no_pmg_passenger_trains = {
             pmg_passenger_trains_steel_current < 0.0
         }
 	add = pmg_passenger_trains_steel_current
-        multiply = state.market_access
-    }
-}
-
-pmg_curie_mining_equipment_building_uranium_mine_tools_current = {
-    if = {
-        limit = {
-            has_active_production_method = pm_curie_picks_and_shovels_building_uranium_mine
-        }
-        value = pm_curie_picks_and_shovels_building_uranium_mine_tools
-    }
-    else_if = {
-        limit = {
-            has_active_production_method = pm_curie_atmospheric_engine_pump_building_uranium_mine
-        }
-        value = pm_curie_atmospheric_engine_pump_building_uranium_mine_tools
-    }
-    else_if = {
-        limit = {
-            has_active_production_method = pm_curie_condensing_engine_pump_building_uranium_mine
-        }
-        value = pm_curie_condensing_engine_pump_building_uranium_mine_tools
-    }
-    else_if = {
-        limit = {
-            has_active_production_method = pm_curie_diesel_pump_building_uranium_mine
-        }
-        value = pm_curie_diesel_pump_building_uranium_mine_tools
-    }
-    else = {
-        value = 0.0
-    }
-    multiply = building_work_efficiency
-}
-
-state_tools_production_if_no_pmg_curie_mining_equipment_building_uranium_mine = {
-	value = state.sg:tools.state_goods_production
-    if = {
-        limit = {
-            pmg_curie_mining_equipment_building_uranium_mine_tools_current > 0.0
-        }
-	subtract = pmg_curie_mining_equipment_building_uranium_mine_tools_current
-    }
-}
-
-state_tools_consumption_if_no_pmg_curie_mining_equipment_building_uranium_mine = {
-	value = state.sg:tools.state_goods_consumption
-    if = {
-        limit = {
-            pmg_curie_mining_equipment_building_uranium_mine_tools_current < 0.0
-        }
-	add = pmg_curie_mining_equipment_building_uranium_mine_tools_current
-    }
-}
-
-market_tools_production_if_no_pmg_curie_mining_equipment_building_uranium_mine = {
-	value = market.mg:tools.market_goods_sell_orders
-    if = {
-        limit = {
-            pmg_curie_mining_equipment_building_uranium_mine_tools_current > 0.0
-        }
-	subtract = pmg_curie_mining_equipment_building_uranium_mine_tools_current
-        multiply = state.market_access
-    }
-}
-
-market_tools_consumption_if_no_pmg_curie_mining_equipment_building_uranium_mine = {
-	value = market.mg:tools.market_goods_buy_orders
-    if = {
-        limit = {
-            pmg_curie_mining_equipment_building_uranium_mine_tools_current < 0.0
-        }
-	add = pmg_curie_mining_equipment_building_uranium_mine_tools_current
-        multiply = state.market_access
-    }
-}
-
-pmg_curie_mining_equipment_building_uranium_mine_good_uranium_current = {
-    if = {
-        limit = {
-            has_active_production_method = pm_curie_picks_and_shovels_building_uranium_mine
-        }
-        value = pm_curie_picks_and_shovels_building_uranium_mine_good_uranium
-    }
-    else_if = {
-        limit = {
-            has_active_production_method = pm_curie_atmospheric_engine_pump_building_uranium_mine
-        }
-        value = pm_curie_atmospheric_engine_pump_building_uranium_mine_good_uranium
-    }
-    else_if = {
-        limit = {
-            has_active_production_method = pm_curie_condensing_engine_pump_building_uranium_mine
-        }
-        value = pm_curie_condensing_engine_pump_building_uranium_mine_good_uranium
-    }
-    else_if = {
-        limit = {
-            has_active_production_method = pm_curie_diesel_pump_building_uranium_mine
-        }
-        value = pm_curie_diesel_pump_building_uranium_mine_good_uranium
-    }
-    else = {
-        value = 0.0
-    }
-    multiply = building_work_efficiency
-}
-
-state_good_uranium_production_if_no_pmg_curie_mining_equipment_building_uranium_mine = {
-	value = state.sg:good_uranium.state_goods_production
-    if = {
-        limit = {
-            pmg_curie_mining_equipment_building_uranium_mine_good_uranium_current > 0.0
-        }
-	subtract = pmg_curie_mining_equipment_building_uranium_mine_good_uranium_current
-    }
-}
-
-state_good_uranium_consumption_if_no_pmg_curie_mining_equipment_building_uranium_mine = {
-	value = state.sg:good_uranium.state_goods_consumption
-    if = {
-        limit = {
-            pmg_curie_mining_equipment_building_uranium_mine_good_uranium_current < 0.0
-        }
-	add = pmg_curie_mining_equipment_building_uranium_mine_good_uranium_current
-    }
-}
-
-market_good_uranium_production_if_no_pmg_curie_mining_equipment_building_uranium_mine = {
-	value = market.mg:good_uranium.market_goods_sell_orders
-    if = {
-        limit = {
-            pmg_curie_mining_equipment_building_uranium_mine_good_uranium_current > 0.0
-        }
-	subtract = pmg_curie_mining_equipment_building_uranium_mine_good_uranium_current
-        multiply = state.market_access
-    }
-}
-
-market_good_uranium_consumption_if_no_pmg_curie_mining_equipment_building_uranium_mine = {
-	value = market.mg:good_uranium.market_goods_buy_orders
-    if = {
-        limit = {
-            pmg_curie_mining_equipment_building_uranium_mine_good_uranium_current < 0.0
-        }
-	add = pmg_curie_mining_equipment_building_uranium_mine_good_uranium_current
-        multiply = state.market_access
-    }
-}
-
-pmg_curie_mining_equipment_building_uranium_mine_coal_current = {
-    if = {
-        limit = {
-            has_active_production_method = pm_curie_picks_and_shovels_building_uranium_mine
-        }
-        value = pm_curie_picks_and_shovels_building_uranium_mine_coal
-    }
-    else_if = {
-        limit = {
-            has_active_production_method = pm_curie_atmospheric_engine_pump_building_uranium_mine
-        }
-        value = pm_curie_atmospheric_engine_pump_building_uranium_mine_coal
-    }
-    else_if = {
-        limit = {
-            has_active_production_method = pm_curie_condensing_engine_pump_building_uranium_mine
-        }
-        value = pm_curie_condensing_engine_pump_building_uranium_mine_coal
-    }
-    else_if = {
-        limit = {
-            has_active_production_method = pm_curie_diesel_pump_building_uranium_mine
-        }
-        value = pm_curie_diesel_pump_building_uranium_mine_coal
-    }
-    else = {
-        value = 0.0
-    }
-    multiply = building_work_efficiency
-}
-
-state_coal_production_if_no_pmg_curie_mining_equipment_building_uranium_mine = {
-	value = state.sg:coal.state_goods_production
-    if = {
-        limit = {
-            pmg_curie_mining_equipment_building_uranium_mine_coal_current > 0.0
-        }
-	subtract = pmg_curie_mining_equipment_building_uranium_mine_coal_current
-    }
-}
-
-state_coal_consumption_if_no_pmg_curie_mining_equipment_building_uranium_mine = {
-	value = state.sg:coal.state_goods_consumption
-    if = {
-        limit = {
-            pmg_curie_mining_equipment_building_uranium_mine_coal_current < 0.0
-        }
-	add = pmg_curie_mining_equipment_building_uranium_mine_coal_current
-    }
-}
-
-market_coal_production_if_no_pmg_curie_mining_equipment_building_uranium_mine = {
-	value = market.mg:coal.market_goods_sell_orders
-    if = {
-        limit = {
-            pmg_curie_mining_equipment_building_uranium_mine_coal_current > 0.0
-        }
-	subtract = pmg_curie_mining_equipment_building_uranium_mine_coal_current
-        multiply = state.market_access
-    }
-}
-
-market_coal_consumption_if_no_pmg_curie_mining_equipment_building_uranium_mine = {
-	value = market.mg:coal.market_goods_buy_orders
-    if = {
-        limit = {
-            pmg_curie_mining_equipment_building_uranium_mine_coal_current < 0.0
-        }
-	add = pmg_curie_mining_equipment_building_uranium_mine_coal_current
-        multiply = state.market_access
-    }
-}
-
-pmg_curie_mining_equipment_building_uranium_mine_oil_current = {
-    if = {
-        limit = {
-            has_active_production_method = pm_curie_picks_and_shovels_building_uranium_mine
-        }
-        value = pm_curie_picks_and_shovels_building_uranium_mine_oil
-    }
-    else_if = {
-        limit = {
-            has_active_production_method = pm_curie_atmospheric_engine_pump_building_uranium_mine
-        }
-        value = pm_curie_atmospheric_engine_pump_building_uranium_mine_oil
-    }
-    else_if = {
-        limit = {
-            has_active_production_method = pm_curie_condensing_engine_pump_building_uranium_mine
-        }
-        value = pm_curie_condensing_engine_pump_building_uranium_mine_oil
-    }
-    else_if = {
-        limit = {
-            has_active_production_method = pm_curie_diesel_pump_building_uranium_mine
-        }
-        value = pm_curie_diesel_pump_building_uranium_mine_oil
-    }
-    else = {
-        value = 0.0
-    }
-    multiply = building_work_efficiency
-}
-
-state_oil_production_if_no_pmg_curie_mining_equipment_building_uranium_mine = {
-	value = state.sg:oil.state_goods_production
-    if = {
-        limit = {
-            pmg_curie_mining_equipment_building_uranium_mine_oil_current > 0.0
-        }
-	subtract = pmg_curie_mining_equipment_building_uranium_mine_oil_current
-    }
-}
-
-state_oil_consumption_if_no_pmg_curie_mining_equipment_building_uranium_mine = {
-	value = state.sg:oil.state_goods_consumption
-    if = {
-        limit = {
-            pmg_curie_mining_equipment_building_uranium_mine_oil_current < 0.0
-        }
-	add = pmg_curie_mining_equipment_building_uranium_mine_oil_current
-    }
-}
-
-market_oil_production_if_no_pmg_curie_mining_equipment_building_uranium_mine = {
-	value = market.mg:oil.market_goods_sell_orders
-    if = {
-        limit = {
-            pmg_curie_mining_equipment_building_uranium_mine_oil_current > 0.0
-        }
-	subtract = pmg_curie_mining_equipment_building_uranium_mine_oil_current
-        multiply = state.market_access
-    }
-}
-
-market_oil_consumption_if_no_pmg_curie_mining_equipment_building_uranium_mine = {
-	value = market.mg:oil.market_goods_buy_orders
-    if = {
-        limit = {
-            pmg_curie_mining_equipment_building_uranium_mine_oil_current < 0.0
-        }
-	add = pmg_curie_mining_equipment_building_uranium_mine_oil_current
-        multiply = state.market_access
-    }
-}
-
-pmg_curie_explosives_building_uranium_mine_explosives_current = {
-    if = {
-        limit = {
-            has_active_production_method = pm_no_explosives
-        }
-        value = pm_no_explosives_explosives
-    }
-    else_if = {
-        limit = {
-            has_active_production_method = pm_curie_nitroglycerin_building_uranium_mine
-        }
-        value = pm_curie_nitroglycerin_building_uranium_mine_explosives
-    }
-    else_if = {
-        limit = {
-            has_active_production_method = pm_curie_dynamite_building_uranium_mine
-        }
-        value = pm_curie_dynamite_building_uranium_mine_explosives
-    }
-    else = {
-        value = 0.0
-    }
-    multiply = building_work_efficiency
-}
-
-state_explosives_production_if_no_pmg_curie_explosives_building_uranium_mine = {
-	value = state.sg:explosives.state_goods_production
-    if = {
-        limit = {
-            pmg_curie_explosives_building_uranium_mine_explosives_current > 0.0
-        }
-	subtract = pmg_curie_explosives_building_uranium_mine_explosives_current
-    }
-}
-
-state_explosives_consumption_if_no_pmg_curie_explosives_building_uranium_mine = {
-	value = state.sg:explosives.state_goods_consumption
-    if = {
-        limit = {
-            pmg_curie_explosives_building_uranium_mine_explosives_current < 0.0
-        }
-	add = pmg_curie_explosives_building_uranium_mine_explosives_current
-    }
-}
-
-market_explosives_production_if_no_pmg_curie_explosives_building_uranium_mine = {
-	value = market.mg:explosives.market_goods_sell_orders
-    if = {
-        limit = {
-            pmg_curie_explosives_building_uranium_mine_explosives_current > 0.0
-        }
-	subtract = pmg_curie_explosives_building_uranium_mine_explosives_current
-        multiply = state.market_access
-    }
-}
-
-market_explosives_consumption_if_no_pmg_curie_explosives_building_uranium_mine = {
-	value = market.mg:explosives.market_goods_buy_orders
-    if = {
-        limit = {
-            pmg_curie_explosives_building_uranium_mine_explosives_current < 0.0
-        }
-	add = pmg_curie_explosives_building_uranium_mine_explosives_current
-        multiply = state.market_access
-    }
-}
-
-pmg_curie_explosives_building_uranium_mine_good_uranium_current = {
-    if = {
-        limit = {
-            has_active_production_method = pm_no_explosives
-        }
-        value = pm_no_explosives_good_uranium
-    }
-    else_if = {
-        limit = {
-            has_active_production_method = pm_curie_nitroglycerin_building_uranium_mine
-        }
-        value = pm_curie_nitroglycerin_building_uranium_mine_good_uranium
-    }
-    else_if = {
-        limit = {
-            has_active_production_method = pm_curie_dynamite_building_uranium_mine
-        }
-        value = pm_curie_dynamite_building_uranium_mine_good_uranium
-    }
-    else = {
-        value = 0.0
-    }
-    multiply = building_work_efficiency
-}
-
-state_good_uranium_production_if_no_pmg_curie_explosives_building_uranium_mine = {
-	value = state.sg:good_uranium.state_goods_production
-    if = {
-        limit = {
-            pmg_curie_explosives_building_uranium_mine_good_uranium_current > 0.0
-        }
-	subtract = pmg_curie_explosives_building_uranium_mine_good_uranium_current
-    }
-}
-
-state_good_uranium_consumption_if_no_pmg_curie_explosives_building_uranium_mine = {
-	value = state.sg:good_uranium.state_goods_consumption
-    if = {
-        limit = {
-            pmg_curie_explosives_building_uranium_mine_good_uranium_current < 0.0
-        }
-	add = pmg_curie_explosives_building_uranium_mine_good_uranium_current
-    }
-}
-
-market_good_uranium_production_if_no_pmg_curie_explosives_building_uranium_mine = {
-	value = market.mg:good_uranium.market_goods_sell_orders
-    if = {
-        limit = {
-            pmg_curie_explosives_building_uranium_mine_good_uranium_current > 0.0
-        }
-	subtract = pmg_curie_explosives_building_uranium_mine_good_uranium_current
-        multiply = state.market_access
-    }
-}
-
-market_good_uranium_consumption_if_no_pmg_curie_explosives_building_uranium_mine = {
-	value = market.mg:good_uranium.market_goods_buy_orders
-    if = {
-        limit = {
-            pmg_curie_explosives_building_uranium_mine_good_uranium_current < 0.0
-        }
-	add = pmg_curie_explosives_building_uranium_mine_good_uranium_current
-        multiply = state.market_access
-    }
-}
-
-pmg_base_building_airport_aeroplanes_current = {
-    if = {
-        limit = {
-            has_active_production_method = pm_private_charters
-        }
-        value = pm_private_charters_aeroplanes
-    }
-    else_if = {
-        limit = {
-            has_active_production_method = pm_regional_routes
-        }
-        value = pm_regional_routes_aeroplanes
-    }
-    else_if = {
-        limit = {
-            has_active_production_method = pm_domestic_routes
-        }
-        value = pm_domestic_routes_aeroplanes
-    }
-    else_if = {
-        limit = {
-            has_active_production_method = pm_international_routes
-        }
-        value = pm_international_routes_aeroplanes
-    }
-    else = {
-        value = 0.0
-    }
-    multiply = building_work_efficiency
-}
-
-state_aeroplanes_production_if_no_pmg_base_building_airport = {
-	value = state.sg:aeroplanes.state_goods_production
-    if = {
-        limit = {
-            pmg_base_building_airport_aeroplanes_current > 0.0
-        }
-	subtract = pmg_base_building_airport_aeroplanes_current
-    }
-}
-
-state_aeroplanes_consumption_if_no_pmg_base_building_airport = {
-	value = state.sg:aeroplanes.state_goods_consumption
-    if = {
-        limit = {
-            pmg_base_building_airport_aeroplanes_current < 0.0
-        }
-	add = pmg_base_building_airport_aeroplanes_current
-    }
-}
-
-market_aeroplanes_production_if_no_pmg_base_building_airport = {
-	value = market.mg:aeroplanes.market_goods_sell_orders
-    if = {
-        limit = {
-            pmg_base_building_airport_aeroplanes_current > 0.0
-        }
-	subtract = pmg_base_building_airport_aeroplanes_current
-        multiply = state.market_access
-    }
-}
-
-market_aeroplanes_consumption_if_no_pmg_base_building_airport = {
-	value = market.mg:aeroplanes.market_goods_buy_orders
-    if = {
-        limit = {
-            pmg_base_building_airport_aeroplanes_current < 0.0
-        }
-	add = pmg_base_building_airport_aeroplanes_current
-        multiply = state.market_access
-    }
-}
-
-pmg_base_building_airport_paper_current = {
-    if = {
-        limit = {
-            has_active_production_method = pm_private_charters
-        }
-        value = pm_private_charters_paper
-    }
-    else_if = {
-        limit = {
-            has_active_production_method = pm_regional_routes
-        }
-        value = pm_regional_routes_paper
-    }
-    else_if = {
-        limit = {
-            has_active_production_method = pm_domestic_routes
-        }
-        value = pm_domestic_routes_paper
-    }
-    else_if = {
-        limit = {
-            has_active_production_method = pm_international_routes
-        }
-        value = pm_international_routes_paper
-    }
-    else = {
-        value = 0.0
-    }
-    multiply = building_work_efficiency
-}
-
-state_paper_production_if_no_pmg_base_building_airport = {
-	value = state.sg:paper.state_goods_production
-    if = {
-        limit = {
-            pmg_base_building_airport_paper_current > 0.0
-        }
-	subtract = pmg_base_building_airport_paper_current
-    }
-}
-
-state_paper_consumption_if_no_pmg_base_building_airport = {
-	value = state.sg:paper.state_goods_consumption
-    if = {
-        limit = {
-            pmg_base_building_airport_paper_current < 0.0
-        }
-	add = pmg_base_building_airport_paper_current
-    }
-}
-
-market_paper_production_if_no_pmg_base_building_airport = {
-	value = market.mg:paper.market_goods_sell_orders
-    if = {
-        limit = {
-            pmg_base_building_airport_paper_current > 0.0
-        }
-	subtract = pmg_base_building_airport_paper_current
-        multiply = state.market_access
-    }
-}
-
-market_paper_consumption_if_no_pmg_base_building_airport = {
-	value = market.mg:paper.market_goods_buy_orders
-    if = {
-        limit = {
-            pmg_base_building_airport_paper_current < 0.0
-        }
-	add = pmg_base_building_airport_paper_current
-        multiply = state.market_access
-    }
-}
-
-pmg_base_building_airport_oil_current = {
-    if = {
-        limit = {
-            has_active_production_method = pm_private_charters
-        }
-        value = pm_private_charters_oil
-    }
-    else_if = {
-        limit = {
-            has_active_production_method = pm_regional_routes
-        }
-        value = pm_regional_routes_oil
-    }
-    else_if = {
-        limit = {
-            has_active_production_method = pm_domestic_routes
-        }
-        value = pm_domestic_routes_oil
-    }
-    else_if = {
-        limit = {
-            has_active_production_method = pm_international_routes
-        }
-        value = pm_international_routes_oil
-    }
-    else = {
-        value = 0.0
-    }
-    multiply = building_work_efficiency
-}
-
-state_oil_production_if_no_pmg_base_building_airport = {
-	value = state.sg:oil.state_goods_production
-    if = {
-        limit = {
-            pmg_base_building_airport_oil_current > 0.0
-        }
-	subtract = pmg_base_building_airport_oil_current
-    }
-}
-
-state_oil_consumption_if_no_pmg_base_building_airport = {
-	value = state.sg:oil.state_goods_consumption
-    if = {
-        limit = {
-            pmg_base_building_airport_oil_current < 0.0
-        }
-	add = pmg_base_building_airport_oil_current
-    }
-}
-
-market_oil_production_if_no_pmg_base_building_airport = {
-	value = market.mg:oil.market_goods_sell_orders
-    if = {
-        limit = {
-            pmg_base_building_airport_oil_current > 0.0
-        }
-	subtract = pmg_base_building_airport_oil_current
-        multiply = state.market_access
-    }
-}
-
-market_oil_consumption_if_no_pmg_base_building_airport = {
-	value = market.mg:oil.market_goods_buy_orders
-    if = {
-        limit = {
-            pmg_base_building_airport_oil_current < 0.0
-        }
-	add = pmg_base_building_airport_oil_current
-        multiply = state.market_access
-    }
-}
-
-pmg_base_building_airport_tools_current = {
-    if = {
-        limit = {
-            has_active_production_method = pm_private_charters
-        }
-        value = pm_private_charters_tools
-    }
-    else_if = {
-        limit = {
-            has_active_production_method = pm_regional_routes
-        }
-        value = pm_regional_routes_tools
-    }
-    else_if = {
-        limit = {
-            has_active_production_method = pm_domestic_routes
-        }
-        value = pm_domestic_routes_tools
-    }
-    else_if = {
-        limit = {
-            has_active_production_method = pm_international_routes
-        }
-        value = pm_international_routes_tools
-    }
-    else = {
-        value = 0.0
-    }
-    multiply = building_work_efficiency
-}
-
-state_tools_production_if_no_pmg_base_building_airport = {
-	value = state.sg:tools.state_goods_production
-    if = {
-        limit = {
-            pmg_base_building_airport_tools_current > 0.0
-        }
-	subtract = pmg_base_building_airport_tools_current
-    }
-}
-
-state_tools_consumption_if_no_pmg_base_building_airport = {
-	value = state.sg:tools.state_goods_consumption
-    if = {
-        limit = {
-            pmg_base_building_airport_tools_current < 0.0
-        }
-	add = pmg_base_building_airport_tools_current
-    }
-}
-
-market_tools_production_if_no_pmg_base_building_airport = {
-	value = market.mg:tools.market_goods_sell_orders
-    if = {
-        limit = {
-            pmg_base_building_airport_tools_current > 0.0
-        }
-	subtract = pmg_base_building_airport_tools_current
-        multiply = state.market_access
-    }
-}
-
-market_tools_consumption_if_no_pmg_base_building_airport = {
-	value = market.mg:tools.market_goods_buy_orders
-    if = {
-        limit = {
-            pmg_base_building_airport_tools_current < 0.0
-        }
-	add = pmg_base_building_airport_tools_current
-        multiply = state.market_access
-    }
-}
-
-pmg_base_building_airport_air_travel_current = {
-    if = {
-        limit = {
-            has_active_production_method = pm_private_charters
-        }
-        value = pm_private_charters_air_travel
-    }
-    else_if = {
-        limit = {
-            has_active_production_method = pm_regional_routes
-        }
-        value = pm_regional_routes_air_travel
-    }
-    else_if = {
-        limit = {
-            has_active_production_method = pm_domestic_routes
-        }
-        value = pm_domestic_routes_air_travel
-    }
-    else_if = {
-        limit = {
-            has_active_production_method = pm_international_routes
-        }
-        value = pm_international_routes_air_travel
-    }
-    else = {
-        value = 0.0
-    }
-    multiply = building_work_efficiency
-}
-
-state_air_travel_production_if_no_pmg_base_building_airport = {
-	value = state.sg:air_travel.state_goods_production
-    if = {
-        limit = {
-            pmg_base_building_airport_air_travel_current > 0.0
-        }
-	subtract = pmg_base_building_airport_air_travel_current
-    }
-}
-
-state_air_travel_consumption_if_no_pmg_base_building_airport = {
-	value = state.sg:air_travel.state_goods_consumption
-    if = {
-        limit = {
-            pmg_base_building_airport_air_travel_current < 0.0
-        }
-	add = pmg_base_building_airport_air_travel_current
-    }
-}
-
-market_air_travel_production_if_no_pmg_base_building_airport = {
-	value = market.mg:air_travel.market_goods_sell_orders
-    if = {
-        limit = {
-            pmg_base_building_airport_air_travel_current > 0.0
-        }
-	subtract = pmg_base_building_airport_air_travel_current
-        multiply = state.market_access
-    }
-}
-
-market_air_travel_consumption_if_no_pmg_base_building_airport = {
-	value = market.mg:air_travel.market_goods_buy_orders
-    if = {
-        limit = {
-            pmg_base_building_airport_air_travel_current < 0.0
-        }
-	add = pmg_base_building_airport_air_travel_current
-        multiply = state.market_access
-    }
-}
-
-pmg_base_building_airport_electricity_current = {
-    if = {
-        limit = {
-            has_active_production_method = pm_private_charters
-        }
-        value = pm_private_charters_electricity
-    }
-    else_if = {
-        limit = {
-            has_active_production_method = pm_regional_routes
-        }
-        value = pm_regional_routes_electricity
-    }
-    else_if = {
-        limit = {
-            has_active_production_method = pm_domestic_routes
-        }
-        value = pm_domestic_routes_electricity
-    }
-    else_if = {
-        limit = {
-            has_active_production_method = pm_international_routes
-        }
-        value = pm_international_routes_electricity
-    }
-    else = {
-        value = 0.0
-    }
-    multiply = building_work_efficiency
-}
-
-state_electricity_production_if_no_pmg_base_building_airport = {
-	value = state.sg:electricity.state_goods_production
-    if = {
-        limit = {
-            pmg_base_building_airport_electricity_current > 0.0
-        }
-	subtract = pmg_base_building_airport_electricity_current
-    }
-}
-
-state_electricity_consumption_if_no_pmg_base_building_airport = {
-	value = state.sg:electricity.state_goods_consumption
-    if = {
-        limit = {
-            pmg_base_building_airport_electricity_current < 0.0
-        }
-	add = pmg_base_building_airport_electricity_current
-    }
-}
-
-market_electricity_production_if_no_pmg_base_building_airport = {
-	value = market.mg:electricity.market_goods_sell_orders
-    if = {
-        limit = {
-            pmg_base_building_airport_electricity_current > 0.0
-        }
-	subtract = pmg_base_building_airport_electricity_current
-        multiply = state.market_access
-    }
-}
-
-market_electricity_consumption_if_no_pmg_base_building_airport = {
-	value = market.mg:electricity.market_goods_buy_orders
-    if = {
-        limit = {
-            pmg_base_building_airport_electricity_current < 0.0
-        }
-	add = pmg_base_building_airport_electricity_current
-        multiply = state.market_access
-    }
-}
-
-pmg_base_building_airport_telephones_current = {
-    if = {
-        limit = {
-            has_active_production_method = pm_private_charters
-        }
-        value = pm_private_charters_telephones
-    }
-    else_if = {
-        limit = {
-            has_active_production_method = pm_regional_routes
-        }
-        value = pm_regional_routes_telephones
-    }
-    else_if = {
-        limit = {
-            has_active_production_method = pm_domestic_routes
-        }
-        value = pm_domestic_routes_telephones
-    }
-    else_if = {
-        limit = {
-            has_active_production_method = pm_international_routes
-        }
-        value = pm_international_routes_telephones
-    }
-    else = {
-        value = 0.0
-    }
-    multiply = building_work_efficiency
-}
-
-state_telephones_production_if_no_pmg_base_building_airport = {
-	value = state.sg:telephones.state_goods_production
-    if = {
-        limit = {
-            pmg_base_building_airport_telephones_current > 0.0
-        }
-	subtract = pmg_base_building_airport_telephones_current
-    }
-}
-
-state_telephones_consumption_if_no_pmg_base_building_airport = {
-	value = state.sg:telephones.state_goods_consumption
-    if = {
-        limit = {
-            pmg_base_building_airport_telephones_current < 0.0
-        }
-	add = pmg_base_building_airport_telephones_current
-    }
-}
-
-market_telephones_production_if_no_pmg_base_building_airport = {
-	value = market.mg:telephones.market_goods_sell_orders
-    if = {
-        limit = {
-            pmg_base_building_airport_telephones_current > 0.0
-        }
-	subtract = pmg_base_building_airport_telephones_current
-        multiply = state.market_access
-    }
-}
-
-market_telephones_consumption_if_no_pmg_base_building_airport = {
-	value = market.mg:telephones.market_goods_buy_orders
-    if = {
-        limit = {
-            pmg_base_building_airport_telephones_current < 0.0
-        }
-	add = pmg_base_building_airport_telephones_current
-        multiply = state.market_access
-    }
-}
-
-pmg_base_building_airport_radios_current = {
-    if = {
-        limit = {
-            has_active_production_method = pm_private_charters
-        }
-        value = pm_private_charters_radios
-    }
-    else_if = {
-        limit = {
-            has_active_production_method = pm_regional_routes
-        }
-        value = pm_regional_routes_radios
-    }
-    else_if = {
-        limit = {
-            has_active_production_method = pm_domestic_routes
-        }
-        value = pm_domestic_routes_radios
-    }
-    else_if = {
-        limit = {
-            has_active_production_method = pm_international_routes
-        }
-        value = pm_international_routes_radios
-    }
-    else = {
-        value = 0.0
-    }
-    multiply = building_work_efficiency
-}
-
-state_radios_production_if_no_pmg_base_building_airport = {
-	value = state.sg:radios.state_goods_production
-    if = {
-        limit = {
-            pmg_base_building_airport_radios_current > 0.0
-        }
-	subtract = pmg_base_building_airport_radios_current
-    }
-}
-
-state_radios_consumption_if_no_pmg_base_building_airport = {
-	value = state.sg:radios.state_goods_consumption
-    if = {
-        limit = {
-            pmg_base_building_airport_radios_current < 0.0
-        }
-	add = pmg_base_building_airport_radios_current
-    }
-}
-
-market_radios_production_if_no_pmg_base_building_airport = {
-	value = market.mg:radios.market_goods_sell_orders
-    if = {
-        limit = {
-            pmg_base_building_airport_radios_current > 0.0
-        }
-	subtract = pmg_base_building_airport_radios_current
-        multiply = state.market_access
-    }
-}
-
-market_radios_consumption_if_no_pmg_base_building_airport = {
-	value = market.mg:radios.market_goods_buy_orders
-    if = {
-        limit = {
-            pmg_base_building_airport_radios_current < 0.0
-        }
-	add = pmg_base_building_airport_radios_current
         multiply = state.market_access
     }
 }

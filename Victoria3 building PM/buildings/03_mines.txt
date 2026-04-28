@@ -18,6 +18,21 @@
 	ownership_type = self
 
 	background = "gfx/interface/icons/building_icons/backgrounds/building_panel_bg_mining.dds"
+	
+	ai_value = {
+		value = 1000
+
+		if = { # Colonisation of Korea
+			limit = {
+				owner ?= {
+					c:JAP ?= this
+					has_journal_entry = je_colonize_korea
+				}
+				is_in_geographic_region = geographic_region_korea
+			}
+			add = 2000
+		}
+	}
 }
 
 building_iron_mine = {
@@ -41,7 +56,22 @@ building_iron_mine = {
 	ownership_type = self
 
 	background = "gfx/interface/icons/building_icons/backgrounds/building_panel_bg_mining.dds"
-}
+	
+	ai_value = {
+		value = 1000
+
+		if = { # Colonisation of Korea
+			limit = {
+				owner ?= {
+					c:JAP ?= this
+					has_journal_entry = je_colonize_korea
+				}
+				is_in_geographic_region = geographic_region_korea
+			}
+			add = 2000
+		}
+	}
+ }
 
 building_lead_mine = {
 	building_group = bg_mining
@@ -63,7 +93,22 @@ building_lead_mine = {
 	ownership_type = self
 
 	background = "gfx/interface/icons/building_icons/backgrounds/building_panel_bg_mining.dds"
-}
+	
+	ai_value = {
+		value = 1000
+
+		if = { # Colonisation of Korea
+			limit = {
+				owner ?= {
+					c:JAP ?= this
+					has_journal_entry = je_colonize_korea
+				}
+				is_in_geographic_region = geographic_region_korea
+			}
+			add = 2000
+		}
+	}
+ }
 
 building_sulfur_mine = {
 	building_group = bg_mining
@@ -85,7 +130,22 @@ building_sulfur_mine = {
 	ownership_type = self
 
 	background = "gfx/interface/icons/building_icons/backgrounds/building_panel_bg_mining.dds"
-}
+	
+	ai_value = {
+		value = 1000
+
+		if = { # Colonisation of Korea
+			limit = {
+				owner ?= {
+					c:JAP ?= this
+					has_journal_entry = je_colonize_korea
+				}
+				is_in_geographic_region = geographic_region_korea
+			}
+			add = 2000
+		}
+	}
+ }
 
 building_gold_mine = {
 	building_group = bg_mining
