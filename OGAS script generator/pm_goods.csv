@@ -166,8 +166,8 @@ building_sugar_plantation,pmg_refinement_building_sugar_plantation,ox_driven_rol
 building_sugar_plantation,pmg_refinement_building_sugar_plantation,vacuum_pan_sugar,upgrade,construction_cost_low,,,,,,,,,,,,,,,,,,,,,,,,,-1,,,,,,,,,,,,,,,,,,,5,,,,,,,,,
 building_sugar_plantation,pmg_refinement_building_sugar_plantation,steam_powered_evaporation_sugar,upgrade,construction_cost_low,,,,,,,,,,,,,,,,,,,,,,,,,-2,,,,,,-1,,,,,,,,,,,,,15,,,,,,,,,
 building_sugar_plantation,pmg_refinement_building_sugar_plantation,centrifugal_machine_sugar,upgrade,construction_cost_low,,,,,,,,,,,,,,,,,,,,,,,,,-4,,,,,,-1,,,,,,,,,,,,,30,,,,,,,,,
-building_banana_plantation,pmg_base_building_banana_plantation,default_building_banana_plantation,upgrade,construction_cost_low,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,40,,,,,,,,,,,,,,
-building_banana_plantation,pmg_base_building_banana_plantation,automatic_irrigation_building_banana_plantation,upgrade,construction_cost_low,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,-5,,,,,,,,50,,,,,,,,,,,,,,
+building_banana_plantation,pmg_base_building_banana_plantation,default_building_banana_plantation,upgrade,construction_cost_low,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,35,,,,,,,,,,,,,,
+building_banana_plantation,pmg_base_building_banana_plantation,automatic_irrigation_building_banana_plantation,upgrade,construction_cost_low,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,-5,,,,,,,,35,,,,,,,,,,,,,,
 building_silk_plantation,pmg_base_building_silk_plantation,default_building_silk_plantation,upgrade,construction_cost_low,,,,,,,,,,,,,,,,,,,,,,15,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
 building_silk_plantation,pmg_base_building_silk_plantation,automatic_irrigation_building_silk_plantation,upgrade,construction_cost_low,,,,,,,,,,,,,,,,,,,,,,40,,,,,,,,,-5,,,,,,,,,,,,,,,,,,,,,,
 building_art_academy,pmg_base_building_art_academy,pm_traditional_art,upgrade,construction_cost_medium,,,,,,,,,,,,,,,-10,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,5

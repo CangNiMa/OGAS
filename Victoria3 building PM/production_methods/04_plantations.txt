@@ -574,7 +574,7 @@ default_building_banana_plantation = {
 
 	building_modifiers = {
 		workforce_scaled = {
-			goods_output_fruit_add = 40
+			goods_output_fruit_add = 35
 		}
 
 		level_scaled = {
@@ -601,7 +601,7 @@ automatic_irrigation_building_banana_plantation = {
 		workforce_scaled = {
 			# output goods
 			goods_input_engines_add = 5
-			goods_output_fruit_add = 50
+			goods_output_fruit_add = 35
 		}
 
 		level_scaled = {
@@ -938,7 +938,7 @@ slave_exploitation_banana = {
 
 	building_modifiers = {
 		workforce_scaled = {
-			goods_output_fruit_add = 25 #slaves weren't used for this often
+			goods_output_fruit_add = 15 #slaves weren't used for this often
 		}
 
 		unscaled = {
@@ -970,7 +970,7 @@ worker_exploitation_banana = {
 
 	building_modifiers = {
 		workforce_scaled = {
-			goods_output_fruit_add = 20
+			goods_output_fruit_add = 10
 		}
 
 		level_scaled = {

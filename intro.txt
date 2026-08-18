@@ -6,9 +6,8 @@
 
 让建筑自行升级生产方式，如果更高级的生产方式利润更高。对建造部门而言，按照建造力单价计算
 让建筑根据当地劳动人口和失业率，调整自动化生产线。可以增加自动化生产以减少人力需求，也可以降低自动化生产以产生就业岗位。
-修改和添加了许多原版自动扩张的方式，包括建造部门、大学、港口等建筑。
 您还可以直接按照利润排名，直接扩建国内最赚钱的建筑。
-任何自动扩张方式，无论是原版的还是由本MOD提供的，都可以由您自定义几项额外功能：吸纳失业、消灭自给农、建造力优先、禁止非整合
+由本MOD提供的自动扩张方式，都可以由您自定义几项额外功能：吸纳失业、消灭自给农、建造力优先、禁止非整合
 你还可以自定义你想要建筑的类型以及每次建造的次数
 
 
@@ -46,7 +45,7 @@ www.bilibili.com/video/BV1YKrQBvEsX
 
 注意：安装多个大型MOD导致不兼容是游戏本身的原因。因为游戏mod制作的局限性，相当多数据无法使用代码，只能向游戏中注入大量脚本值代替，游戏中可以接受mod注入的校本值是有上限的。
 
-如果您对本MOD有任何疑问或讨论，可以加qq群168419758，记得注明群号来源。
+如果您对本MOD有任何疑问或讨论，可以加qq群954138205，记得注明群号来源。
 
 The computer is a great invention! 
 Now you can bring all building and production methods under fully electronic automated control, allowing them to evaluate the advantages and disadvantages of various production methods on their own to achieve the most stable market balance!
@@ -60,10 +59,9 @@ Let buildings upgrade production methods on their own, if new production method 
 
 Let the building adjust the automated production methods line to the local workforce and unemployment rate. Automated production methods can be increased to reduce workforce requirements, or decreased to generate jobs.
 
-Modifications and additions have been made to many of the vanilla auto-expand rule, including construct sector, universities, harbors, and other buildings.
 You can also expand the most profitable buildings in the country directly by ranking them in terms of profit.
 
-Any of the automatic expansion methods, either vanilla or provided by this mod, can be customized by you with several additional features: absorbing unemployment, eliminating subsistence, prioritizing construction power, only incorporated.
+Any of the automatic expansion methods, can be customized by you with several additional features: absorbing unemployment, eliminating subsistence, prioritizing construction power, only incorporated.
 Also you can define the Building Types you need to expand, and expand amonut each time.
 
 
@@ -97,6 +95,7 @@ You can have OGAS only build in incorporated state.
 You can specify the building type built by OGAS.
 
 Warning: This MOD will only use the vanilla recipe and does not support other MOD buildings. If you use a MOD that modifies the vanilla data, this MOD will still calculate according to the vanilla recipe. If the data does not match your expectations, this MOD will not responsible.
-This mod has a tool to help other mod authors adapt their buildings to be compatible with this mod. If you are a mod author, please use this script to add support for this mod to your mod.
+This mod has a tool to help other mod authors adapt their buildings to be compatible with this mod. If you are a mod author, please use this script to add support for this mod to your mod. Example video link:
+www.bilibili.com/video/BV1YKrQBvEsX
 
 Note: Incompatibility caused by installing multiple large mods is due to the game itself. Due to the limitations of game mod development, a considerable amount of data cannot be coded, and instead, a large number of script values are injected into the game. There is an upper limit to the number of script values that can be injected into the game through mods. 
