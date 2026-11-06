@@ -1,7 +1,7 @@
 ﻿l_korean:
 
-je_OGAS_building_weight_manager: "OGAS $pmg_automation$ $concept_construct$ $OPTIONS$"
-je_OGAS_building_weight_manager_reason: "You can change the weight of $concept_building$ you want to build. $concept_building$ that weight <= 0 will not be selected by OGAS."
+je_OGAS_building_weight_manager: "OGAS 자동 건설 가중치"
+je_OGAS_building_weight_manager_reason: "건물별 건설 우선순위를 가중치로 조절합니다. 가중치가 0 이하인 건물은 OGAS의 건설 대상에서 제외됩니다."
 
 
 increase_building_food_industry: "[Scope.GetCountry.MakeScope.Var('cnm_auto_construct_building_food_industry').GetValue]@groceries!$building_food_industry$@arrow_up!"
@@ -99,7 +99,7 @@ increase_building_oil_rig_desc: "$increase_building_OGAS_desc$"
 increase_building_railway: "[Scope.GetCountry.MakeScope.Var('cnm_auto_construct_building_railway').GetValue]@transportation!$building_railway$@arrow_up!"
 increase_building_railway_desc: "$increase_building_OGAS_desc$"
 
-increase_building_OGAS_desc: "Increase weight 0.1"
+increase_building_OGAS_desc: "건설 가중치 0.1 증가\n\n추가 설명\n해당 건물의 가중치가 클릭마다 0.1씩 증가하여 자동 건설의 선택 순위에 반영됩니다. 가중치가 양수인 건물은 다른 조건을 충족하면 건설 후보가 됩니다."
 
 ##############################
 
@@ -198,9 +198,9 @@ decrease_building_oil_rig_desc: "$decrease_building_OGAS_desc$"
 decrease_building_railway: "[Scope.GetCountry.MakeScope.Var('cnm_auto_construct_building_railway').GetValue]@transportation!$building_railway$@arrow_down!"
 decrease_building_railway_desc: "$decrease_building_OGAS_desc$"
 
-decrease_building_OGAS_desc: "decrease weight 0.1"
+decrease_building_OGAS_desc: "건설 가중치 0.1 감소\n\n추가 설명\n해당 건물의 가중치가 클릭마다 0.1씩 감소합니다. 가중치가 0 이하가 되면 해당 건물 유형이 OGAS의 자동 건설 후보에서 제외됩니다."
 
 ##############################
 
 default_all_construct_building: "$OPTION_DEFAULT$"
-default_all_construct_building_desc: "$OPTION_DEFAULT$"
+default_all_construct_building_desc: "$OPTION_DEFAULT$\n\n추가 설명\n누르면 모든 건물 유형의 가중치를 원본 모드에 지정된 기본값으로 되돌립니다."
